@@ -41,17 +41,31 @@ public class Starpicking : MonoBehaviour {
 
         // iterate through the particles which entered the trigger and make them red
         for (int i = 0; i < numEnter; i++) {
-          ParticleSystem.Particle p = enter[i];
-          p.startColor = new Color32(255, 0, 0, 255);
+            ParticleSystem.Particle p = enter[i];
+            
+            float h, s, v;
+            Color.RGBToHSV(p.startColor,out h, out s, out v);
+            v *= 2.0f;
+            //p.startColor = Color.HSVToRGB(h, s, v);
 
-          enter[i] = p;
+            //p.startColor = new Color32(255, 0, 0, 255);
+            p.startSize *= 2.0f;
+
+            enter[i] = p;
         }
 
         // iterate through the particles which exited the trigger and make them green
         for (int i = 0; i < numExit; i++) {
-          ParticleSystem.Particle p = exit[i];
-          p.startColor = new Color32(255, 255, 255, 255);
-          exit[i] = p;
+            ParticleSystem.Particle p = exit[i];
+
+            float h, s, v;
+            Color.RGBToHSV(p.startColor, out h, out s, out v);
+            v /= 2.0f;
+            //p.startColor = Color.HSVToRGB(h, s, v);
+            //p.startColor = new Color32(255, 255, 255, 255);
+            p.startSize /= 2.0f;
+
+            exit[i] = p;
         }
 
         // re-assign the modified particles back into the particle system

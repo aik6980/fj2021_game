@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 402445072324496049}
   - component: {fileID: 402445072324496051}
   - component: {fileID: 402445072324496050}
+  - component: {fileID: 1142562893}
   m_Layer: 0
   m_Name: Stars
   m_TagString: Untagged
@@ -3849,15 +3850,16 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 2
-    inside: 1
+    inside: 2
     outside: 0
-    enter: 0
-    exit: 0
+    enter: 2
+    exit: 2
     colliderQueryMode: 0
     radiusScale: 1
-    primitives: []
+    primitives:
+    - {fileID: 0}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -4862,6 +4864,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &1142562893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402445072324496048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba353da2db178f42990a793b1b6ecaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line_material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &402445072447548082
 GameObject:
   m_ObjectHideFlags: 0
