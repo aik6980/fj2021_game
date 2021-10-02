@@ -117,7 +117,7 @@ public class CameraControl : MonoBehaviour
 			transform.rotation = Quaternion.Euler(euler);
 
 			//ToDo: check if it's over UI!
-			// ...or anything we migth want to click on
+			// ...or anything we might want to click on
 			// and ONLY take the mouse if not
 			if (EventSystem.current.IsPointerOverGameObject())
 			{
