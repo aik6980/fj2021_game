@@ -23,6 +23,7 @@ public class ShipMovement : MonoBehaviour
 	public float[] depth;
 	public Vector3[] hitNormal;
 	public Collider[] hitCollider;
+	public Transform shipTransform;
 
 
 	// Start is called before the first frame update
@@ -68,6 +69,19 @@ public class ShipMovement : MonoBehaviour
 			shape.position = waterSplosh.transform.InverseTransformPoint(sploshTrans.transform.position);
 			shape.rotation = (Quaternion.Inverse(waterSplosh.transform.rotation) * sploshTrans.transform.rotation).eulerAngles;
 		}
+
+		//FOIL RAISE ABOVE WATER EFFECT PROTO
+		if (velocity.z > 10) //THRESHOLD VELOCITY
+		{
+			transform.position = new Vector3(0f,0.1f,0f); //RAISE LEVEL
+		}
+		else
+		{
+			transform.position = new Vector3(0f,0f,0f);
+		}
+
+
+
 	}
 
 	void IslandCollision()
