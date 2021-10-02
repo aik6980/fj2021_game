@@ -115,7 +115,7 @@ Shader "Custom/WaterSurfaceShader"
             o.Albedo = final_colour.rgb;
             o.Normal = normalA + normalB;
             o.Smoothness = _Glossiness;
-            o.Alpha = lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
+			o.Alpha = 1.0;// lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
             o.Emission = foam * _FoamIntensity;
         }
         ENDCG
