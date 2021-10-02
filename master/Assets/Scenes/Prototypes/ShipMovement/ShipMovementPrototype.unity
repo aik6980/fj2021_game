@@ -596,6 +596,90 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065296927}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1241392773
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1442735189511800556}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3712587553929498228, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+      propertyPath: m_Name
+      value: boat_main
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+--- !u!1 &1241392774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+  m_PrefabInstance: {fileID: 1241392773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1241392775
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241392774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1241392776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3712587553929498228, guid: eb543f0aa7562cb428effccad6d0c7cd, type: 3}
+  m_PrefabInstance: {fileID: 1241392773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1313923498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,49 +1302,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: dragLinearDampening
-      value: 0.002
+    - target: {fileID: 1442735190164915548, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
+      propertyPath: sailGameObject
+      value: 
+      objectReference: {fileID: 1241392776}
     - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
       propertyPath: environmentGameObject
       value: 
       objectReference: {fileID: 1900036299}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[0].time
-      value: -0.020833336
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[1].time
-      value: 4.118233
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[2].time
-      value: 7.928801
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[0].inSlope
-      value: 0.011795107
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[1].inSlope
-      value: 0.00054378156
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[2].inSlope
-      value: -0.010707544
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[0].outSlope
-      value: 0.011795107
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[1].outSlope
-      value: 0.00054378156
-      objectReference: {fileID: 0}
-    - target: {fileID: 7152819856052873543, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
-      propertyPath: steeringSpeedCurve.m_Curve.Array.data[2].outSlope
-      value: -0.010707544
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
+--- !u!4 &1442735189511800556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 625174220120404063, guid: 40e2b9ffb9e44ee429509e27c67668e2, type: 3}
+  m_PrefabInstance: {fileID: 1442735189511800555}
+  m_PrefabAsset: {fileID: 0}

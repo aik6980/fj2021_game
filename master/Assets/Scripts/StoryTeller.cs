@@ -5,6 +5,7 @@ using UnityEngine;
 public class StoryTeller : MonoBehaviour
 {
 	public GameObject player;
+	Fungus.Flowchart fc;
 
 	public GameObject[] triggers;
 

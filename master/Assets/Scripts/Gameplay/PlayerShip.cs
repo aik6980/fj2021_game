@@ -84,7 +84,7 @@ public class PlayerShip : MonoBehaviour
         }
 
         var scale = sailGameObject.transform.localScale;
-        scale.z = 0.1f + 0.2f * sailThrottle;
+        scale.z = 1f + 0.2f * sailThrottle;
         sailGameObject.transform.localScale = scale;
     }
 
@@ -96,7 +96,7 @@ public class PlayerShip : MonoBehaviour
         var forwardVelocityMag = Vector3.Project(velocity, transform.forward).magnitude;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(targetDirection, Vector3.up), steeringSpeedMultiplier * steeringSpeedCurve.Evaluate(forwardVelocityMag) * Time.deltaTime);
 
-        var sidewaysDrag = velocity.magnitude * dragSidewaysCoefficient *(1f - Mathf.Clamp01(Mathf.Abs(Vector3.Dot(velocity.normalized, transform.forward))));
+        var sidewaysDrag = velocity.magnitude * dragSidewaysCoefficient *(1f - Mathf.Abs(Vector3.Dot(velocity.normalized, transform.forward))) * Time.deltaTime;
         var drag = (Vector3.Magnitude(velocity) + sidewaysDrag) * dragLinearDampening + 0.5f * (Vector3.SqrMagnitude(velocity) + sidewaysDrag) * dragSquaredCoeffecient;
         velocity -= velocity * Mathf.Clamp01(drag);
         velocity += transform.forward * sailThrottle * (maxSailSpeed / sailModes) * Time.deltaTime;
