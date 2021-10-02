@@ -8,9 +8,9 @@ Shader "Custom/WaterSurfaceShader"
         [HDR]_IntersectionColour("Intersection Colour", Color) = (1,1,1,1)
 
         [Header(Thresholds)]
-        _IntersectionThreshold("Intersction threshold", Range(0,50)) = 0
-        _DeepWaterThreshold("Deep Water Threshold", Range(0,50)) = 0
-        _FoamThreshold("Foam threshold", Range(0,50)) = 0
+        _IntersectionThreshold("Intersction threshold", Range(0,10)) = 0
+        _DeepWaterThreshold("Deep Water Threshold", Range(0,10)) = 0
+        _FoamThreshold("Foam threshold", Range(0,10)) = 0
 
         [Header(Normal maps)]
         [Normal]_NormalA("Normal A", 2D) = "bump" {}
