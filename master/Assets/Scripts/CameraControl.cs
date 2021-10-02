@@ -8,7 +8,9 @@ public class CameraControl : MonoBehaviour
 {
 	public GameObject player;
 	public ShipMovement shipMove;
+	public OnFootMovement footMove;
 	public Transform shipSeat;
+	public PlanetTurner Tina;
 
 	public Camera cam;
 	public float CamDistance = 1.0f;
@@ -60,6 +62,12 @@ public class CameraControl : MonoBehaviour
 
 		disembark.onClick.AddListener(this.OnPressDisembark);
 		embark.onClick.AddListener(this.OnPressEmbark);
+
+		
+		// Start on the boat; attach the player
+		mode = Mode.LandWalk;
+		canEmbark = true;
+		OnPressEmbark();
 	}
 
 	// Update is called once per frame
@@ -115,7 +123,7 @@ public class CameraControl : MonoBehaviour
 			transform.rotation = Quaternion.Euler(euler);
 
 			//ToDo: check if it's over UI!
-			// ...or anything we migth want to click on
+			// ...or anything we might want to click on
 			// and ONLY take the mouse if not
 			if (EventSystem.current.IsPointerOverGameObject())
 			{
@@ -171,10 +179,11 @@ public class CameraControl : MonoBehaviour
 		if (mode == Mode.ShipNav && canDisembark)
 		{
 			mode = Mode.LandWalk;
-			player.transform.SetParent(null, true);
+			player.transform.SetParent(Tina.planetRoot, true);
 			player.transform.position = hitPoint;
 			player.transform.rotation = this.transform.rotation;
-			shipMove.velocity = Vector3.zero;
+			shipMove.anchored = true;
+			Tina.whatToFollow = player.transform;
 		}
 	}
 
@@ -186,6 +195,8 @@ public class CameraControl : MonoBehaviour
 			player.transform.SetParent(shipSeat, true);
 			player.transform.position = shipSeat.position;
 			player.transform.rotation = shipSeat.rotation;
+			shipMove.anchored = false;
+			Tina.whatToFollow = shipMove.transform;
 		}
 	}
 }
