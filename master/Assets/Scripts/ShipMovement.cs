@@ -7,6 +7,9 @@ public class ShipMovement : MonoBehaviour
 	public Transform planetRoot;
 	public float radius;
 
+	public Transform tiltable;
+
+
 	public Vector3 velocity;
 
 	public ParticleSystem waterSplosh;
@@ -25,6 +28,9 @@ public class ShipMovement : MonoBehaviour
 	public Collider[] hitCollider;
 	public Transform shipTransform;
 
+	public float lateralDrag = 0.1f;
+	public float tiltScale = 10.0f;
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -37,6 +43,13 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		Vector3 worldVel = this.transform.rotation * velocity;
+		//lateral drag
+		worldVel -= transform.right * Vector3.Dot(worldVel, transform.right) * lateralDrag * Time.deltaTime;
+		if (tiltable)
+			tiltable.localRotation = Quaternion.Slerp(tiltable.localRotation, Quaternion.Euler(0, 0, Mathf.Clamp(-Vector3.Dot(worldVel, transform.right) * tiltScale, -45.0f, 45.0f)), Time.deltaTime / 0.1f);
+		velocity = Quaternion.Inverse(this.transform.rotation) * worldVel;
+
 		if (Input.GetKeyDown(KeyCode.W))
 			velocity.z += 5.0f;
 		if (Input.GetKeyDown(KeyCode.S))
@@ -49,7 +62,11 @@ public class ShipMovement : MonoBehaviour
 		Vector3 angVel;
 		angVel.x = -velocity.z / radius;
 		angVel.z = velocity.x / radius;
-		angVel.y = -velocity.y;
+		angVel.y = 0;// -velocity.y;
+		worldVel = this.transform.rotation * velocity;
+		angVel.x = -worldVel.z / radius;
+		angVel.z = worldVel.x / radius;
+		angVel.y = 0;// -velocity.y;
 
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
@@ -60,6 +77,10 @@ public class ShipMovement : MonoBehaviour
 			Quaternion turn = Quaternion.AngleAxis(angVel.magnitude * Time.deltaTime, angVel.normalized);
 			planetRoot.rotation = turn * planetRoot.rotation;
 		}
+
+		Quaternion deltaYaw = Quaternion.AngleAxis(velocity.y * Time.deltaTime, Vector3.up);
+		this.transform.rotation = deltaYaw * this.transform.rotation;
+		velocity = deltaYaw * velocity;
 
 		if (waterSplosh)
 		{
@@ -106,6 +127,8 @@ public class ShipMovement : MonoBehaviour
 			Debug.DrawLine(p1, p1 + dir * depth[i], Color.Lerp(Color.red, Color.green, depth[i]/maxDistance));
 		}
 
+		Vector3 worldVel = this.transform.rotation * velocity;
+
 		Vector3 F = Vector3.zero;
 		for (int i = 0; i < collisionPoints.Length; i++)
 		{
@@ -117,23 +140,26 @@ public class ShipMovement : MonoBehaviour
 				Vector3 dir = this.transform.TransformDirection(rayDir[i].normalized);
 				Debug.DrawRay(p1 + dir * (depth[i] - maxHeight), normal);
 
-				float v = Vector3.Dot(velocity, normal);
+				float v = Vector3.Dot(worldVel, normal);
 
 				if (depth[i] < maxHeight + collisionDistance)
 				{
-					velocity += normal * Mathf.Clamp(-v, 0, 100.0f);
+					worldVel += normal * Mathf.Clamp(-v, 0, 100.0f);
+					worldVel += -worldVel * 0.1f * Time.deltaTime;	//also drag so we can stop and get out
 				} else
 				if (depth[i] < maxHeight + dragDistance)
 				{
-					velocity += -velocity * 0.1f * Time.deltaTime;
+					worldVel += -worldVel * 0.1f * Time.deltaTime;
 				} else
 				if (depth[i] < maxHeight + pushDistance)
 				{
 					float f = (maxHeight + pushDistance - depth[i]);
-					velocity += normal * f;
-					velocity.y += Vector3.Cross(normal, p1 - this.transform.position).y * f * -5.0f;
+					worldVel += normal * f;
+					worldVel.y += Vector3.Cross(normal, p1 - this.transform.position).y * f * -5.0f;
 				}
 			}
 		}
+		velocity = Quaternion.Inverse(this.transform.rotation) * worldVel;
+
 	}
 }
