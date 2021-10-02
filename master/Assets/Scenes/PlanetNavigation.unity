@@ -6729,6 +6729,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002669961}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1016056922 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8635345639491352399, guid: 612381ac910c96e43ac075ef98eb1a9d, type: 3}
+  m_PrefabInstance: {fileID: 1922467590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887220320c9b5a94a939423972085e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1060173618 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 38dfbda9d7aa1264d866cbb79cdb8f09, type: 3}
@@ -17438,5 +17449,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8900851938262166059, guid: dbd7f833752d7914ca928fc6c0702690, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1016056922}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd7f833752d7914ca928fc6c0702690, type: 3}

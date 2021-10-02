@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StarpickingRod : MonoBehaviour {
 
@@ -45,7 +46,7 @@ public class StarpickingRod : MonoBehaviour {
         }
   }
 
-  public void EnableConstellationMode() 
+  public void ToggleConstellationCanvas() 
   {
         m_enable_constellation_canvas = !m_enable_constellation_canvas;
   }
