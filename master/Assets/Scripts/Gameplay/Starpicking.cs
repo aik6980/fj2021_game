@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq; 
 
 [ExecuteInEditMode]
 public class Starpicking : MonoBehaviour {
@@ -78,7 +79,21 @@ public class Starpicking : MonoBehaviour {
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
+        {
+            if(constellation.lines.Count > 0)
+            {
+                var line = constellation.lines.Last<LineRenderer>();
+                if (line)
+                {
+                    Destroy(line.gameObject);
+                    constellation.lines.RemoveAt(constellation.lines.Count - 1);
+                }
+            }
+        }
+
+
+        if (Input.GetMouseButtonDown(0))
         {
             if(inside.Count > 0)
             {

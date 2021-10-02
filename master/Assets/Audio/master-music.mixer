@@ -36,7 +36,9 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 3c0cc7f38ef389a42b5b91848e267b6d
-    name: Music_vol
+    name: Music-sailing_vol
+  - guid: aa9da99109785a847be93ffc3e18866e
+    name: Music-stargaze_vol
   m_AudioMixerGroupViews:
   - guids:
     - 55be8630913dbf945881039575ff7b57
