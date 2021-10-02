@@ -62,6 +62,12 @@ public class CameraControl : MonoBehaviour
 
 		disembark.onClick.AddListener(this.OnPressDisembark);
 		embark.onClick.AddListener(this.OnPressEmbark);
+
+		
+		// Start on the boat; attach the player
+		mode = Mode.LandWalk;
+		canEmbark = true;
+		OnPressEmbark();
 	}
 
 	// Update is called once per frame
