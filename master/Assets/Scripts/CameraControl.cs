@@ -24,11 +24,11 @@ public class CameraControl : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        
-    }
+		UpdateCam();
+	}
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
 		if (Cursor.lockState == CursorLockMode.Locked)
 		{
@@ -43,11 +43,12 @@ public class CameraControl : MonoBehaviour
 			euler.x = Mathf.Clamp(euler.x, pitchMin, pitchMax);
 			transform.rotation = Quaternion.Euler(euler);
 
-			pitch = euler.x / 90.0f;
-			Vector3 camPos = cam.transform.localPosition;
-			camPos.z = CamZ.Evaluate(pitch) * CamDistance;
-			camPos.y = CamY.Evaluate(pitch) * CamHeight;
-			cam.transform.localPosition = camPos;
+			//pitch = euler.x / 90.0f;
+			//Vector3 camPos = cam.transform.localPosition;
+			//camPos.z = CamZ.Evaluate(pitch) * CamDistance;
+			//camPos.y = CamY.Evaluate(pitch) * CamHeight;
+			//cam.transform.localPosition = camPos;
+			UpdateCam();
 
 			if (Input.GetMouseButtonUp(0))
 			{
@@ -64,5 +65,17 @@ public class CameraControl : MonoBehaviour
 				Cursor.lockState = CursorLockMode.Locked;
 			}
 		}
+	}
+
+	void UpdateCam()
+	{
+		Vector3 euler = transform.rotation.eulerAngles;
+		if (euler.x > 90.0f) euler.x -= 360.0f;
+
+		pitch = euler.x / 90.0f;
+		Vector3 camPos = cam.transform.localPosition;
+		camPos.z = CamZ.Evaluate(pitch) * CamDistance;
+		camPos.y = CamY.Evaluate(pitch) * CamHeight;
+		cam.transform.localPosition = camPos;
 	}
 }

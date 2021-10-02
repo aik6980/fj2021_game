@@ -38,5 +38,8 @@ public class ShipMovement : MonoBehaviour
 			Quaternion turn = Quaternion.AngleAxis(angVel.magnitude * Time.deltaTime, angVel.normalized);
 			planetRoot.rotation = turn * planetRoot.rotation;
 		}
+
+		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
+		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
 	}
 }
