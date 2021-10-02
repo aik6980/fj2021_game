@@ -19,6 +19,8 @@ public class CameraControl : MonoBehaviour
 	[Range(-1, 1)]
 	public float pitch = 0.0f;
 
+	public float mx, my;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -47,14 +49,18 @@ public class CameraControl : MonoBehaviour
 			camPos.y = CamY.Evaluate(pitch) * CamHeight;
 			cam.transform.localPosition = camPos;
 
-			if (Input.GetKeyDown(KeyCode.Escape))
+			if (Input.GetMouseButtonUp(0))
 			{
+				//release
 				Cursor.lockState = CursorLockMode.None;
+				//ToDo: restore mousepos
+				//https://answers.unity.com/questions/330661/setting-the-mouse-position-to-specific-coordinates.html
 			}
 		} else
 		{
-			if (Input.GetMouseButton(0))
+			if (Input.GetMouseButtonDown(0))
 			{
+				//ToDo: save mousepos
 				Cursor.lockState = CursorLockMode.Locked;
 			}
 		}
