@@ -8,7 +8,9 @@ public class CameraControl : MonoBehaviour
 {
 	public GameObject player;
 	public ShipMovement shipMove;
+	public OnFootMovement footMove;
 	public Transform shipSeat;
+	public PlanetTurner Tina;
 
 	public Camera cam;
 	public float CamDistance = 1.0f;
@@ -171,10 +173,11 @@ public class CameraControl : MonoBehaviour
 		if (mode == Mode.ShipNav && canDisembark)
 		{
 			mode = Mode.LandWalk;
-			player.transform.SetParent(null, true);
+			player.transform.SetParent(Tina.planetRoot, true);
 			player.transform.position = hitPoint;
 			player.transform.rotation = this.transform.rotation;
-			shipMove.velocity = Vector3.zero;
+			shipMove.anchored = true;
+			Tina.whatToFollow = player.transform;
 		}
 	}
 
@@ -186,6 +189,8 @@ public class CameraControl : MonoBehaviour
 			player.transform.SetParent(shipSeat, true);
 			player.transform.position = shipSeat.position;
 			player.transform.rotation = shipSeat.rotation;
+			shipMove.anchored = false;
+			Tina.whatToFollow = shipMove.transform;
 		}
 	}
 }
