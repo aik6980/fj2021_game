@@ -38,7 +38,7 @@ Shader "Custom/WaterSurfaceShader"
         LOD 200
 
         CGPROGRAM
-        #pragma surface surf Standard fullforwardshadows alpha:premul
+        #pragma surface surf Standard fullforwardshadows alpha:premul vertex:vert
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -47,6 +47,7 @@ Shader "Custom/WaterSurfaceShader"
         {
             float4 screenPos;
             float3 worldPos;
+            float3 localPos;
             float3 viewDir;
         };
 
@@ -87,12 +88,24 @@ Shader "Custom/WaterSurfaceShader"
             // put more per-instance properties here
         UNITY_INSTANCING_BUFFER_END(Props)
 
+
+        static float PI = 3.1415926545;
+        static float TAU = 2 * PI;
+
+        void vert(inout appdata_full v, out Input o)
+        {
+            UNITY_INITIALIZE_OUTPUT(Input, o);
+            o.localPos = v.vertex.xyz;
+        }
+
         void surf(Input IN, inout SurfaceOutputStandard o)
         {
-            float2 uv = IN.worldPos.xz - _CamPosition.xz;
-            uv = uv / (_OrthographicCamSize * 2);
-            uv += 0.5;
-            fixed4 renderTex = tex2D(_RenderTexture, uv);
+            float3 pos = IN.localPos;
+
+            float2 rt = pos.xz - _CamPosition.xz;
+            rt = rt / (_OrthographicCamSize * 2);
+            rt += 0.5;
+            fixed4 renderTex = tex2D(_RenderTexture, rt);
 
             float depth = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(IN.screenPos));
             depth = LinearEyeDepth(depth);
@@ -104,16 +117,23 @@ Shader "Custom/WaterSurfaceShader"
 
             fixed4 final_colour = lerp(lerp(_IntersectionColour, _SurfaceColour, intersectionDiff), _DeepWaterColour, fogDiff);
 
-            float foamTex = tex2D(_FoamTexture, IN.worldPos.xz * _FoamTexture_ST.xy + _Time.y * float2(_FoamTextureSpeedX, _FoamTextureSpeedY));
+            float foamTex = tex2D(_FoamTexture, pos.xz * _FoamTexture_ST.xy + _Time.y * float2(_FoamTextureSpeedX, _FoamTextureSpeedY));
             float foam = step(foamDiff - (saturate(sin((foamDiff - _Time.y * _FoamLinesSpeed) * 8 * UNITY_PI)) * (1.0 - foamDiff)), foamTex);
 
             float fresnel = pow(1.0 - saturate(dot(o.Normal, normalize(IN.viewDir))), _FresnelPower);
 
-            float3 normalA = UnpackNormalWithScale(tex2D(_NormalA, IN.worldPos.xz * _NormalA_ST.xy + _Time.y * _NormalPanningVelocity.xy + renderTex.rg), _NormalStrength);
-            float3 normalB = UnpackNormalWithScale(tex2D(_NormalB, IN.worldPos.xz * _NormalB_ST.xy + _Time.y * _NormalPanningVelocity.zw + renderTex.rg), _NormalStrength);
+            float2 spherical_proj = float2(saturate(((atan2(pos.z, pos.x) / PI) + 1.0) / 2.0), (0.5 - (asin(pos.y) / PI)));
+
+            float a = frac(_Time.y * .1) * TAU;
+            float2 uv = spherical_proj + (1 - spherical_proj * float2(sin(a) * 0.0008, cos(a) * 0.0008));
+
+            float2 uv_offset = renderTex.rg + _Time.y * _NormalPanningVelocity.xy;
+
+            float3 normalA = UnpackNormalWithScale(tex2D(_NormalA, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
+            float3 normalB = UnpackNormalWithScale(tex2D(_NormalB, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
             
             o.Albedo = final_colour.rgb;
-            o.Normal = normalA + normalB;
+            o.Normal = normalize(normalA + normalB);
             o.Smoothness = _Glossiness;
 			o.Alpha = 1.0;// lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
             o.Emission = foam * _FoamIntensity;
