@@ -10908,7 +10908,6 @@ GameObject:
   m_Component:
   - component: {fileID: 710212846}
   - component: {fileID: 710212845}
-  - component: {fileID: 710212844}
   - component: {fileID: 710212843}
   m_Layer: 0
   m_Name: Ortho Camera
@@ -10929,15 +10928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2d1f1eea43d8c43bbed178a10fd34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  water_surface: {fileID: 0}
---- !u!81 &710212844
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710212842}
-  m_Enabled: 1
+  water_surface: {fileID: 1060173618}
 --- !u!20 &710212845
 Camera:
   m_ObjectHideFlags: 0
@@ -10971,7 +10962,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 16
   m_RenderingPath: 1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: e88179474e901a94b8513f2fe31516b1, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -16834,6 +16825,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020838284}
   m_CullTransparentMesh: 1
+--- !u!23 &1060173618 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 38dfbda9d7aa1264d866cbb79cdb8f09, type: 3}
+  m_PrefabInstance: {fileID: 365904770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1086366481
 GameObject:
   m_ObjectHideFlags: 0
