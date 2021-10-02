@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraControl : MonoBehaviour
 {
@@ -59,6 +60,10 @@ public class CameraControl : MonoBehaviour
 			}
 		} else
 		{
+			//ToDo: check if it's over UI!
+			// ...or anything we migth want to click on
+			// and ONLY take the mouse if not
+			if (!EventSystem.current.IsPointerOverGameObject())
 			if (Input.GetMouseButtonDown(0))
 			{
 				//ToDo: save mousepos
