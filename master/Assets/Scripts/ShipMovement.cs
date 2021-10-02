@@ -9,7 +9,10 @@ public class ShipMovement : MonoBehaviour
 
 	public Vector3 velocity;
 
-	public Vector3 angVel;
+	public ParticleSystem waterSplosh;
+	public Transform sploshTrans;
+	public float emissionRateScale = 0.1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,7 @@ public class ShipMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.D))
 			velocity.y += 5.0f;
 
+		Vector3 angVel;
 		angVel.x = -velocity.z / radius;
 		angVel.z = velocity.x / radius;
 		angVel.y = -velocity.y;
@@ -41,5 +45,14 @@ public class ShipMovement : MonoBehaviour
 
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
+
+		if (waterSplosh)
+		{
+			waterSplosh.emissionRate = velocity.sqrMagnitude * emissionRateScale;
+			var emitParams = new ParticleSystem.EmitParams();
+			var shape = waterSplosh.shape;
+			shape.position = waterSplosh.transform.InverseTransformPoint(sploshTrans.transform.position);
+			shape.rotation = (Quaternion.Inverse(waterSplosh.transform.rotation) * sploshTrans.transform.rotation).eulerAngles;
+		}
 	}
 }
