@@ -57,7 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AtmosphereThickness: 0.59
-    - _BIAS: 0.07
+    - _BIAS: 0.08
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -74,8 +74,8 @@ Material:
     - _OUTER_RADIUS: 1.025
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RL: 0.0025
-    - _SUN: 20
+    - _RL: 0.004
+    - _SUN: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
