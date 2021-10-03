@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PlanetNavigation.unity
+    guid: f1a4785abf1292b4d99c72351ddc72cf
   m_configObjects: {}
