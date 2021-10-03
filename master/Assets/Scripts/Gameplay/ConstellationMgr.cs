@@ -12,6 +12,8 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     LineRenderer m_tmp_line;
     public Material line_material;
 
+    public GameObject constellation_prefab;
+
 
     Dictionary<Starpicking, List<ParticleSystem.Particle>> star_pickers = new Dictionary<Starpicking, List<ParticleSystem.Particle>>();
 
@@ -134,13 +136,40 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             // add the curr one into the global list
             if(m_curr_constellation.is_valid())
             {
+                var name = "hello world";  //random_name();
+                m_curr_constellation.name = name;
                 m_constellation_list.Add(m_curr_constellation);
+
+                // create a Constellation GO with name tag
+                var go = Instantiate(constellation_prefab);
+                var bound = m_curr_constellation.create_bounds();
+                go.GetComponent<SphereCollider>().radius = bound.extents.magnitude;
+
+                go.transform.SetParent(transform, false);
+                go.transform.position = bound.center;
+                go.GetComponentInChildren<TMPro.TMP_Text>().text = name;
+                
             }
 
             // destroy the temp one
             m_curr_constellation = null;
             m_tmp_line = null;
         }
+    }
+
+    const string glyphs = " abcdefghijklmnop qrstuvwxyz0123456789_ "; //add the characters you want
+    const int minCharAmount = 20;
+    const int maxCharAmount = 30;
+    public string random_name()
+    {
+        string myString = "";
+        int charAmount = Random.Range(minCharAmount, maxCharAmount); //set those to the minimum and maximum length of your string
+        for(int i=0; i<charAmount; i++)
+        {
+            myString += glyphs[Random.Range(0, glyphs.Length)];
+        }
+
+        return myString;
     }
 
     public bool is_canvas_mode_enabled()

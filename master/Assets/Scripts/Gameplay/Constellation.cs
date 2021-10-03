@@ -17,4 +17,16 @@ public class Constellation
         // name should not be empty as well
         return (lines.Count > 0);
     }
+
+    public Bounds create_bounds()
+    {
+        Bounds bounds = lines[0].bounds;
+
+        foreach (LineRenderer line in lines)
+        {
+            bounds.Encapsulate(line.bounds);
+        }
+
+        return bounds;
+    }
 }
