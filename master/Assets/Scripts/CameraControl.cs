@@ -125,10 +125,14 @@ public class CameraControl : MonoBehaviour
 				DetectShore();
 				disembark.interactable = canDisembark;
 				embark.interactable = false;
+				disembark.gameObject.SetActive(canDisembark);
+				embark.gameObject.SetActive(false);
 				break;
 			case Mode.LandWalk:
 				disembark.interactable = false;
 				embark.interactable = canEmbark;
+				disembark.gameObject.SetActive(false);
+				embark.gameObject.SetActive(canEmbark);
 				break;
 		}
 
