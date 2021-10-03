@@ -6,7 +6,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Music-sailing
+  m_Name: sailing
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 261551a1c986e66489e831966ca7da7e
   m_Children: []
@@ -36,7 +36,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 3c0cc7f38ef389a42b5b91848e267b6d
-    name: Music-sailing_vol
+    name: sailing_vol
   - guid: aa9da99109785a847be93ffc3e18866e
     name: Music-stargaze_vol
   m_AudioMixerGroupViews:
@@ -101,7 +101,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Music-stargaze
+  m_Name: stargaze
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: e769ecf76e447984a979a0d867619ff7
   m_Children: []

@@ -18,8 +18,7 @@ public class SFXData
 public class MusicData
 {
     public string name;
-    public AudioClip clip;
-    public float volume;
+    public AudioSource audio_source;
 }
 
 [Serializable]

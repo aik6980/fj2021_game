@@ -5207,6 +5207,105 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116849573, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 183.46399
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849573, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: 409.0236
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849575, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Islands like drops of green against the wide ocean. Out here you can
+        see only the lonely island lost among the vast ocean.
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849576, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 645.18146
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849576, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: 116.531296
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849578, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: The feet of our ancestors once walked these shores. Their tracks long
+        erased, but their words remembered.
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849579, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 477.21396
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849579, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: 118.29402
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849581, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: A place of beauty carved by the wind and waves that lead us here.{w=4}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849582, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 282.3277
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849582, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: 118.29409
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849584, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: This island has an unreal quality that forces us to pause, have we travelled
+        beyond our world to somewhere else?{w=4}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849585, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 816.4187
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849585, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -78.296776
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849586, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: message
+      value: Island-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849587, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Lush and green life abounds everywhere.{w=4}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849588, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 603.3502
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849588, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -69.20588
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849590, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Our neighbours; so close that we can still see our home.{w=4}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849591, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 427.96167
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849591, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -71.65805
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849593, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: From these shores we sail out. To find what we may upon the ocean.{w=4}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 280.05524
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -71.47859
+      objectReference: {fileID: 0}
     - target: {fileID: 116849609, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: staticEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5233,8 +5332,16 @@ PrefabInstance:
       value: monolith
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: blockName
+      value: Island 0 Monolith
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 265.8506
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.y
-      value: 77.49854
+      value: -17.95597
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
@@ -5313,6 +5420,10 @@ PrefabInstance:
     - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: blockViewHeight
       value: 419
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: selectedBlocks.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: selectedCommands.Array.size
@@ -5514,7 +5625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &469492366
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6323,7 +6434,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &666384193
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6336,7 +6447,7 @@ MonoBehaviour:
   itemId: 52
   indentLevel: 0
   storyText: Objects reaching towards the sky might show us the way, but only as
-    far as the horizon's edge.
+    far as the horizon's edge.{w=4}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -6363,8 +6474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 372.6686
-    y: 70.680466
+    x: 430.62314
+    y: -172.50131
     width: 111.36363
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -6380,7 +6491,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &666384195
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6395,7 +6506,7 @@ MonoBehaviour:
   message: Lighthouse
 --- !u!114 &666384196
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6423,7 +6534,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &666384197
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -6466,6 +6577,399 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &666384198
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 57
+  indentLevel: 0
+  storyText: But here is a place to stop, where we may look back to our home, and
+    onward to what we might yet find.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384199
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 430.6233
+    y: -19.774117
+    width: 145.45453
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 58
+  blockName: Island 1 Monolith
+  description: 
+  eventHandler: {fileID: 666384201}
+  commandList:
+  - {fileID: 666384200}
+  - {fileID: 666384198}
+  suppressAllAutoSelections: 0
+--- !u!114 &666384200
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 56
+  indentLevel: 0
+  storyText: Broken and discarded, the words upon this tablet have been forgotten.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384201
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 666384199}
+  suppressBlockAutoSelect: 0
+  message: monolith-1
+--- !u!114 &666384202
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 666384205}
+  suppressBlockAutoSelect: 0
+  message: monolith-4
+--- !u!114 &666384203
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 64
+  indentLevel: 0
+  storyText: We have left what we know and ventured into the lands of the past.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384204
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 63
+  indentLevel: 0
+  storyText: Sat atop the great sea arch this tablet was placed here by a great artist.
+    Someone who recognised the beauty of this place.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384205
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 264.71436
+    y: 169.99872
+    width: 147.72726
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 69
+  blockName: Island 4 Monolith
+  description: 
+  eventHandler: {fileID: 666384202}
+  commandList:
+  - {fileID: 666384204}
+  - {fileID: 666384203}
+  suppressAllAutoSelections: 0
+--- !u!114 &666384206
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 666384209}
+  suppressBlockAutoSelect: 0
+  message: monolith-2
+--- !u!114 &666384207
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 61
+  indentLevel: 0
+  storyText: The jungle has reclaimed what was once tamed by past generations. Nature
+    finds a way back.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384208
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 60
+  indentLevel: 0
+  storyText: Almost lost among the trees the tablet is inscribed with markings whose
+    meaning you cannot determine.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384209
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 605.6228
+    y: -18.637737
+    width: 146.5909
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 68
+  blockName: Island 2 Monolith
+  description: 
+  eventHandler: {fileID: 666384206}
+  commandList:
+  - {fileID: 666384208}
+  - {fileID: 666384207}
+  suppressAllAutoSelections: 0
+--- !u!114 &666384210
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 666384213}
+  suppressBlockAutoSelect: 0
+  message: monolith-3
+--- !u!114 &666384211
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 67
+  indentLevel: 0
+  storyText: Our people once came here, we crossed to this strange place before.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384212
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 66
+  indentLevel: 0
+  storyText: High atop this bizarre sculped island stands testiment to those who
+    visited before.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &666384213
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666384187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 795.3962
+    y: -16.36499
+    width: 147.72726
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 70
+  blockName: Island 3 Monolith
+  description: 
+  eventHandler: {fileID: 666384210}
+  commandList:
+  - {fileID: 666384212}
+  - {fileID: 666384211}
+  suppressAllAutoSelections: 0
 --- !u!4 &690355505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9034063671662732938, guid: 9546930966c76774ea80c234b9a43c18, type: 3}
@@ -6582,7 +7086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &718388828
 Transform:
   m_ObjectHideFlags: 0
@@ -6768,15 +7272,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: 91540dabd01204745b85923c4484ef02, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -72.53
+      value: -73.03
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: 91540dabd01204745b85923c4484ef02, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.7
+      value: 5.71
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: 91540dabd01204745b85923c4484ef02, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 184.81
+      value: 186.07
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: 91540dabd01204745b85923c4484ef02, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7048,7 +7552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &998174811
 Transform:
   m_ObjectHideFlags: 0
@@ -7143,7 +7647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1002669962
 Transform:
   m_ObjectHideFlags: 0
@@ -7590,21 +8094,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 56233282}
     m_Modifications:
+    - target: {fileID: 1778736961286126365, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1985799224865517172, guid: 81abc2b8b3baffc44a2412342c956aa9, type: 3}
+    - target: {fileID: 2346064957428989889, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1985799224865517172, guid: 81abc2b8b3baffc44a2412342c956aa9, type: 3}
     - target: {fileID: 2346064958721338820, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.78
+      value: -25.73
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58.2
+      value: 58.04
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -188.06
+      value: -187.55
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7637,6 +8149,18 @@ PrefabInstance:
     - target: {fileID: 2346064958721338821, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_Name
       value: Island-9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346586401424408875, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346586401424408875, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346586401424408875, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
@@ -7888,7 +8412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1339539832
 Transform:
   m_ObjectHideFlags: 0
@@ -8031,42 +8555,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island-1
       objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9996189
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.027019206
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.0001530582
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.0056626834
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -3.097
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.649
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
 --- !u!1001 &1537450376
@@ -8160,7 +8648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1584016809
 Transform:
   m_ObjectHideFlags: 0
@@ -8368,7 +8856,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1717171954
 Transform:
   m_ObjectHideFlags: 0
@@ -13907,46 +14395,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 56233282}
     m_Modifications:
-    - target: {fileID: 78830174720912595, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 38
-      objectReference: {fileID: 0}
-    - target: {fileID: 109148434145704663, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 485581222567019419, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 504716088549933493, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 978646584173503955, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 49
-      objectReference: {fileID: 0}
-    - target: {fileID: 1016701969382363403, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1474109517610524647, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665170285563515506, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1774255858678196597, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 44
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318165231837858100, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 29
-      objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -13994,146 +14442,6 @@ PrefabInstance:
     - target: {fileID: 2346064958721338821, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_Name
       value: Island-0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2410007692654455278, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2537936698646277123, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2747879028616804830, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4007474243357483559, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4173541332909420661, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4228658800129026799, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 4277193595217802664, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4494732381316613002, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4762873522878397828, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4873038986105918617, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5058862299581982390, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 5685876154826088439, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 5968268707475280397, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6166899118142344204, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 47
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235911656074833719, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 6252719901907758991, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6330103348747377128, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 42
-      objectReference: {fileID: 0}
-    - target: {fileID: 6485824368514538258, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 39
-      objectReference: {fileID: 0}
-    - target: {fileID: 6526957675020402328, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603870963891905578, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7019242556155711260, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 43
-      objectReference: {fileID: 0}
-    - target: {fileID: 7144345790101432773, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 7235147204995192645, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7357886400698606839, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458658283542862270, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7730924029230241272, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7864534554859389273, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8355152659547970202, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 8357872080807022246, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 51
-      objectReference: {fileID: 0}
-    - target: {fileID: 8412819551679785647, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8795258682220006377, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 8891911799017791000, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 9002457710816700827, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137103921732724948, guid: d21a9d562797dea4ba1383204445e425, type: 3}
-      propertyPath: m_RootOrder
-      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d21a9d562797dea4ba1383204445e425, type: 3}
