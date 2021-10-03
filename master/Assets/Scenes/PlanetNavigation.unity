@@ -8094,14 +8094,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 56233282}
     m_Modifications:
-    - target: {fileID: 1778736961286126365, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -1985799224865517172, guid: 81abc2b8b3baffc44a2412342c956aa9, type: 3}
-    - target: {fileID: 2346064957428989889, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -1985799224865517172, guid: 81abc2b8b3baffc44a2412342c956aa9, type: 3}
     - target: {fileID: 2346064958721338820, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -8149,18 +8141,6 @@ PrefabInstance:
     - target: {fileID: 2346064958721338821, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
       propertyPath: m_Name
       value: Island-9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.412
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346586401424408875, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f7e3d0ce344954ba743497b6214ca7, type: 3}
