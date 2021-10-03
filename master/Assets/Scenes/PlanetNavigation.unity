@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.56787777, g: 0.50377214, b: 0.32357407, a: 1}
+  m_IndirectSpecularColor: {r: 0.3630307, g: 0.24870077, b: 0.113613956, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13425,6 +13425,14 @@ PrefabInstance:
       propertyPath: steeringWheelUI
       value: 
       objectReference: {fileID: 5441226067251856949}
+    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
+      propertyPath: steerClickRadius
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
+      propertyPath: steeringSpeedMultiplier
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 746564115713440133, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: m_RootOrder
       value: 5
