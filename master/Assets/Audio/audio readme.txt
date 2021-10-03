@@ -22,3 +22,9 @@ CRICKETS:
 
 FOOTSTEPS:
 	Select one at random when the player moves on land, emitting from the player character, that's all!
+
+STARGAZING:
+	When the player clicks on a star, play sfx_stargazing_start
+	while the mouse button is held, loop sfx_stargazing_loop
+	when the mouse button is released on a star, play sfx_stargazing_end
+	when a constellation is finished, play sfx_stargazing_constellation
