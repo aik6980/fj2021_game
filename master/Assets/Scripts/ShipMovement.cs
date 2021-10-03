@@ -129,7 +129,7 @@ public class ShipMovement : MonoBehaviour
 		wheelColor.a = hoveringOverWheel ? 1.0f : 0.4f;
 		steeringWheelUI.color = wheelColor;
 
-		steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, -angle * Mathf.Rad2Deg);
+		steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
 
 		if (Input.GetKeyDown(KeyCode.W))
 			velocity.z += 5.0f;
