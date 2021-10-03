@@ -7,19 +7,17 @@ public class StarpickingRod : MonoBehaviour {
 
     public CameraControl m_camera_control;
 
-    bool m_enable_constellation_canvas = false;
-
   // Start is called before the first frame update
   void Start() 
   {
-        m_enable_constellation_canvas = false;
+
   }
 
   // Update is called once per frame
   void Update() 
   {
 
-        if(m_enable_constellation_canvas)
+        if(ConstellationMgr.Instance.is_canvas_mode_enabled())
         {
             // disable main camera control
             m_camera_control.enabled = false;
@@ -48,6 +46,7 @@ public class StarpickingRod : MonoBehaviour {
 
   public void ToggleConstellationCanvas() 
   {
-        m_enable_constellation_canvas = !m_enable_constellation_canvas;
+        bool toggle_constellation_canvas = !ConstellationMgr.Instance.is_canvas_mode_enabled();
+        ConstellationMgr.Instance.enable_canvas_mode(toggle_constellation_canvas);
   }
 }
