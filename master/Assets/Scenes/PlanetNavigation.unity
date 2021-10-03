@@ -5654,7 +5654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 16
   indentLevel: 0
-  storyText: Island-1 placeholder message goes here!
+  storyText: Island-1 placeholder message goes here!{w=3}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -5663,7 +5663,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 1
+  waitForClick: 0
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
