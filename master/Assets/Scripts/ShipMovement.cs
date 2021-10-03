@@ -115,7 +115,7 @@ public class ShipMovement : MonoBehaviour
 			angle = Vector2.SignedAngle(startDraggingDir.Value, draggingDir) * Mathf.Deg2Rad;
 			//Debug.Log(angle);
 			var angularVelocityChange = Mathf.Sign(angle) * steeringSpeed.Evaluate(Mathf.Abs(angle / Mathf.PI)) * steeringSpeedMultiplier;
-			velocity.y += angularVelocityChange * Time.deltaTime;
+			velocity.y -= angularVelocityChange * Time.deltaTime;
 		}
         else
         {
