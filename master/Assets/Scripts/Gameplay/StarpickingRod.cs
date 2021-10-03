@@ -46,7 +46,6 @@ public class StarpickingRod : MonoBehaviour {
 
   public void ToggleConstellationCanvas() 
   {
-        bool toggle_constellation_canvas = !ConstellationMgr.Instance.is_canvas_mode_enabled();
-        ConstellationMgr.Instance.enable_canvas_mode(toggle_constellation_canvas);
+        ConstellationMgr.Instance.enable_canvas_mode(true);
   }
 }
