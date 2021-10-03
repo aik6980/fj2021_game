@@ -73,6 +73,8 @@ public class CameraControl : MonoBehaviour
 	public float targetFOV;
 	//public Vector3 lookEuler;
 
+	public ConstellationMgr constellationManager;
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -341,6 +343,14 @@ public class CameraControl : MonoBehaviour
 		}
 	}
 
+	public void ZoomTo(Transform target)
+    {
+		lookTarget = target;
+		lookStrength = 1f;
+		targetFOV = baseFOV;
+		lookTargetValid = true;
+	}
+
 	public void LookAt(Transform target)
 	{
 		lookTargetValid = target != null;	
@@ -348,6 +358,7 @@ public class CameraControl : MonoBehaviour
 		lookStrength = 2.0f;
 		targetFOV = baseFOV * 0.5f;
 	}
+
 	public void StopLook()
 	{
 		lookTargetValid = false;
