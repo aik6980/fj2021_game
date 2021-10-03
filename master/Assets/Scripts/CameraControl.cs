@@ -11,6 +11,7 @@ public class CameraControl : MonoBehaviour
 	public OnFootMovement footMove;
 	public Transform shipSeat;
 	public PlanetTurner Tina;
+	public Collider embarkTrigger;
 
 	public Camera cam;
 	public float CamDistance = 1.0f;
@@ -77,6 +78,26 @@ public class CameraControl : MonoBehaviour
 			shipMove.anchored = true;
 			Tina.whatToFollow = player.transform;
 		}
+
+		if (!embarkTrigger)
+			embarkTrigger = shipMove.transform.Find("EmbarkTrigger").GetComponent<Collider>();
+
+		EventListener.Get(player).OnTriggerEnterDelegate += CameraControl_OnTriggerEnterDelegate;
+		EventListener.Get(player).OnTriggerExitDelegate += CameraControl_OnTriggerExitDelegate;
+
+	}
+
+	private void CameraControl_OnTriggerExitDelegate(Collider col)
+	{
+		if (col == embarkTrigger)
+			canEmbark = false;
+	}
+
+	private void CameraControl_OnTriggerEnterDelegate(Collider col)
+	{
+		//Debug.Log("OTE " + col.name);
+		if (col == embarkTrigger)
+			canEmbark = true;
 	}
 
 	// Update is called once per frame
@@ -96,7 +117,7 @@ public class CameraControl : MonoBehaviour
 				break;
 			case Mode.LandWalk:
 				disembark.interactable = false;
-				embark.interactable = true;
+				embark.interactable = canEmbark;
 				break;
 		}
 

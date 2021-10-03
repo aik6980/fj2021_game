@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3853897748309878071}
-  m_LocalRotation: {x: 0.6347941, y: -0.09881951, z: -0.08232759, w: 0.7619011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4640035, y: 39.92798, z: 195.95998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3853897748531486213}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 71.995, y: -55.62, z: -54.267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3853897748309878068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   footMove: {fileID: 0}
   shipSeat: {fileID: 0}
   Tina: {fileID: 0}
+  embarkTrigger: {fileID: 0}
   cam: {fileID: 3853897748531486211}
   CamDistance: -0.5
   CamHeight: 0.25
