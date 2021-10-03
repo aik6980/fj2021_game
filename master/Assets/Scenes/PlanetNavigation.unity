@@ -5094,6 +5094,11 @@ Transform:
   m_Father: {fileID: 2061956609}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -14.291, y: 0, z: 0}
+--- !u!1 &140533162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6709927174846168811, guid: dbd7f833752d7914ca928fc6c0702690, type: 3}
+  m_PrefabInstance: {fileID: 5441226067251856948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &229259881
 GameObject:
   m_ObjectHideFlags: 0
@@ -13970,6 +13975,10 @@ PrefabInstance:
       propertyPath: canvas_panel
       value: 
       objectReference: {fileID: 1849722547}
+    - target: {fileID: 9034063671662732941, guid: 9546930966c76774ea80c234b9a43c18, type: 3}
+      propertyPath: activate_button
+      value: 
+      objectReference: {fileID: 140533162}
     - target: {fileID: 9034063671662732941, guid: 9546930966c76774ea80c234b9a43c18, type: 3}
       propertyPath: comp_name_inputfield
       value: 

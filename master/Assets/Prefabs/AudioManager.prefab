@@ -48,23 +48,34 @@ MonoBehaviour:
   m_musicMixerGroup:
   - mixerGroup: {fileID: -5980850498795175813, guid: 8cfc6351b1bcc3840be4ee356785f891, type: 2}
     soundName:
-    - music_sail
-    - music_sail_amb_wind_calm
+    - sail_1
     audio_sources: []
   - mixerGroup: {fileID: 2967068842844868195, guid: 8cfc6351b1bcc3840be4ee356785f891, type: 2}
     soundName:
     - music_stargaze
     audio_sources: []
   music_data:
-  - name: music_sail
-    clip: {fileID: 8300000, guid: 99b2e941359956c48ba983b968c05487, type: 3}
+  - name: sail_1
+    clip: {fileID: 8300000, guid: d839125315df9db4dba5b15b94b48bbc, type: 3}
     volume: 1
-  - name: music_stargaze
-    clip: {fileID: 8300000, guid: bc152b781d02adb448fca3d3a70419b2, type: 3}
+  - name: sail_2
+    clip: {fileID: 8300000, guid: e3ba68220c13c3e47a24dff3de7e7da2, type: 3}
     volume: 0
-  - name: music_sail_amb_wind_calm
-    clip: {fileID: 8300000, guid: 36d106563a6eea44eae9dabe8e5ee45b, type: 3}
-    volume: 1
+  - name: sail_3
+    clip: {fileID: 8300000, guid: 53b260dc7e51767498d346e12acd7ee6, type: 3}
+    volume: 0
+  - name: sail_4
+    clip: {fileID: 8300000, guid: d2732a705b7dfbd49b8348b50316a28b, type: 3}
+    volume: 0
+  - name: sail_5
+    clip: {fileID: 8300000, guid: 581341757cfd7c649ab5d75ea7ff364f, type: 3}
+    volume: 0
+  - name: stargaze_1
+    clip: {fileID: 8300000, guid: 2fe46e129932c9744afc480c0ac6a64f, type: 3}
+    volume: 0
+  - name: stargaze_2
+    clip: {fileID: 8300000, guid: 74420b3785e40664bb982ad0f594380a, type: 3}
+    volume: 0
   sfx_data: []
   toxic_sfx: []
   toxic_sfx_interval: 0

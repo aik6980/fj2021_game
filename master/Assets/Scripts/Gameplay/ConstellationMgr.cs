@@ -14,6 +14,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
     public GameObject constellation_prefab;
 
+    public GameObject activate_button;
     public GameObject canvas_panel;
     public TMPro.TMP_InputField comp_name_inputfield;
 
@@ -29,6 +30,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
         m_enable_constellation_canvas = false;
 
         canvas_panel.SetActive(false);
+        activate_button.SetActive(true);
     }
 
     // Update is called once per frame
@@ -141,6 +143,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             m_curr_constellation = new Constellation();
 
             canvas_panel.SetActive(true);
+            activate_button.SetActive(false);
         }
         else // turning canvas off
         {
@@ -167,6 +170,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             m_tmp_line = null;
 
             canvas_panel.SetActive(false);
+            activate_button.SetActive(true);
         }
     }
 
