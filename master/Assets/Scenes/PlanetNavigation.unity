@@ -5033,12 +5033,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 34
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-X placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5066,7 +5066,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 35
   blockName: Island-X
   description: 
   eventHandler: {fileID: 116849562}
@@ -5102,12 +5102,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 32
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-9 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5135,7 +5135,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 36
   blockName: Island-9
   description: 
   eventHandler: {fileID: 116849565}
@@ -5171,12 +5171,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 30
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-8 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5204,7 +5204,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 37
   blockName: Island-8
   description: 
   eventHandler: {fileID: 116849568}
@@ -5240,12 +5240,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 28
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-7 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5268,12 +5268,12 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 664.1459
-    y: 218.29405
+    y: 216.97826
     width: 95.454544
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 38
   blockName: Island-7
   description: 
   eventHandler: {fileID: 116849571}
@@ -5309,12 +5309,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 26
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-6 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5337,12 +5337,12 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 551.64594
-    y: 219.43045
+    y: 218.11465
     width: 95.454544
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 39
   blockName: Island-6
   description: 
   eventHandler: {fileID: 116849574}
@@ -5378,12 +5378,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 24
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-5 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5411,7 +5411,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 40
   blockName: Island-5
   description: 
   eventHandler: {fileID: 116849577}
@@ -5447,12 +5447,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 22
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-4 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5480,7 +5480,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 41
   blockName: Island-4
   description: 
   eventHandler: {fileID: 116849580}
@@ -5516,12 +5516,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 20
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-3 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5549,7 +5549,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 42
   blockName: Island-3
   description: 
   eventHandler: {fileID: 116849583}
@@ -5585,12 +5585,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 18
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-2 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5618,7 +5618,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 43
   blockName: Island-2
   description: 
   eventHandler: {fileID: 116849586}
@@ -5654,12 +5654,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 16
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-1 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5681,13 +5681,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 432.3277
-    y: -15.796814
+    x: 433.6435
+    y: -18.248966
     width: 94.31818
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 44
   blockName: Island-1
   description: 
   eventHandler: {fileID: 116849589}
@@ -5723,12 +5723,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 0
-  storyText: Obelisk!
+  storyText: Island-0 placeholder message goes here!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
-  showAlways: 1
+  showAlways: 0
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
@@ -5756,7 +5756,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 0
+  itemId: 45
   blockName: Island-0
   description: 
   eventHandler: {fileID: 116849592}
@@ -6015,6 +6015,10 @@ PrefabInstance:
     - target: {fileID: 3622296378070810839, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: blockViewHeight
+      value: 393
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: variables.Array.size
@@ -8501,7 +8505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338821, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
       propertyPath: m_Name
-      value: Island-1(Tower)
+      value: Island-1
       objectReference: {fileID: 0}
     - target: {fileID: 7346586401424408875, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14415,7 +14419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338821, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_Name
-      value: Island-0(Home)
+      value: Island-0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d21a9d562797dea4ba1383204445e425, type: 3}
