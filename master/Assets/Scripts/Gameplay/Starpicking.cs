@@ -16,13 +16,13 @@ public class Starpicking : MonoBehaviour {
 
 
     // Constellation struct
-    Constellation constellation;
-    LineRenderer tmp_line;
-    public Material line_material;
+    //Constellation constellation;
+    //LineRenderer tmp_line;
+    //public Material line_material;
 
     private void Start()
     {
-        constellation = new Constellation();
+        //constellation = new Constellation();
     }
 
 
@@ -39,6 +39,7 @@ public class Starpicking : MonoBehaviour {
         int numExit = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
 
         //Debug.Log("trigger beg" + numEnter);
+        ConstellationMgr.Instance.register_star_picker(this, inside);
 
         // iterate through the particles which entered the trigger and make them red
         for (int i = 0; i < numEnter; i++) {
@@ -79,6 +80,7 @@ public class Starpicking : MonoBehaviour {
 
     private void Update()
     {
+        /*
         if (Input.GetMouseButtonDown(1))
         {
             if(constellation.lines.Count > 0)
@@ -137,5 +139,6 @@ public class Starpicking : MonoBehaviour {
 
             tmp_line.SetPosition(1, tmp_line.transform.InverseTransformPoint(pos));
         }
+        */
     }
 }
