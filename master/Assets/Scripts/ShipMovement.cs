@@ -34,6 +34,10 @@ public class ShipMovement : MonoBehaviour
 	public float lateralDrag = 0.1f;
 	public float tiltScale = 10.0f;
 
+	public float max_speed = 400;
+	[Range(0, 1)]
+	public float drag = 0.1f;
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -43,9 +47,26 @@ public class ShipMovement : MonoBehaviour
 		hitCollider = new Collider[collisionPoints.Length];
 	}
 
+	[ExecuteInEditMode]
+	private float SuperSpeed()
+    {
+		if (Input.GetKey(KeyCode.LeftShift))
+        {
+			Time.timeScale = 5f;
+			return 0f;
+        }
+		else
+        {
+			Time.timeScale = 1f;
+			return drag;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+		float update_drag = SuperSpeed();
+
 		if (anchored)
 		{
 			velocity = Vector3.zero;
@@ -62,6 +83,8 @@ public class ShipMovement : MonoBehaviour
 		//steering return
 		float str = 10.0f * Time.deltaTime;
 		velocity.y += Mathf.Clamp(-velocity.y, -str, str);
+		velocity.z = Mathf.Clamp(velocity.z, -max_speed, max_speed);
+		velocity.z *= 1f - (update_drag * Time.deltaTime);
 
 		if (Input.GetKeyDown(KeyCode.W))
 			velocity.z += 5.0f;
