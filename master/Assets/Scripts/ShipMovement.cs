@@ -114,7 +114,10 @@ public class ShipMovement : MonoBehaviour
 
 		if (waterSplosh)
 		{
-			waterSplosh.emissionRate = velocity.sqrMagnitude * emissionRateScale;
+			//waterSplosh.emissionRate = velocity.sqrMagnitude * emissionRateScale;
+			ParticleSystem.EmissionModule emission = waterSplosh.emission;
+			emission.rateOverTimeMultiplier = velocity.sqrMagnitude * emissionRateScale;
+
 			//var emitParams = new ParticleSystem.EmitParams();
 			var shape = waterSplosh.shape;
 			shape.position = waterSplosh.transform.InverseTransformPoint(sploshTrans.transform.position);

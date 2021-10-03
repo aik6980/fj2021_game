@@ -29,6 +29,7 @@ Shader "Custom/WaterSurfaceShader"
         _RenderTexture("Render texture", 2D) = "black" {}
         _Glossiness("Smoothness", Range(0,1)) = 0.5
         _FresnelPower("Fresnel power", float) = 1
+        _Cube("Reflection Cubemap", CUBE) = "" {}
     }
     SubShader
     {
@@ -38,7 +39,7 @@ Shader "Custom/WaterSurfaceShader"
         LOD 200
 
         CGPROGRAM
-        #pragma surface surf Standard fullforwardshadows alpha:premul vertex:vert
+        #pragma surface surf Standard fullforwardshadows alpha:blend vertex:vert
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -49,6 +50,8 @@ Shader "Custom/WaterSurfaceShader"
             float3 worldPos;
             float3 localPos;
             float3 viewDir;
+            //float3 worldRefl;
+            //INTERNAL_DATA
         };
 
         fixed4 _SurfaceColour;
@@ -81,6 +84,8 @@ Shader "Custom/WaterSurfaceShader"
         float3 _CamPosition;
         float _OrthographicCamSize;
 
+        samplerCUBE _Cube;
+
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
         // #pragma instancing_options assumeuniformscaling
@@ -89,8 +94,7 @@ Shader "Custom/WaterSurfaceShader"
         UNITY_INSTANCING_BUFFER_END(Props)
 
 
-        static float PI = 3.1415926545;
-        static float TAU = 2 * PI;
+        static float TAU = 2 * UNITY_PI;
 
         void vert(inout appdata_full v, out Input o)
         {
@@ -122,7 +126,7 @@ Shader "Custom/WaterSurfaceShader"
 
             float fresnel = pow(1.0 - saturate(dot(o.Normal, normalize(IN.viewDir))), _FresnelPower);
 
-            float2 spherical_proj = float2(saturate(((atan2(pos.z, pos.x) / PI) + 1.0) / 2.0), (0.5 - (asin(pos.y) / PI)));
+            float2 spherical_proj = float2(saturate(((atan2(pos.z, pos.x) / UNITY_PI) + 1.0) / 2.0), (0.5 - (asin(pos.y) / UNITY_PI)));
 
             float a = frac(_Time.y * .1) * TAU;
             float2 uv = spherical_proj + (1 - spherical_proj * float2(sin(a) * 0.0008, cos(a) * 0.0008));
@@ -132,10 +136,10 @@ Shader "Custom/WaterSurfaceShader"
             float3 normalA = UnpackNormalWithScale(tex2D(_NormalA, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
             float3 normalB = UnpackNormalWithScale(tex2D(_NormalB, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
             
-            o.Albedo = final_colour.rgb;
+            o.Albedo = final_colour.rgb /*+ texCUBE(_Cube, WorldReflectionVector(IN, o.Normal)).rgb * 0.0000000001*/;
             o.Normal = normalize(normalA + normalB);
             o.Smoothness = _Glossiness;
-			o.Alpha = 1.0;// lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
+			o.Alpha = lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
             o.Emission = foam * _FoamIntensity;
         }
         ENDCG

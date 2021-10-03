@@ -31,6 +31,7 @@ public class CameraControl : MonoBehaviour
 	public float mx, my;
 
 	public Vector3 shoreDetector = Vector3.forward;
+	public LayerMask mask;
 	public float maxHeight = 1.0f;
 	public float maxDistance = 1.2f;
 	public float depth;
@@ -63,11 +64,19 @@ public class CameraControl : MonoBehaviour
 		disembark.onClick.AddListener(this.OnPressDisembark);
 		embark.onClick.AddListener(this.OnPressEmbark);
 
-		
-		// Start on the boat; attach the player
-		mode = Mode.LandWalk;
-		canEmbark = true;
-		OnPressEmbark();
+		footMove.camCon = this;
+
+		if (mode == Mode.ShipNav)
+		{// Start on the boat; attach the player
+			mode = Mode.LandWalk;
+			canEmbark = true;
+			OnPressEmbark();
+		} else
+		{
+			player.transform.SetParent(Tina.planetRoot, true);
+			shipMove.anchored = true;
+			Tina.whatToFollow = player.transform;
+		}
 	}
 
 	// Update is called once per frame
@@ -156,7 +165,7 @@ public class CameraControl : MonoBehaviour
 		Vector3 p1 = this.transform.TransformPoint(shoreDetector);
 		Vector3 dir = this.transform.TransformDirection(Vector3.down);
 		p1 -= dir * maxHeight;
-		if (Physics.Raycast(p1, dir, out hit, maxDistance))
+		if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
 		{
 			depth = hit.distance;
 			hitPoint = hit.point;
