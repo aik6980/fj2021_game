@@ -159,6 +159,7 @@ public class CameraControl : MonoBehaviour
 			{
 
 			} else
+
 			if (Input.GetMouseButtonDown(0))
 			{
 				//ToDo: save mousepos
@@ -210,7 +211,7 @@ public class CameraControl : MonoBehaviour
 		{
 			mode = Mode.LandWalk;
 			player.transform.SetParent(Tina.planetRoot, true);
-			player.transform.position = hitPoint;
+			player.transform.position = hitPoint + Vector3.up * footMove.walkLevel;
 			player.transform.rotation = this.transform.rotation;
 			shipMove.anchored = true;
 			Tina.whatToFollow = player.transform;

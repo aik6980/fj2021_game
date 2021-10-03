@@ -5,13 +5,14 @@ public class DayLight : MonoBehaviour
 {
 	public float dayLength;
 
-	public Transform sun;
+	public Transform sunRoot;
+	public Light sunLight;
 	public float sunIntensityMax = 1.0f;
 	public Quaternion sunStartRotation = Quaternion.identity;
 	public Vector3 axis = Vector3.right;
 
 
-	public Transform skyLight;
+	//public Transform skyLight;
 
 	public float normalisedDayTime;
 	public Gradient sunColour;
@@ -38,9 +39,9 @@ public class DayLight : MonoBehaviour
 		}
 
 		//transform.Rotate (Vector3.right, 360 / (dayLength * 60));
-		sun.rotation = Quaternion.AngleAxis(360.0f * normalisedDayTime, axis) * sunStartRotation;
-		sun.GetComponent<Light> ().color = sunColour.Evaluate(normalisedDayTime);
-		sun.GetComponent<Light> ().intensity = sunIntensity.Evaluate(normalisedDayTime) * sunIntensityMax;
+		sunRoot.localRotation = Quaternion.AngleAxis(360.0f * normalisedDayTime, axis) * sunStartRotation;
+		sunLight.color = sunColour.Evaluate(normalisedDayTime);
+		sunLight.intensity = sunIntensity.Evaluate(normalisedDayTime) * sunIntensityMax;
 		RenderSettings.ambientIntensity = ambientIntensity.Evaluate(normalisedDayTime) * ambientIntensityMax;
 
 		RenderSettings.fogColor = fogColour.Evaluate(normalisedDayTime);
