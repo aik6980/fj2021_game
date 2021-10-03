@@ -14,22 +14,31 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
     public GameObject constellation_prefab;
 
+    public GameObject canvas_panel;
+    public TMPro.TMP_InputField comp_name_inputfield;
+
 
     Dictionary<Starpicking, List<ParticleSystem.Particle>> star_pickers = new Dictionary<Starpicking, List<ParticleSystem.Particle>>();
+
+    bool process_undo = false;
 
     // Start is called before the first frame update
     void Start()
     {
         m_constellation_list = new List<Constellation>();
         m_enable_constellation_canvas = false;
+
+        canvas_panel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || process_undo)
         {
-            if(m_curr_constellation != null)
+            process_undo = false;
+
+            if (m_curr_constellation != null)
             {
                 if (m_curr_constellation.lines.Count > 0)
                 {
@@ -130,13 +139,15 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
         if(m_enable_constellation_canvas == true)
         {
             m_curr_constellation = new Constellation();
+
+            canvas_panel.SetActive(true);
         }
         else // turning canvas off
         {
             // add the curr one into the global list
             if(m_curr_constellation.is_valid())
             {
-                var name = "hello world";  //random_name();
+                var name = comp_name_inputfield.text;
                 m_curr_constellation.name = name;
                 m_constellation_list.Add(m_curr_constellation);
 
@@ -154,6 +165,8 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             // destroy the temp one
             m_curr_constellation = null;
             m_tmp_line = null;
+
+            canvas_panel.SetActive(false);
         }
     }
 
@@ -175,5 +188,17 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     public bool is_canvas_mode_enabled()
     {
         return m_enable_constellation_canvas;
+    }
+
+
+    public void disable_canvas()
+    {
+        enable_canvas_mode(false);
+    }
+
+
+    public void undo_action()
+    {
+        process_undo = true;
     }
 }
