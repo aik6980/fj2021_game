@@ -66,9 +66,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HdrExposure: 1.3
+    - _HdrExposure: 2
     - _INNER_RADIUS: 1
-    - _MIE: 0.001
+    - _MIE: 0.002
     - _Metallic: 0
     - _Mode: 0
     - _OUTER_RADIUS: 1.025

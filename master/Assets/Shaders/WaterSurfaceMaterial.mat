@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _DeepWaterThreshold: 0.68
+    - _DeepWaterThreshold: 0.25
     - _FoamIntensity: 2.95
     - _FoamLinesSpeed: 0.2
     - _FoamTextureSpeedX: 0.05
@@ -57,7 +57,7 @@ Material:
     - _NormalStrength: 0.69
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepWaterColour: {r: 0.09729145, g: 0.09033465, b: 0.13207549, a: 1}
+    - _DeepWaterColour: {r: 0.09019608, g: 0.8281188, b: 0.9137255, a: 1}
     - _IntersectionColour: {r: 0.1607843, g: 0.83137256, b: 0.44554526, a: 0}
     - _NormalPanningVelocity: {r: 0, g: 0, b: 0, a: 0}
     - _SurfaceColour: {r: 0.20803669, g: 0.5049617, b: 0.8018868, a: 0.3137255}

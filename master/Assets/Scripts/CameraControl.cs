@@ -65,6 +65,14 @@ public class CameraControl : MonoBehaviour
 	public float clickRange = 1.0f;
 	public LayerMask clickMask;
 
+	public float baseFOV;
+
+	public bool lookTargetValid;
+	public Transform lookTarget;
+	public float lookStrength = 0.0f;
+	public float targetFOV;
+	//public Vector3 lookEuler;
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -96,6 +104,7 @@ public class CameraControl : MonoBehaviour
 		EventListener.Get(player).OnTriggerEnterDelegate += CameraControl_OnTriggerEnterDelegate;
 		EventListener.Get(player).OnTriggerExitDelegate += CameraControl_OnTriggerExitDelegate;
 
+		baseFOV = cam.fieldOfView;
 	}
 
 	private void CameraControl_OnTriggerExitDelegate(Collider col)
@@ -139,6 +148,21 @@ public class CameraControl : MonoBehaviour
 		mx = Input.GetAxisRaw("Mouse X");
 		my = Input.GetAxisRaw("Mouse Y");
 
+		if (!lookTargetValid && cam.fieldOfView != baseFOV)
+			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, baseFOV, 1.0f * Time.deltaTime);
+
+		if (lookTargetValid)
+		{   //mini "cutscene", look at and optionally zoom in
+			Quaternion look = Quaternion.LookRotation(lookTarget.position - cam.transform.position);
+			//lookEuler = look.eulerAngles;
+			euler.x = Mathf.LerpAngle(euler.x, look.eulerAngles.x, lookStrength * Time.deltaTime);
+			euler.y = Mathf.LerpAngle(euler.y, look.eulerAngles.y, lookStrength * Time.deltaTime);
+			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, lookStrength * Time.deltaTime);
+			transform.rotation = Quaternion.Euler(euler);
+
+			UpdateCam();
+
+		} else
 		if (Cursor.lockState == CursorLockMode.Locked)
 		{
 			//float x = Input.GetAxisRaw("Mouse X");
@@ -315,5 +339,17 @@ public class CameraControl : MonoBehaviour
 			shipMove.anchored = false;
 			Tina.whatToFollow = shipMove.transform;
 		}
+	}
+
+	public void LookAt(Transform target)
+	{
+		lookTargetValid = target != null;	
+		lookTarget = target;
+		lookStrength = 2.0f;
+		targetFOV = baseFOV * 0.5f;
+	}
+	public void StopLook()
+	{
+		lookTargetValid = false;
 	}
 }

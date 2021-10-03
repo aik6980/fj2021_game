@@ -79,6 +79,11 @@ public class ShipMovement : MonoBehaviour
 		if (anchored)
 		{
 			velocity = Vector3.zero;
+			if (waterSplosh)
+			{
+				ParticleSystem.EmissionModule emission = waterSplosh.emission;
+				emission.rateOverTimeMultiplier = 0.1f * emissionRateScale;
+			}
 			return;
 		}
 
