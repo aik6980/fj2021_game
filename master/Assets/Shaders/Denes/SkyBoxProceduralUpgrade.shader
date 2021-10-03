@@ -111,7 +111,6 @@
                     float startAngle = dot(eyeRay, cameraPos) / height;
                     float startOffset = depth*scale(startAngle);
                    
-               
                     // Initialize the scattering loop variables
                     float sampleLength = far / kSamples;
                     float scaledLength = sampleLength * kScale;
@@ -132,6 +131,9 @@
                         float scatter = (startOffset + depth*(scale(lightAngle) - scale(cameraAngle)));
                         float3 attenuate = exp(-scatter * (kInvWavelength * kKr4PI + kKm4PI));
      
+						//if (dot(_WorldSpaceLightPos0.xyz, samplePoint) > 0.3)
+						//	frontColor += float3(1, 1, 1);
+
                         frontColor += attenuate * (depth * scaledLength);
                         samplePoint += sampleRay;
                     }
@@ -218,14 +220,19 @@
             half4 frag (v2f IN) : SV_Target
             {
                 half3 col;
-                if(IN.rayDir.y = _BIAS < 0.0)
+                if(IN.rayDir.y - _BIAS < 0.0)
                 {//sky
 					half3 rayDir = IN.rayDir;
 					rayDir.y += _BIAS;
 					half eyeCos = dot(_WorldSpaceLightPos0.xyz, normalize(rayDir));// IN.rayDir.xyz));
                     half eyeCos2 = eyeCos * eyeCos;
                     col = getRayleighPhase(eyeCos2) * IN.cIn.xyz + getMiePhase(eyeCos, eyeCos2) * IN.cOut * _LightColor0.xyz;
-                }
+					//if (eyeCos > 0.1)
+					//	col = _LightColor0.xyz;
+					//if (rayDir.y > _BIAS)
+					col += //IN.cIn.xyz + 
+						_GroundColor * IN.cOut;
+				}
                 else
                 {//ground
                     col = IN.cIn.xyz + _GroundColor * IN.cOut;
