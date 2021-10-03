@@ -17,5 +17,8 @@ MUSIC:
 GULLS:
 	On islands in day time, every 5 seconds, 50% chance to play a random gull sound, attenuation distance should be long, like 500m
 
+CRICKETS:
+	On islands at night loop it. attenuation distance should just cover the island.
+
 FOOTSTEPS:
 	Select one at random when the player moves on land, emitting from the player character, that's all!
