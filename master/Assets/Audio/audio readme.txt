@@ -16,6 +16,8 @@ GULLS:
 CRICKETS:
 	On islands at night loop it. attenuation distance should just cover the island.
 
+TREES: On Islands with trees in day, loop it, attenuation distance should just cover the island.
+
 FOOTSTEPS:
 	Select one at random when the player moves on land, emitting from the player character, that's all!
 
