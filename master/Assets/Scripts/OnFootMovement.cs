@@ -6,6 +6,7 @@ public class OnFootMovement : MonoBehaviour
 {
 	public CameraControl camCon;
 
+	public float walkLevel = 0.1f;
 	public float maxHeight = 1.0f;
 	public float maxDistance = 1.2f;
 	public float depth;
@@ -31,7 +32,8 @@ public class OnFootMovement : MonoBehaviour
 		// must work nicely with cameracontrol and UI
 
 		//temp
-		Vector3 newPos = transform.position;
+		Vector3 oldPos = transform.position - Vector3.up * walkLevel;
+		Vector3 newPos = oldPos;
 
 		if (Input.GetKeyDown(KeyCode.W))
 			newPos += camCon.transform.forward * 0.1f;
@@ -43,7 +45,7 @@ public class OnFootMovement : MonoBehaviour
 			newPos += camCon.transform.right * 0.1f;
 
 
-		if (newPos != transform.position)
+		if (newPos != oldPos)
 		{
 			RaycastHit hit;
 
@@ -61,7 +63,7 @@ public class OnFootMovement : MonoBehaviour
 				//if ((hitPoint - camCon.Tina.planetRoot.position).magnitude > camCon.Tina.radius)	//not accurate enough
 				{
 					transform.rotation = Quaternion.LookRotation(newPos - transform.position);
-					transform.position = hitPoint;
+					transform.position = hitPoint + Vector3.up * walkLevel;
 				}
 			} else
 			{
