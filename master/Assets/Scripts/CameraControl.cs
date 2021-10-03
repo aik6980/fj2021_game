@@ -340,4 +340,16 @@ public class CameraControl : MonoBehaviour
 			Tina.whatToFollow = shipMove.transform;
 		}
 	}
+
+	public void LookAt(Transform target)
+	{
+		lookTargetValid = target != null;	
+		lookTarget = target;
+		lookStrength = 2.0f;
+		targetFOV = baseFOV * 0.5f;
+	}
+	public void StopLook()
+	{
+		lookTargetValid = false;
+	}
 }
