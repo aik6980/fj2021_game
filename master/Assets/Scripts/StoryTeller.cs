@@ -13,11 +13,21 @@ public class StoryTeller : MonoBehaviour
     void Start()
     {
 		EventListener.Get(player).OnTriggerEnterDelegate2 += StoryTeller_OnTriggerEnterDelegate2;
-    }
+
+		if (!fc)
+			fc = this.gameObject.GetComponent<Fungus.Flowchart>();
+
+	}
 
 	private void StoryTeller_OnTriggerEnterDelegate2(GameObject a, GameObject b)
 	{
 		Debug.Log(a.name + " ENTER " + b.name);
+		this.gameObject.SendMessage(b.name, SendMessageOptions.DontRequireReceiver);
+		fc.SendFungusMessage(b.name);
+		fc.SendFungusMessage(b.transform.parent.name);
+		fc.SendFungusMessage(b.tag);
+		fc.SendFungusMessage(b.transform.parent.tag);
+		//this.gameObject.OnTriggerEnter(b.GetComponent<Collider>());
 	}
 
 	// Update is called once per frame
