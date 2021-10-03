@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line_material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   constellation_prefab: {fileID: 8747106032892393160, guid: 52caf2869013282489646a0ae60b4b2d, type: 3}
+  canvas_panel: {fileID: 0}
+  comp_name_inputfield: {fileID: 0}
