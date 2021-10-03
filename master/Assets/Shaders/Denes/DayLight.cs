@@ -3,14 +3,13 @@ using System.Collections;
 
 public class DayLight : MonoBehaviour 
 {
-	public float dayLength;
+	public float dayLength = 60.0f;
 
 	public Transform sunRoot;
 	public Light sunLight;
 	public float sunIntensityMax = 1.0f;
 	public Quaternion sunStartRotation = Quaternion.identity;
 	public Vector3 axis = Vector3.right;
-
 
 	//public Transform skyLight;
 
@@ -22,6 +21,13 @@ public class DayLight : MonoBehaviour
 
 	public Gradient fogColour;
 	public AnimationCurve fogIntensity;
+
+	public float moonOrbitLength = 65.0f;
+	public Transform moonRoot;
+	public Light moonLight;
+	public float normalisedMoonTime;
+	public Quaternion moonStartRotation = Quaternion.identity;
+
 
 	// Use this for initialization
 	void Start () 
@@ -38,12 +44,29 @@ public class DayLight : MonoBehaviour
 			normalisedDayTime = normalisedDayTime % 1.0f;
 		}
 
-		//transform.Rotate (Vector3.right, 360 / (dayLength * 60));
-		sunRoot.localRotation = Quaternion.AngleAxis(360.0f * normalisedDayTime, axis) * sunStartRotation;
-		sunLight.color = sunColour.Evaluate(normalisedDayTime);
-		sunLight.intensity = sunIntensity.Evaluate(normalisedDayTime) * sunIntensityMax;
+		if (moonOrbitLength > 0)
+		{
+			normalisedMoonTime += Time.deltaTime / moonOrbitLength;
+			normalisedMoonTime = normalisedMoonTime % 1.0f;
+		}
+
+		if (sunRoot)
+		{
+			sunRoot.localRotation = Quaternion.AngleAxis(360.0f * normalisedDayTime, axis) * sunStartRotation;
+		}
+		if (sunLight)
+		{
+			sunLight.color = sunColour.Evaluate(normalisedDayTime);
+			sunLight.intensity = sunIntensity.Evaluate(normalisedDayTime) * sunIntensityMax;
+		}
 		RenderSettings.ambientIntensity = ambientIntensity.Evaluate(normalisedDayTime) * ambientIntensityMax;
 
 		RenderSettings.fogColor = fogColour.Evaluate(normalisedDayTime);
+
+		if (moonRoot)
+		{
+			moonRoot.localRotation = Quaternion.AngleAxis(360.0f * normalisedMoonTime, axis) * moonStartRotation;
+		}
+
 	}
 }
