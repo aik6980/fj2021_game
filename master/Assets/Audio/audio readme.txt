@@ -16,6 +16,8 @@ GULLS:
 CRICKETS:
 	On islands at night loop it. attenuation distance should just cover the island.
 
+TREES: On Islands with trees in day, loop it, attenuation distance should just cover the island.
+
 FOOTSTEPS:
 	Select one at random when the player moves on land, emitting from the player character, that's all!
 
@@ -29,3 +31,5 @@ MUSIC:
 	Keep stargazing music looping constantly, just on a playlist between 1 and 2
 	When transitioning to stargazing, fade out sailing music and fade in stargazing. After 10 seconds, stop sailing music
 	When transitioning to sailing, fade out stargazing. If sailing is still playing fade it in, otherwise start it from the start.
+	Start sailing music when player first presses 'move forward' while on boat. 
+	Sailing music follows a playlist of (1a or 1b), then (2a or 2b), then 3. Might be a bit out of scope to have actual adaptive music at this stage, but maybe for polish would be nice :)

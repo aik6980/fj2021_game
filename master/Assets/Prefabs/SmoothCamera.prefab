@@ -128,6 +128,10 @@ MonoBehaviour:
   pitch: 0
   mx: 0
   my: 0
+  msx: 0
+  msy: 0
+  mousePosPress: {x: 0, y: 0, z: 0}
+  mousePressTime: 0
   shoreDetector: {x: 0, y: 0, z: 1}
   mask:
     serializedVersion: 2
@@ -143,6 +147,10 @@ MonoBehaviour:
   disembark: {fileID: 0}
   embark: {fileID: 0}
   mode: 1
+  clickRange: 3
+  clickMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &3853897748309878069
 MonoBehaviour:
   m_ObjectHideFlags: 0
