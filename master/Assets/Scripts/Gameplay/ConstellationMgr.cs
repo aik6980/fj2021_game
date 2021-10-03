@@ -27,13 +27,16 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (m_curr_constellation.lines.Count > 0)
+            if(m_curr_constellation != null)
             {
-                var line = m_curr_constellation.lines.Last<LineRenderer>();
-                if (line)
+                if (m_curr_constellation.lines.Count > 0)
                 {
-                    Destroy(line.gameObject);
-                    m_curr_constellation.lines.RemoveAt(m_curr_constellation.lines.Count - 1);
+                    var line = m_curr_constellation.lines.Last<LineRenderer>();
+                    if (line)
+                    {
+                        Destroy(line.gameObject);
+                        m_curr_constellation.lines.RemoveAt(m_curr_constellation.lines.Count - 1);
+                    }
                 }
             }
         }
