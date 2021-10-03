@@ -151,6 +151,12 @@ MonoBehaviour:
   clickMask:
     serializedVersion: 2
     m_Bits: 1
+  lookTargetValid: 0
+  lookTarget: {fileID: 0}
+  lookStrength: 0
+  targetFOV: 0
+  baseFOV: 0
+  lookEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &3853897748309878069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,13 +197,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3853897748531486214}
-  m_LocalRotation: {x: 0.013478638, y: -0.08853843, z: 0.0011981801, w: 0.99598086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05, y: 0.24728441, z: -1.302759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3853897748309878070}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 12.501, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3853897748531486211
 Camera:
   m_ObjectHideFlags: 0
