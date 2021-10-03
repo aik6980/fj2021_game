@@ -12,11 +12,9 @@ public class AudioManager : MonoSingleton<AudioManager>
     public MusicGroup[]         m_musicMixerGroup; 
 
     public MusicData[] music_data;
-    public SFXData[] sfx_data;
-    public SFXData[] toxic_sfx;
 
-    public float toxic_sfx_interval;
-    public float toxic_sfx_interval_variation;
+
+    public SFXData[] sfx_data;
 
     public float music_interval;
     public float music_interval_variation;
@@ -24,15 +22,7 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     Queue<int> current_playlist;
 
-    //public float musLerpSmooth = 1;
-    //public float envVolumeMultiplier = 0.1f;
-    //private float musLayerVolumeMultiplier;
-    //private float envLayerVolumeMultiplier;
-    //private float currentMusVolume;
-    //private float currentEnv1Volume;
-    //private float currentEnv2Volume;
-    //private float lerpdMusLayerVolume;
-
+    AudioSource curr_music;
 
     void Awake()
     {
@@ -62,39 +52,29 @@ public class AudioManager : MonoSingleton<AudioManager>
             s.audio_source.outputAudioMixerGroup = m_sfxMixerGroup;
         }
 
-        foreach (SFXData s in toxic_sfx)
-        {
-            s.audio_source = gameObject.AddComponent<AudioSource>();
-            s.audio_source.clip = s.clip;
-            s.audio_source.volume = s.volume;
-            s.audio_source.loop = false;
-
-            s.audio_source.outputAudioMixerGroup = m_sfxMixerGroup;
-        }
-
-        foreach (MusicGroup soundGroup in m_musicMixerGroup)
-        {
-            soundGroup.audio_sources = new AudioSource[soundGroup.soundName.Length];
-            
-            for(int i=0;i<soundGroup.soundName.Length;++i)
-            {
-                var name = soundGroup.soundName[i]; 
-
-                MusicData s = Array.Find(music_data, item => item.name == name);
-                var audioSource = gameObject.AddComponent<AudioSource>();
-
-                audioSource.volume = s.volume;
-                audioSource.clip = s.clip;
-                audioSource.loop = true;
-                audioSource.playOnAwake = false;
-                audioSource.outputAudioMixerGroup = soundGroup.mixerGroup;
-
-                soundGroup.audio_sources[i] = audioSource;
-
-                audioSource.Play();
-            }
-            
-        }
+        //foreach (MusicGroup soundGroup in m_musicMixerGroup)
+        //{
+        //    soundGroup.audio_sources = new AudioSource[soundGroup.soundName.Length];
+        //    
+        //    for(int i=0;i<soundGroup.soundName.Length;++i)
+        //    {
+        //        var name = soundGroup.soundName[i]; 
+        //
+        //        MusicData s = Array.Find(music_data, item => item.name == name);
+        //        var audioSource = gameObject.AddComponent<AudioSource>();
+        //
+        //        audioSource.volume = s.volume;
+        //        audioSource.clip = s.clip;
+        //        audioSource.loop = true;
+        //        audioSource.playOnAwake = false;
+        //        audioSource.outputAudioMixerGroup = soundGroup.mixerGroup;
+        //
+        //        soundGroup.audio_sources[i] = audioSource;
+        //
+        //        audioSource.Play();
+        //    }
+        //    
+        //}
 
 
     }
@@ -103,36 +83,38 @@ public class AudioManager : MonoSingleton<AudioManager>
     {
         current_playlist = GeneratePlaylist();
         // play first track
-        SwitchTrack();
+        //SwitchTrack();
         // then switch track every interval
-        StartCoroutine(SwitchTrackInterval());
+        //StartCoroutine(SwitchTrackInterval());
+
+        curr_music = null;
+        play_music_sail();
     }
 
-    public void PlayToxicSFX()
+    public void play_music_sail()
     {
-        var i = UnityEngine.Random.Range(0, toxic_sfx.Length);
-
-        toxic_sfx[i].audio_source.Play();
+        PlayMusic("sail_1");
     }
 
     public void PlayMusic(string name)
     {
-        MusicGroup music = Array.Find(m_musicMixerGroup, item => item.mixerGroup.name == name);
+        var music = Array.Find(music_data, item => item.name == name);
         if (music == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
 
-        //s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
-        //s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
+        if(curr_music)
+        {
+            StartCoroutine(StartFade_simple(curr_music, crossfade_duration, 0.0f));
+        }
 
-        //foreach(AudioSource source in music.audio_sources)
-        //{
-        //    source.UnPause();
-        //}
+        music.audio_source.Play();
+        curr_music = music.audio_source;
+        StartCoroutine(StartFade_simple(curr_music, crossfade_duration, 1.0f));
 
-        var result = m_masterMixer.SetFloat(name+"_vol", 0.0f);
+        //var result = m_masterMixer.SetFloat(name+"_vol", 0.0f);
     }
     public void StopMusic(string name)
     {
@@ -222,6 +204,33 @@ public class AudioManager : MonoSingleton<AudioManager>
 
             SwitchTrack();
         }
+    }
+
+    public static IEnumerator StartFade_simple(AudioSource audio, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float currentVol = audio.volume;
+        //currentVol = Mathf.Pow(10, currentVol / 20);
+        float targetValue = Mathf.Clamp(targetVolume, 0.0001f, 1);
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
+            //audioMixer.SetFloat(exposedParam, Mathf.Log10(newVol) * 20);
+            //audioMixer.SetFloat(exposedParam, newVol);
+            //audio.volume = Mathf.Log10(newVol) * 20;
+            audio.volume = newVol;
+
+            yield return null;
+        }
+
+        if(targetVolume < 0.01)
+        {
+            audio.Stop();
+        }
+
+        yield break;
     }
 
 
