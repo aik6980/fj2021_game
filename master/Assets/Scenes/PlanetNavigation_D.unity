@@ -4988,43 +4988,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4640767492112972835, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
   m_PrefabInstance: {fileID: 4640767492573799676}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &99599788 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 99599797, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-  m_PrefabInstance: {fileID: 4640767492573799676}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99599787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &99599789
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99599787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 99599802}
-  suppressBlockAutoSelect: 0
-  message: Monolith
---- !u!114 &99599802 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 99599792, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-  m_PrefabInstance: {fileID: 4640767492573799676}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99599787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &99599806 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4640767492112972829, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
@@ -13627,6 +13590,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 56233282}
     m_Modifications:
+    - target: {fileID: 672955236666674533, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632666814645357896, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -13637,11 +13608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.775436
+      value: 40.797
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 194.25049
+      value: 194.367
       objectReference: {fileID: 0}
     - target: {fileID: 2346064958721338820, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13675,6 +13646,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island-0(Home)
       objectReference: {fileID: 0}
+    - target: {fileID: 3650556426313773104, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247444986031847174, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539729467183096764, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753131087106866790, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d21a9d562797dea4ba1383204445e425, type: 3}
 --- !u!1001 &3622296378633837259
@@ -13687,7 +13674,7 @@ PrefabInstance:
     - target: {fileID: 3615013051281046866, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: anyVar.variable
       value: 
-      objectReference: {fileID: 99599788}
+      objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810832, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: player
       value: 
@@ -13739,7 +13726,7 @@ PrefabInstance:
     - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: variables.Array.data[0]
       value: 
-      objectReference: {fileID: 99599788}
+      objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810845, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: m_Name
       value: StoryTeller
@@ -13846,22 +13833,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2056955869}
     m_Modifications:
-    - target: {fileID: 99599788, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 99599788, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-      propertyPath: selectedCommands.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 99599792, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-      propertyPath: eventHandler
-      value: 
-      objectReference: {fileID: 99599789}
-    - target: {fileID: 99599807, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-      propertyPath: _targetGameObject.gameObjectVal
-      value: 
-      objectReference: {fileID: 1303142897}
     - target: {fileID: 4640767491788494503, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: Tina
       value: 
@@ -13930,9 +13901,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 99599793, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-    - {fileID: 99599788, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
 --- !u!1001 &5441226067251856948
 PrefabInstance:
