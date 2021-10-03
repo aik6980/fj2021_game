@@ -10,10 +10,6 @@ WAVES AMBIENCE:
 	amb_waves_loop should always be looping. The volume could be lowered by ~25% when we're on an island
 	amb_waves_shore should be a looping emitter placed every few meters along the shores of islands. Short attenuation distance, like 10-20m
 
-MUSIC:
-	Keep both day and night music looping constantly
-	When transitioning betweeen island and boat, fade out (7 seconds) the current track, then fade in (5 seconds) the other one
-
 GULLS:
 	On islands in day time, every 5 seconds, 50% chance to play a random gull sound, attenuation distance should be long, like 500m
 
@@ -28,3 +24,8 @@ STARGAZING:
 	while the mouse button is held, loop sfx_stargazing_loop
 	when the mouse button is released on a star, play sfx_stargazing_end
 	when a constellation is finished, play sfx_stargazing_constellation
+
+MUSIC:
+	Keep stargazing music looping constantly, just on a playlist between 1 and 2
+	When transitioning to stargazing, fade out sailing music and fade in stargazing. After 10 seconds, stop sailing music
+	When transitioning to sailing, fade out stargazing. If sailing is still playing fade it in, otherwise start it from the start.
