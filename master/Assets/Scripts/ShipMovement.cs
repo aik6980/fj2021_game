@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipMovement : MonoBehaviour
 {
 	public Transform planetRoot;
 	public float radius;
+	public Image steeringWheelUI;
 
 	public bool anchored;
 
@@ -13,6 +15,10 @@ public class ShipMovement : MonoBehaviour
 
 	public Vector3 velocity;
 	public Vector3 worldVel;
+
+	public float steerClickRadius = 10f;
+	public AnimationCurve steeringSpeed = AnimationCurve.Linear(0f, 0f, Mathf.PI/2, 1f);
+	public float steeringSpeedMultiplier = 5f;
 
 	public ParticleSystem waterSplosh;
 	public Transform sploshTrans;
@@ -38,6 +44,9 @@ public class ShipMovement : MonoBehaviour
 	[Range(0, 1)]
 	public float drag = 0.1f;
 
+	private bool isSteeringDragging { get { return startDraggingDir.HasValue; } }
+	private Vector2 screenspaceShipPoint;
+	private Vector2? startDraggingDir;
 
 	// Start is called before the first frame update
 	void Start()
@@ -85,6 +94,42 @@ public class ShipMovement : MonoBehaviour
 		velocity.y += Mathf.Clamp(-velocity.y, -str, str);
 		velocity.z = Mathf.Clamp(velocity.z, -max_speed, max_speed);
 		velocity.z *= 1f - (update_drag * Time.deltaTime);
+
+		// Player input
+		Vector2 screenPoint2d = Input.mousePosition;
+
+		float angle = 0f;
+
+		if (Input.GetMouseButtonDown(0))
+		{
+			screenspaceShipPoint = new Vector2(Camera.main.pixelRect.center.x, Camera.main.pixelRect.yMin);//Camera.main.WorldToScreenPoint(transform.position);
+			Debug.Log(Vector2.Distance(screenPoint2d, screenspaceShipPoint));
+			if(Vector2.Distance(screenPoint2d, screenspaceShipPoint) <= steerClickRadius)
+				startDraggingDir = (screenPoint2d - screenspaceShipPoint).normalized;
+		}
+
+		if(Input.GetMouseButton(0) && isSteeringDragging)
+        {
+			Vector2 draggingDir = (screenPoint2d - screenspaceShipPoint).normalized;
+			//Debug.Log($"{startDraggingDir}, {draggingDir}");
+			angle = Vector2.SignedAngle(startDraggingDir.Value, draggingDir) * Mathf.Deg2Rad;
+			//Debug.Log(angle);
+			var angularVelocityChange = Mathf.Sign(angle) * steeringSpeed.Evaluate(Mathf.Abs(angle / Mathf.PI)) * steeringSpeedMultiplier;
+			velocity.y += angularVelocityChange * Time.deltaTime;
+		}
+        else
+        {
+			screenspaceShipPoint = Vector2.zero;
+			startDraggingDir = Vector2.zero;
+		}
+
+		// Steering wheel
+		bool hoveringOverWheel = steeringWheelUI.Raycast(screenPoint2d, null);
+		Color wheelColor = steeringWheelUI.color;
+		wheelColor.a = hoveringOverWheel ? 1.0f : 0.4f;
+		steeringWheelUI.color = wheelColor;
+
+		steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, -angle * Mathf.Rad2Deg);
 
 		if (Input.GetKeyDown(KeyCode.W))
 			velocity.z += 5.0f;
