@@ -15,6 +15,14 @@ public class OnFootMovement : MonoBehaviour
 	public Collider hitCollider;
 	public LayerMask mask;
 
+	public float stepLength = 0.1f;
+	public float stepTime = 0.3f;
+
+	public bool moveTargetValid;
+	public Collider moveTarget;
+	public Vector3 moveRelPos;
+	public float stepTimer;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -36,14 +44,30 @@ public class OnFootMovement : MonoBehaviour
 		Vector3 newPos = oldPos;
 
 		if (Input.GetKeyDown(KeyCode.W))
-			newPos += camCon.transform.forward * 0.1f;
+			newPos += camCon.transform.forward * stepLength;
 		if (Input.GetKeyDown(KeyCode.S))
-			newPos += camCon.transform.forward * -0.1f;
+			newPos += camCon.transform.forward * -stepLength;
 		if (Input.GetKeyDown(KeyCode.A))
-			newPos += camCon.transform.right * -0.1f;
+			newPos += camCon.transform.right * -stepLength;
 		if (Input.GetKeyDown(KeyCode.D))
-			newPos += camCon.transform.right * 0.1f;
+			newPos += camCon.transform.right * stepLength;
 
+		if (stepTimer > 0)
+		{
+			stepTimer -= Time.deltaTime;
+		} else
+		if (moveTargetValid)
+		{
+			Vector3 wp = moveTarget.transform.TransformPoint(moveRelPos);
+			if ((wp - newPos).magnitude < stepLength)
+			{
+				moveTargetValid = false;
+			} else
+			{
+				newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
+				stepTimer = stepTime;
+			}
+		}
 
 		if (newPos != oldPos)
 		{
@@ -88,4 +112,20 @@ public class OnFootMovement : MonoBehaviour
 	{
 		Debug.Log(other.name);
 	}
+
+	public void OnClicked(Collider coll, Vector3 relPos)
+	{
+		//since we clicked on, and move on, a rotating planet, the collider is important
+		moveTargetValid = coll!=null;
+		moveTarget = coll;
+		moveRelPos = relPos;
+	}
+
+	public void OnHold(Collider coll, Vector3 relPos)
+	{
+		moveTargetValid = coll != null;
+		moveTarget = coll;
+		moveRelPos = relPos;
+	}
+
 }

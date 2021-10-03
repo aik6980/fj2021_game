@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+using System.Runtime.InteropServices;
+
 public class CameraControl : MonoBehaviour
 {
+	[DllImport("user32.dll")]
+	static extern bool SetCursorPos(int X, int Y);
+
 	public GameObject player;
 	public ShipMovement shipMove;
 	public OnFootMovement footMove;
@@ -30,6 +35,9 @@ public class CameraControl : MonoBehaviour
 	public float pitch = 0.0f;
 
 	public float mx, my;
+	public float msx, msy;
+	public Vector3 mousePosPress;
+	public float mousePressTime = 0;
 
 	public Vector3 shoreDetector = Vector3.forward;
 	public LayerMask mask;
@@ -54,6 +62,8 @@ public class CameraControl : MonoBehaviour
 	}
 	public Mode mode = Mode.ShipNav;
 
+	public float clickRange = 1.0f;
+	public LayerMask clickMask;
 
 
 	// Start is called before the first frame update
@@ -66,6 +76,7 @@ public class CameraControl : MonoBehaviour
 		embark.onClick.AddListener(this.OnPressEmbark);
 
 		footMove.camCon = this;
+		shipMove.planetRoot = Tina.planetRoot;
 
 		if (mode == Mode.ShipNav)
 		{// Start on the boat; attach the player
@@ -121,15 +132,18 @@ public class CameraControl : MonoBehaviour
 				break;
 		}
 
+		mx = Input.GetAxisRaw("Mouse X");
+		my = Input.GetAxisRaw("Mouse Y");
+
 		if (Cursor.lockState == CursorLockMode.Locked)
 		{
-			float x = Input.GetAxisRaw("Mouse X");
-			float y = Input.GetAxisRaw("Mouse Y");
+			//float x = Input.GetAxisRaw("Mouse X");
+			//float y = Input.GetAxisRaw("Mouse Y");
 
 			//Vector3 euler = transform.rotation.eulerAngles;
 			if (euler.x > 90.0f) euler.x -= 360.0f;
-			euler.y += x * sensitivityX;
-			euler.x -= y * sensitivityY;
+			euler.y += mx * sensitivityX;
+			euler.x -= my * sensitivityY;
 			euler.y = (euler.y + 360.0f) % 360.0f;
 			euler.x = Mathf.Clamp(euler.x, pitchMin, pitchMax);
 			transform.rotation = Quaternion.Euler(euler);
@@ -147,6 +161,8 @@ public class CameraControl : MonoBehaviour
 				Cursor.lockState = CursorLockMode.None;
 				//ToDo: restore mousepos
 				//https://answers.unity.com/questions/330661/setting-the-mouse-position-to-specific-coordinates.html
+				//this expects fullscreen (windows) pixel coordinates (top left->right&down)
+				//SetCursorPos((int)msx, (int)msy);
 			}
 		} else
 		{
@@ -159,11 +175,77 @@ public class CameraControl : MonoBehaviour
 			{
 
 			} else
-
-			if (Input.GetMouseButtonDown(0))
 			{
-				//ToDo: save mousepos
-				Cursor.lockState = CursorLockMode.Locked;
+				if (Input.GetMouseButtonDown(0))
+					mousePressTime = 0;
+
+				if (Input.GetMouseButton(0))
+				{
+					//ToDo: save mousepos
+					// these are pixel coordinates in window space (bottom left->right&up)
+
+					if (mousePressTime > 0 && (Input.mousePosition - mousePosPress).sqrMagnitude > 1.0f)
+					{
+						Cursor.lockState = CursorLockMode.Locked;
+					} else
+					{//holding without moving; detect a click and pass it to onfoot movement
+						if (mousePressTime >= 0.2f)
+							OnMouseHold(Input.mousePosition);
+					}
+
+					mousePosPress = Input.mousePosition;
+					msx = mousePosPress.x;
+					msy = mousePosPress.y;
+
+					mousePressTime += Time.deltaTime;
+				} else
+				{
+					if (mousePressTime > 0)
+					{
+						Debug.Log("MPT " + mousePressTime);
+						if (mousePressTime < 0.2f)
+						{//click (as in, not hold)
+							OnMouseClick(Input.mousePosition);
+						}
+						mousePressTime = 0;
+					}
+				}
+			}
+		}
+	}
+
+	void OnMouseClick(Vector3 mousePos)
+	{
+		RaycastHit hit;
+
+		Ray ray = cam.ScreenPointToRay(mousePos);
+		Vector3 p1 = ray.origin;
+		Vector3 dir = ray.direction;
+		Debug.DrawRay(p1, dir * clickRange, Color.yellow, 1.0f);
+		if (Physics.Raycast(p1, dir, out hit, clickRange, clickMask))
+		{
+			Debug.Log(hit.point);
+			if (mode == Mode.LandWalk)
+			{
+				footMove.OnClicked(hit.collider, hit.collider.transform.InverseTransformPoint(hit.point));
+			}
+		}
+	}
+
+	void OnMouseHold(Vector3 mousePos)
+	{
+		RaycastHit hit;
+
+		Ray ray = cam.ScreenPointToRay(mousePos);
+		Vector3 p1 = ray.origin;
+		Vector3 dir = ray.direction;
+		Debug.DrawRay(p1, dir * clickRange, Color.yellow, 0.0f);
+		if (Physics.Raycast(p1, dir, out hit, clickRange, clickMask))
+		{
+			Debug.Log(hit.point);
+			if (mode == Mode.LandWalk)
+			{
+				footMove.OnHold(hit.collider, hit.collider.transform.InverseTransformPoint(hit.point));
 			}
 		}
 	}

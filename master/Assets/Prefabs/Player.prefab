@@ -127,6 +127,10 @@ MonoBehaviour:
   pitch: 0
   mx: 0
   my: 0
+  msx: 0
+  msy: 0
+  mousePosPress: {x: 0, y: 0, z: 0}
+  mousePressTime: 0
   shoreDetector: {x: 0, y: 0, z: 1}
   mask:
     serializedVersion: 2
@@ -142,6 +146,10 @@ MonoBehaviour:
   disembark: {fileID: 0}
   embark: {fileID: 0}
   mode: 1
+  clickRange: 1
+  clickMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4640767492112972835
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +208,12 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1
+  stepLength: 0.1
+  stepTime: 0.15
+  moveTargetValid: 0
+  moveTarget: {fileID: 0}
+  moveRelPos: {x: 0, y: 0, z: 0}
+  stepTimer: 0
 --- !u!54 &99599790
 Rigidbody:
   m_ObjectHideFlags: 0
