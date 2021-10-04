@@ -13,6 +13,9 @@ public class DayLight : MonoBehaviour
 
 	//public Transform skyLight;
 
+	[Range(0, 1)]
+	public float normalisedRotationTime;
+	[Range(0, 1)]
 	public float normalisedDayTime;
 	public Gradient sunColour;
 	public AnimationCurve sunIntensity;
@@ -28,6 +31,9 @@ public class DayLight : MonoBehaviour
 	public float normalisedMoonTime;
 	public Quaternion moonStartRotation = Quaternion.identity;
 
+	//debug
+	public float dot;
+	public float dot2;
 
 	// Use this for initialization
 	void Start () 
@@ -40,28 +46,37 @@ public class DayLight : MonoBehaviour
 	{
 		if (dayLength > 0) 
 		{
-			normalisedDayTime += Time.deltaTime / dayLength;
-			normalisedDayTime = normalisedDayTime % 1.0f;
+			normalisedRotationTime += Time.deltaTime / dayLength;
+			normalisedRotationTime = normalisedRotationTime % 1.0f;
 		}
+		if (sunRoot)
+		{
+			sunRoot.localRotation = Quaternion.AngleAxis(360.0f * normalisedRotationTime, axis) * sunStartRotation;
+		}
+
+
+		if (sunLight)
+		{
+			dot = Vector3.Dot(sunLight.transform.forward, Vector3.down);
+			dot2 = Vector3.Dot(Vector3.Cross(sunLight.transform.forward, sunRoot.rotation * axis), Vector3.up);
+			normalisedDayTime = dot2 > 0 ? 0.25f + dot * 0.25f : 0.75f - dot * 0.25f;
+
+			sunLight.color = sunColour.Evaluate(normalisedDayTime);
+			sunLight.intensity = sunIntensity.Evaluate(normalisedDayTime) * sunIntensityMax;
+		} else
+		{
+			normalisedDayTime = normalisedRotationTime;
+		}
+
+		RenderSettings.ambientIntensity = ambientIntensity.Evaluate(normalisedDayTime) * ambientIntensityMax;
+
+		RenderSettings.fogColor = fogColour.Evaluate(normalisedDayTime);
 
 		if (moonOrbitLength > 0)
 		{
 			normalisedMoonTime += Time.deltaTime / moonOrbitLength;
 			normalisedMoonTime = normalisedMoonTime % 1.0f;
 		}
-
-		if (sunRoot)
-		{
-			sunRoot.localRotation = Quaternion.AngleAxis(360.0f * normalisedDayTime, axis) * sunStartRotation;
-		}
-		if (sunLight)
-		{
-			sunLight.color = sunColour.Evaluate(normalisedDayTime);
-			sunLight.intensity = sunIntensity.Evaluate(normalisedDayTime) * sunIntensityMax;
-		}
-		RenderSettings.ambientIntensity = ambientIntensity.Evaluate(normalisedDayTime) * ambientIntensityMax;
-
-		RenderSettings.fogColor = fogColour.Evaluate(normalisedDayTime);
 
 		if (moonRoot)
 		{

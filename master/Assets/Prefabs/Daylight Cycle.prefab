@@ -258,11 +258,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907174097771990251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -300}
+  m_LocalRotation: {x: -0, y: 0.00000005960463, z: 0.00000004214684, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -300.0001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1907174098473687541}
+  m_Father: {fileID: 8787964807929375587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1907174097771990250
@@ -372,12 +372,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506e01569f914eb409d3282f324ef132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayLength: 60
+  dayLength: 180
   sunRoot: {fileID: 1907174098473687541}
   sunLight: {fileID: 1907174097771990250}
   sunIntensityMax: 1
   sunStartRotation: {x: 0, y: 0, z: 0, w: 1}
   axis: {x: 0, y: 1, z: 0}
+  normalisedRotationTime: 0.25
   normalisedDayTime: 0.25
   sunColour:
     serializedVersion: 2
@@ -537,11 +538,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  moonOrbitLength: 65
+  moonOrbitLength: 185
   moonRoot: {fileID: 1907174097287482562}
   moonLight: {fileID: 0}
   normalisedMoonTime: 0
   moonStartRotation: {x: 0, y: 0, z: 0, w: 1}
+  dot: 0
+  dot2: 0
 --- !u!1 &1907174098473687538
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +573,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1907174097771990253}
+  - {fileID: 8787964807929375587}
   m_Father: {fileID: 1907174098220339926}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -587,3 +590,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angVel: {x: 0, y: 0.95, z: 0}
+--- !u!1 &2951938742129041552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8787964807929375587}
+  m_Layer: 0
+  m_Name: EarthAxisTilt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8787964807929375587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951938742129041552}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1907174097771990253}
+  m_Father: {fileID: 1907174098473687541}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}

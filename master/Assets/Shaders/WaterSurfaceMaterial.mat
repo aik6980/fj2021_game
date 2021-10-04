@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3100
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -54,7 +54,7 @@ Material:
     - _Glossiness: 0.74
     - _IntersectionThreshold: 0.17
     - _Metallic: 0
-    - _NormalStrength: 0.69
+    - _NormalStrength: 0.7
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DeepWaterColour: {r: 0.09019608, g: 0.8281188, b: 0.9137255, a: 1}
