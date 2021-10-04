@@ -12,8 +12,6 @@ public class AudioManager : MonoSingleton<AudioManager>
     public MusicGroup[]         m_musicMixerGroup; 
 
     public MusicData[] music_data;
-
-
     public SFXData[] sfx_data;
 
     public float music_interval;
@@ -55,56 +53,6 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     void Awake()
     {
-        // Get Sound Level for music and ambience
-        //currentMusVolume = getSoundVolume("Mus_Layer_B");
-        //currentEnv1Volume = getSoundVolume("Env_BG_Desolate");
-        //currentEnv2Volume = getSoundVolume("Env_BG_Coniferous");
-
-        //musLayerVolumeMultiplier = 0.0f;
-
-        //foreach (Sound s in sounds)
-        //{
-        //    s.source = gameObject.AddComponent<AudioSource>();
-        //    s.source.clip = s.clip;
-        //    s.source.loop = s.loop;
-
-        //    //s.source.outputAudioMixerGroup = mixerGroup;
-        //}
-
-        foreach (SFXData s in sfx_data)
-        {
-            s.audio_source = gameObject.AddComponent<AudioSource>();
-            s.audio_source.clip = s.clip;
-            s.audio_source.volume = s.volume;
-            s.audio_source.loop = false;
-
-            s.audio_source.outputAudioMixerGroup = m_sfxMixerGroup;
-        }
-
-        //foreach (MusicGroup soundGroup in m_musicMixerGroup)
-        //{
-        //    soundGroup.audio_sources = new AudioSource[soundGroup.soundName.Length];
-        //    
-        //    for(int i=0;i<soundGroup.soundName.Length;++i)
-        //    {
-        //        var name = soundGroup.soundName[i]; 
-        //
-        //        MusicData s = Array.Find(music_data, item => item.name == name);
-        //        var audioSource = gameObject.AddComponent<AudioSource>();
-        //
-        //        audioSource.volume = s.volume;
-        //        audioSource.clip = s.clip;
-        //        audioSource.loop = true;
-        //        audioSource.playOnAwake = false;
-        //        audioSource.outputAudioMixerGroup = soundGroup.mixerGroup;
-        //
-        //        soundGroup.audio_sources[i] = audioSource;
-        //
-        //        audioSource.Play();
-        //    }
-        //    
-        //}
-
 
     }
 

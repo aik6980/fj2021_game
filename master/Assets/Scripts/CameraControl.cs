@@ -287,6 +287,7 @@ public class CameraControl : MonoBehaviour
 			if (mode == Mode.LandWalk)
 			{
 				footMove.OnClicked(hit.collider, hit.collider.transform.InverseTransformPoint(hit.point));
+				AudioManager.Instance.PlaySFX("footstep");
 			}
 		}
 	}
@@ -305,6 +306,7 @@ public class CameraControl : MonoBehaviour
 			if (mode == Mode.LandWalk)
 			{
 				footMove.OnHold(hit.collider, hit.collider.transform.InverseTransformPoint(hit.point));
+				AudioManager.Instance.PlaySFX("footstep");
 			}
 		}
 	}

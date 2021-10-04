@@ -6,11 +6,6 @@ using UnityEngine;
 public class SFXData
 {
     public string name;
-    public AudioClip clip;
-
-    public float volume;
-
-    [HideInInspector]
     public AudioSource audio_source;
 }
 

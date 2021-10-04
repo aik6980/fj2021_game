@@ -74,6 +74,7 @@ public class OnFootMovement : MonoBehaviour
 				stepped = true;
 				moveTargetValid = false;
 				stepTimer = stepTime;
+				AudioManager.Instance.PlaySFX("footstep");
 			}
 		}
 
