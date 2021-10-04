@@ -20,7 +20,7 @@ public class StarpickingRod : MonoBehaviour {
         if(ConstellationMgr.Instance.is_canvas_mode_enabled())
         {
             // disable main camera control
-            m_camera_control.enabled = false;
+            //m_camera_control.enabled = false;
 
             // enable picking rod
             var rod_collider = GetComponent<Collider>();
@@ -36,7 +36,7 @@ public class StarpickingRod : MonoBehaviour {
         else
         {
             // enable main cam
-            m_camera_control.enabled = true;
+            //m_camera_control.enabled = true;
 
             // disbale rod
             var rod_collider = GetComponent<Collider>();

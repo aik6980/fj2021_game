@@ -57,8 +57,8 @@ public class CameraControl : MonoBehaviour
 	public enum Mode
 	{
 		ShipNav,
-		LandWalk,
-		SkyDraw
+		LandWalk
+		//SkyDraw
 	}
 	public Mode mode = Mode.ShipNav;
 
@@ -133,6 +133,14 @@ public class CameraControl : MonoBehaviour
 		// detect if we can get off the boat (say, depth test just off the boat in the view direction),
 		// detect if we can get back on,
 		// activate ship controls on onfoot controls
+
+		//Debug.Log(ConstellationMgr.Instance.is_canvas_mode_enabled());
+		if (ConstellationMgr.Instance.is_canvas_mode_enabled())
+		{
+			disembark.gameObject.SetActive(false);
+			embark.gameObject.SetActive(false);
+			return;
+		}
 
 		switch(mode)
 		{

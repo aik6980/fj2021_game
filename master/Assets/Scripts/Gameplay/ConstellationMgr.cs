@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 {
@@ -14,8 +15,10 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
     public GameObject constellation_prefab;
 
-    public GameObject activate_button;
-    public GameObject canvas_panel;
+    public Button activate_button;
+	public Button exit_button;
+	public Button save_button;
+	public GameObject canvas_panel;
     public TMPro.TMP_InputField comp_name_inputfield;
 
 
@@ -23,20 +26,43 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
     bool process_undo = false;
 
-    // Start is called before the first frame update
-    void Start()
+	public float pitchThresholdCosine = 0.6f;
+
+
+	// Start is called before the first frame update
+	void Start()
     {
         m_constellation_list = new List<Constellation>();
         m_enable_constellation_canvas = false;
 
         canvas_panel.SetActive(false);
-        activate_button.SetActive(true);
+        activate_button.gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+	public void Exit()
+	{
+		enable_canvas_mode(false);
+	}
+
+	public void Save()
+	{
+		enable_canvas_mode(false);
+	}
+
+	// Update is called once per frame
+	void Update()
     {
-        if (Input.GetMouseButtonDown(1) || process_undo)
+		if (!is_canvas_mode_enabled())
+		{
+			activate_button.gameObject.SetActive(Camera.main.transform.forward.y > pitchThresholdCosine);
+		} else
+		{
+			bool hasName = !string.IsNullOrEmpty(comp_name_inputfield.text);
+			save_button.gameObject.SetActive(hasName && m_curr_constellation.lines.Count > 0);
+			exit_button.gameObject.SetActive(!hasName || m_curr_constellation.lines.Count == 0);
+		}
+
+		if (Input.GetMouseButtonDown(1) || process_undo)
         {
             process_undo = false;
 
@@ -143,7 +169,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             m_curr_constellation = new Constellation();
 
             canvas_panel.SetActive(true);
-            activate_button.SetActive(false);
+            activate_button.gameObject.SetActive(false);
 
             AudioManager.Instance.PlayMusic("stargaze_1");
         }
@@ -172,7 +198,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             m_tmp_line = null;
 
             canvas_panel.SetActive(false);
-            activate_button.SetActive(true);
+            activate_button.gameObject.SetActive(true);
 
             AudioManager.Instance.PlayMusic("sail_1");
         }
