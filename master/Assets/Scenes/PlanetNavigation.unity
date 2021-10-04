@@ -14310,14 +14310,6 @@ PrefabInstance:
       propertyPath: steeringWheelUI
       value: 
       objectReference: {fileID: 5441226067251856949}
-    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
-      propertyPath: steerClickRadius
-      value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
-      propertyPath: steeringSpeedMultiplier
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 746564115713440133, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: m_RootOrder
       value: 5

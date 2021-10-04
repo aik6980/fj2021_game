@@ -213,37 +213,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetRoot: {fileID: 0}
   radius: 200
-  steeringWheelUI: {fileID: 0}
   anchored: 0
   tiltable: {fileID: 746564116126058358}
   velocity: {x: 0, y: 0, z: 0}
   worldVel: {x: 0, y: 0, z: 0}
-  steerClickRadius: 10
-  steeringSpeed:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0.63661975
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1.5707964
-      value: 1
-      inSlope: 0.63661975
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  steeringSpeedMultiplier: 5
   waterSplosh: {fileID: 0}
   sploshTrans: {fileID: 746564115843840533}
   emissionRateScale: 0.01
@@ -273,6 +246,43 @@ MonoBehaviour:
   tiltScale: -1
   max_speed: 400
   drag: 0.1
+  steeringWheelUI: {fileID: 0}
+  hoveringOverWheel: 0
+  isSteeringDragging: 0
+  screenspaceShipPoint: {x: 0, y: 0}
+  startDraggingDir: {x: 0, y: 0}
+  draggingDir: {x: 0, y: 0}
+  dragAngle: 0
+  steerClickRadius: 1500
+  steeringSpeed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0.63661975
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.5707964
+      value: 1
+      inSlope: 0.63661975
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  steeringSpeedMultiplier: 200
+  steeringAngle: 0
+  steeringAngleToAngVel: 0.1
+  steeringReturnSpeed: 100
+  steeringSpeedKeyboard: 200
 --- !u!1 &746564115843840530
 GameObject:
   m_ObjectHideFlags: 0

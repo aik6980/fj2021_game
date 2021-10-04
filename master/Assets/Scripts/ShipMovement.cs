@@ -7,7 +7,6 @@ public class ShipMovement : MonoBehaviour
 {
 	public Transform planetRoot;
 	public float radius;
-	public Image steeringWheelUI;
 
 	public bool anchored;
 
@@ -15,10 +14,6 @@ public class ShipMovement : MonoBehaviour
 
 	public Vector3 velocity;
 	public Vector3 worldVel;
-
-	public float steerClickRadius = 10f;
-	public AnimationCurve steeringSpeed = AnimationCurve.Linear(0f, 0f, Mathf.PI/2, 1f);
-	public float steeringSpeedMultiplier = 5f;
 
 	public ParticleSystem waterSplosh;
 	public Transform sploshTrans;
@@ -44,9 +39,22 @@ public class ShipMovement : MonoBehaviour
 	[Range(0, 1)]
 	public float drag = 0.1f;
 
-	private bool isSteeringDragging { get { return startDraggingDir.HasValue; } }
-	private Vector2 screenspaceShipPoint;
-	private Vector2? startDraggingDir;
+	public Image steeringWheelUI;
+	public bool hoveringOverWheel;
+
+	public bool isSteeringDragging;
+	public Vector2 screenspaceShipPoint;
+	public Vector2 startDraggingDir, draggingDir;
+	public float dragAngle;
+
+	public float steerClickRadius = 10f;
+	public AnimationCurve steeringSpeed = AnimationCurve.Linear(0f, 0f, Mathf.PI / 2, 1f);
+	public float steeringSpeedMultiplier = 5f;
+	public float steeringAngle = 0.0f;      //degrees
+	public float steeringAngleToAngVel = -0.1f;
+	public float steeringReturnSpeed = 30.0f;
+	public float steeringSpeedKeyboard = 100.0f;
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -94,56 +102,68 @@ public class ShipMovement : MonoBehaviour
 		//decoration
 		if (tiltable)
 			tiltable.localRotation = Quaternion.Slerp(tiltable.localRotation, Quaternion.Euler(0, 0, Mathf.Clamp(-Vector3.Dot(worldVel, transform.right) * tiltScale, -45.0f, 45.0f)), Time.deltaTime / 0.1f);
-		//steering return
-		float str = 10.0f * Time.deltaTime;
-		velocity.y += Mathf.Clamp(-velocity.y, -str, str);
+		//longitudinal drag
 		velocity.z = Mathf.Clamp(velocity.z, -max_speed, max_speed);
 		velocity.z *= 1f - (update_drag * Time.deltaTime);
 
 		// Player input
 		Vector2 screenPoint2d = Input.mousePosition;
 
-		float angle = 0f;
-
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(1))
 		{
 			screenspaceShipPoint = new Vector2(Camera.main.pixelRect.center.x, Camera.main.pixelRect.yMin);//Camera.main.WorldToScreenPoint(transform.position);
 			Debug.Log(Vector2.Distance(screenPoint2d, screenspaceShipPoint));
-			if(Vector2.Distance(screenPoint2d, screenspaceShipPoint) <= steerClickRadius)
+			if (Vector2.Distance(screenPoint2d, screenspaceShipPoint) <= steerClickRadius)
+			{
 				startDraggingDir = (screenPoint2d - screenspaceShipPoint).normalized;
+				isSteeringDragging = true;
+			}
 		}
 
-		if(Input.GetMouseButton(0) && isSteeringDragging)
+		if(Input.GetMouseButton(1) && isSteeringDragging)
         {
-			Vector2 draggingDir = (screenPoint2d - screenspaceShipPoint).normalized;
+			draggingDir = (screenPoint2d - screenspaceShipPoint).normalized;
 			//Debug.Log($"{startDraggingDir}, {draggingDir}");
-			angle = Vector2.SignedAngle(startDraggingDir.Value, draggingDir) * Mathf.Deg2Rad;
+			dragAngle = Vector2.SignedAngle(startDraggingDir, draggingDir);// * Mathf.Deg2Rad;
 			//Debug.Log(angle);
-			var angularVelocityChange = Mathf.Sign(angle) * steeringSpeed.Evaluate(Mathf.Abs(angle / Mathf.PI)) * steeringSpeedMultiplier;
-			velocity.y -= angularVelocityChange * Time.deltaTime;
+			//var angularVelocityChange = Mathf.Sign(angle) * steeringSpeed.Evaluate(Mathf.Abs(angle / Mathf.PI)) * steeringSpeedMultiplier;
+			//velocity.y -= angularVelocityChange * Time.deltaTime;
+			steeringAngle -= dragAngle;
+			startDraggingDir = draggingDir;
 		}
         else
         {
 			screenspaceShipPoint = Vector2.zero;
 			startDraggingDir = Vector2.zero;
+			isSteeringDragging = false;
+		}
+
+		velocity.y = steeringAngle * steeringAngleToAngVel;
+		//steering return
+		if (!isSteeringDragging)
+		{
+			float str = steeringReturnSpeed * Time.deltaTime;
+			//velocity.y += Mathf.Clamp(-velocity.y, -str, str);
+			steeringAngle += Mathf.Clamp(-steeringAngle, -str, str);
 		}
 
 		// Steering wheel
-		bool hoveringOverWheel = steeringWheelUI.Raycast(screenPoint2d, null);
+		hoveringOverWheel = steeringWheelUI.Raycast(screenPoint2d, null);	//this doesn't work
 		Color wheelColor = steeringWheelUI.color;
 		wheelColor.a = hoveringOverWheel ? 1.0f : 0.4f;
 		steeringWheelUI.color = wheelColor;
 
-		steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+		//steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+		steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, -steeringAngle);
 
 		if (Input.GetKeyDown(KeyCode.W))
 			velocity.z += 5.0f;
 		if (Input.GetKeyDown(KeyCode.S))
 			velocity.z -= 5.0f;
-		if (Input.GetKeyDown(KeyCode.A))
-			velocity.y -= 5.0f;
-		if (Input.GetKeyDown(KeyCode.D))
-			velocity.y += 5.0f;
+		if (Input.GetKey(KeyCode.A))
+			steeringAngle -= steeringSpeedKeyboard * Time.deltaTime;
+		if (Input.GetKey(KeyCode.D))
+			steeringAngle += steeringSpeedKeyboard * Time.deltaTime;
 
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 

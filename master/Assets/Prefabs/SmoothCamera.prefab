@@ -151,12 +151,12 @@ MonoBehaviour:
   clickMask:
     serializedVersion: 2
     m_Bits: 1
+  baseFOV: 0
   lookTargetValid: 0
   lookTarget: {fileID: 0}
   lookStrength: 0
   targetFOV: 0
-  baseFOV: 0
-  lookEuler: {x: 0, y: 0, z: 0}
+  constellationManager: {fileID: 0}
 --- !u!114 &3853897748309878069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  linStrength: 2
+  linStrength: 5
   angStrength: 0
 --- !u!1 &3853897748531486214
 GameObject:
