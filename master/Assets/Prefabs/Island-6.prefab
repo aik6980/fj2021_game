@@ -49,6 +49,50 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7880820227830146511, guid: 053bfeeae89704941826bd0b31bf4389, type: 3}
+--- !u!1 &4380553933816852353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2732085354480566718}
+  - component: {fileID: 8334173278273076323}
+  m_Layer: 10
+  m_Name: Trigger
+  m_TagString: monolith-6
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2732085354480566718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380553933816852353}
+  m_LocalRotation: {x: 0.2898101, y: 0.95135707, z: -0.10087633, w: -0.02745502}
+  m_LocalPosition: {x: 64.1712, y: -38.72459, z: -25.880638}
+  m_LocalScale: {x: 1.1666597, y: 0.78956085, z: 0.7807955}
+  m_Children: []
+  m_Father: {fileID: 2147914850488592662}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8334173278273076323
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380553933816852353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6012104038753165663
 GameObject:
   m_ObjectHideFlags: 0
