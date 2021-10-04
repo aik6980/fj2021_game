@@ -11,6 +11,13 @@ public class PlanetTurner : MonoBehaviour
 
 	public Quaternion turnQ;
 
+	public static PlanetTurner singleton;
+
+	private void Awake()
+	{
+		singleton = this;
+	}
+
 	// Start is called before the first frame update
 	void Start()
     {

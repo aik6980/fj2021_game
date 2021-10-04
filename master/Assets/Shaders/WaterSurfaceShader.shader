@@ -116,13 +116,18 @@ Shader "Custom/WaterSurfaceShader"
 
             float fogDiff = saturate((depth - IN.screenPos.w) / _DeepWaterThreshold);
             float intersectionDiff = saturate((depth - IN.screenPos.w) / _IntersectionThreshold);
-            float foamDiff = saturate((depth - IN.screenPos.w) / _FoamThreshold);
-            foamDiff *= (1.0 - renderTex.b);
 
-            fixed4 final_colour = lerp(lerp(_IntersectionColour, _SurfaceColour, intersectionDiff), _DeepWaterColour, fogDiff);
+			fixed4 final_colour = lerp(lerp(_IntersectionColour, _SurfaceColour, intersectionDiff), _DeepWaterColour, fogDiff);
 
-            float foamTex = tex2D(_FoamTexture, pos.xz * _FoamTexture_ST.xy + _Time.y * float2(_FoamTextureSpeedX, _FoamTextureSpeedY));
-            float foam = step(foamDiff - (saturate(sin((foamDiff - _Time.y * _FoamLinesSpeed) * 8 * UNITY_PI)) * (1.0 - foamDiff)), foamTex);
+			float foamDiff = saturate((depth - IN.screenPos.w) / _FoamThreshold);
+			float foam = 0;
+			if (foamDiff > 0)
+			{
+				foamDiff *= (1.0 - renderTex.b);
+
+				float foamTex = tex2D(_FoamTexture, pos.xz * _FoamTexture_ST.xy + _Time.y * float2(_FoamTextureSpeedX, _FoamTextureSpeedY));
+				foam = step(foamDiff - (saturate(sin((foamDiff - _Time.y * _FoamLinesSpeed) * 8 * UNITY_PI)) * (1.0 - foamDiff)), foamTex);
+			}
 
             float fresnel = pow(1.0 - saturate(dot(o.Normal, normalize(IN.viewDir))), _FresnelPower);
 
