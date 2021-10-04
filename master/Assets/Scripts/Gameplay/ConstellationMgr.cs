@@ -170,8 +170,6 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
             canvas_panel.SetActive(true);
             activate_button.gameObject.SetActive(false);
-
-            AudioManager.Instance.PlayMusic("stargaze_1");
         }
         else // turning canvas off
         {
@@ -213,8 +211,6 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
             canvas_panel.SetActive(false);
             activate_button.gameObject.SetActive(true);
-
-            AudioManager.Instance.PlayMusic("sail_1");
         }
     }
 

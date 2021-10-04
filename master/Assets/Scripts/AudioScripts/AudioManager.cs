@@ -24,6 +24,35 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     AudioSource curr_music;
 
+    public CameraControl camera_control;
+
+    enum MusicState
+    {
+        Sailing,
+        Stargazing,
+        Walking,
+    }
+    MusicState curr_state, prev_state;
+
+    MusicState get_game_music_state()
+    {
+        if(ConstellationMgr.Instance.is_canvas_mode_enabled())
+        {
+            return MusicState.Stargazing;
+        }
+        else
+        {
+            if (camera_control.mode == CameraControl.Mode.ShipNav)
+            {
+                return MusicState.Sailing;
+            }
+            else
+            {
+                return MusicState.Walking;
+            }    
+        }
+    }
+
     void Awake()
     {
         // Get Sound Level for music and ambience
@@ -88,12 +117,7 @@ public class AudioManager : MonoSingleton<AudioManager>
         //StartCoroutine(SwitchTrackInterval());
 
         curr_music = null;
-        play_music_sail();
-    }
-
-    public void play_music_sail()
-    {
-        PlayMusic("sail_1");
+        curr_state = prev_state = get_game_music_state();
     }
 
     public void PlayMusic(string name)
@@ -102,6 +126,11 @@ public class AudioManager : MonoSingleton<AudioManager>
         if (music == null)
         {
             Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        if(curr_music == music.audio_source)
+        {
             return;
         }
 
@@ -150,10 +179,31 @@ public class AudioManager : MonoSingleton<AudioManager>
         s.audio_source.Play();
     }
 
+
     private void Update()
     {
+        var next_state = get_game_music_state();
 
+        if(curr_state != next_state)
+        {
+            prev_state = curr_state;
+            curr_state = next_state;
+        }
+
+        switch(curr_state)
+        {
+            case MusicState.Sailing:
+                PlayMusic("sail_1");
+                break;
+            case MusicState.Walking:
+                PlayMusic("island_1");
+                break;
+            case MusicState.Stargazing:
+                PlayMusic("stargaze_1");
+                break;
+        }
     }
+
     Queue<int> GeneratePlaylist()
     {
         int[] indexArray = new int[m_musicMixerGroup.Length];

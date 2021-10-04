@@ -14629,6 +14629,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1421785346, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
+      propertyPath: camera_control
+      value: 
+      objectReference: {fileID: 1727392434}
     - target: {fileID: 151424918697763704, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_Name
       value: AudioManager
