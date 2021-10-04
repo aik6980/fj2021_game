@@ -73,6 +73,10 @@ public class CameraControl : MonoBehaviour
 	public float targetFOV;
 	//public Vector3 lookEuler;
 
+	//public bool moveTargetValid;
+	//public Transform moveTarget;
+	//public float moveStrength = 0.0f;
+
 	public ConstellationMgr constellationManager;
 
 
@@ -153,6 +157,8 @@ public class CameraControl : MonoBehaviour
 		if (!lookTargetValid && cam.fieldOfView != baseFOV)
 			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, baseFOV, 1.0f * Time.deltaTime);
 
+		euler = transform.rotation.eulerAngles;
+
 		if (lookTargetValid)
 		{   //mini "cutscene", look at and optionally zoom in
 			Quaternion look = Quaternion.LookRotation(lookTarget.position - cam.transform.position);
@@ -201,6 +207,12 @@ public class CameraControl : MonoBehaviour
 			//ToDo: check if it's over UI!
 			// ...or anything we might want to click on
 			// and ONLY take the mouse if not
+			if (shipMove.isSteeringDragging)
+			{
+				euler.y = Mathf.LerpAngle(euler.y, shipMove.transform.rotation.eulerAngles.y, 2.0f * Time.deltaTime);
+				transform.rotation = Quaternion.Euler(euler);
+				UpdateCam();
+			} else
 			if (EventSystem.current.IsPointerOverGameObject())
 			{
 
@@ -213,7 +225,6 @@ public class CameraControl : MonoBehaviour
 				{
 					//ToDo: save mousepos
 					// these are pixel coordinates in window space (bottom left->right&up)
-
 					if (mousePressTime > 0 && (Input.mousePosition - mousePosPress).sqrMagnitude > 1.0f)
 					{
 						Cursor.lockState = CursorLockMode.Locked;
@@ -363,4 +374,17 @@ public class CameraControl : MonoBehaviour
 	{
 		lookTargetValid = false;
 	}
+/*
+	public void MoveTo(Transform target)
+	{
+		moveTarget = target;
+		moveStrength = 1f;
+		moveTargetValid = true;
+	}
+
+	public void Stopmove()
+	{
+		moveTargetValid = false;
+	}
+*/
 }

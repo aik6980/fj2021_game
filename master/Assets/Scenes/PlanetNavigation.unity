@@ -14307,6 +14307,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 40952102}
     - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
+      propertyPath: steerPushForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
+      propertyPath: steerPushScale
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: steeringWheelUI
       value: 
       objectReference: {fileID: 5441226067251856949}
@@ -14466,11 +14474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3853897748309878070, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.92798
+      value: 40.209
       objectReference: {fileID: 0}
     - target: {fileID: 3853897748309878070, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 195.95998
+      value: 197.49
       objectReference: {fileID: 0}
     - target: {fileID: 3853897748309878070, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14503,6 +14511,14 @@ PrefabInstance:
     - target: {fileID: 3853897748309878071, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: m_Name
       value: SmoothCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853897748531486213, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.19137388
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853897748531486213, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.3259243
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}

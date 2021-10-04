@@ -55,6 +55,9 @@ public class ShipMovement : MonoBehaviour
 	public float steeringReturnSpeed = 30.0f;
 	public float steeringSpeedKeyboard = 100.0f;
 
+	public float steerPushScale = 1.0f;
+	public float steerPushForce = 1.0f;
+	public float steerPushSpeed = 0.0f;
 
 	// Start is called before the first frame update
 	void Start()
@@ -62,6 +65,10 @@ public class ShipMovement : MonoBehaviour
 		depth = new float[collisionPoints.Length];
 		hitNormal =  new Vector3[collisionPoints.Length];
 		hitCollider = new Collider[collisionPoints.Length];
+
+		screenspaceShipPoint = RectTransformUtility.WorldToScreenPoint(null, steeringWheelUI.rectTransform.transform.position);
+		//steerClickRadius = steeringWheelUI.rectTransform.rect.height * steeringWheelUI.canvas.scaleFactor;
+		steerClickRadius = Screen.height * 0.2f;
 	}
 
 	[ExecuteInEditMode]
@@ -92,8 +99,12 @@ public class ShipMovement : MonoBehaviour
 				ParticleSystem.EmissionModule emission = waterSplosh.emission;
 				emission.rateOverTimeMultiplier = 0.1f * emissionRateScale;
 			}
+
+			steeringWheelUI.gameObject.SetActive(false);
 			return;
 		}
+
+		steeringWheelUI.gameObject.SetActive(true);
 
 		worldVel = this.transform.rotation * velocity;
 		//lateral drag
@@ -109,9 +120,13 @@ public class ShipMovement : MonoBehaviour
 		// Player input
 		Vector2 screenPoint2d = Input.mousePosition;
 
-		if (Input.GetMouseButtonDown(1))
+		//this is actually the bottom centre of the screen
+		// should be the center of steeringwheelUI
+		//screenspaceShipPoint = new Vector2(Camera.main.pixelRect.center.x, Camera.main.pixelRect.yMin);//Camera.main.WorldToScreenPoint(transform.position);
+		//screenspaceShipPoint = steeringWheelUI.rectTransform.rect.center;// .anchoredPosition;
+
+		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
 		{
-			screenspaceShipPoint = new Vector2(Camera.main.pixelRect.center.x, Camera.main.pixelRect.yMin);//Camera.main.WorldToScreenPoint(transform.position);
 			Debug.Log(Vector2.Distance(screenPoint2d, screenspaceShipPoint));
 			if (Vector2.Distance(screenPoint2d, screenspaceShipPoint) <= steerClickRadius)
 			{
@@ -120,7 +135,7 @@ public class ShipMovement : MonoBehaviour
 			}
 		}
 
-		if(Input.GetMouseButton(1) && isSteeringDragging)
+		if(isSteeringDragging && (Input.GetMouseButton(0) || Input.GetMouseButton(1)))
         {
 			draggingDir = (screenPoint2d - screenspaceShipPoint).normalized;
 			//Debug.Log($"{startDraggingDir}, {draggingDir}");
@@ -130,12 +145,19 @@ public class ShipMovement : MonoBehaviour
 			//velocity.y -= angularVelocityChange * Time.deltaTime;
 			steeringAngle -= dragAngle;
 			startDraggingDir = draggingDir;
+
+			//new, test :)
+			if (Mathf.Abs(dragAngle) > 0)
+			{
+				steerPushSpeed = Mathf.Clamp((Mathf.Abs(dragAngle) / Time.deltaTime) * steerPushScale, 0, max_speed);
+				velocity.z += (steerPushSpeed - velocity.z) * steerPushForce * Time.deltaTime;
+			}
 		}
         else
         {
-			screenspaceShipPoint = Vector2.zero;
 			startDraggingDir = Vector2.zero;
 			isSteeringDragging = false;
+			steerPushSpeed = 0.0f;
 		}
 
 		velocity.y = steeringAngle * steeringAngleToAngVel;
@@ -147,13 +169,13 @@ public class ShipMovement : MonoBehaviour
 			steeringAngle += Mathf.Clamp(-steeringAngle, -str, str);
 		}
 
-		// Steering wheel
-		hoveringOverWheel = steeringWheelUI.Raycast(screenPoint2d, null);	//this doesn't work
+		// Steering wheel UI
+		//hoveringOverWheel = steeringWheelUI.Raycast(screenPoint2d, null);	//this doesn't work
+		hoveringOverWheel = Vector2.Distance(screenPoint2d, screenspaceShipPoint) <= steerClickRadius;
 		Color wheelColor = steeringWheelUI.color;
-		wheelColor.a = hoveringOverWheel ? 1.0f : 0.4f;
+		wheelColor.a = (hoveringOverWheel || isSteeringDragging) ? 1.0f : 0.4f;
 		steeringWheelUI.color = wheelColor;
 
-		//steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
 		steeringWheelUI.rectTransform.rotation = Quaternion.Euler(0, 0, -steeringAngle);
 
 		if (Input.GetKeyDown(KeyCode.W))
