@@ -48,3 +48,4 @@ MonoBehaviour:
   activate_button: {fileID: 0}
   canvas_panel: {fileID: 0}
   comp_name_inputfield: {fileID: 0}
+  pitchThresholdCosine: 0.45
