@@ -199,6 +199,7 @@ public class CameraControl : MonoBehaviour
 				//https://answers.unity.com/questions/330661/setting-the-mouse-position-to-specific-coordinates.html
 				//this expects fullscreen (windows) pixel coordinates (top left->right&down)
 				//SetCursorPos((int)msx, (int)msy);
+				mousePressTime = 0;
 			}
 		} else
 		{

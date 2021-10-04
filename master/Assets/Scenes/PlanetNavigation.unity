@@ -14457,6 +14457,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1338331850}
     - target: {fileID: 3853897748309878068, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+      propertyPath: canEmbark
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853897748309878068, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: disembark
       value: 
       objectReference: {fileID: 839386971}
@@ -14529,10 +14533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2056955869}
     m_Modifications:
-    - target: {fileID: 99599807, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
-      propertyPath: _targetGameObject.gameObjectVal
-      value: 
-      objectReference: {fileID: 1303142897}
     - target: {fileID: 4640767491788494503, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: Tina
       value: 
@@ -14559,15 +14559,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4640767492112972828, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.464
+      value: -0.311
       objectReference: {fileID: 0}
     - target: {fileID: 4640767492112972828, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.928
+      value: 40.052
       objectReference: {fileID: 0}
     - target: {fileID: 4640767492112972828, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 195.96
+      value: 195.974
       objectReference: {fileID: 0}
     - target: {fileID: 4640767492112972828, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: m_LocalRotation.w

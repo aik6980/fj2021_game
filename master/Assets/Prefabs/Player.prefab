@@ -150,6 +150,12 @@ MonoBehaviour:
   clickMask:
     serializedVersion: 2
     m_Bits: 0
+  baseFOV: 0
+  lookTargetValid: 0
+  lookTarget: {fileID: 0}
+  lookStrength: 0
+  targetFOV: 0
+  constellationManager: {fileID: 0}
 --- !u!1 &4640767492112972835
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camCon: {fileID: 4640767491788494503}
   walkLevel: 0.05
-  maxHeight: 0.1
+  maxHeight: 0.05
   maxDistance: 0.2
   depth: 0
   hitPoint: {x: 0, y: 0, z: 0}
@@ -208,7 +214,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1
-  stepLength: 0.1
+  stepLength: 0.05
   stepTime: 0.15
   moveTargetValid: 0
   moveTarget: {fileID: 0}

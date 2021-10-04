@@ -43,6 +43,8 @@ public class OnFootMovement : MonoBehaviour
 		Vector3 oldPos = transform.position - Vector3.up * walkLevel;
 		Vector3 newPos = oldPos;
 
+		bool stepped = false;
+		//move on WASD press (allows faster ;)
 		if (Input.GetKeyDown(KeyCode.W))
 			newPos += camCon.transform.forward * stepLength;
 		if (Input.GetKeyDown(KeyCode.S))
@@ -51,12 +53,31 @@ public class OnFootMovement : MonoBehaviour
 			newPos += camCon.transform.right * -stepLength;
 		if (Input.GetKeyDown(KeyCode.D))
 			newPos += camCon.transform.right * stepLength;
+		stepped = newPos != oldPos;
 
 		if (stepTimer > 0)
 		{
 			stepTimer -= Time.deltaTime;
 		} else
-		if (moveTargetValid)
+		if (!stepped)
+		{//move on WASD hold
+			if (Input.GetKey(KeyCode.W))
+				newPos += camCon.transform.forward * stepLength;
+			if (Input.GetKey(KeyCode.S))
+				newPos += camCon.transform.forward * -stepLength;
+			if (Input.GetKey(KeyCode.A))
+				newPos += camCon.transform.right * -stepLength;
+			if (Input.GetKey(KeyCode.D))
+				newPos += camCon.transform.right * stepLength;
+			if (newPos != oldPos)
+			{
+				stepped = true;
+				moveTargetValid = false;
+				stepTimer = stepTime;
+			}
+		}
+
+		if (!stepped && moveTargetValid && stepTimer <= 0)
 		{
 			Vector3 wp = moveTarget.transform.TransformPoint(moveRelPos);
 			if ((wp - newPos).magnitude < stepLength)
