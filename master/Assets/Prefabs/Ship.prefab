@@ -283,6 +283,11 @@ MonoBehaviour:
   steeringAngleToAngVel: 0.1
   steeringReturnSpeed: 100
   steeringSpeedKeyboard: 200
+  steerPushScale: 0.5
+  steerPushSpeed: 0
+  steerPushForce: 0.5
+  steerBaseSpeed: 200
+  steerBaseForce: 0.25
 --- !u!1 &746564115843840530
 GameObject:
   m_ObjectHideFlags: 0

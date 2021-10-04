@@ -56,8 +56,11 @@ public class ShipMovement : MonoBehaviour
 	public float steeringSpeedKeyboard = 100.0f;
 
 	public float steerPushScale = 1.0f;
-	public float steerPushForce = 1.0f;
 	public float steerPushSpeed = 0.0f;
+	public float steerPushForce = 1.0f;
+
+	public float steerBaseSpeed = 1.0f;
+	public float steerBaseForce = 1.0f;
 
 	// Start is called before the first frame update
 	void Start()
@@ -151,6 +154,9 @@ public class ShipMovement : MonoBehaviour
 			{
 				steerPushSpeed = Mathf.Clamp((Mathf.Abs(dragAngle) / Time.deltaTime) * steerPushScale, 0, max_speed);
 				velocity.z += (steerPushSpeed - velocity.z) * steerPushForce * Time.deltaTime;
+			} else
+			{
+				velocity.z += (steerBaseSpeed - velocity.z) * steerBaseForce * Time.deltaTime;
 			}
 		}
         else

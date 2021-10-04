@@ -14307,14 +14307,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 40952102}
     - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
-      propertyPath: steerPushForce
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
-      propertyPath: steerPushScale
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: steeringWheelUI
       value: 
       objectReference: {fileID: 5441226067251856949}
