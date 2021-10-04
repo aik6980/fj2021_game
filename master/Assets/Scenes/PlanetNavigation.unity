@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46656853, g: 0.35477653, b: 0.16274965, a: 1}
+  m_IndirectSpecularColor: {r: 0.4665774, g: 0.35478517, b: 0.1627515, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5207,6 +5207,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116849592, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: message
+      value: LeavingHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: blockName
+      value: Leaving Island-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 280.05527
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -12.907173
+      objectReference: {fileID: 0}
     - target: {fileID: 666384188, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -5243,6 +5259,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 99599787}
+    - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 252.99344
+      objectReference: {fileID: 0}
+    - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -75.098816
+      objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810839, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: m_RootOrder
       value: 0
