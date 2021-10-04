@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 3134882149541579502}
   m_Layer: 10
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: monolith-2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1877,14 +1877,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf250f95ff1dac459e9515000c29858, type: 3}
---- !u!1 &6030047979942507320 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: dbf250f95ff1dac459e9515000c29858, type: 3}
-  m_PrefabInstance: {fileID: 2346064957051218481}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7346586401424408875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: dbf250f95ff1dac459e9515000c29858, type: 3}
+  m_PrefabInstance: {fileID: 2346064957051218481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6030047979942507320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: dbf250f95ff1dac459e9515000c29858, type: 3}
   m_PrefabInstance: {fileID: 2346064957051218481}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2375217252856981699

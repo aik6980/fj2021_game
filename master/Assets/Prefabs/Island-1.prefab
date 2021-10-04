@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 546023393}
   m_Layer: 10
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: monolith-1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,9 +24,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546023391}
-  m_LocalRotation: {x: 0.077372536, y: -0.45952344, z: -0.74433404, w: 0.4783498}
-  m_LocalPosition: {x: -0.0034, y: -0.02, z: -0.0004}
-  m_LocalScale: {x: 0.57058084, y: 0.523869, z: 0.5603616}
+  m_LocalRotation: {x: 0.077372454, y: -0.45952347, z: -0.74433404, w: 0.47834992}
+  m_LocalPosition: {x: -0.003407686, y: -0.020072646, z: -0.00039501023}
+  m_LocalScale: {x: 0.5705806, y: 0.523869, z: 0.56036156}
   m_Children: []
   m_Father: {fileID: 1424064170622830775}
   m_RootOrder: 0
