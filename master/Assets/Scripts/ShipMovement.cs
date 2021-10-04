@@ -231,7 +231,7 @@ public class ShipMovement : MonoBehaviour
 		*/
 		Quaternion deltaYaw = Quaternion.AngleAxis(velocity.y * Time.deltaTime, Vector3.up);
 		this.transform.rotation = deltaYaw * this.transform.rotation;
-		velocity = deltaYaw * velocity;
+		velocity = Quaternion.Inverse(deltaYaw) * velocity;
 
 		if (waterSplosh)
 		{

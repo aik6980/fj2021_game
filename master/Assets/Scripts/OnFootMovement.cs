@@ -107,6 +107,10 @@ public class OnFootMovement : MonoBehaviour
 				//also don't go under the water level
 				//if ((hitPoint - camCon.Tina.planetRoot.position).magnitude > camCon.Tina.radius)	//not accurate enough
 				{
+					//ToDo: also check if there's no collider blocking my way there; e.g. rocks, trees, etc
+					//just do a raycast
+					Debug.DrawLine(transform.position, hitPoint + Vector3.up * walkLevel, Color.green, 10);
+
 					transform.rotation = Quaternion.LookRotation(newPos - transform.position);
 					transform.position = hitPoint + Vector3.up * walkLevel;
 				}
