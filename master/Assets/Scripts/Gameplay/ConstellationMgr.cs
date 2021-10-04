@@ -176,11 +176,21 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
         else // turning canvas off
         {
             // add the curr one into the global list
-            if(m_curr_constellation.is_valid())
+            bool hasName = !string.IsNullOrEmpty(comp_name_inputfield.text);
+            if (m_curr_constellation.is_valid() && hasName)
             {
                 var name = comp_name_inputfield.text;
                 m_curr_constellation.name = name;
-                m_constellation_list.Add(m_curr_constellation);
+
+                // clone then add
+                var new_constellation = new Constellation();
+                foreach (var line in m_curr_constellation.lines)
+                {
+                    var go_clone = Instantiate(line.gameObject, line.gameObject.transform.parent);
+                    new_constellation.lines.Add(go_clone.GetComponent<LineRenderer>());
+                }
+
+                m_constellation_list.Add(new_constellation);
 
                 // create a Constellation GO with name tag
                 var go = Instantiate(constellation_prefab);
@@ -194,6 +204,10 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             }
 
             // destroy the temp one
+            foreach(var line in m_curr_constellation.lines)
+            {
+                Destroy(line.gameObject);
+            }
             m_curr_constellation = null;
             m_tmp_line = null;
 
