@@ -5280,22 +5280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 116849592, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: message
-      value: LeavingHome
-      objectReference: {fileID: 0}
-    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: blockName
-      value: Leaving Island-0
-      objectReference: {fileID: 0}
-    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: nodeRect.x
-      value: 280.05527
-      objectReference: {fileID: 0}
-    - target: {fileID: 116849594, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: nodeRect.y
-      value: -12.907173
-      objectReference: {fileID: 0}
     - target: {fileID: 666384188, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -5324,7 +5308,19 @@ PrefabInstance:
       propertyPath: methodParameters.Array.data[0].objValue.objectValue
       value: 
       objectReference: {fileID: 2024587959}
-    - target: {fileID: 666384215, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - target: {fileID: 1789103039, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1745705871}
+    - target: {fileID: 1789103111, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1745705871}
+    - target: {fileID: 1789103111, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: methodParameters.Array.data[0].objValue.objectValue
+      value: 
+      objectReference: {fileID: 1287148532}
+    - target: {fileID: 1653070067664897898, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: _targetGameObject.gameObjectVal
       value: 
       objectReference: {fileID: 1287148528}
@@ -5332,14 +5328,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 99599787}
-    - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: nodeRect.x
-      value: 252.99344
-      objectReference: {fileID: 0}
-    - target: {fileID: 3622296378070810834, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: nodeRect.y
-      value: -75.098816
-      objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810839, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: m_RootOrder
       value: 0

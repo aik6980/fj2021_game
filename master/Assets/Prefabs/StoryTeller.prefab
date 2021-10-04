@@ -82,8 +82,11 @@ GameObject:
   - component: {fileID: 666384211}
   - component: {fileID: 666384212}
   - component: {fileID: 666384213}
-  - component: {fileID: 666384215}
-  - component: {fileID: 666384262}
+  - component: {fileID: 1653070067664897898}
+  - component: {fileID: 1789103039}
+  - component: {fileID: 1789103110}
+  - component: {fileID: 1789103111}
+  - component: {fileID: 6257438741363819651}
   m_Layer: 0
   m_Name: StoryTeller
   m_TagString: Untagged
@@ -132,11 +135,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 8.892495, y: 233.6421}
+  scrollPos: {x: -85.85421, y: 335.33188}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 419
-  zoom: 0.7000003
+  blockViewHeight: 540
+  zoom: 0.6700003
   scrollViewRect:
     serializedVersion: 2
     x: 0
@@ -144,8 +147,9 @@ MonoBehaviour:
     width: 0
     height: 0
   selectedBlocks:
-  - {fileID: 116849594}
-  selectedCommands: []
+  - {fileID: 3622296378070810834}
+  selectedCommands:
+  - {fileID: 1789103110}
   variables: []
   description: 
   stepPause: 0
@@ -171,9 +175,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 265.8506
-    y: -17.95597
-    width: 145.71425
+    x: 252.99344
+    y: -75.098816
+    width: 148.50742
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -184,11 +188,15 @@ MonoBehaviour:
   commandList:
   - {fileID: 3622296378070810835}
   - {fileID: 666384191}
+  - {fileID: 1789103111}
+  - {fileID: 6257438741363819651}
+  - {fileID: 1653070067664897898}
+  - {fileID: 1789103110}
+  - {fileID: 1789103039}
   - {fileID: 666384190}
   - {fileID: 666384189}
   - {fileID: 666384188}
   - {fileID: 666384192}
-  - {fileID: 666384262}
   suppressAllAutoSelections: 0
 --- !u!114 &3622296378070810833
 MonoBehaviour:
@@ -250,7 +258,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 64.66873
     y: 147.2713
-    width: 160.22726
+    width: 161.94025
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -480,7 +488,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 91.032364
     y: -6.137764
-    width: 154.54544
+    width: 157.46265
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -636,7 +644,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 572.10034
     y: 425.1121
-    width: 96.590904
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -705,7 +713,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 436.87332
     y: 426.24857
-    width: 95.454544
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -774,7 +782,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 309.60052
     y: 428.52136
-    width: 95.454544
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -843,7 +851,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 183.46399
     y: 409.0236
-    width: 95.454544
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -913,7 +921,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 645.18146
     y: 116.531296
-    width: 95.454544
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -983,7 +991,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 477.21396
     y: 118.29402
-    width: 95.454544
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1052,7 +1060,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 282.3277
     y: 118.29409
-    width: 96.590904
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1122,7 +1130,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 816.4187
     y: -78.296776
-    width: 96.590904
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1191,7 +1199,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 603.3502
     y: -69.20588
-    width: 95.454544
+    width: 97.76117
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1260,7 +1268,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 427.96167
     y: -71.65805
-    width: 94.31818
+    width: 96.26863
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1285,7 +1293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 116849594}
   suppressBlockAutoSelect: 0
-  message: Island-0
+  message: LeavingHome
 --- !u!114 &116849593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,19 +1335,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 280.05524
-    y: -71.47859
-    width: 95.714264
+    x: 280.05527
+    y: -12.907173
+    width: 148.50742
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 45
-  blockName: Island-0
+  blockName: Leaving Island-0
   description: 
   eventHandler: {fileID: 116849592}
   commandList:
   - {fileID: 116849593}
-  - {fileID: 666384215}
   suppressAllAutoSelections: 0
 --- !u!114 &666384188
 MonoBehaviour:
@@ -1558,7 +1565,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 430.62314
     y: -172.50131
-    width: 112.85712
+    width: 115.67161
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1703,7 +1710,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 430.6233
     y: -19.774117
-    width: 144.28568
+    width: 147.01488
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1843,7 +1850,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 264.71436
     y: 169.99872
-    width: 147.14282
+    width: 148.50742
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1942,7 +1949,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 605.6228
     y: -18.637737
-    width: 145.71425
+    width: 148.50742
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2040,7 +2047,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 795.3962
     y: -16.36499
-    width: 147.14282
+    width: 148.50742
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2052,7 +2059,7 @@ MonoBehaviour:
   - {fileID: 666384212}
   - {fileID: 666384211}
   suppressAllAutoSelections: 0
---- !u!114 &666384215
+--- !u!114 &1653070067664897898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2064,7 +2071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 72
+  itemId: 71
   indentLevel: 0
   _targetGameObject:
     gameObjectRef: {fileID: 0}
@@ -2073,7 +2080,7 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
---- !u!114 &666384262
+--- !u!114 &1789103039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2082,12 +2089,103 @@ MonoBehaviour:
   m_GameObject: {fileID: 3622296378070810845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 121c2a4d38c149443adb81911f0fdd61, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 71
+  itemId: 74
   indentLevel: 0
-  getOrSet: 1
-  property: 2
-  gameObjectVar: {fileID: 0}
-  inOutVar: {fileID: 0}
+  description: 
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: StopLook
+  targetMethodText: 'StopLook (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1789103110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 73
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1789103111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 72
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: LookAt
+  targetMethodText: 'LookAt (Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &6257438741363819651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 75
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0

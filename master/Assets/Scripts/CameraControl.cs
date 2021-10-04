@@ -134,15 +134,38 @@ public class CameraControl : MonoBehaviour
 		// detect if we can get back on,
 		// activate ship controls on onfoot controls
 
+		euler = transform.rotation.eulerAngles;
+
+
+		if (lookTargetValid)
+		{   //mini "cutscene", look at and optionally zoom in
+			Quaternion look = Quaternion.LookRotation(lookTarget.position - cam.transform.position);
+			//lookEuler = look.eulerAngles;
+			euler.x = Mathf.LerpAngle(euler.x, look.eulerAngles.x, lookStrength * Time.deltaTime);
+			euler.y = Mathf.LerpAngle(euler.y, look.eulerAngles.y, lookStrength * Time.deltaTime);
+			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, lookStrength * Time.deltaTime);
+			transform.rotation = Quaternion.Euler(euler);
+
+			UpdateCam();
+		}
+
 		//Debug.Log(ConstellationMgr.Instance.is_canvas_mode_enabled());
 		if (ConstellationMgr.Instance.is_canvas_mode_enabled())
 		{
 			disembark.gameObject.SetActive(false);
 			embark.gameObject.SetActive(false);
+			if (Cursor.lockState == CursorLockMode.Locked)
+			{
+				Cursor.lockState = CursorLockMode.None;
+				mousePressTime = 0;
+			}
 			return;
 		}
 
-		switch(mode)
+		if (lookTargetValid)
+			return;
+
+		switch (mode)
 		{
 			case Mode.ShipNav:
 				DetectShore();
@@ -165,20 +188,6 @@ public class CameraControl : MonoBehaviour
 		if (!lookTargetValid && cam.fieldOfView != baseFOV)
 			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, baseFOV, 1.0f * Time.deltaTime);
 
-		euler = transform.rotation.eulerAngles;
-
-		if (lookTargetValid)
-		{   //mini "cutscene", look at and optionally zoom in
-			Quaternion look = Quaternion.LookRotation(lookTarget.position - cam.transform.position);
-			//lookEuler = look.eulerAngles;
-			euler.x = Mathf.LerpAngle(euler.x, look.eulerAngles.x, lookStrength * Time.deltaTime);
-			euler.y = Mathf.LerpAngle(euler.y, look.eulerAngles.y, lookStrength * Time.deltaTime);
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, lookStrength * Time.deltaTime);
-			transform.rotation = Quaternion.Euler(euler);
-
-			UpdateCam();
-
-		} else
 		if (Cursor.lockState == CursorLockMode.Locked)
 		{
 			//float x = Input.GetAxisRaw("Mouse X");
