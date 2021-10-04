@@ -112,8 +112,10 @@ public class OnFootMovement : MonoBehaviour
 					//just do a raycast
 					Debug.DrawLine(transform.position, hitPoint + Vector3.up * walkLevel, Color.green, 10);
 
+					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
 					transform.rotation = Quaternion.LookRotation(newPos - transform.position);
 					transform.position = hitPoint + Vector3.up * walkLevel;
+					
 				}
 			} else
 			{
