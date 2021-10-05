@@ -141,11 +141,15 @@ Shader "Custom/WaterSurfaceShader"
             float3 normalA = UnpackNormalWithScale(tex2D(_NormalA, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
             float3 normalB = UnpackNormalWithScale(tex2D(_NormalB, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
             
-            o.Albedo = final_colour.rgb /*+ texCUBE(_Cube, WorldReflectionVector(IN, o.Normal)).rgb * 0.0000000001*/;
-            o.Normal = normalize(normalA + normalB);
-            o.Smoothness = _Glossiness;
+			float3 normal = normalize(normalA + normalB);
+			foam += normal.y;
+
+			o.Albedo = final_colour.rgb /*+ texCUBE(_Cube, WorldReflectionVector(IN, o.Normal)).rgb * 0.0000000001*/
+						+ foam * _FoamIntensity;
+			o.Normal = normal;
+			o.Smoothness = _Glossiness;
 			o.Alpha = lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
-            o.Emission = foam * _FoamIntensity;
+            //o.Emission = foam * _FoamIntensity;
         }
         ENDCG
     }
