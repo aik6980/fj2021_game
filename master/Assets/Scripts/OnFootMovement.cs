@@ -23,6 +23,12 @@ public class OnFootMovement : MonoBehaviour
 	public Vector3 moveRelPos;
 	public float stepTimer;
 
+	public float maxGroundSlopeUp = 45.0f;
+	public Vector3 stepFrom;
+
+	public float currentLevel;
+	public float seaLevelMin = 195.0f;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -91,6 +97,11 @@ public class OnFootMovement : MonoBehaviour
 			}
 		}
 
+		Transform planetRoot = PlanetTurner.singleton.transform;
+		Vector3 localUp = (this.transform.position - planetRoot.position).normalized;
+
+		currentLevel = (this.transform.position - planetRoot.position).magnitude;
+
 		if (newPos != oldPos)
 		{
 			RaycastHit hit;
@@ -99,19 +110,31 @@ public class OnFootMovement : MonoBehaviour
 			Vector3 dir = Vector3.down;
 			p1 -= dir * maxHeight;
 			Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
+
 			if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
 			{
 				depth = hit.distance;
 				hitPoint = hit.point;
 				hitNormal = hit.normal;
 				hitCollider = hit.collider;
-				//also don't go under the water level
-				//if ((hitPoint - camCon.Tina.planetRoot.position).magnitude > camCon.Tina.radius)	//not accurate enough
+
+				Vector3 nextPos = hitPoint + Vector3.up * walkLevel;
+				Vector3 delta = nextPos - transform.position;
+
+				bool stepUp = Vector3.Dot(delta, localUp) >= 0;
+				float groundSlopeThere = Mathf.Acos(Vector3.Dot(hitNormal, localUp)) * Mathf.Rad2Deg;
+
+				//do not step on too steep ground
+				if (groundSlopeThere >= maxGroundSlopeUp)
+				{//too steep
+				} else
+				//do not step DOWN into water (but allow coming up out)
+				if (!stepUp && (nextPos - camCon.Tina.planetRoot.position).magnitude < seaLevelMin) //not accurate enough but cheap early test
 				{
-					//ToDo: also check if there's no collider blocking my way there; e.g. rocks, trees, etc
-					//just do a raycast
-					Vector3 nextPos = hitPoint + Vector3.up * walkLevel;
-					Vector3 delta = nextPos - transform.position;
+
+				} else
+				//also check if there's no collider blocking my way there; e.g. rocks, trees, etc
+				{
 					Debug.DrawLine(transform.position, nextPos, Color.green, 10);
 
 					if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
@@ -135,8 +158,7 @@ public class OnFootMovement : MonoBehaviour
 		}
 
 		//stay upright
-		Transform planetRoot = PlanetTurner.singleton.transform;
-		Vector3 localUp = (this.transform.position - planetRoot.position).normalized;
+		localUp = (this.transform.position - planetRoot.position).normalized;
 		Vector3 cross = Vector3.Cross(this.transform.up, localUp);
 		if (cross != Vector3.zero)
 		{
