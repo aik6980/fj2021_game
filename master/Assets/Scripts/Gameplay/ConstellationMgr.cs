@@ -16,6 +16,8 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     public GameObject constellation_prefab;
 
     public Button activate_button;
+    public float fade_time = 0.4f;
+    private float _fade_velocity;
 	public Button exit_button;
 	public Button save_button;
 	public GameObject canvas_panel;
@@ -36,7 +38,10 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
         m_enable_constellation_canvas = false;
 
         canvas_panel.SetActive(false);
-        activate_button.gameObject.SetActive(true);
+        activate_button.enabled = Camera.main.transform.forward.y > pitchThresholdCosine;
+        var color = activate_button.image.color;
+        color.a = activate_button.enabled ? 1f : 0f;
+        activate_button.image.color = color;
     }
 
 	public void Exit()
@@ -54,8 +59,15 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     {
 		if (!is_canvas_mode_enabled())
 		{
-			activate_button.gameObject.SetActive(Camera.main.transform.forward.y > pitchThresholdCosine);
-		} else
+            bool activation_button_enabled = Camera.main.transform.forward.y > pitchThresholdCosine;
+            float opacity_target = (activate_button.enabled ? 1f : 0f);
+
+            activate_button.enabled = activation_button_enabled;
+            var color = activate_button.image.color;
+            color.a = Mathf.SmoothDamp(color.a, opacity_target, ref _fade_velocity, fade_time);
+            activate_button.image.color = color;
+        } 
+        else
 		{
 			bool hasName = !string.IsNullOrEmpty(comp_name_inputfield.text);
 			save_button.gameObject.SetActive(hasName && m_curr_constellation.lines.Count > 0);
