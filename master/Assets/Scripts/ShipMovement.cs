@@ -78,7 +78,6 @@ public class ShipMovement : MonoBehaviour
 		steerClickRadius = Screen.height * 0.2f;
 	}
 
-	[ExecuteInEditMode]
 	private float SuperSpeed()
     {
 		if (Input.GetKey(KeyCode.LeftShift))
