@@ -136,7 +136,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1
-  maxHeight: 1
+  maxHeight: 0.5
+  maxDisembarkDepth: 0.56
   maxDistance: 1.2
   depth: 0
   hitPoint: {x: 0, y: 0, z: 0}
