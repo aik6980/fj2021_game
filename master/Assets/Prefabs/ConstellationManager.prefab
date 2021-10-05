@@ -43,9 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3c60eeac36c644093ac1d623f22226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  line_material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  line_material: {fileID: 2100000, guid: 4037fde0dcaee9245881f654f86a44e4, type: 2}
   constellation_prefab: {fileID: 8747106032892393160, guid: 52caf2869013282489646a0ae60b4b2d, type: 3}
   activate_button: {fileID: 0}
+  fade_time: 0.4
+  exit_button: {fileID: 0}
+  save_button: {fileID: 0}
   canvas_panel: {fileID: 0}
   comp_name_inputfield: {fileID: 0}
-  pitchThresholdCosine: 0.45
+  line_width: 2
+  pitchThresholdCosine: 0.25

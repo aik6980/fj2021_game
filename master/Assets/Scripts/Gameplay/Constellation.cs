@@ -52,7 +52,7 @@ public class Constellation
 
         foreach(var line in src.lines)
         {
-            dest.go_position.Add(line.gameObject.transform.position);
+            dest.go_position.Add(line.gameObject.transform.localPosition);
             dest.beg_pos.Add(line.GetPosition(0));
             dest.end_pos.Add(line.GetPosition(1));
         }
@@ -70,7 +70,7 @@ public class Constellation
         {
             var go = new GameObject();
             go.transform.SetParent(ConstellationMgr.Instance.transform.parent, false);
-            go.transform.position = src.go_position[i];
+            go.transform.localPosition = src.go_position[i];
 
             var line = go.AddComponent<LineRenderer>();
             line.useWorldSpace = false;
