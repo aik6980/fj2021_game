@@ -197,6 +197,12 @@ public class ShipMovement : MonoBehaviour
 		if (Input.GetKey(KeyCode.D))
 			steeringAngle += steeringSpeedKeyboard * Time.deltaTime;
 
+		//hold acceleration
+		if (Input.GetKey(KeyCode.W))
+			velocity.z += 25.0f * Time.deltaTime;
+		if (Input.GetKey(KeyCode.S))
+			velocity.z -= 25.0f * Time.deltaTime;
+
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
 		IslandCollision();
