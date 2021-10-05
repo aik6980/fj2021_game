@@ -64,6 +64,8 @@ public class ShipMovement : MonoBehaviour
 	public float steerBaseSpeed = 1.0f;
 	public float steerBaseForce = 1.0f;
 
+
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -96,7 +98,7 @@ public class ShipMovement : MonoBehaviour
     {
 		float update_drag = SuperSpeed();
 
-		if (anchored)
+		if (anchored || ConstellationMgr.Instance.is_canvas_mode_enabled())
 		{
 			velocity = Vector3.zero;
 			if (waterSplosh)
