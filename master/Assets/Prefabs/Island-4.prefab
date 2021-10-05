@@ -2328,6 +2328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.692
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fe9b665abff764991a9a06990d0b91db, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e765546635f2d4f5295fa440478818e5, type: 2}
     - target: {fileID: 919132149155446097, guid: fe9b665abff764991a9a06990d0b91db, type: 3}
       propertyPath: m_Name
       value: monolith_merman
