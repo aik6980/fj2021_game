@@ -24,10 +24,12 @@ public class OnFootMovement : MonoBehaviour
 	public float stepTimer;
 
 	public float maxGroundSlopeUp = 45.0f;
-	public Vector3 stepFrom;
 
 	public float currentLevel;
 	public float seaLevelMin = 195.0f;
+
+	public Vector3 modelOffset;
+	public Transform model;
 
 	// Start is called before the first frame update
 	void Start()
@@ -64,6 +66,8 @@ public class OnFootMovement : MonoBehaviour
 		if (stepTimer > 0)
 		{
 			stepTimer -= Time.deltaTime;
+			if (model)
+				model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
 		} else
 		if (!stepped)
 		{//move on WASD hold
@@ -80,6 +84,7 @@ public class OnFootMovement : MonoBehaviour
 				stepped = true;
 				moveTargetValid = false;
 				stepTimer = stepTime;
+				modelOffset = Vector3.zero;
 				AudioManager.Instance.PlaySFX("footstep");
 			}
 		}
@@ -87,13 +92,14 @@ public class OnFootMovement : MonoBehaviour
 		if (!stepped && moveTargetValid && stepTimer <= 0)
 		{
 			Vector3 wp = moveTarget.transform.TransformPoint(moveRelPos);
+			newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
+			stepTimer = stepTime;
+			modelOffset = Vector3.zero;
+
+			Debug.DrawLine(transform.position, wp, Color.white, 5.0f);
 			if ((wp - newPos).magnitude < stepLength)
 			{
 				moveTargetValid = false;
-			} else
-			{
-				newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
-				stepTimer = stepTime;
 			}
 		}
 
@@ -127,11 +133,12 @@ public class OnFootMovement : MonoBehaviour
 				//do not step on too steep ground
 				if (groundSlopeThere >= maxGroundSlopeUp)
 				{//too steep
+					Debug.Log("too steep");
 				} else
 				//do not step DOWN into water (but allow coming up out)
 				if (!stepUp && (nextPos - camCon.Tina.planetRoot.position).magnitude < seaLevelMin) //not accurate enough but cheap early test
 				{
-
+					Debug.Log("water");
 				} else
 				//also check if there's no collider blocking my way there; e.g. rocks, trees, etc
 				{
@@ -139,11 +146,19 @@ public class OnFootMovement : MonoBehaviour
 
 					if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
 					{//hit something; cancel
-						//FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
+					 //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
+						Debug.Log("obstacle");
 					} else
 					{
-						transform.rotation = Quaternion.LookRotation(newPos - transform.position);  //stays horizontal(-ish)
+						//Debug.Log(transform.position.ToString() + "->" + nextPos.ToString());
+						Vector3 lookEuler = Quaternion.LookRotation(nextPos - transform.position).eulerAngles;
+						lookEuler.x = 0.0f;
+						lookEuler.z = 0.0f;
+						transform.rotation = Quaternion.Euler(lookEuler);
+
+						Vector3 prevPos = transform.position;
 						transform.position = nextPos;
+						modelOffset = this.transform.InverseTransformPoint(prevPos);
 
 						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
 					}
@@ -166,7 +181,11 @@ public class OnFootMovement : MonoBehaviour
 			this.transform.rotation = turnQ * this.transform.rotation;
 		}
 
-
+		if (stepTimer > 0)
+		{
+			if (model)
+				model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)
