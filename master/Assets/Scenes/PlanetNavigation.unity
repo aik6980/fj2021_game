@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4665774, g: 0.35478517, b: 0.1627515, a: 1}
+  m_IndirectSpecularColor: {r: 0.46656853, g: 0.35477653, b: 0.16274965, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14342,10 +14342,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1338331850}
     - target: {fileID: 3853897748309878068, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
-      propertyPath: canEmbark
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3853897748309878068, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: disembark
       value: 
       objectReference: {fileID: 839386971}
@@ -14401,17 +14397,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmoothCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 3853897748531486213, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.19137388
-      objectReference: {fileID: 0}
-    - target: {fileID: 3853897748531486213, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.3259243
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3853897748531486212, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
-    - {fileID: -1223929253322850223, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
 --- !u!1001 &4640767492573799676
 PrefabInstance:

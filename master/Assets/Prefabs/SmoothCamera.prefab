@@ -143,7 +143,7 @@ MonoBehaviour:
   hitNormal: {x: 0, y: 0, z: 0}
   hitCollider: {fileID: 0}
   canDisembark: 0
-  canEmbark: 1
+  canEmbark: 0
   disembark: {fileID: 0}
   embark: {fileID: 0}
   mode: 1
@@ -182,8 +182,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3853897748531486213}
   - component: {fileID: 3853897748531486211}
-  - component: {fileID: 3853897748531486212}
-  - component: {fileID: -1223929253322850223}
+  - component: {fileID: 1923716343}
+  - component: {fileID: 3851488792368086602}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -248,7 +248,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3853897748531486212
+--- !u!81 &1923716343
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,7 +256,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3853897748531486214}
   m_Enabled: 1
---- !u!114 &-1223929253322850223
+--- !u!114 &3851488792368086602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
