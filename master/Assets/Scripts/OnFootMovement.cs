@@ -98,7 +98,7 @@ public class OnFootMovement : MonoBehaviour
 			Vector3 p1 = newPos;
 			Vector3 dir = Vector3.down;
 			p1 -= dir * maxHeight;
-			Debug.DrawRay(p1, dir * maxDistance);
+			Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
 			if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
 			{
 				depth = hit.distance;

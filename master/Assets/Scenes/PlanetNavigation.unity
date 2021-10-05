@@ -3808,6 +3808,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3c60eeac36c644093ac1d623f22226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1656679646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6836159393075762870, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+  m_PrefabInstance: {fileID: 2346064958392405831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1656679648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656679646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4441021902536305106, guid: 26926d50740b8b84e93bf55ab6d410d7, type: 3}
 --- !u!4 &1687705824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4640767492112972828, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
@@ -9555,10 +9574,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 2056955869}
     m_Modifications:
     - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
-      propertyPath: tiltScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: waterSplosh
       value: 
       objectReference: {fileID: 202451878}
@@ -9566,10 +9581,6 @@ PrefabInstance:
       propertyPath: steeringWheelUI
       value: 
       objectReference: {fileID: 5441226067251856949}
-    - target: {fileID: 746564115713440129, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
-      propertyPath: emissionRateScale
-      value: 0.002
-      objectReference: {fileID: 0}
     - target: {fileID: 746564115713440133, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -9675,7 +9686,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island-0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5657690022903189078, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5657690022903189078, guid: d21a9d562797dea4ba1383204445e425, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d21a9d562797dea4ba1383204445e425, type: 3}
 --- !u!1001 &3853897749002210511
 PrefabInstance:
