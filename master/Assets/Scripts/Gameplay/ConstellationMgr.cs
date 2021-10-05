@@ -12,6 +12,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     Constellation m_curr_constellation;
     LineRenderer m_tmp_line;
     public Material line_material;
+	public float lineWidth = 5.0f;
 
     public GameObject constellation_prefab;
 
@@ -108,7 +109,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
                     go.transform.localPosition = inside[0].position;
                     m_tmp_line = go.AddComponent<LineRenderer>();
                     m_tmp_line.material = line_material;
-                    m_tmp_line.startWidth = m_tmp_line.endWidth = 2.0f;
+                    m_tmp_line.startWidth = m_tmp_line.endWidth = lineWidth;
                     m_tmp_line.useWorldSpace = false;
                     m_tmp_line.positionCount = 2;
                     m_tmp_line.SetPosition(0, Vector3.zero);

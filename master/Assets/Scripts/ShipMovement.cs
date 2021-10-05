@@ -19,6 +19,8 @@ public class ShipMovement : MonoBehaviour
 	public Transform sploshTrans;
 	public float emissionRateScale = 0.1f;
 
+	public Animator sail;
+
 	public LayerMask mask;
 	public float maxHeight = 1.0f;
 	public float maxDistance = 2.0f;
@@ -62,6 +64,8 @@ public class ShipMovement : MonoBehaviour
 	public float steerBaseSpeed = 1.0f;
 	public float steerBaseForce = 1.0f;
 
+
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -94,7 +98,7 @@ public class ShipMovement : MonoBehaviour
     {
 		float update_drag = SuperSpeed();
 
-		if (anchored)
+		if (anchored || ConstellationMgr.Instance.is_canvas_mode_enabled())
 		{
 			velocity = Vector3.zero;
 			if (waterSplosh)
@@ -244,6 +248,10 @@ public class ShipMovement : MonoBehaviour
 			shape.position = waterSplosh.transform.InverseTransformPoint(sploshTrans.transform.position);
 			shape.rotation = (Quaternion.Inverse(waterSplosh.transform.rotation) * sploshTrans.transform.rotation).eulerAngles;
 		}
+
+		// These constants should probably be exposed 
+		sail.SetFloat("Steering", Mathf.Clamp(velocity.y / 30f, -1, 1));
+		sail.SetFloat("ForwardVel", Mathf.Clamp(velocity.z / 40f, -1, 1), 0.5f, Time.deltaTime);
 
 /*		//FOIL RAISE ABOVE WATER EFFECT PROTO
 		if (velocity.z > 10) //THRESHOLD VELOCITY

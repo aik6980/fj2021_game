@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 public class CameraControl : MonoBehaviour
 {
+	public static CameraControl singleton;
+
 	[DllImport("user32.dll")]
 	static extern bool SetCursorPos(int X, int Y);
 
@@ -79,6 +81,11 @@ public class CameraControl : MonoBehaviour
 
 	public ConstellationMgr constellationManager;
 
+
+	private void Awake()
+	{
+		singleton = this;
+	}
 
 	// Start is called before the first frame update
 	void Start()
