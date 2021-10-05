@@ -35,6 +35,7 @@ public class PlanetTurner : MonoBehaviour
 			planetRoot.rotation = turnQ * planetRoot.rotation;
 			//keep it upright in case it doesn't do it itself
 			whatToFollow.rotation = Quaternion.Inverse(turnQ) * whatToFollow.rotation;
+			CameraControl.singleton.transform.rotation = Quaternion.Inverse(turnQ) * CameraControl.singleton.transform.rotation;
 		}
 
 		//

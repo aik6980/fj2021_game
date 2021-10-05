@@ -100,8 +100,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.1637041
     - serializedVersion: 3
-      time: 0.003363612
-      value: 0.7688691
+      time: 0.0067510633
+      value: 0.5051057
       inSlope: 1.0077718
       outSlope: 1.0077718
       tangentMode: 0
@@ -109,8 +109,8 @@ MonoBehaviour:
       inWeight: 0.12656036
       outWeight: 0.14193825
     - serializedVersion: 3
-      time: 1.0205383
-      value: 7.5475464
+      time: 1.0238953
+      value: 4.837948
       inSlope: 0.23892722
       outSlope: 0.23892722
       tangentMode: 0
@@ -136,7 +136,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1
-  maxHeight: 1
+  maxHeight: 0.5
+  maxDisembarkDepth: 0.56
   maxDistance: 1.2
   depth: 0
   hitPoint: {x: 0, y: 0, z: 0}
@@ -228,7 +229,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.05
   far clip plane: 1000
   field of view: 60
   orthographic: 0

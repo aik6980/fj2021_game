@@ -53,6 +53,9 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
         var color = activate_button.image.color;
         color.a = activate_button.enabled ? 1f : 0f;
         activate_button.image.color = color;
+
+        // load the existing canvas
+        load_constellation_data();
     }
 
     public void Exit()
@@ -69,18 +72,18 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     void Update()
     {
         /// test save/load
-        if(Input.GetKeyDown(KeyCode.G))
+        if(Input.GetKeyDown(KeyCode.Y) && Input.GetKey(KeyCode.LeftControl))
         {
             save_constellation_data();
         }
 
-        if(Input.GetKeyDown(KeyCode.H))
+        if(Input.GetKeyDown(KeyCode.T) && Input.GetKey(KeyCode.LeftControl))
         {
             reset_constellation_data();
             load_constellation_data();
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftControl))
         {
             reset_constellation_data();
         }
@@ -211,6 +214,8 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
             canvas_panel.SetActive(true);
             activate_button.gameObject.SetActive(false);
+
+            comp_name_inputfield.text = "";
         }
         else // turning canvas off
         {

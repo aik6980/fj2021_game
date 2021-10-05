@@ -16,7 +16,8 @@ Shader "Custom/WaterSurfaceShader"
         [Normal]_NormalA("Normal A", 2D) = "bump" {}
         [Normal]_NormalB("Normal B", 2D) = "bump" {}
         _NormalStrength("Normal strength", float) = 1
-        _NormalPanningVelocity("Panning velocity", Vector) = (0,0,0,0)
+		_NormalBStrength("NormalB strength", float) = 1
+		_NormalPanningVelocity("Panning velocity", Vector) = (0,0,0,0)
 
         [Header(Foam)]
         _FoamTexture("Foam texture", 2D) = "white" {}
@@ -67,6 +68,7 @@ Shader "Custom/WaterSurfaceShader"
         float4 _NormalA_ST;
         float4 _NormalB_ST;
         float _NormalStrength;
+		float _NormalBStrength;
         float4 _NormalPanningVelocity;
 
         sampler2D _FoamTexture;
@@ -139,13 +141,17 @@ Shader "Custom/WaterSurfaceShader"
             float2 uv_offset = renderTex.rg + _Time.y * _NormalPanningVelocity.xy;
 
             float3 normalA = UnpackNormalWithScale(tex2D(_NormalA, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
-            float3 normalB = UnpackNormalWithScale(tex2D(_NormalB, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
+            float3 normalB = UnpackNormalWithScale(tex2D(_NormalB, uv * _NormalB_ST.xy + uv_offset), _NormalBStrength);
             
-            o.Albedo = final_colour.rgb /*+ texCUBE(_Cube, WorldReflectionVector(IN, o.Normal)).rgb * 0.0000000001*/;
-            o.Normal = normalize(normalA + normalB);
-            o.Smoothness = _Glossiness;
+			float3 normal = normalize(normalA + normalB);
+			foam += normal.y;
+
+			o.Albedo = final_colour.rgb /*+ texCUBE(_Cube, WorldReflectionVector(IN, o.Normal)).rgb * 0.0000000001*/
+						+ foam * _FoamIntensity;
+			o.Normal = normal;
+			o.Smoothness = _Glossiness;
 			o.Alpha = lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
-            o.Emission = foam * _FoamIntensity;
+            //o.Emission = foam * _FoamIntensity;
         }
         ENDCG
     }

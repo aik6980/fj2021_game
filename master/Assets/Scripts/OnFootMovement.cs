@@ -23,6 +23,14 @@ public class OnFootMovement : MonoBehaviour
 	public Vector3 moveRelPos;
 	public float stepTimer;
 
+	public float maxGroundSlopeUp = 45.0f;
+
+	public float currentLevel;
+	public float seaLevelMin = 195.0f;
+
+	public Vector3 modelOffset;
+	public Transform model;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -32,6 +40,8 @@ public class OnFootMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (ConstellationMgr.Instance.is_canvas_mode_enabled()) return;
+
 		if (camCon.mode != CameraControl.Mode.LandWalk) return;
 
 		//ToDo: point-and click (detect if i clicked on valid ground and move to where)
@@ -58,6 +68,8 @@ public class OnFootMovement : MonoBehaviour
 		if (stepTimer > 0)
 		{
 			stepTimer -= Time.deltaTime;
+			if (model)
+				model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
 		} else
 		if (!stepped)
 		{//move on WASD hold
@@ -74,6 +86,7 @@ public class OnFootMovement : MonoBehaviour
 				stepped = true;
 				moveTargetValid = false;
 				stepTimer = stepTime;
+				modelOffset = Vector3.zero;
 				AudioManager.Instance.PlaySFX("footstep");
 			}
 		}
@@ -81,15 +94,21 @@ public class OnFootMovement : MonoBehaviour
 		if (!stepped && moveTargetValid && stepTimer <= 0)
 		{
 			Vector3 wp = moveTarget.transform.TransformPoint(moveRelPos);
+			newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
+			stepTimer = stepTime;
+			modelOffset = Vector3.zero;
+
+			Debug.DrawLine(transform.position, wp, Color.white, 5.0f);
 			if ((wp - newPos).magnitude < stepLength)
 			{
 				moveTargetValid = false;
-			} else
-			{
-				newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
-				stepTimer = stepTime;
 			}
 		}
+
+		Transform planetRoot = PlanetTurner.singleton.transform;
+		Vector3 localUp = (this.transform.position - planetRoot.position).normalized;
+
+		currentLevel = (this.transform.position - planetRoot.position).magnitude;
 
 		if (newPos != oldPos)
 		{
@@ -98,24 +117,53 @@ public class OnFootMovement : MonoBehaviour
 			Vector3 p1 = newPos;
 			Vector3 dir = Vector3.down;
 			p1 -= dir * maxHeight;
-			Debug.DrawRay(p1, dir * maxDistance);
+			Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
+
 			if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
 			{
 				depth = hit.distance;
 				hitPoint = hit.point;
 				hitNormal = hit.normal;
 				hitCollider = hit.collider;
-				//also don't go under the water level
-				//if ((hitPoint - camCon.Tina.planetRoot.position).magnitude > camCon.Tina.radius)	//not accurate enough
-				{
-					//ToDo: also check if there's no collider blocking my way there; e.g. rocks, trees, etc
-					//just do a raycast
-					Debug.DrawLine(transform.position, hitPoint + Vector3.up * walkLevel, Color.green, 10);
 
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
-					transform.rotation = Quaternion.LookRotation(newPos - transform.position);
-					transform.position = hitPoint + Vector3.up * walkLevel;
-					
+				Vector3 nextPos = hitPoint + Vector3.up * walkLevel;
+				Vector3 delta = nextPos - transform.position;
+
+				bool stepUp = Vector3.Dot(delta, localUp) >= 0;
+				float groundSlopeThere = Mathf.Acos(Vector3.Dot(hitNormal, localUp)) * Mathf.Rad2Deg;
+
+				//do not step on too steep ground
+				if (groundSlopeThere >= maxGroundSlopeUp)
+				{//too steep
+					Debug.Log("too steep");
+				} else
+				//do not step DOWN into water (but allow coming up out)
+				if (!stepUp && (nextPos - camCon.Tina.planetRoot.position).magnitude < seaLevelMin) //not accurate enough but cheap early test
+				{
+					Debug.Log("water");
+				} else
+				//also check if there's no collider blocking my way there; e.g. rocks, trees, etc
+				{
+					Debug.DrawLine(transform.position, nextPos, Color.green, 10);
+
+					if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
+					{//hit something; cancel
+					 //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
+						Debug.Log("obstacle");
+					} else
+					{
+						//Debug.Log(transform.position.ToString() + "->" + nextPos.ToString());
+						Vector3 lookEuler = Quaternion.LookRotation(nextPos - transform.position).eulerAngles;
+						lookEuler.x = 0.0f;
+						lookEuler.z = 0.0f;
+						transform.rotation = Quaternion.Euler(lookEuler);
+
+						Vector3 prevPos = transform.position;
+						transform.position = nextPos;
+						modelOffset = this.transform.InverseTransformPoint(prevPos);
+
+						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
+					}
 				}
 			} else
 			{
@@ -127,13 +175,19 @@ public class OnFootMovement : MonoBehaviour
 		}
 
 		//stay upright
-		Vector3 cross = Vector3.Cross(this.transform.up, Vector3.up);
+		localUp = (this.transform.position - planetRoot.position).normalized;
+		Vector3 cross = Vector3.Cross(this.transform.up, localUp);
 		if (cross != Vector3.zero)
 		{
 			Quaternion turnQ = Quaternion.AngleAxis(cross.magnitude * Mathf.Rad2Deg, cross.normalized);
 			this.transform.rotation = turnQ * this.transform.rotation;
 		}
 
+		if (stepTimer > 0)
+		{
+			if (model)
+				model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
+		}
 	}
 
 	private void OnTriggerEnter(Collider other)

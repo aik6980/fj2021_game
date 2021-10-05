@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 
 public class CameraControl : MonoBehaviour
 {
+	public static CameraControl singleton;
+
 	[DllImport("user32.dll")]
 	static extern bool SetCursorPos(int X, int Y);
 
@@ -42,6 +44,7 @@ public class CameraControl : MonoBehaviour
 	public Vector3 shoreDetector = Vector3.forward;
 	public LayerMask mask;
 	public float maxHeight = 1.0f;
+	public float maxDisembarkDepth = 1.0f;
 	public float maxDistance = 1.2f;
 	public float depth;
 	public Vector3 hitPoint;
@@ -79,6 +82,11 @@ public class CameraControl : MonoBehaviour
 
 	public ConstellationMgr constellationManager;
 
+
+	private void Awake()
+	{
+		singleton = this;
+	}
 
 	// Start is called before the first frame update
 	void Start()
@@ -327,8 +335,11 @@ public class CameraControl : MonoBehaviour
 	{
 		RaycastHit hit;
 
-		Vector3 p1 = this.transform.TransformPoint(shoreDetector);
-		Vector3 dir = this.transform.TransformDirection(Vector3.down);
+		Vector3 euler = this.transform.rotation.eulerAngles;
+		euler.x = euler.z = 0.0f;
+
+		Vector3 p1 = this.transform.position + Quaternion.Euler(euler) * shoreDetector;// this.transform.TransformPoint(shoreDetector);
+		Vector3 dir = Vector3.down; //this.transform.TransformDirection(Vector3.down);
 		p1 -= dir * maxHeight;
 		if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
 		{
@@ -344,8 +355,8 @@ public class CameraControl : MonoBehaviour
 			hitCollider = null;
 		}
 
-		canDisembark = depth < maxHeight;
-		Debug.DrawLine(p1, p1 + dir * depth, depth < maxHeight ? Color.green : Color.red);
+		canDisembark = depth < maxDisembarkDepth;
+		Debug.DrawLine(p1, p1 + dir * depth, canDisembark ? Color.green : Color.red);
 	}
 
 	public void OnPressDisembark()

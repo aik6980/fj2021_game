@@ -64,6 +64,8 @@ public class ShipMovement : MonoBehaviour
 	public float steerBaseSpeed = 1.0f;
 	public float steerBaseForce = 1.0f;
 
+
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -96,7 +98,7 @@ public class ShipMovement : MonoBehaviour
     {
 		float update_drag = SuperSpeed();
 
-		if (anchored)
+		if (anchored || ConstellationMgr.Instance.is_canvas_mode_enabled())
 		{
 			velocity = Vector3.zero;
 			if (waterSplosh)
@@ -194,6 +196,12 @@ public class ShipMovement : MonoBehaviour
 			steeringAngle -= steeringSpeedKeyboard * Time.deltaTime;
 		if (Input.GetKey(KeyCode.D))
 			steeringAngle += steeringSpeedKeyboard * Time.deltaTime;
+
+		//hold acceleration
+		if (Input.GetKey(KeyCode.W))
+			velocity.z += 25.0f * Time.deltaTime;
+		if (Input.GetKey(KeyCode.S))
+			velocity.z -= 25.0f * Time.deltaTime;
 
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
