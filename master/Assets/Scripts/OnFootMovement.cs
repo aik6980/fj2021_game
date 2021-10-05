@@ -40,6 +40,8 @@ public class OnFootMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (ConstellationMgr.Instance.is_canvas_mode_enabled()) return;
+
 		if (camCon.mode != CameraControl.Mode.LandWalk) return;
 
 		//ToDo: point-and click (detect if i clicked on valid ground and move to where)
