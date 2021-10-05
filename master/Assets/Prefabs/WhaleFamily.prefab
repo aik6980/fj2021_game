@@ -62,7 +62,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetRoot: {fileID: 0}
   radius: 0
+  moveSpeed: 1
   velocity: {x: 0, y: 0, z: 1}
+  turnTimeMin: 1
+  turnTimeMax: 10
+  maxTurnSpeed: 5
+  lateralDrag: 1
+  turnTimer: 0
+  worldVel: {x: 0, y: 0, z: 0}
 --- !u!111 &4953210763524395415
 Animation:
   m_ObjectHideFlags: 0
@@ -93,7 +100,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetRoot: {fileID: 0}
   radius: 0
+  moveSpeed: 1
   velocity: {x: 0, y: 0, z: 1}
+  turnTimeMin: 1
+  turnTimeMax: 10
+  maxTurnSpeed: 5
+  lateralDrag: 1
+  turnTimer: 0
+  worldVel: {x: 0, y: 0, z: 0}
 --- !u!1 &3084452731863866308
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,11 +4987,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae3a327e6e751184991b95199fabb1d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42.597374
+      value: 42.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae3a327e6e751184991b95199fabb1d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 198.61627
+      value: 198.45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae3a327e6e751184991b95199fabb1d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5052,11 +5066,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae3a327e6e751184991b95199fabb1d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.69
+      value: 44.66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae3a327e6e751184991b95199fabb1d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 198.3
+      value: 198.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ae3a327e6e751184991b95199fabb1d4, type: 3}
       propertyPath: m_LocalRotation.w
