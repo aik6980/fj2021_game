@@ -110,12 +110,20 @@ public class OnFootMovement : MonoBehaviour
 				{
 					//ToDo: also check if there's no collider blocking my way there; e.g. rocks, trees, etc
 					//just do a raycast
-					Debug.DrawLine(transform.position, hitPoint + Vector3.up * walkLevel, Color.green, 10);
+					Vector3 nextPos = hitPoint + Vector3.up * walkLevel;
+					Vector3 delta = nextPos - transform.position;
+					Debug.DrawLine(transform.position, nextPos, Color.green, 10);
 
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
-					transform.rotation = Quaternion.LookRotation(newPos - transform.position);
-					transform.position = hitPoint + Vector3.up * walkLevel;
-					
+					if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
+					{//hit something; cancel
+						//FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
+					} else
+					{
+						transform.rotation = Quaternion.LookRotation(newPos - transform.position);  //stays horizontal(-ish)
+						transform.position = nextPos;
+
+						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
+					}
 				}
 			} else
 			{
