@@ -11250,10 +11250,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1849722547}
     - target: {fileID: 9034063671662732941, guid: 9546930966c76774ea80c234b9a43c18, type: 3}
-      propertyPath: line_material
-      value: 
-      objectReference: {fileID: 2100000, guid: 4037fde0dcaee9245881f654f86a44e4, type: 2}
-    - target: {fileID: 9034063671662732941, guid: 9546930966c76774ea80c234b9a43c18, type: 3}
       propertyPath: activate_button
       value: 
       objectReference: {fileID: 140533164}
