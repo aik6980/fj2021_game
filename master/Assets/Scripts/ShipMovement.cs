@@ -64,6 +64,14 @@ public class ShipMovement : MonoBehaviour
 	public float steerBaseSpeed = 1.0f;
 	public float steerBaseForce = 1.0f;
 
+	private FMOD.Studio.EventInstance instance;
+
+	FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance)
+    {
+        FMOD.Studio.PLAYBACK_STATE pS;
+        instance.getPlaybackState(out pS);
+        return pS;        
+    }
 
 
 	// Start is called before the first frame update
@@ -202,6 +210,27 @@ public class ShipMovement : MonoBehaviour
 		if (Input.GetKey(KeyCode.S))
 			velocity.z -= 25.0f * Time.deltaTime;
 
+			
+		//play and stop music
+		if (PlaybackState(instance) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+		
+		{
+			if (velocity.z > 20.0f)
+				{
+					instance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
+					instance.start();
+				}
+		}
+		if (PlaybackState(instance) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+		{
+			if (velocity.z < 1.0f)
+				{
+					instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+					instance.release();
+				}
+		}
+
+
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
 		IslandCollision();
@@ -256,21 +285,20 @@ public class ShipMovement : MonoBehaviour
 
 		// These constants should probably be exposed 
 		sail.SetFloat("Steering", Mathf.Clamp(velocity.y / 30f, -1, 1));
-		sail.SetFloat("ForwardVel", Mathf.Clamp(velocity.z / 40f, -1, 1), 0.05f, Time.deltaTime);
-		sail.SetFloat("LateralVel", Mathf.Clamp(velocity.x / 10f, -1, 1), 0.05f, Time.deltaTime);
+		sail.SetFloat("ForwardVel", Mathf.Clamp(velocity.z / 40f, -1, 1), 0.5f, Time.deltaTime);
 
-		/*		//FOIL RAISE ABOVE WATER EFFECT PROTO
-				if (velocity.z > 10) //THRESHOLD VELOCITY
-				{
-					//transform.position = new Vector3(0f,0.1f,0f); //RAISE LEVEL
-					tiltable.localPosition = Vector3.up * 0.1f;
-				}
-				else
-				{
-					//transform.position = new Vector3(0f,0f,0f);
-					tiltable.localPosition = Vector3.up * 0.0f;
-				}
-		*/
+/*		//FOIL RAISE ABOVE WATER EFFECT PROTO
+		if (velocity.z > 10) //THRESHOLD VELOCITY
+		{
+			//transform.position = new Vector3(0f,0.1f,0f); //RAISE LEVEL
+			tiltable.localPosition = Vector3.up * 0.1f;
+		}
+		else
+		{
+			//transform.position = new Vector3(0f,0f,0f);
+			tiltable.localPosition = Vector3.up * 0.0f;
+		}
+*/
 
 
 	}
