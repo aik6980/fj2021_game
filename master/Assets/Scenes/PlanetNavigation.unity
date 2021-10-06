@@ -833,6 +833,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 405227892}
     - target: {fileID: 8513144915026772602, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: eventHandler
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513144915026772602, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -856,7 +860,8 @@ PrefabInstance:
       propertyPath: commandList.Array.data[4]
       value: 
       objectReference: {fileID: 405227824}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8779729062986308951, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
 --- !u!114 &333041378 stripped
 MonoBehaviour:
