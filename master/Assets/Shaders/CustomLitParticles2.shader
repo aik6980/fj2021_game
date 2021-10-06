@@ -82,7 +82,7 @@ Shader "Particles/CustomLitParticlesSurface2"
 
 		//float4 c2 = tex2D(_BumpTex, IN.uv_MainTex);
 		//float4 c2 = tex2D(_BumpTex, IN.worldPos.xz);
-		float c2 = ClassicNoise(IN.worldPos.xyz) * 0.5 + 0.5;
+		float c2 = ClassicNoise(IN.worldPos.xyz * 0.8) * 0.5 + 0.5;
 		//if (c2.r < _Cutoff) c.a = 0;
 		//if (c2.r * IN.vcolor.a < _Cutoff) c.a = 0;
 
