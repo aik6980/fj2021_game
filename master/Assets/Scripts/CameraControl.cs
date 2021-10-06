@@ -71,6 +71,7 @@ public class CameraControl : MonoBehaviour
 	public float baseFOV;
 
 	public bool lookTargetValid;
+	public bool lookTargetIsRoot;
 	public Transform lookTarget;
 	public float lookStrength = 0.0f;
 	public float targetFOV;
@@ -147,12 +148,20 @@ public class CameraControl : MonoBehaviour
 
 		if (lookTargetValid)
 		{   //mini "cutscene", look at and optionally zoom in
-			Quaternion look = Quaternion.LookRotation(lookTarget.position - cam.transform.position);
+			float f = Mathf.Clamp01(lookStrength * Time.deltaTime);
+			Vector3 fwd = lookTargetIsRoot ? lookTarget.position - this.transform.position : lookTarget.position - cam.transform.position;
+			Vector3 xy = fwd;
+			xy.z = 0.0f;
+			float q = Mathf.Clamp01(xy.magnitude / fwd.magnitude);
+			Vector3 up = Vector3.Lerp(transform.up, Vector3.up, q*q);
+			Quaternion look = Quaternion.LookRotation(fwd, up);
 			//lookEuler = look.eulerAngles;
-			euler.x = Mathf.LerpAngle(euler.x, look.eulerAngles.x, lookStrength * Time.deltaTime);
-			euler.y = Mathf.LerpAngle(euler.y, look.eulerAngles.y, lookStrength * Time.deltaTime);
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, lookStrength * Time.deltaTime);
-			transform.rotation = Quaternion.Euler(euler);
+			//euler.x = Mathf.LerpAngle(euler.x, look.eulerAngles.x, f);
+			//euler.y = Mathf.LerpAngle(euler.y, look.eulerAngles.y, f);
+			//transform.rotation = Quaternion.Euler(euler);
+			transform.rotation = Quaternion.Slerp(transform.rotation, look, f);
+
+			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, f);
 
 			UpdateCam();
 		}
@@ -393,29 +402,45 @@ public class CameraControl : MonoBehaviour
 		lookTargetValid = true;
 	}
 
-	public void LookAt(Transform target)
+	public void LookAt(Transform target, float strength = 2.0f, float FoV = 30.0f, bool raw = false)
 	{
-		lookTargetValid = target != null;	
+		if (strength < 0)
+		{//instant
+			Quaternion look = raw
+							? Quaternion.LookRotation(target.position - this.transform.position)
+							: Quaternion.LookRotation(target.position - cam.transform.position);
+			euler.x = look.eulerAngles.x;
+			euler.y = look.eulerAngles.y;
+			transform.rotation = Quaternion.Euler(euler);
+			if (FoV > 0)
+				cam.fieldOfView = FoV;
+			UpdateCam();
+			return;
+		}
+
+		lookTargetValid = target != null;
 		lookTarget = target;
-		lookStrength = 2.0f;
-		targetFOV = baseFOV * 0.5f;
+		lookStrength = strength;
+		lookTargetIsRoot = raw;
+		targetFOV = FoV > 0 ? FoV : baseFOV * 0.5f;
 	}
 
 	public void StopLook()
 	{
 		lookTargetValid = false;
 	}
-/*
-	public void MoveTo(Transform target)
-	{
-		moveTarget = target;
-		moveStrength = 1f;
-		moveTargetValid = true;
-	}
 
-	public void Stopmove()
-	{
-		moveTargetValid = false;
-	}
-*/
+	/*
+		public void MoveTo(Transform target)
+		{
+			moveTarget = target;
+			moveStrength = 1f;
+			moveTargetValid = true;
+		}
+
+		public void Stopmove()
+		{
+			moveTargetValid = false;
+		}
+	*/
 }
