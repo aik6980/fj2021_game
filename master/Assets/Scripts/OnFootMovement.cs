@@ -70,8 +70,9 @@ public class OnFootMovement : MonoBehaviour
 			stepTimer -= Time.deltaTime;
 			if (model)
 				model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
-		} else
-		if (!stepped)
+		}
+
+		if (!stepped && stepTimer <= 0)
 		{//move on WASD hold
 			if (Input.GetKey(KeyCode.W))
 				newPos += camCon.transform.forward * stepLength;
@@ -81,6 +82,7 @@ public class OnFootMovement : MonoBehaviour
 				newPos += camCon.transform.right * -stepLength;
 			if (Input.GetKey(KeyCode.D))
 				newPos += camCon.transform.right * stepLength;
+
 			if (newPos != oldPos)
 			{
 				stepped = true;
