@@ -164,7 +164,7 @@ public class OnFootMovement : MonoBehaviour
 						transform.position = nextPos;
 						modelOffset = this.transform.InverseTransformPoint(prevPos);
 
-						FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
+						//FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
 					}
 				}
 			} else

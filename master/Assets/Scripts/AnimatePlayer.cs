@@ -33,4 +33,9 @@ public class AnimatePlayer : MonoBehaviour
 			timer = Random.Range(timerMin, timerMax);
 		}
 	}
+
+	public void StepSound()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
+	}
 }
