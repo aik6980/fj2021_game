@@ -20,6 +20,10 @@ Shader "Particles/CustomLitParticlesSurface2"
 	CGPROGRAM
 #pragma surface surf Lambert
 
+
+#include "UnityCG.cginc"
+#include "Assets/Shaders/Noise/ClassicNoise3D.hlsl"
+
 /*
 	Tags{ "Queue" = "AlphaTest" "RenderType" = "TransparentCutout" }
 	//Tags{ "Queue" = "Geometry" }
@@ -42,10 +46,11 @@ Shader "Particles/CustomLitParticlesSurface2"
 
 	struct Input 
 	{
-		float2 uv_MainTex;
+		float3 worldPos;
+		float2 uv_MainTex : TEXCOORD0;
 		//float3 normal;
-		//float4 lpos;
-		fixed4 vcolor;
+		float4 lpos;
+		fixed4 vcolor : COLOR;
 	};
 
 	fixed4 _Color;
@@ -55,7 +60,7 @@ Shader "Particles/CustomLitParticlesSurface2"
 	{
 		UNITY_INITIALIZE_OUTPUT(Input, o);
 		//o.normal = v.normal;
-		//o.lpos = v.vertex;
+		o.lpos = v.vertex;
 		o.vcolor = v.color;
 	}
 
@@ -75,11 +80,13 @@ Shader "Particles/CustomLitParticlesSurface2"
 		o.Normal = UnpackScaleNormal(normalMap, _BumpScale);
 		//--------------------------------------------------------------
 
-		float4 c2 = tex2D(_BumpTex, IN.uv_MainTex);
+		//float4 c2 = tex2D(_BumpTex, IN.uv_MainTex);
+		//float4 c2 = tex2D(_BumpTex, IN.worldPos.xz);
+		float c2 = ClassicNoise(IN.worldPos.xyz) * 0.5 + 0.5;
 		//if (c2.r < _Cutoff) c.a = 0;
 		//if (c2.r * IN.vcolor.a < _Cutoff) c.a = 0;
 
-		//o.Albedo = IN.vcolor.aaa;
+		//o.Albedo = IN.vcolor.rgb;
 		o.Albedo = c.rgb;
 		//o.Alpha =  (c2.r * IN.vcolor.a < _Cutoff) ? 0 : 1;
 		//o.Alpha = IN.vcolor.a;
@@ -90,8 +97,8 @@ Shader "Particles/CustomLitParticlesSurface2"
 		//_Cutoff = 0.5;
 		//clip(c2.r * IN.vcolor.a - _Cutoff);
 		//clip(c2.g - _Cutoff);
-		clip(_Cutoff - c2.r);
-		//clip(IN.vcolor.a - c2.r);
+		//clip(_Cutoff - c2.r);
+		clip(IN.vcolor.a - c2);
 	}
 
 	ENDCG
