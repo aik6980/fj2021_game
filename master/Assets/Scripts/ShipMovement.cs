@@ -65,14 +65,16 @@ public class ShipMovement : MonoBehaviour
 	public float steerBaseSpeed = 1.0f;
 	public float steerBaseForce = 1.0f;
 
-	private FMOD.Studio.EventInstance instance;
+	private FMOD.Studio.EventInstance music_sailing, boatsplash;
 
-	FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance)
+	FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance music_sailing)
     {
         FMOD.Studio.PLAYBACK_STATE pS;
-        instance.getPlaybackState(out pS);
+        music_sailing.getPlaybackState(out pS);
         return pS;        
     }
+
+	FMOD.Studio.PARAMETER_ID sailing_speedParameterId;
 
 
 	// Start is called before the first frame update
@@ -85,6 +87,18 @@ public class ShipMovement : MonoBehaviour
 		screenspaceShipPoint = RectTransformUtility.WorldToScreenPoint(null, steeringWheelUI.rectTransform.transform.position);
 		//steerClickRadius = steeringWheelUI.rectTransform.rect.height * steeringWheelUI.canvas.scaleFactor;
 		steerClickRadius = Screen.height * 0.2f;
+
+		boatsplash = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/boatsplash");
+        boatsplash.start();
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject(boatsplash, GetComponent<Transform>(), GetComponent<Rigidbody>());
+
+		FMOD.Studio.EventDescription sailing_speedEventDescription;
+        boatsplash.getDescription(out sailing_speedEventDescription);
+        FMOD.Studio.PARAMETER_DESCRIPTION sailing_speedParameterDescription;
+        sailing_speedEventDescription.getParameterDescriptionByName("sailing_speed", out sailing_speedParameterDescription);
+        sailing_speedParameterId = sailing_speedParameterDescription.id;
+
+
 	}
 
 	private float SuperSpeed()
@@ -215,24 +229,25 @@ public class ShipMovement : MonoBehaviour
 
 			
 		//play and stop music
-		if (PlaybackState(instance) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+		if (PlaybackState(music_sailing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
 		
 		{
 			if (velocity.z > 20.0f)
 				{
-					instance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
-					instance.start();
+					music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
+					music_sailing.start();
 				}
 		}
-		if (PlaybackState(instance) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+		if (PlaybackState(music_sailing) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
 		{
 			if (velocity.z < 1.0f)
 				{
-					instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-					instance.release();
+					music_sailing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+					music_sailing.release();
 				}
 		}
 
+		boatsplash.setParameterByID(sailing_speedParameterId, (float)velocity.z);
 
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
