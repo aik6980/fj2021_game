@@ -234,6 +234,7 @@ MonoBehaviour:
   max_speed: 400
   drag: 0.1
   steeringWheelUI: {fileID: 0}
+  steeringWheelUI_backdrop: {fileID: 0}
   hoveringOverWheel: 0
   isSteeringDragging: 0
   screenspaceShipPoint: {x: 0, y: 0}
