@@ -42,6 +42,7 @@ public class ShipMovement : MonoBehaviour
 	public float drag = 0.1f;
 
 	public Image steeringWheelUI;
+	public Image steeringWheelUI_backdrop;
 	public bool hoveringOverWheel;
 
 	public bool isSteeringDragging;
@@ -115,10 +116,12 @@ public class ShipMovement : MonoBehaviour
 			}
 
 			steeringWheelUI.gameObject.SetActive(false);
+			steeringWheelUI_backdrop.gameObject.SetActive(false);
 			return;
 		}
 
 		steeringWheelUI.gameObject.SetActive(true);
+		steeringWheelUI_backdrop.gameObject.SetActive(true);
 
 		worldVel = this.transform.rotation * velocity;
 		//lateral drag
