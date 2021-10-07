@@ -51,6 +51,7 @@ MonoBehaviour:
   shipSeat: {fileID: 0}
   Tina: {fileID: 0}
   embarkTrigger: {fileID: 0}
+  follower: {fileID: 0}
   cam: {fileID: 3853897748531486211}
   CamDistance: -0.5
   CamHeight: 0.25
@@ -132,13 +133,13 @@ MonoBehaviour:
   msy: 0
   mousePosPress: {x: 0, y: 0, z: 0}
   mousePressTime: 0
-  shoreDetector: {x: 0, y: 0, z: 1}
+  shoreDetector: {x: 0, y: 0, z: 0.8}
   mask:
     serializedVersion: 2
     m_Bits: 1
   maxHeight: 0.5
-  maxDisembarkDepth: 0.56
-  maxDistance: 1.2
+  maxDisembarkDepth: 0.575
+  maxDistance: 0.6
   depth: 0
   hitPoint: {x: 0, y: 0, z: 0}
   hitNormal: {x: 0, y: 0, z: 0}
