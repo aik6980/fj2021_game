@@ -74,8 +74,6 @@ public class ShipMovement : MonoBehaviour
         return pS;        
     }
 
-	FMOD.Studio.PARAMETER_ID sailing_speedParameterId;
-
 
 	// Start is called before the first frame update
 	void Start()
@@ -92,12 +90,6 @@ public class ShipMovement : MonoBehaviour
 		boatsplash = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/boatsplash");
         boatsplash.start();
 		FMODUnity.RuntimeManager.AttachInstanceToGameObject(boatsplash, GetComponent<Transform>(), GetComponent<Rigidbody>());
-
-		FMOD.Studio.EventDescription sailing_speedEventDescription;
-        boatsplash.getDescription(out sailing_speedEventDescription);
-        FMOD.Studio.PARAMETER_DESCRIPTION sailing_speedParameterDescription;
-        sailing_speedEventDescription.getParameterDescriptionByName("sailing_speed", out sailing_speedParameterDescription);
-        sailing_speedParameterId = sailing_speedParameterDescription.id;
 
 
 	}
@@ -252,7 +244,10 @@ public class ShipMovement : MonoBehaviour
 				}
 		}
 
-		boatsplash.setParameterByID(sailing_speedParameterId, (float)velocity.z);
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("sailing_speed", velocity.z);
+		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("is_turning", velocity.y);
+
+		
 
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
