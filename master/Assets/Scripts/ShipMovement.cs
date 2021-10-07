@@ -260,12 +260,21 @@ public class ShipMovement : MonoBehaviour
 		//eliminate numerical drift in altitude
 		this.transform.position = planetRoot.position + (this.transform.position - planetRoot.position).normalized * radius;
 		//stay upright
-		Vector3 cross = Vector3.Cross(this.transform.up, Vector3.up);
+/*		Vector3 cross = Vector3.Cross(this.transform.up, Vector3.up);
 		if (cross != Vector3.zero)
 		{
 			Quaternion turnQ = Quaternion.AngleAxis(cross.magnitude * Mathf.Rad2Deg, cross.normalized);
 			this.transform.rotation = turnQ * this.transform.rotation;
 		}
+*/
+		Vector3 localUp = (this.transform.position - planetRoot.position).normalized;
+		Vector3 cross = Vector3.Cross(this.transform.up, localUp);
+		if (cross != Vector3.zero)
+		{
+			Quaternion turnQ = Quaternion.AngleAxis(cross.magnitude * Mathf.Rad2Deg, cross.normalized);
+			this.transform.rotation = turnQ * this.transform.rotation;
+		}
+
 
 		/*
 				Vector3 angVel;

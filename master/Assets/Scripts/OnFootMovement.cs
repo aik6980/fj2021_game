@@ -151,7 +151,7 @@ public class OnFootMovement : MonoBehaviour
 					if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
 					{//hit something; cancel
 					 //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
-						Debug.Log("obstacle");
+						Debug.Log("obstacle " + hit.collider.name, hit.collider);
 					} else
 					{
 						//Debug.Log(transform.position.ToString() + "->" + nextPos.ToString());

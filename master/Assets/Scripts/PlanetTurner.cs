@@ -25,7 +25,7 @@ public class PlanetTurner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
 		//turnQ = Quaternion.FromToRotation(currentVector, Vector3.up);
 		Vector3 cross = Vector3.Cross((whatToFollow.position - planetRoot.position).normalized, Vector3.up);

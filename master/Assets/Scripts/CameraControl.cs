@@ -136,14 +136,12 @@ public class CameraControl : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	public void Update()
     {
 		//ToDo: on foot controls
 		// detect if we can get off the boat (say, depth test just off the boat in the view direction),
 		// detect if we can get back on,
 		// activate ship controls on onfoot controls
-
-		euler = transform.rotation.eulerAngles;
 
 
 		if (lookTargetValid)
@@ -204,6 +202,12 @@ public class CameraControl : MonoBehaviour
 
 		if (!lookTargetValid && cam.fieldOfView != baseFOV)
 			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, baseFOV, 1.0f * Time.deltaTime);
+
+		//euler = transform.rotation.eulerAngles;
+		Vector3 localUp = (this.transform.position - Tina.planetRoot.position).normalized;
+		Quaternion noRoll = Quaternion.LookRotation(transform.forward, localUp);
+		euler = noRoll.eulerAngles;
+
 
 		if (Cursor.lockState == CursorLockMode.Locked)
 		{
@@ -328,7 +332,7 @@ public class CameraControl : MonoBehaviour
 		}
 	}
 
-	void UpdateCam()
+	public void UpdateCam()
 	{
 		Vector3 euler = transform.rotation.eulerAngles;
 		if (euler.x > 90.0f) euler.x -= 360.0f;

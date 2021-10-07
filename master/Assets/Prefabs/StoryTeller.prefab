@@ -82,7 +82,6 @@ GameObject:
   - component: {fileID: 1789103110}
   - component: {fileID: 1789103111}
   - component: {fileID: 6257438741363819651}
-  - component: {fileID: 405227824}
   - component: {fileID: 405227826}
   - component: {fileID: 405227827}
   - component: {fileID: 405227828}
@@ -115,6 +114,11 @@ GameObject:
   - component: {fileID: 405227917}
   - component: {fileID: 405227918}
   - component: {fileID: 405227928}
+  - component: {fileID: 3984573119993896149}
+  - component: {fileID: 6116471482349127166}
+  - component: {fileID: 8592869124968600120}
+  - component: {fileID: 8618191383829416351}
+  - component: {fileID: 8092060373066475306}
   m_Layer: 0
   m_Name: StoryTeller
   m_TagString: Untagged
@@ -163,18 +167,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 60.41439, y: 344.28702}
+  scrollPos: {x: -154.56967, y: 341.5544}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 540
-  zoom: 0.6700003
+  zoom: 0.5500004
   scrollViewRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 666384199}
   selectedCommands: []
   variables: []
   description: 
@@ -203,7 +208,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 215.67998
     y: -94.501816
-    width: 148.50742
+    width: 149.99992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -223,6 +228,7 @@ MonoBehaviour:
   - {fileID: 666384189}
   - {fileID: 666384188}
   - {fileID: 666384192}
+  - {fileID: 3984573119993896149}
   suppressAllAutoSelections: 0
 --- !u!114 &3622296378070810833
 MonoBehaviour:
@@ -284,7 +290,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -51.749115
     y: -27.355469
-    width: 161.94025
+    width: 157.27264
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -310,14 +316,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: -4.4899826
     y: -130.01837
-    width: 157.46265
+    width: 155.45447
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 12
   blockName: Game Intro (Copy)
   description: 
-  eventHandler: {fileID: 405227824}
+  eventHandler: {fileID: 0}
   commandList:
   - {fileID: 405227902}
   - {fileID: 405227826}
@@ -429,7 +435,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1054.1895
     y: 377.3509
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -498,7 +504,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 874.1865
     y: 382.96503
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -567,7 +573,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 694.675
     y: 382.25278
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -636,7 +642,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 516.29956
     y: 382.1579
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -706,7 +712,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1357.1217
     y: -98.393974
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -776,7 +782,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1186.1691
     y: -95.138725
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -845,7 +851,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 985.31256
     y: -101.10882
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -915,7 +921,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 791.04553
     y: -91.729614
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -984,7 +990,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 610.813
     y: -93.08648
-    width: 97.76117
+    width: 97.27269
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1055,7 +1061,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 414.52893
     y: -91.06104
-    width: 96.26863
+    width: 95.45451
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1127,7 +1133,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 215.87619
     y: -38.280304
-    width: 148.50742
+    width: 148.18173
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1356,7 +1362,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 497.78708
     y: -184.44162
-    width: 115.67161
+    width: 113.636314
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1503,7 +1509,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 405.25024
     y: -40.669636
-    width: 147.01488
+    width: 148.18173
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1521,6 +1527,7 @@ MonoBehaviour:
   - {fileID: 405227829}
   - {fileID: 7997142666711873483}
   - {fileID: 7631304205614344204}
+  - {fileID: 6116471482349127166}
   suppressAllAutoSelections: 0
 --- !u!114 &666384200
 MonoBehaviour:
@@ -1652,7 +1659,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 957.2512
     y: -46.419113
-    width: 148.50742
+    width: 149.99992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1663,6 +1670,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 666384204}
   - {fileID: 666384203}
+  - {fileID: 8092060373066475306}
   suppressAllAutoSelections: 0
 --- !u!114 &666384206
 MonoBehaviour:
@@ -1751,7 +1759,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 586.21967
     y: -39.533245
-    width: 148.50742
+    width: 149.99992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1762,6 +1770,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 666384208}
   - {fileID: 666384207}
+  - {fileID: 8592869124968600120}
   suppressAllAutoSelections: 0
 --- !u!114 &666384210
 MonoBehaviour:
@@ -1849,7 +1858,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 778.9781
     y: -44.72319
-    width: 148.50742
+    width: 149.99992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1860,6 +1869,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 666384212}
   - {fileID: 666384211}
+  - {fileID: 8618191383829416351}
   suppressAllAutoSelections: 0
 --- !u!114 &1653070067664897898
 MonoBehaviour:
@@ -1991,21 +2001,6 @@ MonoBehaviour:
     floatRef: {fileID: 0}
     floatVal: 3
   durationOLD: 0
---- !u!114 &405227824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3622296378070810845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f6487d21a03404cb21b245f0242e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentBlock: {fileID: 8513144915026772602}
-  suppressBlockAutoSelect: 0
-  waitForFrames: 1
 --- !u!114 &405227826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2672,7 +2667,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 221.30211
     y: 241.68292
-    width: 139.5522
+    width: 139.09085
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2741,7 +2736,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 221.302
     y: 186.45895
-    width: 139.5522
+    width: 139.09085
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2810,7 +2805,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 221.302
     y: 131.23509
-    width: 139.5522
+    width: 139.09085
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2879,7 +2874,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 219.80948
     y: 76.01129
-    width: 139.5522
+    width: 139.09085
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2948,7 +2943,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 218.31683
     y: 22.27995
-    width: 138.05966
+    width: 137.27266
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2977,3 +2972,143 @@ MonoBehaviour:
     floatRef: {fileID: 0}
     floatVal: 0.5
   durationOLD: 0
+--- !u!114 &3984573119993896149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 116
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &6116471482349127166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 117
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &8592869124968600120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 118
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &8618191383829416351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 119
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &8092060373066475306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3622296378070810845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 120
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
