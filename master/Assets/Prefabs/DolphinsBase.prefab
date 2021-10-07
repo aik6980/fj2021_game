@@ -1,0 +1,244 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7420408990864224981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7420408990864224979}
+  - component: {fileID: 7420408990864224978}
+  m_Layer: 0
+  m_Name: DolphinsBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7420408990864224979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420408990864224981}
+  m_LocalRotation: {x: 0.63479257, y: -0.09881857, z: -0.0823325, w: 0.761902}
+  m_LocalPosition: {x: -2.76774, y: 38.874756, z: 196.05016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7021164410546964023}
+  - {fileID: 7021164410238259336}
+  - {fileID: 7021164409408910267}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7420408990864224978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420408990864224981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c06399211c94e469d87c00e2d42a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetRoot: {fileID: 0}
+  radius: 0
+  moveSpeed: 1
+  velocity: {x: 0, y: 10, z: 1.2}
+  turnTimeMin: 1
+  turnTimeMax: 10
+  maxTurnSpeed: 5
+  lateralDrag: 5
+  turnTimer: 0
+  worldVel: {x: 0, y: 0, z: 0}
+--- !u!1001 &7420408991172862428
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7420408990864224979}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+      propertyPath: m_Name
+      value: anim_dolphin_jump_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+--- !u!4 &7021164410546964023 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f23b71cf054497e43b313f6ebdbf74c8, type: 3}
+  m_PrefabInstance: {fileID: 7420408991172862428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7420408991515195235
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7420408990864224979}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.232
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.058
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.439
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_Name
+      value: anim_dolphin_swim_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+--- !u!4 &7021164410238259336 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+  m_PrefabInstance: {fileID: 7420408991515195235}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7420408992311252048
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7420408990864224979}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.427
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.807
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+      propertyPath: m_Name
+      value: anim_dolphin_swim_01 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+--- !u!4 &7021164409408910267 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6399d5f87f532f948914bd4d323fe678, type: 3}
+  m_PrefabInstance: {fileID: 7420408992311252048}
+  m_PrefabAsset: {fileID: 0}
