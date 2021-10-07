@@ -65,6 +65,11 @@ public class ShipMovement : MonoBehaviour
 	public float steerBaseSpeed = 1.0f;
 	public float steerBaseForce = 1.0f;
 
+	public bool boosting = false;
+	public bool stopped;
+
+
+
 	private FMOD.Studio.EventInstance music_sailing, boatsplash;
 
 	FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance music_sailing)
@@ -96,21 +101,26 @@ public class ShipMovement : MonoBehaviour
 
 	private float SuperSpeed()
     {
-		if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+			boosting = true;
 			Time.timeScale = 5f;
-			return 0f;
         }
 		else
-        {
+		if (Input.GetKeyUp(KeyCode.LeftShift))
+		{
+			boosting = false;
 			Time.timeScale = 1f;
-			return drag;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
+		return boosting ? 0 : drag;
+	}
+
+	// Update is called once per frame
+	void Update()
     {
+		if (stopped) return;
+
 		float update_drag = SuperSpeed();
 
 		if (anchored || ConstellationMgr.Instance.is_canvas_mode_enabled())
@@ -387,4 +397,15 @@ public class ShipMovement : MonoBehaviour
 		velocity = Quaternion.Inverse(this.transform.rotation) * worldVel;
 
 	}
+
+	public void StopMove()
+	{
+		stopped = true;
+	}
+
+	public void Continue()
+	{
+		stopped = false;
+	}
+
 }
