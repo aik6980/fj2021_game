@@ -16,6 +16,8 @@ public class RespawnMechanics : MonoBehaviour
 	public float currentAge = 0;
 	public float maxAge = 100;
 
+	public int years = 0;
+
 	private void Awake()
 	{
 		if (player)
@@ -47,6 +49,13 @@ public class RespawnMechanics : MonoBehaviour
 	void Update()
     {
 		currentAge += Time.deltaTime / ageYearLengthInSeconds;
+
+		int _years = (int)currentAge;
+		if (_years != years)
+		{
+			years = _years;
+			StoryTeller.singleton.fc.SendFungusMessage("Age_" + years.ToString());
+		}
 
 		//debug
 		if (Input.GetKeyDown(KeyCode.T) && Input.GetKey(KeyCode.LeftControl))
@@ -133,6 +142,7 @@ public class RespawnMechanics : MonoBehaviour
 		Debug.Log(camcon.transform.localRotation.eulerAngles);
 
 		currentAge = 0;
+		years = (int)currentAge;
 
 		//notify fungus
 		StoryTeller.singleton.fc.SendFungusMessage("Respawned");
