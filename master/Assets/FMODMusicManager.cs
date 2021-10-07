@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FMOD_AudioManager : MonoBehaviour
+public class FMODMusicManager : MonoBehaviour
 {
 
     public CameraControl camera_control;
@@ -44,3 +44,4 @@ public class FMOD_AudioManager : MonoBehaviour
 
     }
 }
+
