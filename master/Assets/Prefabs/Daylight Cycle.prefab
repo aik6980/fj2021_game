@@ -283,7 +283,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -378,7 +378,7 @@ MonoBehaviour:
   sunIntensityMax: 1
   sunStartRotation: {x: 0, y: 0, z: 0, w: 1}
   axis: {x: 0, y: 1, z: 0}
-  normalisedRotationTime: 0.25
+  normalisedRotationTime: 0.26
   normalisedDayTime: 0.25
   sunColour:
     serializedVersion: 2
@@ -446,8 +446,17 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 1
     - serializedVersion: 3
-      time: 0.2907115
-      value: 0.30612856
+      time: 0.16443022
+      value: 0.19079103
+      inSlope: 0.685639
+      outSlope: 0.685639
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.25883105
+      value: 0.8522577
       inSlope: 1.2431947
       outSlope: 1.2431947
       tangentMode: 0
@@ -464,13 +473,22 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.28042412
     - serializedVersion: 3
-      time: 0.79412967
-      value: 0.2924376
-      inSlope: -1.3771927
-      outSlope: -1.3771927
-      tangentMode: 34
+      time: 0.7248397
+      value: 0.68996155
+      inSlope: -2.9996011
+      outSlope: -2.9996011
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.7113768
+    - serializedVersion: 3
+      time: 0.7941296
+      value: 0.29642394
+      inSlope: -0.8779683
+      outSlope: -0.8779683
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
