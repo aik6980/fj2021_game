@@ -31,6 +31,9 @@ public class OnFootMovement : MonoBehaviour
 	public Vector3 modelOffset;
 	public Transform model;
 
+	public bool stopped;
+
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -41,8 +44,8 @@ public class OnFootMovement : MonoBehaviour
     void Update()
     {
 		if (ConstellationMgr.Instance.is_canvas_mode_enabled()) return;
-
 		if (camCon.mode != CameraControl.Mode.LandWalk) return;
+		if (stopped) return;
 
 		//ToDo: point-and click (detect if i clicked on valid ground and move to where)
 		// use depth tests to avoid walking into the water
@@ -54,6 +57,7 @@ public class OnFootMovement : MonoBehaviour
 		Vector3 newPos = oldPos;
 
 		bool stepped = false;
+
 		//move on WASD press (allows faster ;)
 		if (Input.GetKeyDown(KeyCode.W))
 			newPos += camCon.transform.forward * stepLength;
@@ -212,4 +216,14 @@ public class OnFootMovement : MonoBehaviour
 		moveRelPos = relPos;
 	}
 
+
+	public void StopMove()
+	{
+		stopped = true;
+	}
+
+	public void Continue()
+	{
+		stopped = false;
+	}
 }

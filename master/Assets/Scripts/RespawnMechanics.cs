@@ -53,6 +53,11 @@ public class RespawnMechanics : MonoBehaviour
 		{
 			ExecuteRespawn();
 		}
+
+		if (currentAge >= maxAge)
+		{
+			ExecuteRespawn();
+		}
     }
 
 	public void SaveRespawnPoint()
@@ -74,7 +79,20 @@ public class RespawnMechanics : MonoBehaviour
 	public void ExecuteRespawn()
 	{
 		Debug.Log("Respawn");
+		StartCoroutine(RespawnProcess());
+	}
 
+	public IEnumerator RespawnProcess()
+	{
+		//ToDo:
+		//notify fungus
+		StoryTeller.singleton.fc.SendFungusMessage("Died");
+		
+		//FADE DOWN
+		//notify fungus
+		StoryTeller.singleton.fc.SendFungusMessage("RespawnFadedDown");
+		
+		//RESPAWN,
 		PlanetTurner Tina = PlanetTurner.singleton;
 
 		CameraControl camcon = CameraControl.singleton;
@@ -114,5 +132,14 @@ public class RespawnMechanics : MonoBehaviour
 		Debug.Log(camcon.transform.localRotation.eulerAngles);
 
 		currentAge = 0;
+
+		//notify fungus
+		StoryTeller.singleton.fc.SendFungusMessage("Respawned");
+
+		//FADE UP
+		//notify fungus
+		StoryTeller.singleton.fc.SendFungusMessage("RespawFadedUp");
+
+		yield return new WaitForSeconds(.1f);
 	}
 }

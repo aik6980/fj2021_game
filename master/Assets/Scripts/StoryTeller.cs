@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class StoryTeller : MonoBehaviour
 {
+	public static StoryTeller singleton;
+
 	public GameObject player;
-	Fungus.Flowchart fc;
+	public Fungus.Flowchart fc;
 
-	public GameObject[] triggers;
+	//public GameObject[] triggers;
 
-    // Start is called before the first frame update
-    void Start()
+	private void Awake()
+	{
+		singleton = this;
+	}
+
+	// Start is called before the first frame update
+	void Start()
     {
 		EventListener.Get(player).OnTriggerEnterDelegate2 += StoryTeller_OnTriggerEnterDelegate2;
 

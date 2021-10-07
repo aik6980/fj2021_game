@@ -19,6 +19,7 @@ public class CameraControl : MonoBehaviour
 	public Transform shipSeat;
 	public PlanetTurner Tina;
 	public Collider embarkTrigger;
+	public FollowCamera follower;
 
 	public Camera cam;
 	public float CamDistance = 1.0f;
@@ -92,6 +93,8 @@ public class CameraControl : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		follower = GetComponent<FollowCamera>();
+
 		euler = transform.rotation.eulerAngles;
 		UpdateCam();
 
@@ -434,17 +437,17 @@ public class CameraControl : MonoBehaviour
 		lookTargetValid = false;
 	}
 
-	/*
-		public void MoveTo(Transform target)
-		{
-			moveTarget = target;
-			moveStrength = 1f;
-			moveTargetValid = true;
-		}
-
-		public void Stopmove()
-		{
-			moveTargetValid = false;
-		}
-	*/
+	public void StopMove()
+	{
+		follower.enabled = false;
+	}
+	public void Continue()
+	{
+		follower.enabled = true;
+	}
+	public void Follow(Transform target)
+	{
+		follower.target = target;
+		follower.enabled = true;
+	}
 }
