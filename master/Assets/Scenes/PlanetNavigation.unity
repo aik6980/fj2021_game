@@ -1141,7 +1141,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &405227823
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1171,7 +1171,7 @@ MonoBehaviour:
     floatVal: 255
 --- !u!114 &405227824
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1184,6 +1184,60 @@ MonoBehaviour:
   parentBlock: {fileID: 405227921}
   suppressBlockAutoSelect: 0
   waitForFrames: 1
+--- !u!114 &405227825
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405227822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 401.90924
+    y: 703.6012
+    width: 91.37928
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 127
+  blockName: Age_50
+  description: 
+  eventHandler: {fileID: 405227828}
+  commandList:
+  - {fileID: 405227826}
+  suppressAllAutoSelections: 0
+--- !u!114 &405227826
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405227822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 140
+  indentLevel: 0
+  storyText: You lived half of your life now...
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!114 &405227827 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 405227827, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
@@ -1195,6 +1249,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &405227828
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405227822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 405227825}
+  suppressBlockAutoSelect: 0
+  message: Age_50
 --- !u!114 &405227834 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 405227902, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
@@ -1632,12 +1701,12 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 327.2968
-    y: 587.5359
-    width: 93.63633
+    y: 589.17523
+    width: 91.37928
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 127
+  itemId: 141
   blockName: OnDied
   description: 
   eventHandler: {fileID: 405227942}
@@ -1795,7 +1864,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 493.80017
     y: 586.41724
-    width: 117.272675
+    width: 115.5172
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4823,6 +4892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island-1
       objectReference: {fileID: 0}
+    - target: {fileID: 2351880972979583606, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -9003158209553059410, guid: d49170ef26f3541b298356ba67156ce5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
 --- !u!1001 &1537450376
