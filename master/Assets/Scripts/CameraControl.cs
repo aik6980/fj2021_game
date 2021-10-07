@@ -372,6 +372,7 @@ public class CameraControl : MonoBehaviour
 		}
 
 		canDisembark = depth < maxDisembarkDepth;
+		//ToDo: check with onfootmovement if it also accepts it
 		Debug.DrawLine(p1, p1 + dir * depth, canDisembark ? Color.green : Color.red);
 	}
 
