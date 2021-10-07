@@ -87,9 +87,10 @@ public class RespawnMechanics : MonoBehaviour
 		//ToDo:
 		//notify fungus
 		StoryTeller.singleton.fc.SendFungusMessage("Died");
-		
+
 		//FADE DOWN
-		//notify fungus
+		yield return new WaitForSeconds(3.0f);
+		//notify fungus (it should actually come back FROM it)
 		StoryTeller.singleton.fc.SendFungusMessage("RespawnFadedDown");
 		
 		//RESPAWN,
@@ -137,6 +138,7 @@ public class RespawnMechanics : MonoBehaviour
 		StoryTeller.singleton.fc.SendFungusMessage("Respawned");
 
 		//FADE UP
+		yield return new WaitForSeconds(3.0f);
 		//notify fungus
 		StoryTeller.singleton.fc.SendFungusMessage("RespawFadedUp");
 
