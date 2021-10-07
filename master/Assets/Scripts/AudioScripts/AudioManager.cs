@@ -53,10 +53,10 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     void Awake()
     {
+		if (!camera_control) { this.enabled = false; return; }
+	}
 
-    }
-
-    void Start()
+	void Start()
     {
         current_playlist = GeneratePlaylist();
         // play first track
@@ -115,6 +115,8 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     public void PlaySFX(string sound)
     {
+		if (sfx_data == null) return;
+
         SFXData s = Array.Find(sfx_data, item => item.name == sound);
         if (s == null)
         {

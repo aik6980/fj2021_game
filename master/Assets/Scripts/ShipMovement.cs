@@ -84,6 +84,7 @@ public class ShipMovement : MonoBehaviour
 		hitNormal =  new Vector3[collisionPoints.Length];
 		hitCollider = new Collider[collisionPoints.Length];
 
+		if (steeringWheelUI)
 		screenspaceShipPoint = RectTransformUtility.WorldToScreenPoint(null, steeringWheelUI.rectTransform.transform.position);
 		//steerClickRadius = steeringWheelUI.rectTransform.rect.height * steeringWheelUI.canvas.scaleFactor;
 		steerClickRadius = Screen.height * 0.2f;
@@ -129,13 +130,17 @@ public class ShipMovement : MonoBehaviour
 				emission.rateOverTimeMultiplier = 0.1f * emissionRateScale;
 			}
 
-			steeringWheelUI.gameObject.SetActive(false);
-			steeringWheelUI_backdrop.gameObject.SetActive(false);
+			if (steeringWheelUI)
+				steeringWheelUI.gameObject.SetActive(false);
+			if (steeringWheelUI_backdrop)
+				steeringWheelUI_backdrop.gameObject.SetActive(false);
 			return;
 		}
 
-		steeringWheelUI.gameObject.SetActive(true);
-		steeringWheelUI_backdrop.gameObject.SetActive(true);
+		if (steeringWheelUI)
+			steeringWheelUI.gameObject.SetActive(true);
+		if (steeringWheelUI_backdrop)
+			steeringWheelUI_backdrop.gameObject.SetActive(true);
 
 		worldVel = this.transform.rotation * velocity;
 		//lateral drag
