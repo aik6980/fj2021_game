@@ -43,6 +43,8 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
     // Start is called before the first frame update
     void Start()
     {
+		if (!activate_button) { this.enabled = false; return; }
+
         m_constellation_list = new List<Constellation>();
         m_constellation_name_list = new List<GameObject>();
 
