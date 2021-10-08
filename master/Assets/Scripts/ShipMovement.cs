@@ -125,6 +125,10 @@ public class ShipMovement : MonoBehaviour
 
 		if (anchored || ConstellationMgr.Instance.is_canvas_mode_enabled())
 		{
+
+			isSteeringDragging = false;
+
+
 			velocity = Vector3.zero;
 			if (waterSplosh)
 			{
