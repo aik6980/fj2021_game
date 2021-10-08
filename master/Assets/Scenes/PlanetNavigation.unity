@@ -872,6 +872,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116849575, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: "This island is covered by bones! What happened here and to what {b}great
+        monster{/b}? The eerie cold surrounding this island won\u2019t keep us away..
+        {w=5}"
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849576, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 1354.994
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849576, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -97.33014
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849578, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: This island has a menacing look to it, rocky protrusions like the great
+        scales of a {b}monstrous beast{/b}.. {w=5}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849578, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849581, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: A place of beauty carved by the wind and waves that lead us here. {w=3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849581, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849584, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: This island has an unreal quality that forces us to pause, have we travelled
+        beyond our world to somewhere else? {w=3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849584, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849587, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Lush and green life abounds everywhere. But there is no sign of people,
+        this place seems to have returned to nature. {w=3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849587, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849590, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: With the help of this, our closest neighbour, our little island has
+        thrived, but secrets abound even with such close friends. Long has it been
+        known that upon their tall mountainside stands another {b}ancient tablet{/b}
+        {w=2}
+      objectReference: {fileID: 0}
     - target: {fileID: 116849592, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: message
       value: Island-0
@@ -886,6 +942,19 @@ PrefabInstance:
       propertyPath: targetObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1005621451}
+    - target: {fileID: 405227825, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: But objects reaching towards the sky only allow us to travel as far
+        as the horizon's edge. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227825, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: showAlways
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227825, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 405227826, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -922,10 +991,165 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 42454220}
+    - target: {fileID: 405227845, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: "The water here will be lit by the setting sun, to make a {color=red}blazing
+        trail{/color} into the unknown. Perhaps this is the dragon\u2019s final breath
+        of fire. {w=3}"
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227845, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227846, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: The feet of our ancestors once walked these shores. Their tracks long
+        erased, the path leading here is like the neck of some giant dragon, fallen
+        into the sea. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227846, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 1149.3147
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -36.939198
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1819711806}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1819711805}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1819711804}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1819711803}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711802}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1819711801}
+    - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1819711800}
+    - target: {fileID: 405227848, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: This strange constellation reminds us that unwanted food should be put
+        in a bin, not in a toilet! {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227848, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.x
+      value: 1337.7201
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -34.20555
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1819711799}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1819711798}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1819711797}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1819711808}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711796}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1819711795}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1819711794}
+    - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[10]
+      value: 
+      objectReference: {fileID: 1819711794}
     - target: {fileID: 405227850, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 42454220}
+    - target: {fileID: 405227851, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: This tablet, left here by our ancestors bears the markings of another
+        constellation. Here on this grim island to leave such a strange pattern.
+        Who would do such a thing? {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227851, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227853, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: But perhaps we know more now about the shape of our planet than those
+        who sailed before us. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227853, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227854, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: "Etched on this stone are strange words that make no sense. The words
+        \u2018Tardar Sauce\u2019 repeat several times. The outline of a constellation
+        is clear, maybe this is the great \u2018Tardar Sauce\u2019 constellation.
+        {w=2}"
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227854, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227855, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Such a waste. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227855, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 405227857, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -1001,8 +1225,8 @@ PrefabInstance:
       objectReference: {fileID: 1819711768}
     - target: {fileID: 405227908, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
-      value: Young ones ... no one has respect for us anymore. Back in my day ...
-        ! {w=2}
+      value: Those young ones ... no one has respect for us anymore. Back in my day
+        ... ! {w=2}
       objectReference: {fileID: 0}
     - target: {fileID: 405227911, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
@@ -1027,9 +1251,9 @@ PrefabInstance:
       objectReference: {fileID: 1819711746}
     - target: {fileID: 405227914, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
-      value: "There are stories, don\u2019tcha know? About a {b} dragon {/b} that
-        fell into the sea thousands of years ago! It streaked over the beach here
-        towards the setting sun and drowned in the ocean. {w=1}"
+      value: "There are stories, don\u2019tcha know? About a {b}dragon{/b} that fell
+        into the sea thousands of years ago! It streaked over the beach here towards
+        the setting sun and drowned in the ocean. {w=1}"
       objectReference: {fileID: 0}
     - target: {fileID: 405227914, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: showAlways
@@ -1037,8 +1261,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405227917, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
-      value: The {b} old lighthouse {/b}, you should pay a visit before leaving,
-        for good fortune on your journey! {s=45} {w=3}
+      value: The {b}old lighthouse{/b}, you should pay a visit before leaving, for
+        good fortune on your journey! {s=45} {w=3}
       objectReference: {fileID: 0}
     - target: {fileID: 405227933, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObjects.Array.data[0]
@@ -1113,6 +1337,20 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1745705871}
+    - target: {fileID: 666384193, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: "This ancient tower has stood here beyond our people\u2019s memory.
+        It has always been a marker that allowed us to navigate the ocean safely.
+        {w=2}"
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384193, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: showAlways
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384193, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 666384196, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -1125,6 +1363,210 @@ PrefabInstance:
       propertyPath: methodParameters.Array.data[0].objValue.objectValue
       value: 
       objectReference: {fileID: 2024587959}
+    - target: {fileID: 666384198, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: The words on the monolith are almost worn away by time, but the way
+        the light moves over the surface catches the shape of a {b}constellation{/b}
+        carved into the tablet. Perhaps this is a clue to where we came from? {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384198, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384199, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384200, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: There is an unmistakable majesty here high atop the mountain. From up
+        here we can see far across the ocean, the shining {b}tower{/b} out in the
+        water. And our home. So small on the horizon. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384200, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: showAlways
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384200, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384203, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: May Tardar Sauce watch down on our journey with benevolence. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384203, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384204, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Sat atop the great sea arch this tablet was placed here by a great artist.
+        Someone who recognised the beauty of this place. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384204, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1819711793}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1819711792}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1819711791}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1819711790}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711789}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1819711788}
+    - target: {fileID: 666384205, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1819711787}
+    - target: {fileID: 666384207, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Under the thick gunk there are the traces of a {b}constellation{/b},
+        with great outspread wings. Maybe these {b}dragons{/b} were revered here?
+        {w=3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384207, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384208, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Claw marks score the surface of this tablet, not to mention a certain
+        amount of guano from some very large birds. This place has seen neglect;
+        so unlike the monoliths of our home island and that of our other neighbour
+        isle. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384208, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: -38.778896
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1819711872}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1819711873}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1819711786}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1819711785}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1819711784}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1819711783}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711782}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1819711781}
+    - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1819711780}
+    - target: {fileID: 666384211, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Our people once came here, we crossed to this strange place before.
+        {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384211, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384212, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: High atop this bizarre sculped island stands testiment to those who
+        visited before. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384212, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: showAlways
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384212, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: fadeWhenDone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384212, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1819711779}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1819711778}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[5]
+      value: 
+      objectReference: {fileID: 1819711777}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[6]
+      value: 
+      objectReference: {fileID: 1819711776}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711775}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[8]
+      value: 
+      objectReference: {fileID: 1819711774}
+    - target: {fileID: 666384213, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[9]
+      value: 
+      objectReference: {fileID: 1819711773}
     - target: {fileID: 1789103039, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -1192,9 +1634,9 @@ PrefabInstance:
       objectReference: {fileID: 99599787}
     - target: {fileID: 3622296378070810835, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
-      value: The writing on the ancient tablet is worn and covered in moss. But it
-        is here that we pass on the stories of generations. The stories that help
-        us to venture out onto the sea. {w=1}
+      value: The writing on the {b}ancient tablet{/b} is worn and covered in moss.
+        But it is here that we pass on the stories of generations. The stories that
+        help us to venture out onto the sea. {w=1}
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810839, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: m_RootOrder
@@ -1242,7 +1684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: blockViewHeight
-      value: 567
+      value: 610
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: selectedBlocks.Array.size
@@ -1271,6 +1713,20 @@ PrefabInstance:
     - target: {fileID: 5171276598879765463, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.y
       value: 465.30038
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029760066209460620, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: storyText
+      value: Their village has extended a rare invitation to visit this relic of
+        the past. What might we learn if we venture to the {b}top of the peak{/b}?
+        {w=3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029760066209460620, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: showAlways
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029760066209460620, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6116471482349127166, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
@@ -1399,6 +1855,12 @@ PrefabInstance:
       objectReference: {fileID: 42454220}
     m_RemovedComponents:
     - {fileID: 405227824, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 7631304205614344204, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 8592869124968600120, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 8618191383829416351, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 8092060373066475306, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227850, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
 --- !u!114 &297093471 stripped
 MonoBehaviour:
@@ -2679,6 +3141,14 @@ PrefabInstance:
     - target: {fileID: 1907174098220339927, guid: 0fbc62c7a0432bd4f8b70fe3e18e39af, type: 3}
       propertyPath: m_Name
       value: Daylight Cycle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907174098220339929, guid: 0fbc62c7a0432bd4f8b70fe3e18e39af, type: 3}
+      propertyPath: dayLength
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 1907174098220339929, guid: 0fbc62c7a0432bd4f8b70fe3e18e39af, type: 3}
+      propertyPath: moonOrbitLength
+      value: 925
       objectReference: {fileID: 0}
     - target: {fileID: 1907174098220339929, guid: 0fbc62c7a0432bd4f8b70fe3e18e39af, type: 3}
       propertyPath: normalisedRotationTime
@@ -16280,8 +16750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 195
   indentLevel: 0
-  storyText: If you see a {b} constellation {/b}, remember us, looking at it from
-    the edge of the world! And you may feel a bit less lonely! {w=2}
+  storyText: If you see a {b}constellation{/b}, remember us, looking at it from the
+    edge of the world! And you may feel a bit less lonely! {w=2}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -16548,7 +17018,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 198
   indentLevel: 0
-  storyText: I'm almost a sailor now, but mom won't let me go! {w=3}
+  storyText: Jumping on my {b}ship{/b} and sailing the oceans! I'm almost a sailor
+    now, but mom won't let me go yet! {w=3}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -16657,6 +17128,937 @@ MonoBehaviour:
   commandList:
   - {fileID: 1819711771}
   suppressAllAutoSelections: 0
+--- !u!114 &1819711773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 213
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 212
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: StopLook
+  targetMethodText: 'StopLook (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 211
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 210
+  indentLevel: 0
+  storyText: If we venture too far...will we ever fall off the edge?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1819711777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 209
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 528911539}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1819711778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 208
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 207
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: ZoomTo
+  targetMethodText: 'ZoomTo (Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 528911540}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 206
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 205
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: StopLook
+  targetMethodText: 'StopLook (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 204
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 203
+  indentLevel: 0
+  storyText: Here be....dragons?
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1819711784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 202
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 2133029702}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1819711785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 201
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 200
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: ZoomTo
+  targetMethodText: 'ZoomTo (Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 2133029703}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 220
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 219
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: StopLook
+  targetMethodText: 'StopLook (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 218
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 217
+  indentLevel: 0
+  storyText: Doesn't look too happy..
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1819711791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 216
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 338452242}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1819711792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 215
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 214
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: ZoomTo
+  targetMethodText: 'ZoomTo (Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 338452243}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 234
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 233
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: StopLook
+  targetMethodText: 'StopLook (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 232
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 230
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 1807910821}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1819711798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 229
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 228
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: ZoomTo
+  targetMethodText: 'ZoomTo (Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 1807910822}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 227
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 226
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: StopLook
+  targetMethodText: 'StopLook (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 225
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 224
+  indentLevel: 0
+  storyText: Fuel to my fire..!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &1819711804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 223
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 877951531}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &1819711805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 222
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 3
+  durationOLD: 0
+--- !u!114 &1819711806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 221
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745705871}
+  targetComponentAssemblyName: CameraControl, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: CameraControl
+  targetMethod: ZoomTo
+  targetMethodText: 'ZoomTo (Transform): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      typeFullname: UnityEngine.Transform
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 877951532}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 405227855, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+  m_PrefabInstance: {fileID: 297093470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1819711872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 666384208, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+  m_PrefabInstance: {fileID: 297093470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1819711873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 666384207, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+  m_PrefabInstance: {fileID: 297093470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1833573646
 GameObject:
   m_ObjectHideFlags: 0
