@@ -31,6 +31,11 @@ Shader "Custom/WaterSurfaceShader"
         _Glossiness("Smoothness", Range(0,1)) = 0.5
         _FresnelPower("Fresnel power", float) = 1
         _Cube("Reflection Cubemap", CUBE) = "" {}
+
+        [Header(Displacement)]
+        _Direction("Direction", Vector) = (1.0, 0.0, 0.0, 1.0)
+        _Steepness("Steepness", Range(0.000001, 0.0001)) = 0.5
+        _Freq("Frequency", Range(100.0, 10000.0)) = 1.0
     }
     SubShader
     {
@@ -41,6 +46,9 @@ Shader "Custom/WaterSurfaceShader"
 
         CGPROGRAM
         #pragma surface surf Standard fullforwardshadows alpha:blend vertex:vert
+
+        #include "UnityCG.cginc"
+        #include "Assets/Shaders/Noise/ClassicNoise3D.hlsl"
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -88,6 +96,9 @@ Shader "Custom/WaterSurfaceShader"
 
         samplerCUBE _Cube;
 
+        float _Steepness, _Freq;
+        float4 _Direction;
+
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
         // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
         // #pragma instancing_options assumeuniformscaling
@@ -102,7 +113,42 @@ Shader "Custom/WaterSurfaceShader"
         {
             UNITY_INITIALIZE_OUTPUT(Input, o);
             o.localPos = v.vertex.xyz;
+        
+            // displacement
+            float3 pos = v.vertex.xyz * _Freq + sin(_Time.y);
+            float4 dir = normalize(_Direction);
+            
+            float default_wavelength = 2 * UNITY_PI;
+            float wL = default_wavelength / _Freq;
+            float phase = sqrt(9.8 / wL);
+            float disp = wL * (dot(dir, pos) - (phase * _Time.y));
+        
+            float peak = _Steepness / wL; 
+            //pos.x += dir.x * (peak * cos(disp));
+            //pos.y = peak * sin(disp);
+            //pos.z += dir.y * (peak * cos(disp));
+
+            float3 displace = 0.0;
+            float s = 1;
+            float w = 0.5;
+            const float epsilon = 0.0001;
+            for (int i = 0; i < 6; i++)
+            {
+                float v0 = ClassicNoise(pos + float3(0.0, 0.0, 0.0));
+                float vx = ClassicNoise(pos + float3(epsilon, 0.0, 0.0));
+                float vy = ClassicNoise(pos + float3(0.0, epsilon, 0.0));
+                float vz = ClassicNoise(pos + float3(0.0, 0.0, epsilon));
+                displace += w * float3(vx - v0, vy - v0, vz - v0) / epsilon;
+
+                s *= 2.0;
+                w *= 0.5;
+            }
+
+            //v.vertex.xyz = pos;
+            v.vertex.xyz += v.normal * displace.y * _Steepness;
         }
+
+
 
         void surf(Input IN, inout SurfaceOutputStandard o)
         {

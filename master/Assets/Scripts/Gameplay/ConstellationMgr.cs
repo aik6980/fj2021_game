@@ -32,6 +32,14 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
     public float line_width = 2.0f;
 
+    private FMOD.Studio.EventInstance stargazing_drawing, stargazing_constellation;
+    FMOD.Studio.PLAYBACK_STATE PlaybackState_Drawing(FMOD.Studio.EventInstance stargazing_drawing)
+        {
+            FMOD.Studio.PLAYBACK_STATE pS;
+            stargazing_drawing.getPlaybackState(out pS);
+            return pS;        
+        }
+
 
     Dictionary<Starpicking, List<ParticleSystem.Particle>> star_pickers = new Dictionary<Starpicking, List<ParticleSystem.Particle>>();
 
@@ -146,6 +154,11 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
                     m_tmp_line.useWorldSpace = false;
                     m_tmp_line.positionCount = 2;
                     m_tmp_line.SetPosition(0, Vector3.zero);
+                    if (PlaybackState_Drawing(stargazing_drawing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+                {
+                    stargazing_drawing = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/stargazing_drawing");
+                    stargazing_drawing.start();
+                }
                 }
             }
 
@@ -165,6 +178,9 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
                     m_curr_constellation.lines.Add(m_tmp_line);
                     m_tmp_line = null;
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByName("end_on_star", 1.0f);
+                    stargazing_drawing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                    stargazing_drawing.release();
                 }
             }
 
@@ -172,6 +188,9 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
             {
                 Destroy(m_tmp_line.gameObject);
                 m_tmp_line = null;
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByName("end_on_star", 0.0f);
+                stargazing_drawing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                stargazing_drawing.release();
             }
 
         }
@@ -228,6 +247,10 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
                 var name = comp_name_inputfield.text;
                 m_curr_constellation.name = name;
 
+                stargazing_constellation = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/stargazing_constellation");
+                stargazing_constellation.start();
+                stargazing_constellation.release();
+
                 // clone then add
                 var new_constellation = new Constellation();
                 new_constellation.name = name;
@@ -249,6 +272,7 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
 
                 m_constellation_list.Add(new_constellation);
                 m_constellation_name_list.Add(go);
+
             }
 
             // destroy the temp one
