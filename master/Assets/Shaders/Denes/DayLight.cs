@@ -3,6 +3,8 @@ using System.Collections;
 
 public class DayLight : MonoBehaviour 
 {
+	public static DayLight singleton;
+
 	public float dayLength = 60.0f;
 
 	public Transform sunRoot;
@@ -34,6 +36,12 @@ public class DayLight : MonoBehaviour
 	//debug
 	public float dot;
 	public float dot2;
+
+
+	private void Awake()
+	{
+		singleton = this;
+	}
 
 	// Use this for initialization
 	void Start () 
