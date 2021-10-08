@@ -22868,6 +22868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera_control: {fileID: 1727392434}
   velocity: {x: 0, y: 0, z: 0}
+  otherObject: {fileID: 1579618764}
 --- !u!4 &1833573648
 Transform:
   m_ObjectHideFlags: 0
