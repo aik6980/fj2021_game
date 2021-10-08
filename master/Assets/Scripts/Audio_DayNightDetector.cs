@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Audio_DayNightDetector : MonoBehaviour
 {
-    public GameObject DayLightCycle;
 
     private FMOD.Studio.EventInstance instance;
     private FMOD.Studio.PARAMETER_ID day_nightParameterID;
@@ -32,7 +31,7 @@ public class Audio_DayNightDetector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var daylight_script = DayLightCycle.GetComponent<DayLight>();
-        instance.setParameterByID(day_nightParameterID, daylight_script.normalisedDayTime);
+        //Debug.Log(DayLight.singleton.normalisedDayTime);
+        instance.setParameterByID(day_nightParameterID, DayLight.singleton.normalisedDayTime);
     }
 }
