@@ -273,6 +273,10 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
                 m_constellation_list.Add(new_constellation);
                 m_constellation_name_list.Add(go);
 
+                stargazing_constellation = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/stargazing_constellation");
+                stargazing_constellation.start();
+                stargazing_constellation.release();
+
             }
 
             // destroy the temp one
