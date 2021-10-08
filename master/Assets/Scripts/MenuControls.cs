@@ -10,7 +10,7 @@ public class MenuControls : MonoBehaviour
 	public GameObject inGameMenuRoot;
 
 	public bool paused;
-
+	public bool ignoreInput;
 
 
 	void Awake()
@@ -30,6 +30,8 @@ public class MenuControls : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+		if (ignoreInput) return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			if (!paused)
@@ -66,5 +68,10 @@ public class MenuControls : MonoBehaviour
 	public void OnQuitButton()
 	{
 		Application.Quit();
+	}
+
+	public void IgnoreInput(bool on)
+	{
+		ignoreInput = on;
 	}
 }
