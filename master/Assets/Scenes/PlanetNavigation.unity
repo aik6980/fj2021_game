@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3035893, g: 0.306869, b: 0.1447673, a: 1}
+  m_IndirectSpecularColor: {r: 0.30358562, g: 0.30686286, b: 0.14476418, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1134,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 116849593, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: showCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 116849593, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
@@ -2004,32 +2004,40 @@ PrefabInstance:
       propertyPath: targetObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1005621451}
+    - target: {fileID: 405227947, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitUntilFinished.booleanVal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.x
-      value: 277.24536
+      value: 269.6505
       objectReference: {fileID: 0}
     - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.y
-      value: 462.58975
+      value: 466.38718
       objectReference: {fileID: 0}
     - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.width
-      value: 114.47366
+      value: 119.62024
       objectReference: {fileID: 0}
     - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[1]
       value: 
-      objectReference: {fileID: 1819711823}
+      objectReference: {fileID: 1819711903}
     - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[2]
       value: 
-      objectReference: {fileID: 1819711810}
+      objectReference: {fileID: 1819711823}
     - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1819711810}
+    - target: {fileID: 405227948, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[4]
       value: 
       objectReference: {fileID: 1819711824}
     - target: {fileID: 666384188, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
@@ -2416,6 +2424,10 @@ PrefabInstance:
       propertyPath: _targetGameObject.gameObjectVal
       value: 
       objectReference: {fileID: 1287148528}
+    - target: {fileID: 2589986947360005818, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: message
+      value: Age_250
+      objectReference: {fileID: 0}
     - target: {fileID: 2834000964872530433, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: It has been a while. I have been away for some time already.. {w=3}
@@ -2531,6 +2543,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 42454220}
     - target: {fileID: 5171276598879765463, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: blockName
+      value: Age_250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171276598879765463, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.x
       value: 59.038597
       objectReference: {fileID: 0}
@@ -2540,7 +2556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5171276598879765463, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.width
-      value: 89.47367
+      value: 93.037964
       objectReference: {fileID: 0}
     - target: {fileID: 5171276598879765463, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
@@ -2574,7 +2590,7 @@ PrefabInstance:
       objectReference: {fileID: 42454220}
     - target: {fileID: 6942984137332990856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: showCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6942984137332990856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
@@ -18630,7 +18646,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 220.91663
     y: 305.10022
-    width: 101.31577
+    width: 105.69619
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -19644,7 +19660,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 278
   indentLevel: 0
-  storyText: I wonder what they would say..would they recognize me? {w=3}
+  storyText: I wonder what they would say back if they saw me..would they recognize
+    me? {w=3}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -21223,7 +21240,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 409.82864
     y: 247.81683
-    width: 132.89471
+    width: 137.34175
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21293,7 +21310,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 413.35797
     y: 191.34628
-    width: 134.21051
+    width: 137.34175
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21362,7 +21379,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 408.06378
     y: 134.87581
-    width: 134.21051
+    width: 137.34175
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21453,7 +21470,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 410.41684
     y: 77.22874
-    width: 132.89471
+    width: 137.34175
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -21522,7 +21539,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 411.59332
     y: 23.111088
-    width: 132.89471
+    width: 136.07593
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -22783,6 +22800,24 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1819711903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 333
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  durationOLD: 0
 --- !u!114 &1819712020 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
@@ -24090,6 +24125,10 @@ PrefabInstance:
     - target: {fileID: 5560790471333301891, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_RootOrder
       value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649238142264638078, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5727009221097793513, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_LocalScale.x
