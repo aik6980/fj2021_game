@@ -2416,13 +2416,19 @@ GameObject:
   - component: {fileID: 7590219641747621324}
   m_Layer: 10
   m_Name: Trigger
+<<<<<<< Updated upstream
   m_TagString: Island-7
+=======
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5510979363010690185
 Transform:
+<<<<<<< Updated upstream
+=======
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2506,6 +2512,7 @@ MeshCollider:
   m_Mesh: {fileID: -4551110832435944924, guid: 8cb3726dc6afe5d479e026be2e7ad449, type: 3}
 --- !u!64 &4564039876831562052
 MeshCollider:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
