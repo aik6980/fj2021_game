@@ -373,6 +373,23 @@ public class CameraControl : MonoBehaviour
 
 		canDisembark = depth < maxDisembarkDepth;
 		//ToDo: check with onfootmovement if it also accepts it
+		{
+			Vector3 localUp = (hitPoint - Tina.planetRoot.position).normalized;
+			float groundSlopeThere = Mathf.Acos(Vector3.Dot(hitNormal, localUp)) * Mathf.Rad2Deg;
+
+			//do not step on too steep ground
+			if (groundSlopeThere >= footMove.maxGroundSlopeUp)
+			{//too steep
+				//Debug.Log("too steep");
+				canDisembark = false;
+			} else
+			//do not step DOWN into water (but allow coming up out)
+			if ((hitPoint - Tina.planetRoot.position).magnitude < footMove.seaLevelMin) //not accurate enough but cheap early test
+			{
+				//Debug.Log("water");
+				canDisembark = false;
+			}
+		}
 		Debug.DrawLine(p1, p1 + dir * depth, canDisembark ? Color.green : Color.red);
 	}
 

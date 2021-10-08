@@ -48,6 +48,9 @@ public class RespawnMechanics : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+		if (!StoryTeller.singleton) return;
+
+
 		currentAge += Time.deltaTime / ageYearLengthInSeconds;
 
 		int _years = (int)currentAge;

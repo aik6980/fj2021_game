@@ -11,8 +11,15 @@ public class MenuControls : MonoBehaviour
 
 	public bool paused;
 
-    // Start is called before the first frame update
-    void Start()
+
+
+	void Awake()
+	{
+	}
+
+
+	// Start is called before the first frame update
+	void Start()
     {
 		quitButton.onClick.AddListener(this.OnQuitButton);
 
