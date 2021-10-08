@@ -1101,7 +1101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.x
-      value: 1149.3147
+      value: 1150.6846
       objectReference: {fileID: 0}
     - target: {fileID: 405227847, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.y
@@ -1162,15 +1162,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.y
-      value: -34.20555
+      value: -35.575413
       objectReference: {fileID: 0}
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.width
-      value: 147.64703
+      value: 141.78079
       objectReference: {fileID: 0}
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[2]
@@ -1199,7 +1199,7 @@ PrefabInstance:
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[8]
       value: 
-      objectReference: {fileID: 1819711795}
+      objectReference: {fileID: 1819711885}
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[9]
       value: 
@@ -1260,40 +1260,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.width
-      value: 203.60825
+      value: 195.20543
       objectReference: {fileID: 0}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[2]
+      propertyPath: commandList.Array.data[1]
       value: 
       objectReference: {fileID: 1819711859}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[3]
+      propertyPath: commandList.Array.data[2]
       value: 
       objectReference: {fileID: 1819711858}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[4]
+      propertyPath: commandList.Array.data[3]
       value: 
       objectReference: {fileID: 1819711857}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[5]
+      propertyPath: commandList.Array.data[4]
       value: 
       objectReference: {fileID: 1819711856}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[6]
+      propertyPath: commandList.Array.data[5]
       value: 
       objectReference: {fileID: 1819711855}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[7]
+      propertyPath: commandList.Array.data[6]
       value: 
       objectReference: {fileID: 1819711854}
     - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711884}
+    - target: {fileID: 405227856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[8]
       value: 
-      objectReference: {fileID: 1819711853}
+      objectReference: {fileID: 405227857, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
     - target: {fileID: 405227857, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -1327,40 +1331,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.width
-      value: 182.98969
+      value: 174.6575
       objectReference: {fileID: 0}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[2]
+      propertyPath: commandList.Array.data[1]
       value: 
       objectReference: {fileID: 1819711852}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[3]
+      propertyPath: commandList.Array.data[2]
       value: 
       objectReference: {fileID: 1819711851}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[4]
+      propertyPath: commandList.Array.data[3]
       value: 
       objectReference: {fileID: 1819711850}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[5]
+      propertyPath: commandList.Array.data[4]
       value: 
       objectReference: {fileID: 1819711849}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[6]
+      propertyPath: commandList.Array.data[5]
       value: 
       objectReference: {fileID: 1819711848}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[7]
+      propertyPath: commandList.Array.data[6]
       value: 
       objectReference: {fileID: 1819711847}
     - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711883}
+    - target: {fileID: 405227863, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[8]
       value: 
-      objectReference: {fileID: 1819711846}
+      objectReference: {fileID: 405227861, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
     - target: {fileID: 405227864, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: This constellation makes us hungry. It reminds us of our long journey
@@ -1379,37 +1387,45 @@ PrefabInstance:
       value: 437.32578
       objectReference: {fileID: 0}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.size
-      value: 8
+      propertyPath: nodeRect.width
+      value: 191.09584
       objectReference: {fileID: 0}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[2]
+      propertyPath: commandList.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[1]
       value: 
       objectReference: {fileID: 1819711845}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[3]
+      propertyPath: commandList.Array.data[2]
       value: 
       objectReference: {fileID: 1819711844}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[4]
+      propertyPath: commandList.Array.data[3]
       value: 
       objectReference: {fileID: 1819711843}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[5]
+      propertyPath: commandList.Array.data[4]
       value: 
       objectReference: {fileID: 1819711842}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[6]
+      propertyPath: commandList.Array.data[5]
       value: 
       objectReference: {fileID: 1819711841}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[7]
+      propertyPath: commandList.Array.data[6]
       value: 
       objectReference: {fileID: 1819711840}
     - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711882}
+    - target: {fileID: 405227870, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[8]
       value: 
-      objectReference: {fileID: 1819711839}
+      objectReference: {fileID: 405227871, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
     - target: {fileID: 405227871, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -1448,37 +1464,45 @@ PrefabInstance:
       value: 498.0331
       objectReference: {fileID: 0}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.size
-      value: 8
+      propertyPath: nodeRect.width
+      value: 189.72598
       objectReference: {fileID: 0}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[2]
+      propertyPath: commandList.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[1]
       value: 
       objectReference: {fileID: 1819711838}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[3]
+      propertyPath: commandList.Array.data[2]
       value: 
       objectReference: {fileID: 1819711837}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[4]
+      propertyPath: commandList.Array.data[3]
       value: 
       objectReference: {fileID: 1819711836}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[5]
+      propertyPath: commandList.Array.data[4]
       value: 
       objectReference: {fileID: 1819711835}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[6]
+      propertyPath: commandList.Array.data[5]
       value: 
       objectReference: {fileID: 1819711834}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[7]
+      propertyPath: commandList.Array.data[6]
       value: 
       objectReference: {fileID: 1819711832}
     - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711881}
+    - target: {fileID: 405227877, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[8]
       value: 
-      objectReference: {fileID: 1819711831}
+      objectReference: {fileID: 405227875, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
     - target: {fileID: 405227878, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: "Our heroic journey feels close to it\u2019s end this enormous statue
@@ -1496,40 +1520,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.width
-      value: 147.93814
+      value: 141.78079
       objectReference: {fileID: 0}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[2]
+      propertyPath: commandList.Array.data[1]
       value: 
       objectReference: {fileID: 1819711830}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[3]
+      propertyPath: commandList.Array.data[2]
       value: 
       objectReference: {fileID: 1819711829}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[4]
+      propertyPath: commandList.Array.data[3]
       value: 
       objectReference: {fileID: 1819711828}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[5]
+      propertyPath: commandList.Array.data[4]
       value: 
       objectReference: {fileID: 1819711826}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[6]
+      propertyPath: commandList.Array.data[5]
       value: 
       objectReference: {fileID: 1819711825}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
-      propertyPath: commandList.Array.data[7]
+      propertyPath: commandList.Array.data[6]
       value: 
       objectReference: {fileID: 1819711822}
     - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: commandList.Array.data[7]
+      value: 
+      objectReference: {fileID: 1819711880}
+    - target: {fileID: 405227879, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[8]
       value: 
-      objectReference: {fileID: 1819711821}
+      objectReference: {fileID: 405227880, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
     - target: {fileID: 405227880, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -1554,11 +1582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405227883, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: nodeRect.width
-      value: 151.06381
+      value: 143.15065
       objectReference: {fileID: 0}
     - target: {fileID: 405227883, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 405227883, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[4]
@@ -1587,7 +1615,7 @@ PrefabInstance:
     - target: {fileID: 405227883, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[10]
       value: 
-      objectReference: {fileID: 1819711815}
+      objectReference: {fileID: 1819711879}
     - target: {fileID: 405227883, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[11]
       value: 
@@ -8750,7 +8778,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8355055007284101108, guid: d21a9d562797dea4ba1383204445e425, type: 3}
   m_PrefabInstance: {fileID: 2346064958392405831}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &593808315
+--- !u!64 &593808317
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9938,7 +9966,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7786066980746084313, guid: d21a9d562797dea4ba1383204445e425, type: 3}
   m_PrefabInstance: {fileID: 2346064958392405831}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &929277615
+--- !u!64 &929277617
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9957,7 +9985,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6337156385326137996, guid: d21a9d562797dea4ba1383204445e425, type: 3}
   m_PrefabInstance: {fileID: 2346064958392405831}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &962676941
+--- !u!64 &962676943
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9976,7 +10004,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5717549396115222433, guid: d21a9d562797dea4ba1383204445e425, type: 3}
   m_PrefabInstance: {fileID: 2346064958392405831}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &987910040
+--- !u!64 &987910042
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18047,7 +18075,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 220.91663
     y: 305.10022
-    width: 109.61533
+    width: 103.42464
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20383,7 +20411,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 409.82864
     y: 247.81683
-    width: 142.30762
+    width: 132.19174
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20453,7 +20481,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 413.35797
     y: 191.34628
-    width: 142.30762
+    width: 133.56161
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20522,7 +20550,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 408.06378
     y: 134.87581
-    width: 142.30762
+    width: 133.56161
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20613,7 +20641,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 410.41684
     y: 77.22874
-    width: 142.30762
+    width: 132.19174
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20682,7 +20710,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 411.59332
     y: 23.111088
-    width: 140.38454
+    width: 130.8219
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -20693,6 +20721,202 @@ MonoBehaviour:
   commandList:
   - {fileID: 1819711877}
   suppressAllAutoSelections: 0
+--- !u!114 &1819711879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 301
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 298
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 297
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 296
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 299
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 300
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1819711885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 295
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 42454220}
+  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: RespawnMechanics
+  targetMethod: SaveRespawnPoint
+  targetMethodText: 'SaveRespawnPoint (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1833573646
 GameObject:
   m_ObjectHideFlags: 0
