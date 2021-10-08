@@ -22703,7 +22703,7 @@ PrefabInstance:
       objectReference: {fileID: 1447744788}
     - target: {fileID: 4969102832529159723, guid: d5d6fb4cc35b44d43a410c50264ca95e, type: 3}
       propertyPath: maxAge
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4969102832529159723, guid: d5d6fb4cc35b44d43a410c50264ca95e, type: 3}
       propertyPath: player
