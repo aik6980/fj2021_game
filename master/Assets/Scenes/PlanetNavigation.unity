@@ -1017,10 +1017,18 @@ PrefabInstance:
       value: Island-0
       objectReference: {fileID: 0}
     - target: {fileID: 116849593, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: showCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849593, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: From these shores, {s=45} our parents have sailed to visit the islands
         of our neighbours. But today we set out further. To explore what lies beyond
         the horizons edge. {w=2}
+      objectReference: {fileID: 0}
+    - target: {fileID: 116849593, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 405227823, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: duration.floatVal
@@ -1203,11 +1211,11 @@ PrefabInstance:
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[9]
       value: 
-      objectReference: {fileID: 1819711794}
+      objectReference: {fileID: 0}
     - target: {fileID: 405227849, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[10]
       value: 
-      objectReference: {fileID: 1819711794}
+      objectReference: {fileID: 0}
     - target: {fileID: 405227850, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -1619,7 +1627,7 @@ PrefabInstance:
     - target: {fileID: 405227883, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[11]
       value: 
-      objectReference: {fileID: 1819711814}
+      objectReference: {fileID: 0}
     - target: {fileID: 405227884, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
       value: 
@@ -2080,7 +2088,7 @@ PrefabInstance:
     - target: {fileID: 666384209, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.data[9]
       value: 
-      objectReference: {fileID: 1819711780}
+      objectReference: {fileID: 0}
     - target: {fileID: 666384211, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: Our people once came here, we crossed to this strange place before.
@@ -2300,7 +2308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810845, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3984573119993896149, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
@@ -2349,12 +2357,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 42454220}
     - target: {fileID: 6942984137332990856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: showCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942984137332990856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: To follow the setting {color=orange} sun {/color} and pass out of sight
         of home. To find what we may on the {color=blue} ocean {/color}. {s=45} {w=5}
       objectReference: {fileID: 0}
     - target: {fileID: 6942984137332990856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: showAlways
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942984137332990856, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: waitForClick
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7631304205614344204, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
@@ -2483,6 +2499,7 @@ PrefabInstance:
     - {fileID: 405227861, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
     - {fileID: 405227857, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
     - {fileID: 405227884, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 6116471482349127166, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
 --- !u!114 &297093472 stripped
 MonoBehaviour:
@@ -8992,7 +9009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1274001130}
+  selectedFlowchart: {fileID: 1819712020}
 --- !u!4 &627649188
 Transform:
   m_ObjectHideFlags: 1
@@ -11116,17 +11133,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1274001130 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 514268031, guid: dbd7f833752d7914ca928fc6c0702690, type: 3}
-  m_PrefabInstance: {fileID: 5441226067251856948}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274001115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1274001131
@@ -18461,7 +18467,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 95
+  itemId: 302
   blockName: Seagull_0
   description: 
   eventHandler: {fileID: 1819711770}
@@ -18648,34 +18654,6 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &1819711780
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 206
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -19023,34 +19001,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1819711794
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 234
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &1819711795
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -19176,34 +19126,6 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &1819711800
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 227
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -19541,34 +19463,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &1819711814
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 277
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &1819711815
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -19710,34 +19604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1819711821
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 255
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &1819711822
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -19928,34 +19794,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1819711831
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 248
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &1819711832
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -20124,34 +19962,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1819711839
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 241
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &1819711840
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -20309,34 +20119,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1819711846
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 262
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &1819711847
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -20489,34 +20271,6 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &1819711853
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819711744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 269
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 42454220}
-  targetComponentAssemblyName: RespawnMechanics, Assembly-CSharp, Version=0.0.0.0,
-    Culture=neutral, PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: RespawnMechanics
-  targetMethod: SaveRespawnPoint
-  targetMethodText: 'SaveRespawnPoint (): Void'
-  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
@@ -20797,7 +20551,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 99
+  itemId: 303
   blockName: Island-1 Char 5
   description: 
   eventHandler: {fileID: 1819711862}
@@ -20867,7 +20621,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 99
+  itemId: 304
   blockName: Island-1 Char 4
   description: 
   eventHandler: {fileID: 1819711865}
@@ -20936,7 +20690,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 99
+  itemId: 305
   blockName: Island-1 Char 3
   description: 
   eventHandler: {fileID: 1819711868}
@@ -21027,7 +20781,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 99
+  itemId: 306
   blockName: Island-1 Char 2
   description: 
   eventHandler: {fileID: 1819711871}
@@ -21096,7 +20850,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 99
+  itemId: 307
   blockName: Island-1 Char 1
   description: 
   eventHandler: {fileID: 1819711876}
@@ -21299,6 +21053,17 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &1819712020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3622296378070810844, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+  m_PrefabInstance: {fileID: 297093470}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819711744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1833573646
 GameObject:
   m_ObjectHideFlags: 0
