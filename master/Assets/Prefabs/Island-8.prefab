@@ -382,8 +382,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322820946845745749}
   m_LocalRotation: {x: -0.87449586, y: 0.46005812, z: -0.023016442, w: 0.15190035}
-  m_LocalPosition: {x: -88.75206, y: -306.03745, z: -42.887817}
-  m_LocalScale: {x: 1.4448533, y: 0.64808863, z: 0.973086}
+  m_LocalPosition: {x: -0.0000013807, y: 0.0000031673, z: 0.000006452}
+  m_LocalScale: {x: 0.23610348, y: -0.12546995, z: -0.26615846}
   m_Children: []
   m_Father: {fileID: 4821316069251258267}
   m_RootOrder: 0
@@ -5481,7 +5481,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dc8b3863c92f548599f7f67076855dc4, type: 2}
     - target: {fileID: 919132149155446097, guid: fe9b665abff764991a9a06990d0b91db, type: 3}
       propertyPath: m_Name
-      value: monolith_merman
+      value: monolith-8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9b665abff764991a9a06990d0b91db, type: 3}
