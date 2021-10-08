@@ -59,7 +59,7 @@ public class OnFootMovement : MonoBehaviour
 		bool stepped = false;
 
 		//move on WASD press (allows faster ;)
-		if (Input.GetKeyDown(KeyCode.W))
+/*		if (Input.GetKeyDown(KeyCode.W))
 			newPos += camCon.transform.forward * stepLength;
 		if (Input.GetKeyDown(KeyCode.S))
 			newPos += camCon.transform.forward * -stepLength;
@@ -68,7 +68,7 @@ public class OnFootMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.D))
 			newPos += camCon.transform.right * stepLength;
 		stepped = newPos != oldPos;
-
+*/
 		if (stepTimer > 0)
 		{
 			stepTimer -= Time.deltaTime;
