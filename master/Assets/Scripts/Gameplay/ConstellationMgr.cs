@@ -179,8 +179,6 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
                     m_curr_constellation.lines.Add(m_tmp_line);
                     m_tmp_line = null;
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByName("end_on_star", 1.0f);
-                    stargazing_drawing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    stargazing_drawing.release();
                 }
             }
 
@@ -189,9 +187,10 @@ public class ConstellationMgr : MonoSingleton<ConstellationMgr>
                 Destroy(m_tmp_line.gameObject);
                 m_tmp_line = null;
                 FMODUnity.RuntimeManager.StudioSystem.setParameterByName("end_on_star", 0.0f);
-                stargazing_drawing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                stargazing_drawing.release();
+                
             }
+            stargazing_drawing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            stargazing_drawing.release();
 
         }
 

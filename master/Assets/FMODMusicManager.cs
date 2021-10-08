@@ -5,11 +5,10 @@ using UnityEngine;
 public class FMODMusicManager : MonoBehaviour
 {
 
-    public CameraControl camera_control;
-    public Vector3 velocity;
-    public GameObject otherObject;
+    public GameObject creditsObject;
 
-    private FMOD.Studio.EventInstance music_stargazing, music_sailing, music_introstart, music_introend;
+
+    private FMOD.Studio.EventInstance music_stargazing, music_introstart, music_introend;
 
     FMOD.Studio.PLAYBACK_STATE PlaybackState_IntroStart(FMOD.Studio.EventInstance music_introstart)
         {
@@ -29,12 +28,6 @@ public class FMODMusicManager : MonoBehaviour
             music_stargazing.getPlaybackState(out pS);
             return pS;        
         }
-    FMOD.Studio.PLAYBACK_STATE PlaybackState_Sailing(FMOD.Studio.EventInstance music_sailing)
-        {
-            FMOD.Studio.PLAYBACK_STATE pS;
-            music_sailing.getPlaybackState(out pS);
-            return pS;        
-        }
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +39,7 @@ public class FMODMusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (otherObject.activeSelf != true)
+        if (creditsObject.activeSelf != true)
         {
             if (PlaybackState_IntroStart(music_introstart) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
             {
@@ -77,15 +70,8 @@ public class FMODMusicManager : MonoBehaviour
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("constellation_view", 0.0f);
         }
-        
-        if (velocity.z > 10.0f)
-        {
-            if (PlaybackState_Sailing(music_sailing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-            {
-                music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
-                music_sailing.start();
-            }
-        }
+
+
 
     }
 }

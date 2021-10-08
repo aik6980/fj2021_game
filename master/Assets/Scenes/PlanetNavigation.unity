@@ -3035,7 +3035,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 38dfbda9d7aa1264d866cbb79cdb8f09, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 38dfbda9d7aa1264d866cbb79cdb8f09, type: 3}
       propertyPath: m_LocalScale.x
@@ -4245,7 +4245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2056955869}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!199 &592665502
 ParticleSystemRenderer:
@@ -12763,7 +12763,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 717839942459416312, guid: ae5538e49af42664f84af2641199d512, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 717839942459416312, guid: ae5538e49af42664f84af2641199d512, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22869,6 +22869,7 @@ MonoBehaviour:
   camera_control: {fileID: 1727392434}
   velocity: {x: 0, y: 0, z: 0}
   otherObject: {fileID: 1579618764}
+  shipObject: {fileID: 1447744788}
 --- !u!4 &1833573648
 Transform:
   m_ObjectHideFlags: 0
@@ -23344,7 +23345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 402445073247719897, guid: ecad13e11b15958418449437246d7baa, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 402445073247719897, guid: ecad13e11b15958418449437246d7baa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23436,11 +23437,11 @@ Transform:
   - {fileID: 1421966687}
   - {fileID: 692349433}
   - {fileID: 1687705824}
-  - {fileID: 2109963660}
   - {fileID: 202451876}
   - {fileID: 365904771}
   - {fileID: 2028904386}
   - {fileID: 592665501}
+  - {fileID: 2109963660}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -79.6, y: 14.78, z: 0}
@@ -23827,7 +23828,7 @@ PrefabInstance:
       objectReference: {fileID: 1955308101}
     - target: {fileID: 746564115713440133, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 746564115713440133, guid: f16fb26fb0932294dbe130de182d4814, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24963,23 +24964,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 368606241, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 520997659, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1208470254, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1208470255, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1421785346, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1421785346, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: camera_control
@@ -24991,7 +24992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 151424918697763704, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697449810631386307, guid: 95f6e3e6eb8ef644e874620bc05cd66a, type: 3}
       propertyPath: m_RootOrder

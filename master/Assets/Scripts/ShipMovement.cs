@@ -239,7 +239,7 @@ public class ShipMovement : MonoBehaviour
 			velocity.z -= 25.0f * Time.deltaTime;
 
 			
-		//play and stop music
+		//boat moving audio
 		if (PlaybackState(music_sailing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
 		
 		{
@@ -247,16 +247,10 @@ public class ShipMovement : MonoBehaviour
 				{
 					music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
 					music_sailing.start();
-				}
-		}
-		if (PlaybackState(music_sailing) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-		{
-			if (velocity.z < 1.0f)
-				{
-					music_sailing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 					music_sailing.release();
 				}
 		}
+
 
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("sailing_speed", velocity.z);
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("is_turning", velocity.y);
