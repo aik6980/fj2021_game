@@ -1701,7 +1701,7 @@ PrefabInstance:
       objectReference: {fileID: 1745705871}
     - target: {fileID: 405227905, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
-      value: When I grow up, I want to be just like you! {w=1}
+      value: When I grow up, I want to be just like you! {w=2}
       objectReference: {fileID: 0}
     - target: {fileID: 405227905, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: showAlways
@@ -1726,12 +1726,12 @@ PrefabInstance:
     - target: {fileID: 405227908, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: Those young ones ... no one has respect for us anymore. Back in my day
-        ... ! {w=2}
+        ... ! {w=3}
       objectReference: {fileID: 0}
     - target: {fileID: 405227911, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
       value: '{hpunch=10,0.5} How many of you will we lose to the ocean? Is this
-        island not enough for you people? {w=2}'
+        island not enough for you people? {w=3}'
       objectReference: {fileID: 0}
     - target: {fileID: 405227912, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: commandList.Array.size
@@ -1753,11 +1753,15 @@ PrefabInstance:
       propertyPath: storyText
       value: "There are stories, don\u2019tcha know? About a {b}dragon{/b} that fell
         into the sea thousands of years ago! It streaked over the beach here towards
-        the setting sun and drowned in the ocean. {w=1}"
+        the setting sun and drowned in the ocean. {w=3}"
       objectReference: {fileID: 0}
     - target: {fileID: 405227914, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: showAlways
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 405227915, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+      propertyPath: nodeRect.y
+      value: 74.947464
       objectReference: {fileID: 0}
     - target: {fileID: 405227917, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: storyText
@@ -18069,7 +18073,7 @@ MonoBehaviour:
   itemId: 196
   indentLevel: 0
   storyText: They will always be there! To guide your ship, and your heart, back
-    home! Goodwinds! {w=3}
+    home! Goodwinds! {w=4}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -18097,7 +18101,7 @@ MonoBehaviour:
   itemId: 195
   indentLevel: 0
   storyText: If you see a {b}constellation{/b}, remember us, looking at it from the
-    edge of the world! And you may feel a bit less lonely! {w=2}
+    edge of the world! And you may feel a bit less lonely! {w=2.5}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -18125,7 +18129,7 @@ MonoBehaviour:
   itemId: 194
   indentLevel: 0
   storyText: Anyway, remember to think about us, from time to time. If you feel lonely
-    or lost, just lift your head, and gaze upon the stars! {w=2}
+    or lost, just lift your head, and gaze upon the stars! {w=2.5}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -20518,7 +20522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 293
   indentLevel: 0
-  storyText: How high do you think you can go? To the moon? {w=3}
+  storyText: How high do you think you can go? To the moon? You can see your island
+    from up here, and also the lighthouse!{w=3}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -20587,8 +20592,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 291
   indentLevel: 0
-  storyText: We should make coins out of our constellations, I'm sure it'll be popular
-    {w=3}
+  storyText: We should make coins of our constellations, I'm sure it'll be popular
+    some day! {w=3}
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
