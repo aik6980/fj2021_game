@@ -27,6 +27,7 @@ public class ShipMovement : MonoBehaviour
 	public float collisionDistance = 0.2f;
 	public float pushDistance = 0.3f;
 	public float dragDistance = 0.4f;
+	public float dragForce = 0.1f;
 	public Vector3[] collisionPoints;
 	public Vector3[] rayDir;
 	public float[] depth;
@@ -383,7 +384,7 @@ public class ShipMovement : MonoBehaviour
 				} else
 				if (depth[i] < maxHeight + dragDistance)
 				{
-					worldVel += -worldVel * 0.1f * Time.deltaTime;
+					worldVel += -worldVel * dragForce * Time.deltaTime;
 				} else
 				if (depth[i] < maxHeight + pushDistance)
 				{

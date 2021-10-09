@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698127480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: -0.165}
-  m_LocalScale: {x: 1.816234, y: 1.816234, z: 1.816234}
+  m_LocalPosition: {x: -0, y: -0, z: -0.053}
+  m_LocalScale: {x: 1.9039582, y: 1.9039582, z: 1.9039582}
   m_Children: []
   m_Father: {fileID: 746564115713440133}
   m_RootOrder: 5
@@ -211,11 +211,12 @@ MonoBehaviour:
     m_Bits: 1
   maxHeight: 1
   maxDistance: 2
-  collisionDistance: 0.2
+  collisionDistance: 0.1
   pushDistance: 0.3
   dragDistance: 0.4
+  dragForce: 0.25
   collisionPoints:
-  - {x: 0, y: 0, z: 0.5}
+  - {x: 0, y: 0, z: 0.3}
   - {x: 0, y: 0, z: -0.3}
   - {x: 0.3, y: 0, z: 0}
   - {x: -0.3, y: 0, z: 0}
@@ -275,6 +276,8 @@ MonoBehaviour:
   steerPushForce: 0.5
   steerBaseSpeed: 200
   steerBaseForce: 0.25
+  boosting: 0
+  stopped: 0
 --- !u!1 &746564115843840530
 GameObject:
   m_ObjectHideFlags: 0
