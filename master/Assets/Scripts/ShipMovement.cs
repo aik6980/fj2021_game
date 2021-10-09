@@ -320,20 +320,21 @@ public class ShipMovement : MonoBehaviour
 
 		// These constants should probably be exposed 
 		sail.SetFloat("Steering", Mathf.Clamp(velocity.y / 30f, -1, 1));
-		sail.SetFloat("ForwardVel", Mathf.Clamp(velocity.z / 40f, -1, 1), 0.5f, Time.deltaTime);
+		sail.SetFloat("ForwardVel", Mathf.Clamp(velocity.z / 40f, -1, 1), 0.1f, Time.deltaTime);
+		sail.SetFloat("LateralVel", Mathf.Clamp(velocity.x / 4f, -1, 1), 0.1f, Time.deltaTime);
 
-/*		//FOIL RAISE ABOVE WATER EFFECT PROTO
-		if (velocity.z > 10) //THRESHOLD VELOCITY
-		{
-			//transform.position = new Vector3(0f,0.1f,0f); //RAISE LEVEL
-			tiltable.localPosition = Vector3.up * 0.1f;
-		}
-		else
-		{
-			//transform.position = new Vector3(0f,0f,0f);
-			tiltable.localPosition = Vector3.up * 0.0f;
-		}
-*/
+		/*		//FOIL RAISE ABOVE WATER EFFECT PROTO
+				if (velocity.z > 10) //THRESHOLD VELOCITY
+				{
+					//transform.position = new Vector3(0f,0.1f,0f); //RAISE LEVEL
+					tiltable.localPosition = Vector3.up * 0.1f;
+				}
+				else
+				{
+					//transform.position = new Vector3(0f,0f,0f);
+					tiltable.localPosition = Vector3.up * 0.0f;
+				}
+		*/
 
 
 	}
