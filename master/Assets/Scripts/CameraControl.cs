@@ -285,7 +285,7 @@ public class CameraControl : MonoBehaviour
 				{
 					if (mousePressTime > 0)
 					{
-						Debug.Log("MPT " + mousePressTime);
+						//Debug.Log("MPT " + mousePressTime);
 						if (mousePressTime < 0.2f)
 						{//click (as in, not hold)
 							OnMouseClick(Input.mousePosition);
@@ -307,7 +307,7 @@ public class CameraControl : MonoBehaviour
 		Debug.DrawRay(p1, dir * clickRange, Color.yellow, 1.0f);
 		if (Physics.Raycast(p1, dir, out hit, clickRange, clickMask))
 		{
-			Debug.Log(hit.point);
+			//Debug.Log(hit.point);
 			if (mode == Mode.LandWalk)
 			{
 				footMove.OnClicked(hit.collider, hit.collider.transform.InverseTransformPoint(hit.point));
@@ -326,7 +326,7 @@ public class CameraControl : MonoBehaviour
 		Debug.DrawRay(p1, dir * clickRange, Color.yellow, 0.0f);
 		if (Physics.Raycast(p1, dir, out hit, clickRange, clickMask))
 		{
-			Debug.Log(hit.point);
+			//Debug.Log(hit.point);
 			if (mode == Mode.LandWalk)
 			{
 				footMove.OnHold(hit.collider, hit.collider.transform.InverseTransformPoint(hit.point));

@@ -50,5 +50,9 @@ MonoBehaviour:
   respawnRotation_Player: {x: -0.5386757, y: 0.4150343, z: 0.34579298, w: -0.64653087}
   respawnRotation_Ship: {x: 0.43369913, y: -0.5650649, z: -0.47079504, w: 0.5205371}
   ageYearLengthInSeconds: 5
+  maxAge: 500
+  fadeDownTime: 12
+  stayBlackTime: 8
+  fadeUpTime: 6
   currentAge: 0
-  maxAge: 100
+  years: 0

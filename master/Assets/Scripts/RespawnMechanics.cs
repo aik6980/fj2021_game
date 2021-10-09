@@ -12,9 +12,14 @@ public class RespawnMechanics : MonoBehaviour
 	public Quaternion respawnRotation_Player;
 	public Quaternion respawnRotation_Ship;
 
-	public float ageYearLengthInSeconds = 5;	//~8 minutes to reach 100 years
-	public float currentAge = 0;
+	public float ageYearLengthInSeconds = 5;    //~8 minutes to reach 100 years
 	public float maxAge = 100;
+
+	public float fadeDownTime = 5.0f;
+	public float stayBlackTime = 1.0f;
+	public float fadeUpTime = 5.0f;
+
+	public float currentAge = 0;
 
 	public int years = 0;
 
@@ -101,7 +106,7 @@ public class RespawnMechanics : MonoBehaviour
 		StoryTeller.singleton.fc.SendFungusMessage("Died");
 
 		//FADE DOWN
-		yield return new WaitForSeconds(3.0f);
+		yield return new WaitForSeconds(fadeDownTime);
 		//notify fungus (it should actually come back FROM it)
 		StoryTeller.singleton.fc.SendFungusMessage("RespawnFadedDown");
 		
@@ -147,11 +152,14 @@ public class RespawnMechanics : MonoBehaviour
 		currentAge = 0;
 		years = (int)currentAge;
 
+		//a bit of extra story time
+		yield return new WaitForSeconds(stayBlackTime);
+
 		//notify fungus
 		StoryTeller.singleton.fc.SendFungusMessage("Respawned");
 
 		//FADE UP
-		yield return new WaitForSeconds(3.0f);
+		yield return new WaitForSeconds(fadeUpTime);
 		//notify fungus
 		StoryTeller.singleton.fc.SendFungusMessage("RespawFadedUp");
 

@@ -80,10 +80,12 @@ namespace Fungus
             if (componentType == null)
             {
                 componentType = ReflectionHelper.GetType(targetComponentAssemblyName);
-            }
+				//Debug.Assert(componentType != null, "Component type for '" + targetComponentAssemblyName + "' is null", this);// in Block " + ParentBlock.BlockName, this);
+			}
 
-            if (objComponent == null)
+			if (objComponent == null)
             {
+				//Debug.Assert(targetObject != null, "targetObject is null", this);// in Block " + ParentBlock.BlockName, this);
                 objComponent = targetObject.GetComponent(componentType);
             }
 
@@ -412,7 +414,21 @@ namespace Fungus
             types[AssemblyQualifiedNameTypeName] = AppDomain.CurrentDomain.GetAssemblies().
                 SelectMany(x => x.GetTypes())
                 .FirstOrDefault(x => x.AssemblyQualifiedName == AssemblyQualifiedNameTypeName);
-
+/*
+			if (types[AssemblyQualifiedNameTypeName] == null)
+			{
+				//debug
+				Debug.Log("FAILED To FIND " + AssemblyQualifiedNameTypeName + " IN...");
+				foreach(var ass in AppDomain.CurrentDomain.GetAssemblies())
+				{
+					Debug.Log(ass.FullName);
+					foreach(var type in ass.GetTypes())
+					{
+						Debug.Log(type.AssemblyQualifiedName);
+					}
+				}
+			}
+*/
             return types[AssemblyQualifiedNameTypeName];
         }
     }
