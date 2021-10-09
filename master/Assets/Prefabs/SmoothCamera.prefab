@@ -53,28 +53,119 @@ MonoBehaviour:
   embarkTrigger: {fileID: 0}
   follower: {fileID: 0}
   cam: {fileID: 3853897748531486211}
-  CamDistance: -0.5
+  euler: {x: 0, y: 0, z: 0}
+  sensitivityX: 7
+  sensitivityY: 3
+  pitchMin: -80
+  pitchMax: 50
+  pitch: 0
+  CamRight: 0.1
   CamHeight: 0.25
+  CamDistance: -0.5
+  CamX:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -1
+      value: 0.099996984
+      inSlope: 1.3401846
+      outSlope: 1.3401846
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.05704701
+    - serializedVersion: 3
+      time: -0.50670326
+      value: 0.571852
+      inSlope: -0.084984735
+      outSlope: -0.084984735
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.30323106
+      outWeight: 0.11135573
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: 0.004732874
+      outSlope: 0.004732874
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.9966443
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  CamY:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.99834585
+      value: 0.0008300543
+      inSlope: 0.08003324
+      outSlope: 0.08003324
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.4659603
+    - serializedVersion: 3
+      time: -0.50087893
+      value: 0.0961673
+      inSlope: 0.13283163
+      outSlope: 0.13283163
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: -0.0018854113
+      value: 0.25034493
+      inSlope: 0.8885733
+      outSlope: 0.8885733
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11171364
+      outWeight: 0.14193825
+    - serializedVersion: 3
+      time: 0.49397188
+      value: 1.5816541
+      inSlope: 3.8011818
+      outSlope: 3.8011818
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2022414
+    - serializedVersion: 3
+      time: 1.0238953
+      value: 4.1631813
+      inSlope: 0.23892722
+      outSlope: 0.23892722
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.20348367
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   CamZ:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -1.0064311
-      value: -0.1772002
-      inSlope: -0.17026399
-      outSlope: -0.17026399
+      time: -0.99971724
+      value: -0.020100772
+      inSlope: 0.047926147
+      outSlope: 0.047926147
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.15582968
+      outWeight: 0.14677702
     - serializedVersion: 3
       time: -0.0030681347
       value: 0.6437559
-      inSlope: 2.60169
-      outSlope: 2.60169
+      inSlope: 2.1840603
+      outSlope: 2.1840603
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.15050086
+      inWeight: 0.075094186
       outWeight: 0.09110492
     - serializedVersion: 3
       time: 1.0634348
@@ -88,45 +179,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  CamY:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -1.0017447
-      value: 0.68292844
-      inSlope: -0.3224679
-      outSlope: -0.3224679
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.1637041
-    - serializedVersion: 3
-      time: 0.0067510633
-      value: 0.5051057
-      inSlope: 1.0077718
-      outSlope: 1.0077718
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.12656036
-      outWeight: 0.14193825
-    - serializedVersion: 3
-      time: 1.0238953
-      value: 4.837948
-      inSlope: 0.23892722
-      outSlope: 0.23892722
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.20348367
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  sensitivityX: 7
-  sensitivityY: 3
-  pitchMin: -80
-  pitchMax: 50
-  euler: {x: 0, y: 0, z: 0}
-  pitch: 0
   mx: 0
   my: 0
   msx: 0
@@ -173,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  relPosition: {x: 0, y: 0.04, z: 0}
+  relRotation: {x: 0, y: 0, z: 0, w: 1}
   linStrength: 5
   angStrength: 0
 --- !u!1 &3853897748531486214
@@ -232,7 +286,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.05
+  near clip plane: 0.037
   far clip plane: 1000
   field of view: 60
   orthographic: 0

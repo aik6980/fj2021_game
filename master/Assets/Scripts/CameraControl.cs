@@ -22,10 +22,8 @@ public class CameraControl : MonoBehaviour
 	public FollowCamera follower;
 
 	public Camera cam;
-	public float CamDistance = 1.0f;
-	public float CamHeight = 1.0f;
-	public AnimationCurve CamZ;
-	public AnimationCurve CamY;
+
+	public Vector3 euler;
 
 	public float sensitivityX = 10.0f;
 	public float sensitivityY = 10.0f;
@@ -33,9 +31,15 @@ public class CameraControl : MonoBehaviour
 	public float pitchMin = -70;
 	public float pitchMax = 89;
 
-	public Vector3 euler;
 	[Range(-1, 1)]
 	public float pitch = 0.0f;
+
+	public float CamRight = 1.0f;
+	public float CamHeight = 1.0f;
+	public float CamDistance = 1.0f;
+	public AnimationCurve CamX;
+	public AnimationCurve CamY;
+	public AnimationCurve CamZ;
 
 	public float mx, my;
 	public float msx, msy;
@@ -230,7 +234,7 @@ public class CameraControl : MonoBehaviour
 			//camPos.z = CamZ.Evaluate(pitch) * CamDistance;
 			//camPos.y = CamY.Evaluate(pitch) * CamHeight;
 			//cam.transform.localPosition = camPos;
-			UpdateCam();
+			//UpdateCam();
 
 			if (Input.GetMouseButtonUp(0))
 			{
@@ -253,7 +257,7 @@ public class CameraControl : MonoBehaviour
 			{
 				euler.y = Mathf.LerpAngle(euler.y, shipMove.transform.rotation.eulerAngles.y, 2.0f * Time.deltaTime);
 				transform.rotation = Quaternion.Euler(euler);
-				UpdateCam();
+				//UpdateCam();
 			} else
 			if (EventSystem.current.IsPointerOverGameObject())
 			{
@@ -295,6 +299,9 @@ public class CameraControl : MonoBehaviour
 				}
 			}
 		}
+
+		UpdateCam();
+
 	}
 
 	void OnMouseClick(Vector3 mousePos)
@@ -342,8 +349,27 @@ public class CameraControl : MonoBehaviour
 
 		pitch = euler.x / 90.0f;
 		Vector3 camPos = cam.transform.localPosition;
-		camPos.z = CamZ.Evaluate(pitch) * CamDistance;
+		camPos.x = CamX.Evaluate(pitch) * CamRight;
 		camPos.y = CamY.Evaluate(pitch) * CamHeight;
+		camPos.z = CamZ.Evaluate(pitch) * CamDistance;
+
+		//obstruction handling
+		for (int i = 0; i < 8; i++)
+		{
+			RaycastHit hit;
+			Vector3 p1 = this.transform.position;
+			Vector3 p2 = this.transform.TransformPoint(camPos);
+			Vector3 dir = p2 - p1;
+			if (Physics.Raycast(p1, dir.normalized, out hit, dir.magnitude, mask))
+			{
+				Debug.DrawLine(p1, p2, Color.magenta);
+				//camPos = hit.point;
+				pitch = Mathf.Lerp(pitch, pitchMin / 90.0f, (1.0f-Mathf.Clamp01(hit.distance / dir.magnitude))*0.1f);
+				camPos.x = CamX.Evaluate(pitch) * CamRight;
+				camPos.y = CamY.Evaluate(pitch) * CamHeight;
+				camPos.z = CamZ.Evaluate(pitch) * CamDistance;
+			}
+		}
 		cam.transform.localPosition = camPos;
 	}
 
