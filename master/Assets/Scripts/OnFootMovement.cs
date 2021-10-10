@@ -91,7 +91,8 @@ public class OnFootMovement : MonoBehaviour
 
 		if (!onGround && !jumping)
 		{
-			transform.position += localUp * -fallSpeed * Time.deltaTime;
+			transform.position += localUp * -fallSpeed * Time.deltaTime;	// NOTE: constant speed! :oP
+
 			RaycastHit hit;
 
 			Vector3 p1 = newPos;
@@ -116,112 +117,115 @@ public class OnFootMovement : MonoBehaviour
 
 		//ToDo: if we have ground but it's too steep, SLIDE =o)
 
-		if (!stepped && stepTimer <= 0)
-		{//move on WASD hold
-			if (Input.GetKey(KeyCode.W))
-				newPos += camCon.transform.forward * stepLength;
-			if (Input.GetKey(KeyCode.S))
-				newPos += camCon.transform.forward * -stepLength;
-			if (Input.GetKey(KeyCode.A))
-				newPos += camCon.transform.right * -stepLength;
-			if (Input.GetKey(KeyCode.D))
-				newPos += camCon.transform.right * stepLength;
+		if (onGround)
+		{
+			if (!stepped && stepTimer <= 0)
+			{//move on WASD hold
+				if (Input.GetKey(KeyCode.W))
+					newPos += camCon.transform.forward * stepLength;
+				if (Input.GetKey(KeyCode.S))
+					newPos += camCon.transform.forward * -stepLength;
+				if (Input.GetKey(KeyCode.A))
+					newPos += camCon.transform.right * -stepLength;
+				if (Input.GetKey(KeyCode.D))
+					newPos += camCon.transform.right * stepLength;
 
-			if (newPos != oldPos)
+				if (newPos != oldPos)
+				{
+					stepped = true;
+					moveTargetValid = false;
+					stepTimer = stepTime;
+					modelOffset = Vector3.zero;
+					modelRotationOffset = Quaternion.identity;
+					AudioManager.Instance.PlaySFX("footstep");
+				}
+			}
+
+			if (!stepped && moveTargetValid && stepTimer <= 0)
 			{
-				stepped = true;
-				moveTargetValid = false;
+				Vector3 wp = moveTarget.transform.TransformPoint(moveRelPos);
+				newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
 				stepTimer = stepTime;
 				modelOffset = Vector3.zero;
 				modelRotationOffset = Quaternion.identity;
-				AudioManager.Instance.PlaySFX("footstep");
-			}
-		}
 
-		if (!stepped && moveTargetValid && stepTimer <= 0)
-		{
-			Vector3 wp = moveTarget.transform.TransformPoint(moveRelPos);
-			newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
-			stepTimer = stepTime;
-			modelOffset = Vector3.zero;
-			modelRotationOffset = Quaternion.identity;
-
-			Debug.DrawLine(transform.position, wp, Color.white, 5.0f);
-			if ((wp - newPos).magnitude < stepLength)
-			{
-				moveTargetValid = false;
-			}
-		}
-
-		//just for debug
-		if (planetRoot)
-			currentLevel = (this.transform.position - planetRoot.position).magnitude;
-
-		if (newPos != oldPos)
-		{
-			RaycastHit hit;
-
-			Vector3 p1 = newPos;
-			Vector3 dir = Vector3.down;
-			p1 -= dir * maxHeight;
-			Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
-
-			if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
-			{
-				depth = hit.distance;
-				hitPoint = hit.point;
-				hitNormal = hit.normal;
-				hitCollider = hit.collider;
-				onGround = hitCollider != null;
-
-				Vector3 nextPos = hitPoint + Vector3.up * walkLevel;
-				Vector3 delta = nextPos - transform.position;
-
-				bool stepUp = Vector3.Dot(delta, localUp) >= 0;
-				float groundSlopeThere = Mathf.Acos(Vector3.Dot(hitNormal, localUp)) * Mathf.Rad2Deg;
-
-				//do not step on too steep ground
-				if (groundSlopeThere >= maxGroundSlopeUp)
-				{//too steep
-					Debug.Log("too steep");
-				} else
-				//do not step DOWN into water (but allow coming up out)
-				if (!stepUp && planetRoot && (nextPos - planetRoot.position).magnitude < seaLevelMin) //not accurate enough but cheap early test
+				Debug.DrawLine(transform.position, wp, Color.white, 5.0f);
+				if ((wp - newPos).magnitude < stepLength)
 				{
-					Debug.Log("water");
-				} else
-				//also check if there's no collider blocking my way there; e.g. rocks, trees, etc
-				{
-					Debug.DrawLine(transform.position, nextPos, Color.green, 10);
-
-					if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
-					{//hit something; cancel
-					 //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
-						Debug.Log("obstacle " + hit.collider.name, hit.collider);
-					} else
-					{
-						//Debug.Log(transform.position.ToString() + "->" + nextPos.ToString());
-						Vector3 lookEuler = Quaternion.LookRotation(nextPos - transform.position).eulerAngles;
-						lookEuler.x = 0.0f;
-						lookEuler.z = 0.0f;
-
-						Vector3 prevPos = transform.position;
-						Quaternion prevRot = transform.rotation;
-						transform.position = nextPos;
-						transform.rotation = Quaternion.Euler(lookEuler);
-						modelOffset = this.transform.InverseTransformPoint(prevPos);
-						modelRotationOffset = Quaternion.Inverse(transform.rotation) * prevRot;
-
-						//FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
-					}
+					moveTargetValid = false;
 				}
-			} else
+			}
+
+			//just for debug
+			if (planetRoot)
+				currentLevel = (this.transform.position - planetRoot.position).magnitude;
+
+			if (newPos != oldPos)
 			{
-				depth = maxDistance;
-				hitPoint = p1;
-				hitNormal = Vector3.up;
-				hitCollider = null;
-				onGround = hitCollider != null;
+				RaycastHit hit;
+
+				Vector3 p1 = newPos;
+				Vector3 dir = Vector3.down;
+				p1 -= dir * maxHeight;
+				Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
+
+				if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
+				{
+					depth = hit.distance;
+					hitPoint = hit.point;
+					hitNormal = hit.normal;
+					hitCollider = hit.collider;
+					onGround = hitCollider != null;
+
+					Vector3 nextPos = hitPoint + Vector3.up * walkLevel;
+					Vector3 delta = nextPos - transform.position;
+
+					bool stepUp = Vector3.Dot(delta, localUp) >= 0;
+					float groundSlopeThere = Mathf.Acos(Vector3.Dot(hitNormal, localUp)) * Mathf.Rad2Deg;
+
+					//do not step on too steep ground
+					if (groundSlopeThere >= maxGroundSlopeUp)
+					{//too steep
+						Debug.Log("too steep");
+					} else
+					//do not step DOWN into water (but allow coming up out)
+					if (!stepUp && planetRoot && (nextPos - planetRoot.position).magnitude < seaLevelMin) //not accurate enough but cheap early test
+					{
+						Debug.Log("water");
+					} else
+					//also check if there's no collider blocking my way there; e.g. rocks, trees, etc
+					{
+						Debug.DrawLine(transform.position, nextPos, Color.green, 10);
+
+						if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
+						{//hit something; cancel
+						 //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
+							Debug.Log("obstacle " + hit.collider.name, hit.collider);
+						} else
+						{
+							//Debug.Log(transform.position.ToString() + "->" + nextPos.ToString());
+							Vector3 lookEuler = Quaternion.LookRotation(nextPos - transform.position).eulerAngles;
+							lookEuler.x = 0.0f;
+							lookEuler.z = 0.0f;
+
+							Vector3 prevPos = transform.position;
+							Quaternion prevRot = transform.rotation;
+							transform.position = nextPos;
+							transform.rotation = Quaternion.Euler(lookEuler);
+							modelOffset = this.transform.InverseTransformPoint(prevPos);
+							modelRotationOffset = Quaternion.Inverse(transform.rotation) * prevRot;
+
+							//FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
+						}
+					}
+				} else
+				{
+					depth = maxDistance;
+					hitPoint = p1;
+					hitNormal = Vector3.up;
+					hitCollider = null;
+					onGround = hitCollider != null;
+				}
 			}
 		}
 

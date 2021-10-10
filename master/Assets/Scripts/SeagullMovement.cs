@@ -12,13 +12,14 @@ public class SeagullMovement : MonoBehaviour
 
 	public float drag = 1.0f;
 	public float acceleration = 5.0f;
-	public float liftSpeed = 1.0f;
+	public float liftAcceleration = 1.0f;
 	public float slerpRate = 1.0f;
 	public float lift = 1.0f;
+	public float gravity = 0.5f;
 
 	public Vector3 worldVel;
 
-
+	//public float cameraSlerpRate = 1.0f;
 
 
 	// Start is called before the first frame update
@@ -42,7 +43,7 @@ public class SeagullMovement : MonoBehaviour
 		if (Input.GetKey(KeyCode.Space))
 		{
 			//transform.position += localUp * liftSpeed * Time.deltaTime;
-			worldVel += localUp * liftSpeed * Time.deltaTime;
+			worldVel += localUp * liftAcceleration * Time.deltaTime;
 			footMove.hitCollider = null;
 			footMove.onGround = false;
 			footMove.jumping = true;
@@ -58,8 +59,13 @@ public class SeagullMovement : MonoBehaviour
 		{
 			//lift
 			worldVel += transform.up * Mathf.Abs(Vector3.Dot(worldVel, transform.forward)) * lift * Time.deltaTime;
+			
 			//drag
 			worldVel += Vector3.ClampMagnitude(worldVel * -drag * Time.deltaTime, worldVel.magnitude);
+
+			//gravity
+			worldVel -= localUp * gravity * Time.deltaTime;
+
 
 			Vector3 velocity = camCon.transform.InverseTransformVector(worldVel);
 
@@ -78,7 +84,8 @@ public class SeagullMovement : MonoBehaviour
 			transform.position += worldVel * Time.deltaTime;
 
 			//transform.rotation = Quaternion.LookRotation(worldVel);
-			Vector3 fwd = worldVel - localUp * footMove.fallSpeed;
+			Vector3 fwd = worldVel;
+			if (!footMove.jumping) fwd -= localUp * footMove.fallSpeed;
 			Vector3 xy = fwd;
 			xy.y = 0.0f;
 			float q = Mathf.Clamp01(xy.magnitude / fwd.magnitude);
@@ -96,10 +103,21 @@ public class SeagullMovement : MonoBehaviour
 
 			transform.rotation = Quaternion.Slerp(transform.rotation, look, slerpRate * Time.deltaTime);
 
+			Debug.DrawRay(transform.position, transform.right, Color.blue);
+
 			if (tiltable)
 			{
-				tiltable.localRotation = Quaternion.Euler(0, 0, Vector3.Dot(worldVel, transform.right) * tiltMax);
+				tiltable.localRotation = Quaternion.Slerp(tiltable.localRotation,
+										Quaternion.Euler(0, 0, Vector3.Dot(worldVel, transform.right) * tiltMax),
+										slerpRate * Time.deltaTime);
 			}
+
+			//camCon.transform.rotation = Quaternion.Slerp(camCon.transform.rotation, tiltable.rotation, cameraSlerpRate * Time.deltaTime);
 		}
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		Debug.Log("bang " + collision.collider.name);
 	}
 }

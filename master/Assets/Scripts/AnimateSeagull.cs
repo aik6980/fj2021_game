@@ -17,8 +17,11 @@ public class AnimateSeagull : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (!move) return;
+
 		anim.SetBool("InAir", !move.footMove.onGround);
 		Vector3 vel2D = move.worldVel - move.transform.up * Vector3.Dot(move.worldVel, move.transform.up);
 		anim.SetFloat("Speed", vel2D.magnitude);
+		anim.SetBool("Effort", move.footMove.jumping);	//space
     }
 }
