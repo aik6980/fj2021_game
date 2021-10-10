@@ -28,7 +28,8 @@ public class OnFootMovement : MonoBehaviour
 	public float currentLevel;
 	public float seaLevelMin = 195.0f;
 
-	public Vector3 modelOffset;
+	public Vector3 modelOffset = Vector3.zero;
+	public Quaternion modelRotationOffset = Quaternion.identity;
 	public Transform model;
 
 	public bool stopped;
@@ -43,9 +44,13 @@ public class OnFootMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (ConstellationMgr.Instance.is_canvas_mode_enabled()) return;
-		if (camCon.mode != CameraControl.Mode.LandWalk) return;
-		if (stopped) return;
+		if (ConstellationMgr.Instance.is_canvas_mode_enabled()
+			|| camCon.mode != CameraControl.Mode.LandWalk
+			|| stopped)
+		{
+			stepTimer = 0;
+			return;
+		}
 
 		//ToDo: point-and click (detect if i clicked on valid ground and move to where)
 		// use depth tests to avoid walking into the water
@@ -72,8 +77,8 @@ public class OnFootMovement : MonoBehaviour
 		if (stepTimer > 0)
 		{
 			stepTimer -= Time.deltaTime;
-			if (model)
-				model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
+			//if (model)
+			//	model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
 		}
 
 		if (!stepped && stepTimer <= 0)
@@ -93,6 +98,7 @@ public class OnFootMovement : MonoBehaviour
 				moveTargetValid = false;
 				stepTimer = stepTime;
 				modelOffset = Vector3.zero;
+				modelRotationOffset = Quaternion.identity;
 				AudioManager.Instance.PlaySFX("footstep");
 			}
 		}
@@ -103,6 +109,7 @@ public class OnFootMovement : MonoBehaviour
 			newPos += Vector3.ClampMagnitude(wp - newPos, 0.1f);
 			stepTimer = stepTime;
 			modelOffset = Vector3.zero;
+			modelRotationOffset = Quaternion.identity;
 
 			Debug.DrawLine(transform.position, wp, Color.white, 5.0f);
 			if ((wp - newPos).magnitude < stepLength)
@@ -162,11 +169,13 @@ public class OnFootMovement : MonoBehaviour
 						Vector3 lookEuler = Quaternion.LookRotation(nextPos - transform.position).eulerAngles;
 						lookEuler.x = 0.0f;
 						lookEuler.z = 0.0f;
-						transform.rotation = Quaternion.Euler(lookEuler);
 
 						Vector3 prevPos = transform.position;
+						Quaternion prevRot = transform.rotation;
 						transform.position = nextPos;
+						transform.rotation = Quaternion.Euler(lookEuler);
 						modelOffset = this.transform.InverseTransformPoint(prevPos);
+						modelRotationOffset = Quaternion.Inverse(transform.rotation) * prevRot;
 
 						//FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
 					}
@@ -192,7 +201,13 @@ public class OnFootMovement : MonoBehaviour
 		if (stepTimer > 0)
 		{
 			if (model)
+			{
 				model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
+				model.transform.localRotation = Quaternion.Slerp(Quaternion.identity, modelRotationOffset, Mathf.Clamp01(stepTimer / stepTime));
+				//model.transform.localRotation = Quaternion.Slerp(model.transform.localRotation,
+				//								Quaternion.Euler(0, Quaternion.LookRotation(-modelOffset).eulerAngles.y, 0),
+				//								1.0f - Mathf.Clamp01(stepTimer / stepTime));
+			}
 		}
 	}
 
