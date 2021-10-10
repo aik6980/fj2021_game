@@ -58,6 +58,7 @@ public class ShipMovement : MonoBehaviour
 	public float steeringAngleToAngVel = -0.1f;
 	public float steeringReturnSpeed = 30.0f;
 	public float steeringSpeedKeyboard = 100.0f;
+	public float maxSteeringAngle = 200;
 
 	public float steerPushScale = 1.0f;
 	public float steerPushSpeed = 0.0f;
@@ -206,7 +207,6 @@ public class ShipMovement : MonoBehaviour
 			steerPushSpeed = 0.0f;
 		}
 
-		velocity.y = steeringAngle * steeringAngleToAngVel;
 		//steering return
 		if (!isSteeringDragging)
 		{
@@ -233,13 +233,16 @@ public class ShipMovement : MonoBehaviour
 		if (Input.GetKey(KeyCode.D))
 			steeringAngle += steeringSpeedKeyboard * Time.deltaTime;
 
+		steeringAngle = Mathf.Clamp(steeringAngle, -maxSteeringAngle, maxSteeringAngle);
+
 		//hold acceleration
 		if (Input.GetKey(KeyCode.W))
 			velocity.z += 25.0f * Time.deltaTime;
 		if (Input.GetKey(KeyCode.S))
 			velocity.z -= 25.0f * Time.deltaTime;
 
-			
+		velocity.y = steeringAngle * steeringAngleToAngVel;
+
 		//boat moving audio
 		if (PlaybackState(music_sailing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
 		
