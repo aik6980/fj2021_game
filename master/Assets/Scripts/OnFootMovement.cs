@@ -10,13 +10,18 @@ public class OnFootMovement : MonoBehaviour
 	public float maxHeight = 1.0f;
 	public float maxDistance = 1.2f;
 	public float depth;
+
+	public float stepLength = 0.1f;
+	public float stepTime = 0.3f;
+
 	public Vector3 hitPoint;
 	public Vector3 hitNormal;
 	public Collider hitCollider;
 	public LayerMask mask;
 
-	public float stepLength = 0.1f;
-	public float stepTime = 0.3f;
+	public bool onGround;   //hitCollider!=null;
+	public bool jumping;
+	public float fallSpeed = 1.0f;	// m/sec
 
 	public bool moveTargetValid;
 	public Collider moveTarget;
@@ -44,8 +49,8 @@ public class OnFootMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (ConstellationMgr.Instance.is_canvas_mode_enabled()
-			|| camCon.mode != CameraControl.Mode.LandWalk
+		if ((ConstellationMgr.Instance && ConstellationMgr.Instance.is_canvas_mode_enabled())
+			|| (camCon && camCon.mode != CameraControl.Mode.LandWalk && camCon.mode != CameraControl.Mode.Seagull)
 			|| stopped)
 		{
 			stepTimer = 0;
@@ -80,6 +85,36 @@ public class OnFootMovement : MonoBehaviour
 			//if (model)
 			//	model.transform.localPosition = modelOffset * Mathf.Clamp01(stepTimer / stepTime);
 		}
+
+		Transform planetRoot = PlanetTurner.singleton ? PlanetTurner.singleton.transform : null;
+		Vector3 localUp = PlanetTurner.singleton ? (this.transform.position - planetRoot.position).normalized : Vector3.up;
+
+		if (!onGround && !jumping)
+		{
+			transform.position += localUp * -fallSpeed * Time.deltaTime;
+			RaycastHit hit;
+
+			Vector3 p1 = newPos;
+			Vector3 dir = Vector3.down;
+			p1 -= dir * maxHeight;
+			Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
+
+			if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
+			{
+				depth = hit.distance;
+				hitPoint = hit.point;
+				hitNormal = hit.normal;
+				hitCollider = hit.collider;
+				onGround = hitCollider != null;
+				//ToDo: set the appropriate height (snap down)
+				transform.position = hitPoint + Vector3.up * walkLevel;
+			}
+			return;
+		}
+
+		onGround = hitCollider != null;
+
+		//ToDo: if we have ground but it's too steep, SLIDE =o)
 
 		if (!stepped && stepTimer <= 0)
 		{//move on WASD hold
@@ -118,10 +153,9 @@ public class OnFootMovement : MonoBehaviour
 			}
 		}
 
-		Transform planetRoot = PlanetTurner.singleton.transform;
-		Vector3 localUp = (this.transform.position - planetRoot.position).normalized;
-
-		currentLevel = (this.transform.position - planetRoot.position).magnitude;
+		//just for debug
+		if (planetRoot)
+			currentLevel = (this.transform.position - planetRoot.position).magnitude;
 
 		if (newPos != oldPos)
 		{
@@ -138,6 +172,7 @@ public class OnFootMovement : MonoBehaviour
 				hitPoint = hit.point;
 				hitNormal = hit.normal;
 				hitCollider = hit.collider;
+				onGround = hitCollider != null;
 
 				Vector3 nextPos = hitPoint + Vector3.up * walkLevel;
 				Vector3 delta = nextPos - transform.position;
@@ -151,7 +186,7 @@ public class OnFootMovement : MonoBehaviour
 					Debug.Log("too steep");
 				} else
 				//do not step DOWN into water (but allow coming up out)
-				if (!stepUp && (nextPos - camCon.Tina.planetRoot.position).magnitude < seaLevelMin) //not accurate enough but cheap early test
+				if (!stepUp && planetRoot && (nextPos - planetRoot.position).magnitude < seaLevelMin) //not accurate enough but cheap early test
 				{
 					Debug.Log("water");
 				} else
@@ -186,11 +221,12 @@ public class OnFootMovement : MonoBehaviour
 				hitPoint = p1;
 				hitNormal = Vector3.up;
 				hitCollider = null;
+				onGround = hitCollider != null;
 			}
 		}
 
 		//stay upright
-		localUp = (this.transform.position - planetRoot.position).normalized;
+		localUp = planetRoot ? (this.transform.position - planetRoot.position).normalized : Vector3.up;
 		Vector3 cross = Vector3.Cross(this.transform.up, localUp);
 		if (cross != Vector3.zero)
 		{

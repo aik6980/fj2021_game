@@ -65,8 +65,8 @@ public class CameraControl : MonoBehaviour
 	public enum Mode
 	{
 		ShipNav,
-		LandWalk
-		//SkyDraw
+		LandWalk,
+		Seagull		//=o]
 	}
 	public Mode mode = Mode.ShipNav;
 
@@ -97,6 +97,8 @@ public class CameraControl : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+		baseFOV = cam.fieldOfView;
+
 		follower = GetComponent<FollowCamera>();
 
 		euler = transform.rotation.eulerAngles;
@@ -125,8 +127,6 @@ public class CameraControl : MonoBehaviour
 
 		EventListener.Get(player).OnTriggerEnterDelegate += CameraControl_OnTriggerEnterDelegate;
 		EventListener.Get(player).OnTriggerExitDelegate += CameraControl_OnTriggerExitDelegate;
-
-		baseFOV = cam.fieldOfView;
 	}
 
 	private void CameraControl_OnTriggerExitDelegate(Collider col)
@@ -156,14 +156,10 @@ public class CameraControl : MonoBehaviour
 			float f = Mathf.Clamp01(lookStrength * Time.deltaTime);
 			Vector3 fwd = lookTargetIsRoot ? lookTarget.position - this.transform.position : lookTarget.position - cam.transform.position;
 			Vector3 xy = fwd;
-			xy.z = 0.0f;
+			xy.z = 0.0f;	//INCORRECT :oP Y is the vertical component to should zero out 
 			float q = Mathf.Clamp01(xy.magnitude / fwd.magnitude);
 			Vector3 up = Vector3.Lerp(transform.up, Vector3.up, q*q);
 			Quaternion look = Quaternion.LookRotation(fwd, up);
-			//lookEuler = look.eulerAngles;
-			//euler.x = Mathf.LerpAngle(euler.x, look.eulerAngles.x, f);
-			//euler.y = Mathf.LerpAngle(euler.y, look.eulerAngles.y, f);
-			//transform.rotation = Quaternion.Euler(euler);
 			transform.rotation = Quaternion.Slerp(transform.rotation, look, f);
 
 			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, targetFOV, f);
@@ -190,17 +186,25 @@ public class CameraControl : MonoBehaviour
 		switch (mode)
 		{
 			case Mode.ShipNav:
-				DetectShore();
-				disembark.interactable = canDisembark;
-				embark.interactable = false;
-				disembark.gameObject.SetActive(canDisembark);
-				embark.gameObject.SetActive(false);
+				if (embark && disembark)
+				{
+					DetectShore();
+					disembark.interactable = canDisembark;
+					embark.interactable = false;
+					disembark.gameObject.SetActive(canDisembark);
+					embark.gameObject.SetActive(false);
+				}
 				break;
 			case Mode.LandWalk:
-				disembark.interactable = false;
-				embark.interactable = canEmbark;
-				disembark.gameObject.SetActive(false);
-				embark.gameObject.SetActive(canEmbark);
+				if (embark && disembark)
+				{
+					disembark.interactable = false;
+					embark.interactable = canEmbark;
+					disembark.gameObject.SetActive(false);
+					embark.gameObject.SetActive(canEmbark);
+				}
+				break;
+			case Mode.Seagull:
 				break;
 		}
 
@@ -211,7 +215,7 @@ public class CameraControl : MonoBehaviour
 			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, baseFOV, 1.0f * Time.deltaTime);
 
 		//euler = transform.rotation.eulerAngles;
-		Vector3 localUp = (this.transform.position - Tina.planetRoot.position).normalized;
+		Vector3 localUp = Tina ? (this.transform.position - Tina.planetRoot.position).normalized : Vector3.up;
 		Quaternion noRoll = Quaternion.LookRotation(transform.forward, localUp);
 		euler = noRoll.eulerAngles;
 
@@ -253,13 +257,13 @@ public class CameraControl : MonoBehaviour
 			//ToDo: check if it's over UI!
 			// ...or anything we might want to click on
 			// and ONLY take the mouse if not
-			if (shipMove.isSteeringDragging)
+			if (shipMove && shipMove.isSteeringDragging)
 			{
 				euler.y = Mathf.LerpAngle(euler.y, shipMove.transform.rotation.eulerAngles.y, 2.0f * Time.deltaTime);
 				transform.rotation = Quaternion.Euler(euler);
 				//UpdateCam();
 			} else
-			if (EventSystem.current.IsPointerOverGameObject())
+			if (EventSystem.current && EventSystem.current.IsPointerOverGameObject())
 			{
 
 			} else
