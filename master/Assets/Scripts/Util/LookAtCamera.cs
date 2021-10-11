@@ -28,7 +28,7 @@ public class LookAtCamera : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        if (doUpdateWhileEditing)
+        if (doUpdateWhileEditing && UnityEditor.SceneView.currentDrawingSceneView)
             LookAt(UnityEditor.SceneView.currentDrawingSceneView.camera);
     }
 #endif

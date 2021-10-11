@@ -19,6 +19,13 @@ public class SeagullMovement : MonoBehaviour
 
 	public Vector3 worldVel;
 
+	public LayerMask mask;
+	public Vector3 hitPoint;
+	public Vector3 hitNormal;
+	public Collider hitCollider;
+
+	public float liftTimer;
+	public GameObject poop;
 	//public float cameraSlerpRate = 1.0f;
 
 
@@ -28,12 +35,25 @@ public class SeagullMovement : MonoBehaviour
 		if (!footMove)
 			footMove = GetComponent<OnFootMovement>();
 		if (footMove)
-			camCon = footMove.camCon;
+		{
+			if (camCon)
+				footMove.camCon = camCon;
+			else
+				camCon = footMove.camCon;
+		}
     }
 
     // Update is called once per frame
     void Update()
     {
+		if ((ConstellationMgr.Instance && ConstellationMgr.Instance.is_canvas_mode_enabled())
+			|| (camCon && camCon.mode != CameraControl.Mode.LandWalk && camCon.mode != CameraControl.Mode.Seagull)
+			)//|| stopped)
+		{
+			return;
+		}
+
+
 		//ToDo: add falling and flying (WASD, a bit like the ship movement, plus SPC), and simply revert to onfootmovement when on ground :)
 		//actually onfoot could handle falling... it knows if we have ground or not
 
@@ -44,12 +64,27 @@ public class SeagullMovement : MonoBehaviour
 		{
 			//transform.position += localUp * liftSpeed * Time.deltaTime;
 			worldVel += localUp * liftAcceleration * Time.deltaTime;
+
+			if (liftTimer == 0 && footMove)
+			{// MIGHT be a takeoff, but might be just start flapping in air
+				hitCollider = footMove.hitCollider;
+				hitPoint = footMove.hitPoint;
+				hitNormal = footMove.hitNormal;
+			}
+
 			footMove.hitCollider = null;
 			footMove.onGround = false;
 			footMove.jumping = true;
+
+			liftTimer += Time.deltaTime;
 		} else
 		{
 			footMove.jumping = false;
+			if (liftTimer > 0 && liftTimer < 0.2f)
+			{//was a tap, not hold
+				Poop();
+			}
+			liftTimer = 0;
 		}
 
 		if (footMove.onGround && !footMove.jumping)
@@ -119,5 +154,32 @@ public class SeagullMovement : MonoBehaviour
 	void OnCollisionEnter(Collision collision)
 	{
 		Debug.Log("bang " + collision.collider.name);
+	}
+
+	void Poop()
+	{
+		//could be a tap mid air!
+		Debug.Log("Mine!");
+
+		Vector3 p1 = transform.TransformPoint(0, 0, -0.05f);
+		Vector3 dir = -transform.up;
+		float maxDistance = 0.2f;
+		RaycastHit hit;
+		if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
+		{
+			hitPoint = hit.point;
+			hitNormal = hit.normal;
+			hitCollider = hit.collider;
+
+			if (hitCollider)
+			{
+				if (poop)
+				{
+					Instantiate(poop
+								, hitPoint, Quaternion.LookRotation(hitNormal, transform.forward) * Quaternion.AngleAxis(90.0f, Vector3.right)
+								, transform.parent);
+				}
+			}
+		}
 	}
 }

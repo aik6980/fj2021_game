@@ -58,6 +58,14 @@ MonoBehaviour:
   lift: 0.2
   gravity: 0.25
   worldVel: {x: 0, y: 0, z: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 1
+  hitPoint: {x: 0, y: 0, z: 0}
+  hitNormal: {x: 0, y: 0, z: 0}
+  hitCollider: {fileID: 0}
+  liftTimer: 0
+  poop: {fileID: 717839942459416319, guid: 206d992af9a05274a9b9e7a46407263e, type: 3}
 --- !u!136 &5872217866522772801
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -91,12 +99,12 @@ MonoBehaviour:
   depth: 0
   stepLength: 0.05
   stepTime: 0.3
-  hitPoint: {x: 0, y: 0, z: 0}
-  hitNormal: {x: 0, y: 0, z: 0}
-  hitCollider: {fileID: 0}
   mask:
     serializedVersion: 2
     m_Bits: 1
+  hitPoint: {x: 0, y: 0, z: 0}
+  hitNormal: {x: 0, y: 0, z: 0}
+  hitCollider: {fileID: 0}
   onGround: 0
   jumping: 0
   fallSpeed: 0.5
@@ -191,6 +199,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   move: {fileID: 0}
+  timer: 0
+  timerMin: 1
+  timerMax: 2
+  randMax: 5
 --- !u!1001 &5872217868440331781
 PrefabInstance:
   m_ObjectHideFlags: 0

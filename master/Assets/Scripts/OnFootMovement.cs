@@ -14,10 +14,10 @@ public class OnFootMovement : MonoBehaviour
 	public float stepLength = 0.1f;
 	public float stepTime = 0.3f;
 
+	public LayerMask mask;
 	public Vector3 hitPoint;
 	public Vector3 hitNormal;
 	public Collider hitCollider;
-	public LayerMask mask;
 
 	public bool onGround;   //hitCollider!=null;
 	public bool jumping;
