@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.30358562, g: 0.30686286, b: 0.14476418, a: 1}
+  m_IndirectSpecularColor: {r: 0.3035856, g: 0.3068627, b: 0.14476416, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,6 +187,7 @@ Transform:
   - {fileID: 2145121214}
   - {fileID: 1282600177}
   - {fileID: 1304204079}
+  - {fileID: 978741323}
   m_Father: {fileID: 2056955869}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8947,6 +8948,80 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1001 &978741322
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56233282}
+    m_Modifications:
+    - target: {fileID: 8368888539516089658, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_Name
+      value: rock-formation_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -63.461
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -154.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 110.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.27895176
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.9176879
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2232995
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.17370138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 154.252
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 29.488998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 34.235992
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+--- !u!4 &978741323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8688274928089131688, guid: c7dfe0c42e2c94f84b4014042c7a96b0, type: 3}
+  m_PrefabInstance: {fileID: 978741322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &987910039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5717549396115222433, guid: d21a9d562797dea4ba1383204445e425, type: 3}
