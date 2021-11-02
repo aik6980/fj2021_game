@@ -31,6 +31,17 @@ float3 wglnoise_fade(float3 t)
     return t * t * t * (t * (t * 6 - 15) + 10);
 }
 
+// an improved smoothstep for noise
+float quintic(float t)
+{
+    return t * t * t * (t * (t * 6 - 15) + 10);
+}
+
+float quintic_deriv(float t)
+{
+    return 30 * t * t * (t * (t - 2) + 1);
+}
+
 float wglnoise_mod289(float x)
 {
     return x - floor(x / 289) * 289;

@@ -17,7 +17,7 @@
 
 #include "Common.hlsl"
 
-float ClassicNoise_impl(float3 pi0, float3 pf0, float3 pi1, float3 pf1)
+float4 ClassicNoise_impl(float3 pi0, float3 pf0, float3 pi1, float3 pf1)
 {
     pi0 = wglnoise_mod289(pi0);
     pi1 = wglnoise_mod289(pi1);
@@ -65,16 +65,53 @@ float ClassicNoise_impl(float3 pi0, float3 pf0, float3 pi1, float3 pf1)
     float n011 = dot(g011, float3(pf0.x, pf1.y, pf1.z));
     float n111 = dot(g111, pf1);
 
-    float3 fade_xyz = wglnoise_fade(pf0);
-    float4 n_z = lerp(float4(n000, n100, n010, n110),
-        float4(n001, n101, n011, n111), fade_xyz.z);
-    float2 n_yz = lerp(n_z.xy, n_z.zw, fade_xyz.y);
-    float n_xyz = lerp(n_yz.x, n_yz.y, fade_xyz.x);
-    return 1.46 * n_xyz;
+    float a = n000;
+    float b = n100;
+    float c = n010;
+    float d = n110;
+    float e = n001;
+    float f = n101;
+    float g = n011;
+    float h = n111;
+
+    float k0 = (b - a);
+    float k1 = (c - a);
+    float k2 = (e - a);
+    float k3 = (a + d - b - c);
+    float k4 = (a + f - b - e);
+    float k5 = (a + g - c - e);
+    float k6 = (b + c + e + h - a - d - f - g);
+
+    float3 u = quintic(pf0.x);//smoothstep(pf0.x);
+    float3 v = quintic(pf0.y);//smoothstep(pf0.y);
+    float3 w = quintic(pf0.z);//smoothstep(pf0.z);
+
+    float3 du = quintic_deriv(pf0.x);//smoothstep_deriv(pf0.x);
+    float3 dv = quintic_deriv(pf0.y);//smoothstep_deriv(pf0.y);
+    float3 dw = quintic_deriv(pf0.z);//smoothstep_deriv(pf0.z);
+
+    float3 derivs;
+    derivs.x = du * (k0 + v * k3 + w * k4 + v * w * k6);
+    derivs.y = dv * (k1 + u * k3 + w * k5 + u * w * k6);
+    derivs.z = dw * (k2 + u * k4 + v * k5 + u * v * k6);
+
+    float val = a + u * k0 + v * k1 + w * k2 + u * v * k3 + u * w * k4 + v * w * k5 + u * v * w * k6;
+
+    //float3 fade_xyz = wglnoise_fade(pf0);
+    //float4 n_z = lerp(float4(n000, n100, n010, n110),
+    //    float4(n001, n101, n011, n111), fade_xyz.z);
+    //float2 n_yz = lerp(n_z.xy, n_z.zw, fade_xyz.y);
+    //float n_xyz = lerp(n_yz.x, n_yz.y, fade_xyz.x);
+    //return 1.46 * n_xyz;
+
+    float4 r;
+    r.x     = val; // x => noise val
+    r.yzw = derivs; // yzw => noise derivitive (could be use for Normal)
+    return r;
 }
 
 // Classic Perlin noise
-float ClassicNoise(float3 p)
+float4 ClassicNoise(float3 p)
 {
     float3 i = floor(p);
     float3 f = frac(p);
@@ -82,7 +119,7 @@ float ClassicNoise(float3 p)
 }
 
 // Classic Perlin noise, periodic variant
-float PeriodicNoise(float3 p, float3 rep)
+float4 PeriodicNoise(float3 p, float3 rep)
 {
     float3 i0 = wglnoise_mod(floor(p), rep);
     float3 i1 = wglnoise_mod(i0 + 1, rep);
