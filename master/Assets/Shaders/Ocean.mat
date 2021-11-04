@@ -102,20 +102,20 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DeepWaterThreshold: 0.25
+    - _DeepWaterThreshold: 0.84
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FoamIntensity: 2.95
-    - _FoamLinesSpeed: 0.2
-    - _FoamTextureSpeedX: 0
+    - _FoamIntensity: 10
+    - _FoamLinesSpeed: 0.1
+    - _FoamTextureSpeedX: 0.2
     - _FoamTextureSpeedY: 0
-    - _FoamThreshold: 0.09
+    - _FoamThreshold: 0.14
     - _Freq: 1
     - _FresnelPower: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IntersectionThreshold: 0.17
+    - _IntersectionThreshold: 0.06
     - _Metallic: 0
     - _Mode: 0
     - _NormalBStrength: 1
@@ -132,6 +132,8 @@ Material:
     - _SunPow: 256
     - _Surface: 0
     - _UVSec: 0
+    - _WaterMovement: 0.35
+    - _WaterTiling: 1903
     - _WaveHeight: 1
     - _WaveSpeed: 0.01
     - _ZWrite: 1
@@ -143,7 +145,7 @@ Material:
     - _Direction: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColour: {r: 0.8125, g: 0.9609, b: 0.96479994, a: 1}
-    - _IntersectionColour: {r: 0.16202943, g: 0.8307701, b: 0.44520125, a: 1}
+    - _IntersectionColour: {r: 1, g: 1, b: 1, a: 1}
     - _NormalPanningVelocity: {r: 0, g: 0, b: 0, a: 0}
     - _SeaColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}

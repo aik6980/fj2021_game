@@ -3,15 +3,17 @@ Shader "Custom/Ocean"
     Properties
     {
         [Header(Colours)]
-        [HDR]_SurfaceColour("Surface Colour", Color) = (0.04, 0.38, 0.88, 1.0)
+        [HDR] _SurfaceColour("Surface Colour", Color) = (0.04, 0.38, 0.88, 1.0)
         [HDR]_DeepWaterColour("Deep Water Colour", Color) = (0.04, 0.35, 0.78, 1.0)
         [HDR]_IntersectionColour("Intersection Colour", Color) = (1,1,1,1)
         [HDR]_FoamColour("Foam Colour", Color) = (0.8125, 0.9609, 0.9648, 1.0)
+        _WaterTiling("Water Tiling", Range(1,15000)) = 2859
+        _WaterMovement("Water Movement", Range(0.1,2.0)) = 0.4
 
         [Header(Thresholds)]
-        _IntersectionThreshold("Intersction threshold", Range(0,10)) = 0
-        _DeepWaterThreshold("Deep Water Threshold", Range(0,10)) = 0
-        _FoamThreshold("Foam threshold", Range(0,10)) = 0
+        _IntersectionThreshold("Intersction threshold", Range(0,1)) = 0
+        _DeepWaterThreshold("Deep Water Threshold", Range(0,1)) = 0
+        _FoamThreshold("Foam threshold", Range(0,1)) = 0
 
         [Header(Normal maps)]
         _NormalStrength("Normal strength", float) = 1
@@ -51,20 +53,12 @@ Shader "Custom/Ocean"
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 4.0
 
-        struct Input
-        {
-            float4 screenPos;
-            float3 worldPos;
-            float3 localPos;
-            float3 viewDir;
-            float3 worldNormal;
-            INTERNAL_DATA
-        };
-
         fixed4 _SurfaceColour;
         fixed4 _DeepWaterColour;
         fixed4 _IntersectionColour;
 
+        float _WaterTiling;
+        float _WaterMovement;
         float _IntersectionThreshold;
         float _DeepWaterThreshold;
         float _FoamThreshold;
@@ -124,11 +118,24 @@ Shader "Custom/Ocean"
             return normalize(tangent);
         }
 
+        struct Input
+        {
+            float4 screenPos;
+            float3 worldPos;
+            float3 localPos;
+            float3 viewDir;
+            float3 worldNormal;
+            float eyeDepth;
+            //INTERNAL_DATA
+        };
+
         void vert(inout appdata_full v, out Input o)
         //void vert(inout appdata_full v)
         {
             UNITY_INITIALIZE_OUTPUT(Input, o);
             o.localPos = v.vertex.xyz;
+            o.screenPos = ComputeScreenPos(v.vertex);
+            COMPUTE_EYEDEPTH(o.eyeDepth);
 
             //float3 n_sample = pos * 20.0 + _Time.y * 0.01;
             //getHeight(n_sample);
@@ -377,14 +384,13 @@ Shader "Custom/Ocean"
 
             float depth = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(IN.screenPos));
             depth = LinearEyeDepth(depth);
-
             float fogDiff = saturate((depth - IN.screenPos.w) / _DeepWaterThreshold);
             float intersectionDiff = saturate((depth - IN.screenPos.w) / _IntersectionThreshold);
 
             float3 n_sample = pos * 20.0 + _Time.y * 0.01;
 
             // get colour
-            float a = _Time.y * 0.2;
+            float a = _Time.y * _WaterMovement;
             UV sh_uvs = smoothSphereToCubicTiling(float2(phi, theta), tilingBorderGradiantAngle);
             float3 col = 0.0;
             for (int i = 0; i < 3; i++)
@@ -393,7 +399,7 @@ Shader "Custom/Ocean"
                 if (sh_uv.z > .0)
                 {
                     //float3 t_col = 1.0 - sh_uv.z;
-                    float3 t_col = water_colour(sh_uv.xy * 512.0, float3(0, 1, 0), a).xyz;
+                    float3 t_col = water_colour(sh_uv.xy * _WaterTiling, float3(0, 1, 0), a).xyz;
 
                     col += t_col * (withTilingBorderGradient ? sh_uv.z : 1.0);
                 }
@@ -401,34 +407,28 @@ Shader "Custom/Ocean"
 
 
             float3 surface_colour = col;
-            fixed4 final_colour = lerp(lerp(_IntersectionColour, float4(surface_colour, 1.0), intersectionDiff), float4(surface_colour, 1.0), fogDiff);
+            fixed4 final_colour = lerp(lerp(_SurfaceColour, _SurfaceColour, intersectionDiff), float4(surface_colour, 1.0), fogDiff);
 
-            //float foamDiff = saturate((depth - IN.screenPos.w) / _FoamThreshold);
-            float foam = 0;
-            //if (foamDiff > 0)
-            //{
-            //    foamDiff *= (1.0 - renderTex.b);
-            //
-            //    float foamTex = tex2D(_FoamTexture, pos.xz * _FoamTexture_ST.xy + _Time.y * float2(_FoamTextureSpeedX, _FoamTextureSpeedY));
-            //    foam = step(foamDiff - (saturate(sin((foamDiff - _Time.y * _FoamLinesSpeed) * 8 * UNITY_PI)) * (1.0 - foamDiff)), foamTex);
-            //}
+            final_colour = lerp(final_colour, _SurfaceColour, smoothstep(0.0, 10.0, IN.eyeDepth));
+
+            // foam
+            float foamDiff = 1.0 - saturate((depth - IN.screenPos.w) / _FoamThreshold);
+
+            float3 foam_noise_p = pos * 9831 + _Time.y * _FoamTextureSpeedX;
+            float foamTex = ClassicNoise(foam_noise_p);
+            float foam = 1.0 - step(foamDiff - abs((sin((foamDiff - _Time.y * _FoamLinesSpeed) * 4 * UNITY_PI))), foamTex);
+            
+            float3 foam_col = lerp(_SurfaceColour, 1.0, foam);
+
+            final_colour.rgb = lerp(foam_col, final_colour, intersectionDiff);
 
             float fresnel = pow(1.0 - saturate(dot(o.Normal, normalize(IN.viewDir))), _FresnelPower);
 
-            //float2 uv_offset = renderTex.rg + _Time.y * _NormalPanningVelocity.xy;
-
-            //float3 normalA = UnpackNormalWithScale(tex2D(_NormalA, uv * _NormalA_ST.xy + uv_offset), _NormalStrength);
-            //float3 normalB = UnpackNormalWithScale(tex2D(_NormalB, uv * _NormalB_ST.xy + uv_offset), _NormalBStrength);
-
-            //float3 normalA = r1.derivs; //ClassicNoise(pos * 20.0 + _Time.y * 0.1).xyz;
-            //float3 normalB = r1.derivs; //ClassicNoise(pos * 200.0 + _Time.y * 0.5).xyz;
-
-            float3 normal = getNormal(n_sample);
-            foam += normal.y;
+            //float3 normal = getNormal(n_sample);
+            //foam += normal.y;
 
             //o.Albedo = n.val;
             o.Albedo = final_colour.rgb; /*+ texCUBE(_Cube, WorldReflectionVector(IN, o.Normal)).rgb * 0.0000000001*/
-                       + foam * _FoamIntensity;
             //o.Normal = WorldToTangentNormalVector(IN, normal);
             //o.Smoothness = _Glossiness;
             o.Alpha = 1.0;// lerp(lerp(final_colour.a * fresnel, 1.0, foam), _DeepWaterColour.a, fogDiff);
