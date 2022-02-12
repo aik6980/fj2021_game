@@ -8,6 +8,7 @@ public class MenuControls : MonoBehaviour
 	public GameObject pauseMenuRoot;
 	public Button quitButton;
 	public GameObject inGameMenuRoot;
+	public GameObject IntroSequence;
 
 	public bool paused;
 	public bool ignoreInput;
@@ -34,7 +35,7 @@ public class MenuControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			if (!paused)
+			if (!paused && (IntroSequence.activeSelf == false))
 			{
 				paused = true;
 			} else

@@ -54,21 +54,19 @@ public class FMODMusicManager : MonoBehaviour
             }
         }
 
-        if(ConstellationMgr.Instance.is_canvas_mode_enabled())
+        if(ConstellationMgr.Instance.is_canvas_mode_enabled() == true)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ConstellationView", 1.0f);
+
             if (PlaybackState_Stargazing(music_stargazing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
                 {
-                            music_stargazing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_stargazing");
-                            music_stargazing.start();
+                    music_stargazing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_stargazing");
+                    music_stargazing.start();
                 }
-        }
-        if(ConstellationMgr.Instance.is_canvas_mode_enabled())
-        {
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("constellation_view", 1.0f);
         }
         else
         {
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("constellation_view", 0.0f);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ConstellationView", 0.0f);
         }
 
 

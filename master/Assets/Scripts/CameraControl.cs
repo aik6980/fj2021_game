@@ -86,6 +86,14 @@ public class CameraControl : MonoBehaviour
 	//public Transform moveTarget;
 	//public float moveStrength = 0.0f;
 
+	private FMOD.Studio.EventInstance music_sailing;
+	FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance music_sailing)
+		{
+			FMOD.Studio.PLAYBACK_STATE pS;
+			music_sailing.getPlaybackState(out pS);
+			return pS;        
+		}
+
 	public ConstellationMgr constellationManager;
 
 
@@ -127,6 +135,18 @@ public class CameraControl : MonoBehaviour
 
 		EventListener.Get(player).OnTriggerEnterDelegate += CameraControl_OnTriggerEnterDelegate;
 		EventListener.Get(player).OnTriggerExitDelegate += CameraControl_OnTriggerExitDelegate;
+	}
+
+	private void ShipMusic()
+	{
+		
+
+		if (PlaybackState(music_sailing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+		{
+			music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
+			music_sailing.start();
+			music_sailing.release();
+		}
 	}
 
 	private void CameraControl_OnTriggerExitDelegate(Collider col)
@@ -440,6 +460,7 @@ public class CameraControl : MonoBehaviour
 	{
 		if (mode == Mode.LandWalk && canEmbark)
 		{
+			ShipMusic();
 			mode = Mode.ShipNav;
 			player.transform.SetParent(shipSeat, true);
 			player.transform.position = shipSeat.position;
@@ -448,6 +469,8 @@ public class CameraControl : MonoBehaviour
 			Tina.whatToFollow = shipMove.transform;
 		}
 	}
+
+
 
 	public void ZoomTo(Transform target)
     {

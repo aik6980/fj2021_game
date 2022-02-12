@@ -71,15 +71,7 @@ public class ShipMovement : MonoBehaviour
 	public bool stopped;
 
 
-
-	private FMOD.Studio.EventInstance music_sailing, boatsplash;
-
-	FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance music_sailing)
-    {
-        FMOD.Studio.PLAYBACK_STATE pS;
-        music_sailing.getPlaybackState(out pS);
-        return pS;        
-    }
+	private FMOD.Studio.EventInstance boatsplash;
 
 
 	// Start is called before the first frame update
@@ -97,6 +89,7 @@ public class ShipMovement : MonoBehaviour
 		boatsplash = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/boatsplash");
         boatsplash.start();
 		FMODUnity.RuntimeManager.AttachInstanceToGameObject(boatsplash, GetComponent<Transform>(), GetComponent<Rigidbody>());
+		
 
 
 	}
@@ -117,6 +110,9 @@ public class ShipMovement : MonoBehaviour
 
 		return boosting ? 0 : drag;
 	}
+
+
+		
 
 	// Update is called once per frame
 	void Update()
@@ -147,6 +143,7 @@ public class ShipMovement : MonoBehaviour
 
 		if (steeringWheelUI)
 			steeringWheelUI.gameObject.SetActive(true);
+
 		if (steeringWheelUI_backdrop)
 			steeringWheelUI_backdrop.gameObject.SetActive(true);
 
@@ -243,17 +240,6 @@ public class ShipMovement : MonoBehaviour
 
 		velocity.y = steeringAngle * steeringAngleToAngVel;
 
-		//boat moving audio
-		if (PlaybackState(music_sailing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-		
-		{
-			if (velocity.z > 20.0f)
-				{
-					music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
-					music_sailing.start();
-					music_sailing.release();
-				}
-		}
 
 
 		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("sailing_speed", velocity.z);
