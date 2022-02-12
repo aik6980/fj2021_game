@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FMODMusicManager : MonoBehaviour
+public class FMODAudioManager : MonoBehaviour
 {
 
     public GameObject creditsObject;
@@ -29,6 +29,7 @@ public class FMODMusicManager : MonoBehaviour
             return pS;        
         }
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,8 @@ public class FMODMusicManager : MonoBehaviour
     {
         if (creditsObject.activeSelf != true)
         {
+            
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("CreditsSequence", 0.0f);
             if (PlaybackState_IntroStart(music_introstart) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
             {
                 music_introstart.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -52,6 +55,10 @@ public class FMODMusicManager : MonoBehaviour
                 music_introend.start();
                 music_introend.release();
             }
+        }
+        else
+        {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("CreditsSequence", 1.0f);
         }
 
         if(ConstellationMgr.Instance.is_canvas_mode_enabled() == true)
