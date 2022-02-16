@@ -18854,6 +18854,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2056955869}
     m_Modifications:
+    - target: {fileID: 1923716343, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851488792368086602, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+      propertyPath: attenuationObject
+      value: 
+      objectReference: {fileID: 99599787}
     - target: {fileID: 3853897748309878068, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: Tina
       value: 

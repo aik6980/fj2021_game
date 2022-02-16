@@ -13,6 +13,8 @@ public class AnimatePlayer : MonoBehaviour
 
 	public int randMax = 5;
 
+	private FMOD.Studio.EventInstance footstepSound;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -36,6 +38,9 @@ public class AnimatePlayer : MonoBehaviour
 
 	public void StepSound()
 	{
-		FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
+		footstepSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/footsteps");
+        footstepSound.start();
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstepSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+		footstepSound.release();
 	}
 }
