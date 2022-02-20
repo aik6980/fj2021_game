@@ -10753,6 +10753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8609f0272d574448c06fd59e4ea8ac, type: 3}
+--- !u!1 &1517815717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3853897748531486214, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+  m_PrefabInstance: {fileID: 3853897749002210511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1537450376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16342,7 +16347,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/waves_loop
+  EventReference:
+    Guid:
+      Data1: 723056092
+      Data2: 1249994317
+      Data3: -1622414150
+      Data4: 1646034428
+    Path: event:/Ambience/waves_loop
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
@@ -16365,7 +16377,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/Wind
+  EventReference:
+    Guid:
+      Data1: 1172538172
+      Data2: 1253434060
+      Data3: -1833072225
+      Data4: 358311292
+    Path: event:/Ambience/Wind
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
@@ -18861,7 +18880,7 @@ PrefabInstance:
     - target: {fileID: 3851488792368086602, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: attenuationObject
       value: 
-      objectReference: {fileID: 99599787}
+      objectReference: {fileID: 1517815717}
     - target: {fileID: 3853897748309878068, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
       propertyPath: Tina
       value: 

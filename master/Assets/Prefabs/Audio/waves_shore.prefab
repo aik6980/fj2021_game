@@ -44,7 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/waves_shore
+  EventReference:
+    Guid:
+      Data1: 1597404745
+      Data2: 1098450450
+      Data3: -375715680
+      Data4: -383773769
+    Path: event:/Ambience/waves_shore
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
@@ -52,5 +59,5 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
+  OverrideMinDistance: 0.7
   OverrideMaxDistance: 5

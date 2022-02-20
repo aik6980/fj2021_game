@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7312395219516490030}
-  m_LocalRotation: {x: 0.065226145, y: -0.7083643, z: -0.0329882, w: 0.7020523}
+  m_LocalRotation: {x: 0.06522746, y: -0.708363, z: -0.03298374, w: 0.7020537}
   m_LocalPosition: {x: -0.4061, y: 2.2891, z: 0.1205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.571, y: -90.692, z: -7.982}
 --- !u!114 &1685879928037674210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,4 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41c446b1f7d7944b9a32572902f52f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fmodEvent: event:/Ambience/island_trees_small
+  fmodEvent:
+    Guid:
+      Data1: -930004498
+      Data2: 1105513499
+      Data3: 445602196
+      Data4: -1451563707
+    Path: event:/Ambience/island_trees_small

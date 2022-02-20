@@ -43,4 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41c446b1f7d7944b9a32572902f52f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fmodEvent: event:/Ambience/island_crickets
+  fmodEvent:
+    Guid:
+      Data1: 1774232985
+      Data2: 1107563716
+      Data3: -166319688
+      Data4: -1441452744
+    Path: event:/Ambience/island_crickets

@@ -977,7 +977,18 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 42454220}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 485377947688246559, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 5856389754508011688, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 7076036576966796410, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227933, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227934, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227936, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227937, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227938, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 405227939, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 1819711745, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
+    - {fileID: 1819711749, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
 --- !u!114 &333041378 stripped
 MonoBehaviour:
@@ -1151,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6dd8d3a780f4d1ea772e3daf10c372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 136
+  itemId: 337
   indentLevel: 0
   targetObjects:
   - {fileID: 1005621451}
@@ -1204,7 +1215,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 127
+  itemId: 334
   blockName: Age_50
   description: 
   eventHandler: {fileID: 405227828}
@@ -1223,7 +1234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 140
+  itemId: 338
   indentLevel: 0
   storyText: You lived half of your life now...
   description: 
@@ -1496,7 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6dd8d3a780f4d1ea772e3daf10c372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 122
+  itemId: 339
   indentLevel: 0
   targetObjects:
   - {fileID: 1005621451}
@@ -1526,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6dd8d3a780f4d1ea772e3daf10c372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 121
+  itemId: 340
   indentLevel: 0
   targetObjects:
   - {fileID: 1005621451}
@@ -1556,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6dd8d3a780f4d1ea772e3daf10c372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 129
+  itemId: 341
   indentLevel: 0
   targetObjects:
   - {fileID: 1005621451}
@@ -1586,7 +1597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 124
+  itemId: 342
   indentLevel: 0
   description: 
   targetObject: {fileID: 1745705871}
@@ -1614,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 123
+  itemId: 343
   indentLevel: 0
   description: 
   targetObject: {fileID: 1745705871}
@@ -1642,7 +1653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 126
+  itemId: 344
   indentLevel: 0
   description: 
   targetObject: {fileID: 99599787}
@@ -1670,7 +1681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 125
+  itemId: 345
   indentLevel: 0
   description: 
   targetObject: {fileID: 99599787}
@@ -1706,7 +1717,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 141
+  itemId: 335
   blockName: OnDied
   description: 
   eventHandler: {fileID: 405227942}
@@ -1728,7 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 128
+  itemId: 346
   indentLevel: 0
   storyText: You lived a long and beautiful life, travelled the Ocean...
   description: 
@@ -1785,7 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 134
+  itemId: 347
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
@@ -1803,7 +1814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 133
+  itemId: 348
   indentLevel: 0
   storyText: ...and the next Generation will continue your journey.
   description: 
@@ -1830,7 +1841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6dd8d3a780f4d1ea772e3daf10c372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 132
+  itemId: 349
   indentLevel: 0
   targetObjects:
   - {fileID: 1005621451}
@@ -1868,7 +1879,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 135
+  itemId: 336
   blockName: Respawned
   description: 
   eventHandler: {fileID: 405227944}
@@ -1889,7 +1900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 130
+  itemId: 350
   indentLevel: 0
   _duration:
     floatRef: {fileID: 0}
@@ -10444,7 +10455,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/waves_loop
+  EventReference:
+    Guid:
+      Data1: 723056092
+      Data2: 1249994317
+      Data3: -1622414150
+      Data4: 1646034428
+    Path: event:/Ambience/waves_loop
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
@@ -10467,7 +10485,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/Wind
+  EventReference:
+    Guid:
+      Data1: 1172538172
+      Data2: 1253434060
+      Data3: -1833072225
+      Data4: 358311292
+    Path: event:/Ambience/Wind
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1

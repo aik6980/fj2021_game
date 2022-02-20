@@ -281,4 +281,7 @@ public class OnFootMovement : MonoBehaviour
 	{
 		stopped = false;
 	}
+
+	
+
 }

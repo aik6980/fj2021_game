@@ -44,7 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/wind_intro
+  EventReference:
+    Guid:
+      Data1: -2046521788
+      Data2: 1128031697
+      Data3: 1898758059
+      Data4: 492769028
+    Path: event:/Ambience/wind_intro
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
@@ -98,7 +105,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/gulls_intro
+  EventReference:
+    Guid:
+      Data1: 200587127
+      Data2: 1310651567
+      Data3: -1246745471
+      Data4: -1628039424
+    Path: event:/Ambience/gulls_intro
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
@@ -152,7 +166,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambience/wind_intro
+  EventReference:
+    Guid:
+      Data1: -2046521788
+      Data2: 1128031697
+      Data3: 1898758059
+      Data4: 492769028
+    Path: event:/Ambience/wind_intro
+  Event: 
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1

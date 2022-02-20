@@ -13,13 +13,17 @@ public class AnimatePlayer : MonoBehaviour
 
 	public int randMax = 5;
 
-	private FMOD.Studio.EventInstance footstepSound;
+
+	public GameObject foot;
+
 
 	// Start is called before the first frame update
 	void Start()
     {
 		anim = GetComponent<Animator>();
 		move = GetComponentInParent<OnFootMovement>();
+
+		foot = GameObject.FindGameObjectWithTag("PlayerFoot");
     }
 
     // Update is called once per frame
@@ -36,11 +40,12 @@ public class AnimatePlayer : MonoBehaviour
 		}
 	}
 
+
 	public void StepSound()
 	{
-		footstepSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/footsteps");
-        footstepSound.start();
-		FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstepSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
-		footstepSound.release();
+		FootstepSounds footScript = foot.GetComponent<FootstepSounds>();
+		footScript.PlayFootstepSound();
 	}
+
+
 }
