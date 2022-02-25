@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7159263546748153195}
   - component: {fileID: 7400189465553563352}
   - component: {fileID: 8034515810394999152}
+  - component: {fileID: 8243792236959099663}
   m_Layer: 10
   m_Name: Audio_Foot
   m_TagString: PlayerFoot
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7078835721729833145}
   m_LocalRotation: {x: -0.07333801, y: 0.1155296, z: -0.6983938, w: -0.70251024}
   m_LocalPosition: {x: -0.022947326, y: -0.0055935583, z: -0.0050224364}
-  m_LocalScale: {x: 0.008711562, y: 0.008711562, z: 0.008711562}
+  m_LocalScale: {x: 0.008711564, y: 0.012625669, z: 0.0087115625}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +58,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7078835721729833145}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -79,3 +80,17 @@ MonoBehaviour:
   rockTexture: {fileID: 2800000, guid: b9cd3e032702dc942884dc62c05f79a4, type: 3}
   sandTexture: {fileID: 2800000, guid: 0f3b210959803b246bb964ff0de6c6c8, type: 3}
   monolithTexture: {fileID: 2800000, guid: 2a7fe22108bfc43748c728d625aa879f, type: 3}
+--- !u!114 &8243792236959099663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078835721729833145}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57192c34961f20141aefcc89312674a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCollider: {fileID: 0}
+  mainBodyPos: {fileID: 0}

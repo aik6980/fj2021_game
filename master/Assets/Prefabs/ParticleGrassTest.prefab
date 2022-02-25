@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7900722078920138522}
   - component: {fileID: 6477815633060413901}
   - component: {fileID: 1508592359536358218}
-  - component: {fileID: 7247222983339251685}
+  - component: {fileID: 5934052543600287894}
   m_Layer: 0
   m_Name: ParticleGrassTest
   m_TagString: Grass
@@ -29,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.859, y: -0.29, z: -4.574}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6426362454251951942}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,7 +53,7 @@ ParticleSystem:
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 0
-  useRigidbodyForVelocity: 1
+  useRigidbodyForVelocity: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -3669,7 +3670,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     type: 1
     collisionMode: 0
@@ -3854,12 +3855,12 @@ ParticleSystem:
     serializedVersion: 2
     inside: 0
     outside: 0
-    enter: 0
-    exit: 0
-    colliderQueryMode: 0
+    enter: 2
+    exit: 2
+    colliderQueryMode: 2
     radiusScale: 0.08
     primitives:
-    - {fileID: 0}
+    - {fileID: 7400189465553563352, guid: 03caa827bae68df4cb23006b83267bba, type: 3}
   SubModule:
     serializedVersion: 2
     enabled: 0
@@ -4864,7 +4865,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &7247222983339251685
+--- !u!114 &5934052543600287894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4873,6 +4874,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 3522877864481881186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5437f59a8a310fa4083b1c470051ab62, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c3189870811146409ffda5ebf84e27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderGO: {fileID: 8481386964277156427}
+--- !u!1 &8481386964277156427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6426362454251951942}
+  - component: {fileID: 6253523717460691367}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Grass
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6426362454251951942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481386964277156427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_Children: []
+  m_Father: {fileID: 7900722078920138522}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6253523717460691367
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481386964277156427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

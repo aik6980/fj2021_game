@@ -1,62 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
-public class NonSolidObjects : MonoBehaviour
+public class DynamicFoley : MonoBehaviour
 {
-    [SerializeField] bool inShallowWater, inDeepWater, inGrass, inBush;
-    Rigidbody rb;
-    float nonSolidTriggerVelocity = 0.1f;
-    FMOD.Studio.EventInstance grassMoveSound;
+    EventInstance playerFoleyEvent;
+    Vector3 oldPos, newPos;
+    float limbSpeed;  
+    [SerializeField] Transform mainBodyPos; 
+
 
     void Start() 
     {
-        rb = GetComponent<Rigidbody>();
+        oldPos = transform.position;
+        //inGrass = GameObject.FindGameObjectWithTag("Grass").GetComponent<ParticleTrigger>().inGrass;
+        
+        playerFoleyEvent = RuntimeManager.CreateInstance("event:/SFX/dynamic_foley");
+        playerFoleyEvent.start();
+        RuntimeManager.AttachInstanceToGameObject(playerFoleyEvent, GetComponent<Transform>(), GetComponent<Rigidbody>()); 
     }
 
-    void OnTriggerEnter(Collider other) 
+    void Update() 
     {
-        float waterDepthCheck = other.ClosestPoint(gameObject.transform.position).y;
-        if (other.gameObject.tag == "Water") 
+        newPos = transform.position;
+        //limbSpeed = (oldPos - newPos).magnitude * Time.deltaTime;
+        limbSpeed = Mathf.Sqrt(Mathf.Pow((oldPos.x - newPos.x), 2) + Mathf.Pow((oldPos.z - newPos.z), 2)) / Time.deltaTime;
+
+        //Debug.Log("limb speed " + limbSpeed);
+
+        
+        playerFoleyEvent.setParameterByName("ClothesMove", limbSpeed);
+        if(PlayerAudioCollider.inGrass) { playerFoleyEvent.setParameterByName("GrassMove", limbSpeed); }
+        if(PlayerAudioCollider.inBush) { playerFoleyEvent.setParameterByName("BushMove", limbSpeed); }
+        if(PlayerAudioCollider.inWater) 
         { 
-            inShallowWater = true; 
+            playerFoleyEvent.setParameterByName("WaterMove", limbSpeed);
+            playerFoleyEvent.setParameterByName("WaterDepth", PlayerAudioCollider.waterDepth);
         }
-        if (other.gameObject.tag == "Water" && waterDepthCheck < -0.055f) 
-        { 
-            inShallowWater = false;
-            inDeepWater = true;
-        }
-        if (other.gameObject.tag == "Bush") 
-        { 
-            inBush = true; 
-        }
-    }
-    void OnTriggerExit(Collider other) 
-    {
-        float waterDepthCheck = other.ClosestPoint(gameObject.transform.position).y;
-        if (other.gameObject.tag == "Water") 
-        { 
-            inShallowWater = false; 
-        }
-        if (other.gameObject.tag == "Water" && waterDepthCheck < -0.055f) 
-        { 
-            inShallowWater = true;
-            inDeepWater = false;
-        }
-        if (other.gameObject.tag == "Bush") 
-        { 
-            inBush = false; 
-        }
+        
+        // Debug.Log("In bush = " + PlayerAudioCollider.inBush);
+        // Debug.Log("In grass = " + PlayerAudioCollider.inGrass);
+        // Debug.Log("In shallow water = " + PlayerAudioCollider.inShallowWater);
+        // Debug.Log("In deep water = " + PlayerAudioCollider.inDeepWater);
+        
+        oldPos = transform.position;
+
     }
 
-    void OnParticleCollision(GameObject other) 
-    {
-        if (rb.velocity.x > nonSolidTriggerVelocity)
-        {
-            grassMoveSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Movement/Grass");
-            grassMoveSound.start();
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(grassMoveSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
-            grassMoveSound.release();
-        }
-    }
 }

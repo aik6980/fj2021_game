@@ -183,6 +183,7 @@ public class OnFootMovement : MonoBehaviour
 					bool stepUp = Vector3.Dot(delta, localUp) >= 0;
 					float groundSlopeThere = Mathf.Acos(Vector3.Dot(hitNormal, localUp)) * Mathf.Rad2Deg;
 
+					
 					//do not step on too steep ground
 					if (groundSlopeThere >= maxGroundSlopeUp)
 					{//too steep
@@ -253,7 +254,7 @@ public class OnFootMovement : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log(other.name);
+		//Debug.Log(other.name);
 	}
 
 	public void OnClicked(Collider coll, Vector3 relPos)

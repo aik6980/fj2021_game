@@ -13,7 +13,7 @@ public class FootstepSounds : MonoBehaviour
             float groundCoordX, groundCoordY;
             Texture textureCheck;
             RaycastHit[] hit;
-            
+
             hit = Physics.RaycastAll(transform.position, -transform.up, 0.05f);
             System.Array.Sort(hit, (x,y) => x.distance.CompareTo(y.distance));
 
@@ -21,7 +21,13 @@ public class FootstepSounds : MonoBehaviour
             {
                 groundCoordX = rayhit.textureCoord.x;
                 groundCoordY = rayhit.textureCoord.y;
-                textureCheck = rayhit.transform.GetComponent<Renderer>().sharedMaterial.mainTexture;
+                if(gameObject.GetComponent<Renderer>())
+                {
+                    textureCheck = rayhit.transform.GetComponent<Renderer>().sharedMaterial.mainTexture;
+                }
+                else textureCheck = islandTexture;
+
+                
 
                 if (textureCheck == islandTexture)
                 {
@@ -96,7 +102,15 @@ public class FootstepSounds : MonoBehaviour
             groundTypeParameterID = groundTypeParameterDescription.id;
 
             footstepSound.setParameterByID(groundTypeParameterID, GroundTypeParameter());
-            Debug.Log ("ground type = " + GroundTypeParameter());
+
+            if (PlayerAudioCollider.inWater)
+            {
+                footstepSound.setParameterByName("Footstep_Water", 1);
+            }
+            else footstepSound.setParameterByName("Footstep_Water", 0);
+            footstepSound.setParameterByName("WaterDepth", PlayerAudioCollider.waterDepth);
+            
+            //Debug.Log ("ground type = " + GroundTypeParameter());
 
             footstepSound.start();
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstepSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
