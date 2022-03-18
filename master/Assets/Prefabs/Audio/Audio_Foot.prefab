@@ -9,10 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7309513654334132780}
-  - component: {fileID: 7159263546748153195}
-  - component: {fileID: 7400189465553563352}
   - component: {fileID: 8034515810394999152}
-  - component: {fileID: 8243792236959099663}
+  - component: {fileID: 5556809526016898022}
   m_Layer: 10
   m_Name: Audio_Foot
   m_TagString: PlayerFoot
@@ -34,35 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15.332, y: -3.56, z: 449.184}
---- !u!54 &7159263546748153195
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078835721729833145}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!65 &7400189465553563352
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078835721729833145}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8034515810394999152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,25 +41,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 7078835721729833145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c78d8a3d0ea0e946a707dd98a5f6016, type: 3}
+  m_Script: {fileID: 11500000, guid: 062869958219e1d4a9248b2d2958f47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTerrain: 3
-  islandTexture: {fileID: 2800000, guid: 2376e7d410fe48a42b75071123510cb4, type: 3}
-  rockTexture: {fileID: 2800000, guid: b9cd3e032702dc942884dc62c05f79a4, type: 3}
-  sandTexture: {fileID: 2800000, guid: 0f3b210959803b246bb964ff0de6c6c8, type: 3}
-  monolithTexture: {fileID: 2800000, guid: 2a7fe22108bfc43748c728d625aa879f, type: 3}
---- !u!114 &8243792236959099663
+--- !u!114 &5556809526016898022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7078835721729833145}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57192c34961f20141aefcc89312674a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 14974eca38a1a5f4499de7f5101200fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollider: {fileID: 0}
-  mainBodyPos: {fileID: 0}
+  currentTerrain: 0
+  islandTexture: {fileID: 2800000, guid: 2376e7d410fe48a42b75071123510cb4, type: 3}
+  rockTexture: {fileID: 2800000, guid: b9cd3e032702dc942884dc62c05f79a4, type: 3}
+  sandTexture: {fileID: 2800000, guid: 0f3b210959803b246bb964ff0de6c6c8, type: 3}
+  monolithTexture: {fileID: 2800000, guid: 2a7fe22108bfc43748c728d625aa879f, type: 3}

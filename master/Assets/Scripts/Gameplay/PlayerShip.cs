@@ -91,8 +91,8 @@ public class PlayerShip : MonoBehaviour
     private void HandleMovement()
     {
         var forwardVelocity = Vector3.Project(velocity, transform.forward);
-        Debug.DrawLine(transform.position, transform.position + velocity * 5f, Color.red, 0.2f);
-        Debug.DrawLine(transform.position, transform.position + forwardVelocity * 5f, Color.green, 0.2f);
+        //Debug.DrawLine(transform.position, transform.position + velocity * 5f, Color.red, 0.2f);
+        //Debug.DrawLine(transform.position, transform.position + forwardVelocity * 5f, Color.green, 0.2f);
         var forwardVelocityMag = Vector3.Project(velocity, transform.forward).magnitude;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(targetDirection, Vector3.up), steeringSpeedMultiplier * steeringSpeedCurve.Evaluate(forwardVelocityMag) * Time.deltaTime);
 

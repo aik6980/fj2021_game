@@ -86,14 +86,6 @@ public class CameraControl : MonoBehaviour
 	//public Transform moveTarget;
 	//public float moveStrength = 0.0f;
 
-	private FMOD.Studio.EventInstance music_sailing;
-	FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance music_sailing)
-		{
-			FMOD.Studio.PLAYBACK_STATE pS;
-			music_sailing.getPlaybackState(out pS);
-			return pS;        
-		}
-
 	public ConstellationMgr constellationManager;
 
 
@@ -135,18 +127,6 @@ public class CameraControl : MonoBehaviour
 
 		EventListener.Get(player).OnTriggerEnterDelegate += CameraControl_OnTriggerEnterDelegate;
 		EventListener.Get(player).OnTriggerExitDelegate += CameraControl_OnTriggerExitDelegate;
-	}
-
-	private void ShipMusic()
-	{
-		
-
-		if (PlaybackState(music_sailing) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-		{
-			music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
-			music_sailing.start();
-			music_sailing.release();
-		}
 	}
 
 	private void CameraControl_OnTriggerExitDelegate(Collider col)
@@ -335,7 +315,7 @@ public class CameraControl : MonoBehaviour
 		Ray ray = cam.ScreenPointToRay(mousePos);
 		Vector3 p1 = ray.origin;
 		Vector3 dir = ray.direction;
-		Debug.DrawRay(p1, dir * clickRange, Color.yellow, 1.0f);
+		//Debug.DrawRay(p1, dir * clickRange, Color.yellow, 1.0f);
 		if (Physics.Raycast(p1, dir, out hit, clickRange, clickMask))
 		{
 			//Debug.Log(hit.point);
@@ -354,7 +334,7 @@ public class CameraControl : MonoBehaviour
 		Ray ray = cam.ScreenPointToRay(mousePos);
 		Vector3 p1 = ray.origin;
 		Vector3 dir = ray.direction;
-		Debug.DrawRay(p1, dir * clickRange, Color.yellow, 0.0f);
+		//Debug.DrawRay(p1, dir * clickRange, Color.yellow, 0.0f);
 		if (Physics.Raycast(p1, dir, out hit, clickRange, clickMask))
 		{
 			//Debug.Log(hit.point);
@@ -386,7 +366,7 @@ public class CameraControl : MonoBehaviour
 			Vector3 dir = p2 - p1;
 			if (Physics.Raycast(p1, dir.normalized, out hit, dir.magnitude, mask))
 			{
-				Debug.DrawLine(p1, p2, Color.magenta);
+				//Debug.DrawLine(p1, p2, Color.magenta);
 				//camPos = hit.point;
 				pitch = Mathf.Lerp(pitch, pitchMin / 90.0f, (1.0f-Mathf.Clamp01(hit.distance / dir.magnitude))*0.1f);
 				camPos.x = CamX.Evaluate(pitch) * CamRight;
@@ -440,7 +420,7 @@ public class CameraControl : MonoBehaviour
 				canDisembark = false;
 			}
 		}
-		Debug.DrawLine(p1, p1 + dir * depth, canDisembark ? Color.green : Color.red);
+		//Debug.DrawLine(p1, p1 + dir * depth, canDisembark ? Color.green : Color.red);
 	}
 
 	public void OnPressDisembark()
@@ -460,7 +440,6 @@ public class CameraControl : MonoBehaviour
 	{
 		if (mode == Mode.LandWalk && canEmbark)
 		{
-			ShipMusic();
 			mode = Mode.ShipNav;
 			player.transform.SetParent(shipSeat, true);
 			player.transform.position = shipSeat.position;

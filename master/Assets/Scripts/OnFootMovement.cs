@@ -98,7 +98,7 @@ public class OnFootMovement : MonoBehaviour
 			Vector3 p1 = newPos;
 			Vector3 dir = Vector3.down;
 			p1 -= dir * maxHeight;
-			Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
+			//Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
 
 			if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
 			{
@@ -149,7 +149,7 @@ public class OnFootMovement : MonoBehaviour
 				modelOffset = Vector3.zero;
 				modelRotationOffset = Quaternion.identity;
 
-				Debug.DrawLine(transform.position, wp, Color.white, 5.0f);
+				//Debug.DrawLine(transform.position, wp, Color.white, 5.0f);
 				if ((wp - newPos).magnitude < stepLength)
 				{
 					moveTargetValid = false;
@@ -167,7 +167,7 @@ public class OnFootMovement : MonoBehaviour
 				Vector3 p1 = newPos;
 				Vector3 dir = Vector3.down;
 				p1 -= dir * maxHeight;
-				Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
+				//Debug.DrawRay(p1, dir * maxDistance, Color.cyan, 10.0f);
 
 				if (Physics.Raycast(p1, dir, out hit, maxDistance, mask))
 				{
@@ -196,11 +196,10 @@ public class OnFootMovement : MonoBehaviour
 					} else
 					//also check if there's no collider blocking my way there; e.g. rocks, trees, etc
 					{
-						Debug.DrawLine(transform.position, nextPos, Color.green, 10);
+						//Debug.DrawLine(transform.position, nextPos, Color.green, 10);
 
 						if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
 						{//hit something; cancel
-						 //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Ouch");
 							Debug.Log("obstacle " + hit.collider.name, hit.collider);
 						} else
 						{
@@ -215,8 +214,6 @@ public class OnFootMovement : MonoBehaviour
 							transform.rotation = Quaternion.Euler(lookEuler);
 							modelOffset = this.transform.InverseTransformPoint(prevPos);
 							modelRotationOffset = Quaternion.Inverse(transform.rotation) * prevRot;
-
-							//FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footsteps");
 						}
 					}
 				} else

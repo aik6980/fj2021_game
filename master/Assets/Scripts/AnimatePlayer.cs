@@ -13,20 +13,17 @@ public class AnimatePlayer : MonoBehaviour
 
 	public int randMax = 5;
 
+	GameObject player;
 
-	public GameObject foot;
+	public static bool leftStep;
 
-
-	// Start is called before the first frame update
 	void Start()
     {
 		anim = GetComponent<Animator>();
 		move = GetComponentInParent<OnFootMovement>();
 
-		foot = GameObject.FindGameObjectWithTag("PlayerFoot");
     }
 
-    // Update is called once per frame
     void Update()
     {
 		anim.SetBool("moving", move.stepTimer > 0);
@@ -41,11 +38,17 @@ public class AnimatePlayer : MonoBehaviour
 	}
 
 
-	public void StepSound()
+	public void LeftStepSound()
 	{
-		FootstepSounds footScript = foot.GetComponent<FootstepSounds>();
-		footScript.PlayFootstepSound();
+		leftStep = true;
+		GetComponent<Audio_FootstepSounds>().PlayFootstepSound();
 	}
+	public void RightStepSound()
+	{
+		leftStep = false;
+		GetComponent<Audio_FootstepSounds>().PlayFootstepSound();
+	}
+
 
 
 }

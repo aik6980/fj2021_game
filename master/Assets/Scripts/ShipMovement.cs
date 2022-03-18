@@ -70,10 +70,6 @@ public class ShipMovement : MonoBehaviour
 	public bool boosting = false;
 	public bool stopped;
 
-
-	private FMOD.Studio.EventInstance boatsplash;
-
-
 	// Start is called before the first frame update
 	void Start()
     {
@@ -86,12 +82,7 @@ public class ShipMovement : MonoBehaviour
 		//steerClickRadius = steeringWheelUI.rectTransform.rect.height * steeringWheelUI.canvas.scaleFactor;
 		steerClickRadius = Screen.height * 0.2f;
 
-		boatsplash = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/boatsplash");
-        boatsplash.start();
-		FMODUnity.RuntimeManager.AttachInstanceToGameObject(boatsplash, GetComponent<Transform>(), GetComponent<Rigidbody>());
-		
-
-
+		Audio_SFX.BoatSplashStart(this.gameObject);
 	}
 
 	private float SuperSpeed()
@@ -168,7 +159,7 @@ public class ShipMovement : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
 		{
-			Debug.Log(Vector2.Distance(screenPoint2d, screenspaceShipPoint));
+			//Debug.Log(Vector2.Distance(screenPoint2d, screenspaceShipPoint));
 			if (Vector2.Distance(screenPoint2d, screenspaceShipPoint) <= steerClickRadius)
 			{
 				startDraggingDir = (screenPoint2d - screenspaceShipPoint).normalized;
@@ -240,12 +231,7 @@ public class ShipMovement : MonoBehaviour
 
 		velocity.y = steeringAngle * steeringAngleToAngVel;
 
-
-
-		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("sailing_speed", velocity.z);
-		FMODUnity.RuntimeManager.StudioSystem.setParameterByName("is_turning", velocity.y);
-
-		
+		Audio_SFX.BoatSplashUpdate(velocity);
 
 		//How do we "collide" with islands? we are not using physics on the ship (and really shouldn't)
 		//idea: use a raycast to MEASURE DEPTH, and use that to slow down (drag the bottom) and push away :) 
@@ -348,7 +334,7 @@ public class ShipMovement : MonoBehaviour
 				hitNormal[i] = Vector3.up;
 				hitCollider[i] = null;
 			}
-			Debug.DrawLine(p1, p1 + dir * depth[i], Color.Lerp(Color.red, Color.green, depth[i]/maxDistance));
+			//Debug.DrawLine(p1, p1 + dir * depth[i], Color.Lerp(Color.red, Color.green, depth[i]/maxDistance));
 		}
 
 		Vector3 worldVel = this.transform.rotation * velocity;
@@ -362,7 +348,7 @@ public class ShipMovement : MonoBehaviour
 
 				Vector3 p1 = this.transform.TransformPoint(collisionPoints[i]);
 				Vector3 dir = this.transform.TransformDirection(rayDir[i].normalized);
-				Debug.DrawRay(p1 + dir * (depth[i] - maxHeight), normal);
+				//Debug.DrawRay(p1 + dir * (depth[i] - maxHeight), normal);
 
 				float v = Vector3.Dot(worldVel, normal);
 

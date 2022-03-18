@@ -133,12 +133,12 @@ public class SeagullMovement : MonoBehaviour
 
 			//ToDo: roll (based on acceleration)
 
-			Debug.DrawRay(transform.position, worldVel, Color.green);
-			Debug.DrawRay(transform.position, fwd, Color.red);
+			//Debug.DrawRay(transform.position, worldVel, Color.green);
+			//Debug.DrawRay(transform.position, fwd, Color.red);
 
 			transform.rotation = Quaternion.Slerp(transform.rotation, look, slerpRate * Time.deltaTime);
 
-			Debug.DrawRay(transform.position, transform.right, Color.blue);
+			//Debug.DrawRay(transform.position, transform.right, Color.blue);
 
 			if (tiltable)
 			{
