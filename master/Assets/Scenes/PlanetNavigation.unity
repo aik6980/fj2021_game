@@ -1406,7 +1406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3622296378070810845, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3984573119993896149, guid: bd1072640c6277b43809745eb57a0c55, type: 3}
       propertyPath: targetObject
@@ -15461,6 +15461,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2346064958721338820, guid: e037e120404f22549be235bbd30266d7, type: 3}
   m_PrefabInstance: {fileID: 1009408683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1025158871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810579566, guid: dbd7f833752d7914ca928fc6c0702690, type: 3}
+  m_PrefabInstance: {fileID: 5441226067251856948}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1026447707
 GameObject:
@@ -30165,9 +30170,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1833573646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbc3adb8b4b8e744a955ca05fd7aee05, type: 3}
+  m_Script: {fileID: 11500000, guid: e1e729e4fc90a3c499530fc5b2adfbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creditsObject: {fileID: 1025158871}
+  cameraObject: {fileID: 1745705871}
 --- !u!4 &1833573648
 Transform:
   m_ObjectHideFlags: 0
@@ -43751,7 +43758,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 99599788, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: fineTune
-      value: 2000
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 99599788, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: worldRoot
@@ -43921,7 +43928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5441226068918815138, guid: dbd7f833752d7914ca928fc6c0702690, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5441226068918815150, guid: dbd7f833752d7914ca928fc6c0702690, type: 3}
       propertyPath: m_Pivot.x
@@ -44142,7 +44149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680804193474658451, guid: feb6c6637526934409c41b68c9170c2a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feb6c6637526934409c41b68c9170c2a, type: 3}
