@@ -36,12 +36,12 @@ public class Audio_MusicManager : MonoBehaviour
                 music_introend.start();
                 music_introend.release();
             }
-            if (GetPlaybackState(music_sailing) != PLAYBACK_STATE.PLAYING && cameraObject.GetComponent<CameraControl>().mode == CameraControl.Mode.ShipNav)
-            {
-                music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
-                music_sailing.start();
-                music_sailing.release();
-            }
+            // if (GetPlaybackState(music_sailing) != PLAYBACK_STATE.PLAYING && cameraObject.GetComponent<CameraControl>().mode == CameraControl.Mode.ShipNav)
+            // {
+            //     music_sailing = FMODUnity.RuntimeManager.CreateInstance("event:/Music/music_sailing");
+            //     music_sailing.start();
+            //     music_sailing.release();
+            // }
         }
 
         if(ConstellationMgr.Instance.is_canvas_mode_enabled())

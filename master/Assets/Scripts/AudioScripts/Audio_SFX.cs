@@ -6,7 +6,6 @@ using FMOD.Studio;
 
 public class Audio_SFX : MonoBehaviour
 {
-    static EventInstance stargazing_drawing;
     public static void BoatSplashStart(GameObject boat)
     {
         EventInstance boatsplash = RuntimeManager.CreateInstance("event:/SFX/boatsplash");
@@ -16,12 +15,11 @@ public class Audio_SFX : MonoBehaviour
 
     public static void BoatSplashUpdate(Vector3 velocity)
     {
-        RuntimeManager.StudioSystem.setParameterByName("sailing_speed", velocity.z);
-		RuntimeManager.StudioSystem.setParameterByName("is_turning", velocity.y);
+        RuntimeManager.StudioSystem.setParameterByName("SailingSpeed", velocity.z);
+		RuntimeManager.StudioSystem.setParameterByName("IsTurning", velocity.y);
     }
 
-    public EventInstance stargazing_constellation;
-    
+    static EventInstance stargazing_drawing;
     public static void StarDrawingStart()
     {
         stargazing_drawing = RuntimeManager.CreateInstance("event:/SFX/stargazing_drawing");
@@ -33,11 +31,10 @@ public class Audio_SFX : MonoBehaviour
 
     public static void StarDrawingEnd(bool endOnStar)
     {
-        if(endOnStar) { RuntimeManager.StudioSystem.setParameterByName("end_on_star", 1f); }
-        else  { RuntimeManager.StudioSystem.setParameterByName("end_on_star", 0f); }
+        if(endOnStar) { RuntimeManager.StudioSystem.setParameterByName("EndOnStar", 1f); }
+        else  { RuntimeManager.StudioSystem.setParameterByName("EndOnStar", 0f); }
         stargazing_drawing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         stargazing_drawing.release();
-        Debug.Log("end_on_star " + endOnStar);
     }
 
     public static void StarDrawingConstellation()

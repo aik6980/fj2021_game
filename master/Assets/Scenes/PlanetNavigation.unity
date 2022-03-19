@@ -30154,8 +30154,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1833573648}
   - component: {fileID: 1833573647}
+  - component: {fileID: 1833573649}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: FMODAudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30189,6 +30190,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1833573649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833573646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79db33416f32c3b4eb49b3a669254bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1833877199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39093,6 +39106,46 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4267277
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4362795
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.0656672
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.6874171
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.07240372
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.72264093
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.002383649
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 5.515
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 266.838
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027451873301323037, guid: d21a9d562797dea4ba1383204445e425, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -6.224
+      objectReference: {fileID: 0}
     - target: {fileID: 3044415084172270872, guid: d21a9d562797dea4ba1383204445e425, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -43758,7 +43811,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 99599788, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: fineTune
-      value: 50
+      value: 169
       objectReference: {fileID: 0}
     - target: {fileID: 99599788, guid: 77a5a2d5f257a62479d63e893aca33c2, type: 3}
       propertyPath: worldRoot

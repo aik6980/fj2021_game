@@ -6,7 +6,7 @@ public class Audio_DynamicFoley : MonoBehaviour
 {
     public static float waterDepth;
     public static float altitude, limbSpeedAvg;
-    [SerializeField] [Range(1f, 100f)] float fineTune = 50f;
+    [SerializeField] [Range(100f, 500f)] float fineTune = 50f;
     [SerializeField] GameObject worldRoot, head, lArm, rArm, lLeg, rLeg;
     EventInstance waterMove, bushMove, grassMove, headFoley, lArmFoley, rArmFoley, lLegFoley, rLegFoley;
     Vector3 headPos, lArmPos, rArmPos, lLegPos, rLegPos;

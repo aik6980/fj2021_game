@@ -6,39 +6,36 @@ using FMOD.Studio;
 
 public class Audio_IslandMusic : MonoBehaviour
 {
-    public CameraControl camControl;
-    EventInstance psIslandMusicWalking;
-    PARAMETER_ID walkSail;
-    EventReference islandMusicWalking;
+    [SerializeField] GameObject mainCamera;
+    [SerializeField] EventReference musicEvent;
+    EventInstance musicInstance;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        musicInstance = RuntimeManager.CreateInstance(musicEvent);
+        RuntimeManager.AttachInstanceToGameObject(musicInstance, transform);
     }
 
     void update()
     {
-        if (camControl.footMove)
+        if (mainCamera.GetComponent<CameraControl>().footMove)
         {
-            Debug.Log("on foot");
-           // psIslandMusicWalking.setParameterByID(walkSail, 0);
-           // psIslandMusicWalking = RuntimeManager.CreateInstance(islandMusicWalking);
-           // psIslandMusicWalking.start();
+            musicInstance.setParameterByNameWithLabel("WalkSail", "Walk");
         }
         else
         {
-            Debug.Log("on ship");
-            psIslandMusicWalking.setParameterByID(walkSail, 1);
+            float distanceToIsland = Vector3.Distance(transform.position, mainCamera.transform.position);
+            Debug.Log("distance to island: " + distanceToIsland);
+            musicInstance.setParameterByNameWithLabel("WalkSail", "Sail");
+            musicInstance.setParameterByName("DistanceToIsland", distanceToIsland);
         }
         
     }
 
-
-    PLAYBACK_STATE PlaybackState(EventInstance islandMusicWalking)
+    PLAYBACK_STATE GetPlaybackState(EventInstance instance)
     {
         PLAYBACK_STATE pS;
-        psIslandMusicWalking.getPlaybackState(out pS);
-        return pS;
+        instance.getPlaybackState(out pS);
+        return pS;        
     }
 }
