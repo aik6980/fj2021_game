@@ -8,10 +8,11 @@ public class Audio_DynamicFoley : MonoBehaviour
     public static float altitude, limbSpeedAvg;
     [SerializeField] [Range(100f, 500f)] float fineTune = 50f;
     [SerializeField] GameObject worldRoot, head, lArm, rArm, lLeg, rLeg;
-    EventInstance waterMove, bushMove, grassMove, headFoley, lArmFoley, rArmFoley, lLegFoley, rLegFoley;
+    EventInstance waterMove, bushMove, grassMove, treeMove;
+    EventInstance headFoley, lArmFoley, rArmFoley, lLegFoley, rLegFoley;
     Vector3 headPos, lArmPos, rArmPos, lLegPos, rLegPos;
     Vector3 headOffset, lArmOffset, rArmOffset, lLegOffset, rLegOffset;
-    GameObject bushGO, grassGO, waterGO;
+    GameObject treeObject, bushObject, grassObject, waterObject;
     GameObject eventObject;
 
 
@@ -38,6 +39,9 @@ public class Audio_DynamicFoley : MonoBehaviour
         waterDepth = (Mathf.InverseLerp(199.9759f, 199.9550f, altitude));
         waterMove.setParameterByName("WaterDepth", waterDepth);
 
+        if(GetPlaybackState(treeMove) == PLAYBACK_STATE.STOPPING)
+            NonSolidExit(treeMove);
+
         if(GetPlaybackState(bushMove) == PLAYBACK_STATE.STOPPING)
             NonSolidExit(bushMove);
 
@@ -49,6 +53,11 @@ public class Audio_DynamicFoley : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) 
     {
+        if (other.gameObject.tag == "Tree" && GetPlaybackState(treeMove) != PLAYBACK_STATE.PLAYING) 
+        { 
+            treeMove = RuntimeManager.CreateInstance("event:/SFX/dynamic_foley_tree");
+            treeMove.start();
+        }
         if (other.gameObject.tag == "Bush" && GetPlaybackState(bushMove) != PLAYBACK_STATE.PLAYING) 
         { 
             bushMove = RuntimeManager.CreateInstance("event:/SFX/dynamic_foley_bush");
@@ -67,20 +76,27 @@ public class Audio_DynamicFoley : MonoBehaviour
     }
 
     void OnTriggerStay(Collider other) 
-    {
+    {   if (other.gameObject.tag == "Tree") 
+            treeObject = NonSolidTrack(treeMove, other, "TreeMove");
+
         if (other.gameObject.tag == "Bush") 
-            bushGO = NonSolidTrack(bushMove, other, "BushMove");
+            bushObject = NonSolidTrack(bushMove, other, "BushMove");
 
         if (other.gameObject.tag == "Grass") 
-            grassGO = NonSolidTrack(grassMove, other, "GrassMove");
+            grassObject = NonSolidTrack(grassMove, other, "GrassMove");
 
         if (other.gameObject.tag == "Water") 
-            waterGO = NonSolidTrack(waterMove, other, "waterMove");
+            waterObject = NonSolidTrack(waterMove, other, "waterMove");
 
     }
 
     void OnTriggerExit(Collider other) 
     {
+        if (other.gameObject.tag == "Tree" && GetPlaybackState(treeMove) == PLAYBACK_STATE.PLAYING) 
+        { 
+            treeMove.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            treeMove.setParameterByName("TreeMove", 0f);
+        }
         if (other.gameObject.tag == "Bush" && GetPlaybackState(bushMove) == PLAYBACK_STATE.PLAYING) 
         { 
             bushMove.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);

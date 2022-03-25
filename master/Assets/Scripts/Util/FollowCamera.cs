@@ -27,6 +27,8 @@ public class FollowCamera : MonoBehaviour
 	void Update()
     {
         float dT = Time.deltaTime;
+		if (dT == 0f)
+			dT = Mathf.Epsilon;
 
 		Vector3 newPos = target.TransformPoint(relPosition);
 		if (local && transform.parent != null)

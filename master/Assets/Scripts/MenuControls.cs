@@ -10,7 +10,7 @@ public class MenuControls : MonoBehaviour
 	public GameObject inGameMenuRoot;
 	public GameObject IntroSequence;
 
-	public bool paused;
+	public static bool paused;
 	public bool ignoreInput;
 
 
