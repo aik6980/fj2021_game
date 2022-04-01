@@ -10,9 +10,7 @@ public class Audio_MusicManager : MonoBehaviour
     [SerializeField] EventReference islandMusicRef, windRef;
     List<EventInstance> islandMusicInsts = new List<EventInstance>();
     Dictionary<GameObject, EventInstance> islandMusicDict = new Dictionary<GameObject, EventInstance>();
-    [SerializeField] GameObject creditsObject, shipObject, cameraObject, playerObject;
-    [SerializeField] bool hearAllIslands = true;
-    
+    [SerializeField] GameObject creditsObject, shipObject, cameraObject, listenerObject, playerObject, planetObject;
     EventInstance stargazingInst, introStartInst, introEndInst, sailingInst, islandMusicInst, windInst;
     EventInstance creditsSnapshot, pausedSnapshot;
     float shipVelocity, windMusicOld;
@@ -26,6 +24,7 @@ public class Audio_MusicManager : MonoBehaviour
     }
     Music musicState = Music.INTRO;
     bool firstSail = true;
+    [SerializeField] LayerMask sphereMask;
 
 
     void Start()
@@ -93,7 +92,6 @@ public class Audio_MusicManager : MonoBehaviour
             RuntimeManager.StudioSystem.setParameterByName("ConstellationView", 0.0f);
     }
 
-    
     void SetMusicState()
     {
         switch (musicState)
@@ -111,10 +109,7 @@ public class Audio_MusicManager : MonoBehaviour
             }
             case Music.ISLANDS:
                 {
-                    if (hearAllIslands)
-                        PlayIslandMusicAll();
-                    else
-                        PlayIslandMusic();
+                    PlayIslandMusic();
                     break;
                 }
             //maybe a bug if while sailing is playing, player gets off boat and back on quickly
@@ -163,32 +158,33 @@ public class Audio_MusicManager : MonoBehaviour
         }
     }
 
-    void PlayIslandMusicAll()
+    void PlayIslandMusic()
     {
-        int islandsToPlay;
+        int islandCount;
         if (cameraObject.GetComponent<CameraControl>().mode == CameraControl.Mode.LandWalk)
         {
-            islandsToPlay = 1;
+            islandCount = 1;
             RuntimeManager.StudioSystem.setParameterByNameWithLabel("WalkSail", "Walk");
         }
         else
         {
-            islandsToPlay = islandMusicDict.Count;
+            islandCount = islandMusicDict.Count;
             RuntimeManager.StudioSystem.setParameterByNameWithLabel("WalkSail", "Sail");
         }
 
-        var notClosest = islandMusicDict.Count - islandsToPlay;
-        var closestIslands = islandMusicDict.OrderBy(pair => Vector3.Distance(pair.Key.transform.position, shipObject.transform.position)).Take(islandsToPlay).ToDictionary(pair => pair.Key, pair => pair.Value);
+        var notClosest = islandMusicDict.Count - islandCount;
+        var islandsToPlay = islandMusicDict.OrderBy(pair => Vector3.Distance(pair.Key.transform.position, shipObject.transform.position)).Take(islandCount).ToDictionary(pair => pair.Key, pair => pair.Value);
         var furthestIslands = islandMusicDict.OrderByDescending(pair => Vector3.Distance(pair.Key.transform.position, shipObject.transform.position)).Take(notClosest).ToDictionary(pair => pair.Key, pair => pair.Value);
 
-        foreach (var pair in closestIslands)
+        foreach (var pair in islandsToPlay)
         {
             if (GetPlaybackState(pair.Value) != PLAYBACK_STATE.PLAYING)
             {
                 pair.Value.start();
-                RuntimeManager.AttachInstanceToGameObject(pair.Value, pair.Key.transform);
+                Vector3 sourcePos = AudioHorizon(listenerObject, pair.Key, planetObject);
+                pair.Value.set3DAttributes(sourcePos.To3DAttributes());
             }
-            pair.Value.setParameterByName("DistanceToIsland", Vector3.Distance(pair.Key.transform.position, shipObject.transform.position));
+            pair.Value.setParameterByName("DistanceToIsland", Vector3.Distance(pair.Key.transform.position, listenerObject.transform.position));
         }
         foreach (var pair in furthestIslands)
         {
@@ -210,58 +206,13 @@ public class Audio_MusicManager : MonoBehaviour
                     pair.Value.setParameterByName("HeardOnWind", 0f);
                 }
                 var heardPair = islandMusicDict.OrderBy(pair => Random.Range(0, islandMusicDict.Count)).ElementAt(0);
-                Debug.Log("heard object: " + heardPair.Key);
                 heardPair.Value.setParameterByName("HeardOnWind", 1f);
-                RuntimeManager.AttachInstanceToGameObject(heardPair.Value, heardPair.Key.transform);
-                RuntimeManager.AttachInstanceToGameObject(windInst, heardPair.Key.transform);
+                Vector3 sourcePos = AudioHorizon(listenerObject, heardPair.Key, planetObject);
+                heardPair.Value.set3DAttributes(sourcePos.To3DAttributes());
+                windInst.set3DAttributes(sourcePos.To3DAttributes());
+                Debug.DrawLine(listenerObject.transform.position, sourcePos, Color.green, 5f);
             }
             windMusicOld = windMusic;
-        }
-        
-        if (shipVelocity > 40f
-            && Vector3.Distance(islandMusicDict.OrderBy(pair => Vector3.Distance(pair.Key.transform.position, shipObject.transform.position)).Take(1).ToList()[0].Key.transform.position, shipObject.transform.position) > 30f)
-            musicState = Music.SAILING;
-    }
-
-    void PlayIslandMusic()
-    {
-        int islandsToPlay;
-        if (cameraObject.GetComponent<CameraControl>().mode == CameraControl.Mode.LandWalk)
-        {
-            islandsToPlay = 1;
-            RuntimeManager.StudioSystem.setParameterByNameWithLabel("WalkSail", "Walk");
-        }
-        else
-        {
-            islandsToPlay = 3;
-            RuntimeManager.StudioSystem.setParameterByNameWithLabel("WalkSail", "Sail");
-        }
-
-        var notClosest = islandMusicDict.Count - islandsToPlay;
-        var closestIslands = islandMusicDict.OrderBy(pair => Vector3.Distance(pair.Key.transform.position, shipObject.transform.position)).Take(islandsToPlay).ToDictionary(pair => pair.Key, pair => pair.Value);
-        var furthestIslands = islandMusicDict.OrderByDescending(pair => Vector3.Distance(pair.Key.transform.position, shipObject.transform.position)).Take(notClosest).ToDictionary(pair => pair.Key, pair => pair.Value);
-
-        foreach (var pair in closestIslands)
-        {
-            if (GetPlaybackState(pair.Value) != PLAYBACK_STATE.PLAYING)
-            {
-                pair.Value.start();
-                RuntimeManager.AttachInstanceToGameObject(pair.Value, pair.Key.transform);
-            }
-            pair.Value.setParameterByName("DistanceToIsland", Vector3.Distance(pair.Key.transform.position, shipObject.transform.position));
-            pair.Value.getParameterByName("WindSpeed", out float windSpeed);
-            if(windSpeed == 0f)
-            {
-                
-            }
-        }
-        foreach (var pair in furthestIslands)
-        {
-            if (GetPlaybackState(pair.Value) == PLAYBACK_STATE.PLAYING)
-            {
-                pair.Value.release();
-                pair.Value.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            }
         }
         
         if (shipVelocity > 40f
@@ -292,8 +243,58 @@ public class Audio_MusicManager : MonoBehaviour
         }
     }
 
-    
+    Vector3 AudioHorizon(GameObject listener, GameObject source, GameObject sphere)
+    {
+        Vector3 listenerPos = listener.transform.position;
+        Vector3 sourcePos = source.transform.position;
+        Vector3 spherePos = sphere.transform.position;
 
-    
+        if(!Physics.Linecast(listenerPos, sourcePos, layerMask: sphereMask))
+            return sourcePos;
+
+        Plane plane = new Plane(listenerPos, sourcePos, spherePos);
+        Vector3 normal = plane.normal;
+        Vector3 centre = spherePos;
+        float radius = sphere.transform.localScale.x * sphere.GetComponent<SphereCollider>().radius;
+
+        Vector3 tanA = Vector3.zero;
+        Vector3 tanB = Vector3.zero;
+        CircleTangent3D(centre, radius, listenerPos, plane, ref tanA, ref tanB);
+
+        Vector3 tangentPos;
+        if(Vector3.Distance(tanA, sourcePos) < Vector3.Distance(tanB, sourcePos))
+            tangentPos = tanA;
+        else tangentPos = tanB;
+
+        Vector3 heading = tangentPos - listenerPos;
+                heading = heading.normalized * (Vector3.Distance(listenerPos, sourcePos) - Vector3.Distance(listenerPos, tangentPos));
+        Vector3 pSourcePos = heading + tangentPos;
+
+        return pSourcePos;
+    }
+
+    void CircleTangent3D(Vector3 c, float r, Vector3 p, Plane plane, ref Vector3 tanPosA, ref Vector3 tanPosB) 
+    {
+        Vector3 n = plane.normal;
+        p -= c;
+
+        float P = p.magnitude;
+        
+        float a = r * r                             / P;    
+        float q = r * Mathf.Sqrt((P * P) - (r * r)) / P;
+        
+        if(Mathf.Sign(n.z) == -1f)
+            plane.Flip();
+        
+        Vector3 pN  = p / P;
+        Vector3 pNP = Vector3.Cross(n, pN);
+        Vector3 va  = pN * a;
+
+        tanPosA = va + pNP * q;
+        tanPosB = va - pNP * q;
+
+        tanPosA += c;
+        tanPosB += c;
+    }
 }
 

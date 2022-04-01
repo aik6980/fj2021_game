@@ -17937,6 +17937,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &846041790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3853897748531486214, guid: 432892e76f0883748abc88b4f2acfc78, type: 3}
+  m_PrefabInstance: {fileID: 3853897749002210511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &846812053 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8267209225598877805, guid: 248ff240be3bdc34fadfcf9fd9d2d7eb, type: 3}
@@ -21591,7 +21596,7 @@ GameObject:
   - component: {fileID: 1278816583}
   - component: {fileID: 1278816582}
   - component: {fileID: 1278816581}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: ocean_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39246,8 +39251,12 @@ MonoBehaviour:
   creditsObject: {fileID: 1025158871}
   shipObject: {fileID: 1447744788}
   cameraObject: {fileID: 1745705871}
+  listenerObject: {fileID: 846041790}
   playerObject: {fileID: 99599787}
-  hearAllIslands: 1
+  planetObject: {fileID: 1278816579}
+  sphereMask:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!224 &1833573648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39336,6 +39345,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7248bc2e0e235bc45acfa9591585408c, type: 3}
+--- !u!1 &1834089490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834089492}
+  - component: {fileID: 1834089491}
+  m_Layer: 0
+  m_Name: Audio_Horizon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1834089491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834089490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beebb87656dae0f4d9d2de2ebaccee8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listener: {fileID: 846041790}
+  source: {fileID: 1827263878}
+  sphere: {fileID: 1777946619}
+  sphereMask:
+    serializedVersion: 2
+    m_Bits: 16
+--- !u!4 &1834089492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834089490}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8208566, y: 3.832209, z: 15.280226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838007408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 918084908733677596, guid: 560cb3fae50897249a5bb9a89a2cb434, type: 3}
