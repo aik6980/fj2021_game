@@ -200,7 +200,7 @@ public class OnFootMovement : MonoBehaviour
 
 						if (Physics.Raycast(transform.position, delta.normalized, out hit, delta.magnitude, mask))
 						{//hit something; cancel
-							Debug.Log("obstacle " + hit.collider.name, hit.collider);
+							//Debug.Log("obstacle " + hit.collider.name, hit.collider);
 						} else
 						{
 							//Debug.Log(transform.position.ToString() + "->" + nextPos.ToString());

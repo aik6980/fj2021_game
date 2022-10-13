@@ -10,13 +10,13 @@ public class Audio_SFX : MonoBehaviour
     {
         EventInstance boatsplash = RuntimeManager.CreateInstance("event:/SFX/boatsplash");
         boatsplash.start();
-		RuntimeManager.AttachInstanceToGameObject(boatsplash, boat.GetComponent<Transform>());
+        RuntimeManager.AttachInstanceToGameObject(boatsplash, boat.GetComponent<Transform>());
     }
 
     public static void BoatSplashUpdate(Vector3 velocity)
     {
         RuntimeManager.StudioSystem.setParameterByName("SailingSpeed", velocity.z);
-		RuntimeManager.StudioSystem.setParameterByName("IsTurning", velocity.y);
+        RuntimeManager.StudioSystem.setParameterByName("IsTurning", velocity.y);
     }
 
     static EventInstance stargazing_drawing;
@@ -31,8 +31,8 @@ public class Audio_SFX : MonoBehaviour
 
     public static void StarDrawingEnd(bool endOnStar)
     {
-        if(endOnStar) { RuntimeManager.StudioSystem.setParameterByName("EndOnStar", 1f); }
-        else  { RuntimeManager.StudioSystem.setParameterByName("EndOnStar", 0f); }
+        if (endOnStar) { RuntimeManager.StudioSystem.setParameterByName("EndOnStar", 1f); }
+        else { RuntimeManager.StudioSystem.setParameterByName("EndOnStar", 0f); }
         stargazing_drawing.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         stargazing_drawing.release();
     }
@@ -48,6 +48,6 @@ public class Audio_SFX : MonoBehaviour
     {
         PLAYBACK_STATE pS;
         instance.getPlaybackState(out pS);
-        return pS;        
+        return pS;
     }
 }

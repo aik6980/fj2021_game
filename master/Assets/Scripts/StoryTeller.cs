@@ -28,7 +28,7 @@ public class StoryTeller : MonoBehaviour
 
 	private void StoryTeller_OnTriggerEnterDelegate2(GameObject a, GameObject b)
 	{
-		Debug.Log(a.name + " ENTER " + b.name + " of " + b.transform.parent.name);
+		//Debug.Log(a.name + " ENTER " + b.name + " of " + b.transform.parent.name);
 		this.gameObject.SendMessage(b.name, SendMessageOptions.DontRequireReceiver);
 		fc.SendFungusMessage(b.name);
 		fc.SendFungusMessage(b.transform.parent.name);

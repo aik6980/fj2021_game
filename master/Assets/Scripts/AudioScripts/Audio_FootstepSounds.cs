@@ -10,7 +10,7 @@ public class Audio_FootstepSounds : MonoBehaviour
     [SerializeField] Texture islandTexture, rockTexture, sandTexture, monolithTexture;
     EventInstance footstepSound;
     [SerializeField] GameObject leftFoot, rightFoot;
-    
+
 
     void DetectGroundType()
     {
@@ -18,19 +18,19 @@ public class Audio_FootstepSounds : MonoBehaviour
         Texture textureCheck;
         RaycastHit[] hit;
 
-        if(AnimatePlayer.leftStep)
+        if (AnimatePlayer.leftStep)
             hit = Physics.RaycastAll(leftFoot.transform.position, -transform.up, 0.05f);
         else
             hit = Physics.RaycastAll(rightFoot.transform.position, -transform.up, 0.05f);
 
-        System.Array.Sort(hit, (x,y) => x.distance.CompareTo(y.distance));
+        System.Array.Sort(hit, (x, y) => x.distance.CompareTo(y.distance));
 
         foreach (RaycastHit rayhit in hit)
         {
             groundCoordX = rayhit.textureCoord.x;
             groundCoordY = rayhit.textureCoord.y;
 
-            if(rayhit.collider.gameObject.GetComponent<Renderer>())
+            if (rayhit.collider.gameObject.GetComponent<Renderer>())
             {
                 textureCheck = rayhit.transform.GetComponent<Renderer>().sharedMaterial.mainTexture;
             }
@@ -57,7 +57,7 @@ public class Audio_FootstepSounds : MonoBehaviour
                 {
                     currentTerrain = CURRENT_TERRAIN.GRASS;
                     return;
-                }   
+                }
                 else
                 {
                     currentTerrain = CURRENT_TERRAIN.SAND;
@@ -116,11 +116,11 @@ public class Audio_FootstepSounds : MonoBehaviour
         }
         else footstepSound.setParameterByName("Footstep_Water", 0);
         footstepSound.setParameterByName("WaterDepth", Audio_DynamicFoley.waterDepth);
-        
+
         footstepSound.start();
-        if(AnimatePlayer.leftStep)
+        if (AnimatePlayer.leftStep)
             RuntimeManager.AttachInstanceToGameObject(footstepSound, leftFoot.GetComponent<Transform>());
-        else 
+        else
             RuntimeManager.AttachInstanceToGameObject(footstepSound, rightFoot.GetComponent<Transform>());
 
         footstepSound.release();

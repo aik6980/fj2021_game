@@ -6,12 +6,12 @@ public class Audio_Horizon : MonoBehaviour
     [SerializeField] LayerMask sphereMask;
     Plane plane;
 
-    void OnDrawGizmos() 
+    void OnDrawGizmos()
     {
         Vector3 listenerPos = listener.transform.position;
         Vector3 sourcePos = source.transform.position;
         Vector3 spherePos = sphere.transform.position;
-        
+
         //calculate plane and disc for horizon tangent direction
         plane.Set3Points(listenerPos, sourcePos, spherePos);
         Vector3 normal = plane.normal;
@@ -25,17 +25,17 @@ public class Audio_Horizon : MonoBehaviour
 
         //select closest tangent point
         Vector3 tangentPos;
-        if(Vector3.Distance(tanA, sourcePos) < Vector3.Distance(tanB, sourcePos))
+        if (Vector3.Distance(tanA, sourcePos) < Vector3.Distance(tanB, sourcePos))
             tangentPos = tanA;
         else tangentPos = tanB;
-        
+
         //extend vector distance
         Vector3 heading = tangentPos - listenerPos;
-                heading = heading.normalized * (Vector3.Distance(listenerPos, sourcePos) - Vector3.Distance(listenerPos, tangentPos));
+        heading = heading.normalized * (Vector3.Distance(listenerPos, sourcePos) - Vector3.Distance(listenerPos, tangentPos));
         Vector3 pSource = heading + tangentPos;
 
         //check if source and listener can see each other
-        if(!Physics.Linecast(listenerPos, sourcePos, layerMask: sphereMask))
+        if (!Physics.Linecast(listenerPos, sourcePos, layerMask: sphereMask))
             Debug.DrawLine(listenerPos, sourcePos, Color.green, 0.1f);
         else
         {
@@ -47,27 +47,27 @@ public class Audio_Horizon : MonoBehaviour
         }
     }
 
-    void CircleTangent3D(Vector3 c, float r, Vector3 p, Plane plane, ref Vector3 tanPosA, ref Vector3 tanPosB) 
+    void CircleTangent3D(Vector3 c, float r, Vector3 p, Plane plane, ref Vector3 tanPosA, ref Vector3 tanPosB)
     {
         Vector3 n = plane.normal;
         p -= c;
 
         float P = p.magnitude;
-        
-        float a = r * r                             / P;    
+
+        float a = r * r / P;
         float q = r * Mathf.Sqrt((P * P) - (r * r)) / P;
-        
-        if(Mathf.Sign(n.z) == -1f)
+
+        if (Mathf.Sign(n.z) == -1f)
             plane.Flip();
-        
-        Vector3 pN  = p / P;
+
+        Vector3 pN = p / P;
         Vector3 pNP = Vector3.Cross(n, pN);
-        Vector3 va  = pN * a;
+        Vector3 va = pN * a;
 
         tanPosA = va + pNP * q;
         tanPosB = va - pNP * q;
 
         tanPosA += c;
         tanPosB += c;
-  }
+    }
 }

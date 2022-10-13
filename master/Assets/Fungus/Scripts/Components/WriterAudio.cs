@@ -58,7 +58,6 @@ namespace Fungus
         // Time when current beep will have finished playing
         protected float nextBeepTime;
 
-
         public float GetSecondsRemaining()
         {
             if (IsPlayingVoiceOver)
